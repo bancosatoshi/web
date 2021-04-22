@@ -1,0 +1,57 @@
+@import "../../theme/base";
+
+$NAVBAR_HEIGHT: 112px;
+$LOGO_WIDTH: 153px;
+
+.navbar {
+  z-index: $z-index-navigation;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__logo {
+    height: $NAVBAR_HEIGHT;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    a {
+      width: $LOGO_WIDTH * 1.2;
+    }
+
+    svg {
+      width: $LOGO_WIDTH;
+    }
+  }
+
+  &__right {
+    height: $NAVBAR_HEIGHT;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__language-selector {
+    background-color: $color-dark-1;
+    color: $color-brand-light;
+    padding: $space-xs;
+    border-radius: $border-radius;
+    font-size: $font-size-2;
+    display: flex;
+
+    &:hover {
+      background-color: $color-dark-2;
+      cursor: pointer;
+    }
+
+    svg {
+      width: 14px;
+      height: auto;
+      color: $color-brand-light;
+      margin-right: $space-xs;
+    }
+  }
+}

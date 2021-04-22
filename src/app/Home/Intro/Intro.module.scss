@@ -1,0 +1,40 @@
+@import "../../../theme/base";
+
+.intro {
+  background-color: $color-brand-light;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  &__background-image {
+    position: absolute;
+    width: 50vw;
+    height: 100vh;
+    bottom: -15%;
+    right: $space-l;
+    background-image: url("/home/fern-intro@2x.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+  }
+
+  h1 {
+    span {
+      display: block;
+      &:nth-child(1) {
+        @include font-properties($text-heading-level-5);
+      }
+      &:nth-child(2) {
+        @include font-properties($text-heading-level-1);
+      }
+    }
+  }
+
+  h2 {
+    @include font-properties($text-1);
+    margin-bottom: $space-l;
+  }
+}
