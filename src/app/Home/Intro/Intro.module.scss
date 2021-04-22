@@ -26,6 +26,11 @@
     background-repeat: no-repeat;
     background-position: center right;
     background-size: contain;
+    display: none;
+
+    @include atTablet {
+      display: block;
+    }
   }
 
   h1 {

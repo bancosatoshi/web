@@ -24,14 +24,14 @@ export const NavBar: React.FC<{ children?: ReactChild }> = ({ children }) => {
       <div className={styles.navbar}>
         <Container>
           <Row justify="between">
-            <Col lg={3}>
+            <Col lg={3} xs={6} sm={6}>
               <div className={styles.navbar__logo}>
                 <a href="#">
                   <AufacicentaLogo />
                 </a>
               </div>
             </Col>
-            <Col lg={2}>
+            <Col lg={2} xs={6} sm={6}>
               <div className={styles.navbar__right}>
                 {children && children}
                 <div className={styles["navbar__language-selector"]}>

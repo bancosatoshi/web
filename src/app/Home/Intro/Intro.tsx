@@ -29,18 +29,12 @@ export const Intro: React.FC<IntroProps> = () => {
       <div>
         <Container>
           <Row>
-            <Col lg={6}>
+            <Col lg={5}>
               <h1 className={clsx(styles["intro__heading"])}>
                 <span>{t("intro.h1.top")}</span>
                 <span>{t("intro.h1.main")}</span>
               </h1>
-              <h2>
-                {t("intro.h2.text.1")}
-                <br />
-                {t("intro.h2.text.2")}
-                <br />
-                {t("intro.h2.text.3")}
-              </h2>
+              <h2>{t("intro.h2.text.1")}</h2>
               <div className={clsx(styles["intro__actions"])}>
                 <Link href={getContactURL()}>
                   <a target="_blank" rel="nofollow">
