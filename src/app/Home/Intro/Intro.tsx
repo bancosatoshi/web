@@ -1,4 +1,7 @@
 import clsx from "clsx";
+import { useTranslation } from "next-i18next";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Col, Container, Row } from "react-grid-system";
 import { Button } from "../../../ui/button/Button";
 import { NavBar } from "../../../ui/navbar/NavBar";
@@ -6,6 +9,20 @@ import styles from "./Intro.module.scss";
 import { IntroProps } from "./Intro.types";
 
 export const Intro: React.FC<IntroProps> = () => {
+  const { t } = useTranslation("home");
+  const { locale } = useRouter();
+
+  const getContactURL = () => {
+    switch (locale) {
+      case "es":
+        return "https://13iqht6lpij.typeform.com/to/wvwrL9cd";
+      case "en":
+        return "https://13iqht6lpij.typeform.com/to/wvwrL9cd";
+      default:
+        return "https://13iqht6lpij.typeform.com/to/wvwrL9cd";
+    }
+  };
+
   return (
     <section id="intro" className={clsx(styles["intro"])}>
       <NavBar />
@@ -14,18 +31,22 @@ export const Intro: React.FC<IntroProps> = () => {
           <Row>
             <Col lg={6}>
               <h1 className={clsx(styles["intro__heading"])}>
-                <span>Líderes en</span>
-                <span>Estrategia DeFi</span>
+                <span>{t("intro.h1.top")}</span>
+                <span>{t("intro.h1.main")}</span>
               </h1>
               <h2>
-                Orientación especializada en Finanzas Descentralizadas
+                {t("intro.h2.text.1")}
                 <br />
-                (DeFi) para negocios de todos los tamaños
+                {t("intro.h2.text.2")}
                 <br />
-                de todas las regiones del mundo.
+                {t("intro.h2.text.3")}
               </h2>
               <div className={clsx(styles["intro__actions"])}>
-                <Button>Contacto</Button>
+                <Link href={getContactURL()}>
+                  <a target="_blank" rel="nofollow">
+                    <Button>{t("intro.button.contact")}</Button>
+                  </a>
+                </Link>
               </div>
             </Col>
           </Row>

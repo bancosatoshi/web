@@ -42,6 +42,12 @@ $LOGO_WIDTH: 153px;
     font-size: $font-size-2;
     display: flex;
 
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: flex;
+    }
+
     &:hover {
       background-color: $color-dark-2;
       cursor: pointer;

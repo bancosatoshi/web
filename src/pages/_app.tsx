@@ -1,3 +1,4 @@
+import { appWithTranslation } from "next-i18next";
 import { setConfiguration } from "react-grid-system";
 import "../theme/globals.scss";
 
@@ -7,4 +8,4 @@ function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { Home } from "../app/Home/Home";
 
@@ -17,5 +18,11 @@ const Index: NextPage = () => (
     <Home />
   </>
 );
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "home"])),
+  },
+});
 
 export default Index;
