@@ -20,6 +20,8 @@ const Index: NextPage = () => {
         <meta property="og:title" content={t("head.og.title")} />
         <meta property="og:description" content={t("head.og.description")} />
         <meta property="og:image" content={`/shared/og-image_${locale}.png`} />
+        <meta property="og:url" content="https://aufacicenta.com" />
+        <meta property="og:type" content="website" />
       </Head>
       <Home />
     </>
