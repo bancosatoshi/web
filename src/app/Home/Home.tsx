@@ -25,13 +25,13 @@ export const Home: React.FC<HomeProps> = () => {
         <Tab defaultPaneId="my-properties">
           <Tab.Navigation>
             <Tab.Item paneId="my-properties">My Properties</Tab.Item>
-            <Tab.Item paneId="another">Another Pane</Tab.Item>
+            <Tab.Item paneId="explore">Explore</Tab.Item>
           </Tab.Navigation>
           <Tab.Pane id="my-properties">
             <MainPanel.Container>My Properties</MainPanel.Container>
           </Tab.Pane>
-          <Tab.Pane id="another">
-            <MainPanel.Container>Another</MainPanel.Container>
+          <Tab.Pane id="explore">
+            <MainPanel.Container>Explore</MainPanel.Container>
           </Tab.Pane>
         </Tab>
       </MainPanel>
