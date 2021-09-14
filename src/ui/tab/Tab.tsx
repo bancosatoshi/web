@@ -6,9 +6,9 @@ import { Pane } from "./pane/Pane";
 import styles from "./Tab.module.scss";
 import { TabProps } from "./Tab.types";
 
-export const Tab: React.FC<TabProps> = ({ children, className }) => {
+export const Tab: React.FC<TabProps> = ({ children, className, defaultPaneId }) => {
   return (
-    <TabContextController>
+    <TabContextController defaultPaneId={defaultPaneId}>
       <div className={clsx(styles["tab"], className)}>{children}</div>
     </TabContextController>
   );

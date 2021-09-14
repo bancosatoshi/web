@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 export type TabContextControllerProps = {
   children: ReactNode;
+  defaultPaneId?: string;
 };
 
 export type TabContextType = {
