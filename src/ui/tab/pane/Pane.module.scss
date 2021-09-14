@@ -1,0 +1,9 @@
+@import "../../../theme/base";
+
+.pane {
+  display: none;
+
+  &__active {
+    display: block;
+  }
+}

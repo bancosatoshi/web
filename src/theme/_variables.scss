@@ -196,6 +196,14 @@ $typography-text: (
   ),
 );
 
+$typography-text-bold: (
+  font: (
+    size: $font-size-text,
+    weight: $font-weight-bold,
+    fontFamily: $font-family-text,
+  ),
+);
+
 //Default font sizes
 $font-size-1: rem(11) !default; //0.6875
 $font-size-2: rem(13) !default; //0.8125
@@ -634,3 +642,6 @@ $checkbox-size: $form-radio !default;
 // Switch
 $switch-height: 32px !default;
 $switch-min-width: 60px !default;
+
+// Main Panel
+$main-panel-container-space-x: $space-xxl;

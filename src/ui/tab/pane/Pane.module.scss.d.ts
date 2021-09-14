@@ -1,6 +1,6 @@
 export type Styles = {
-  'main-panel': string;
-  'main-panel__container': string;
+  'pane': string;
+  'pane__active': string;
 };
 
 export type ClassNames = keyof Styles;

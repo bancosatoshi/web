@@ -6,5 +6,7 @@
   width: 100%;
   position: relative;
 
-  padding: 0 $space-xxl;
+  &__container {
+    padding: 0 $main-panel-container-space-x;
+  }
 }

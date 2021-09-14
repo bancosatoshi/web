@@ -74,6 +74,12 @@ body[data-theme="dark"] {
 
   // Typography
   --color-text-headline-1: var(--color-white);
+  --color-typography-text: var(--color-white);
+
+  // Tab
+  --color-tab-navigation-border: var(--color-dark-7);
+  --color-tab-item-default: var(--color-dark-7);
+  --color-tab-item-active: var(--color-white);
 
   //Gray light
   --color-light-1: #c8cacb;

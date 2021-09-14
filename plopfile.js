@@ -26,12 +26,12 @@ const customHookGenerator = () => ({
     const actions = [
       {
         type: "add",
-        path: "src/{{directory}}/{{camelCase name}}/{{pascalCase name}}.tsx",
+        path: "src/{{directory}}/{{camelCase name}}/{{camelCase name}}.tsx",
         templateFile: "plop-templates/hook/hook.hbs",
       },
       {
         type: "add",
-        path: "src/{{directory}}/{{camelCase name}}/{{pascalCase name}}.test.tsx",
+        path: "src/{{directory}}/{{camelCase name}}/{{camelCase name}}.test.tsx",
         templateFile: "plop-templates/hook/hook.test.hbs",
       },
     ];
