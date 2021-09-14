@@ -22,12 +22,12 @@ export const NavBar: React.FC<{ children?: ReactChild }> = ({ children }) => {
   return (
     <>
       <div className={styles.navbar}>
-        <Container>
+        <Container fluid>
           <Row justify="between">
             <Col lg={3} xs={6} sm={6}>
               <div className={styles.navbar__logo}>
                 <a href="#">
-                  <AufacicentaLogo />
+                  <AufacicentaLogo className={styles["navbar__logo--color"]} />
                 </a>
               </div>
             </Col>

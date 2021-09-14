@@ -15,8 +15,7 @@
 
   &:hover,
   &:focus {
-    background: $color-brand-bright
-      radial-gradient(circle, transparent 1%, $color-brand-bright 1%) center/15000%;
+    background: $color-brand-bright radial-gradient(circle, transparent 1%, $color-brand-bright 1%) center/15000%;
     color: $color-white;
   }
 
@@ -81,8 +80,7 @@
     color: $color-brand;
     &:hover {
       color: $color-brand;
-      background: $color-brand-light
-        radial-gradient(circle, transparent 1%, $color-brand-light 1%) center/15000%;
+      background: $color-brand-light radial-gradient(circle, transparent 1%, $color-brand-light 1%) center/15000%;
     }
     &:active {
       background-color: $color-brand-brighter;

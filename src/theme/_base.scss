@@ -7,6 +7,9 @@
 
 @import "_variables";
 
+$navbar-height: 70px;
+$navbar-logo-width: 153px;
+
 $z-index-navigation: 3;
 $z-index-modal: 4;
 $z-index-form-dropdown: 5;
@@ -20,6 +23,8 @@ $max-container-width: 1720px;
 
 $dropzone-file-preview-sidebar-width-shrink: 77px;
 $dropzone-file-preview-sidebar-width-open: 420px;
+
+$sidebar-width: 320px;
 
 // min-width 360px
 @mixin atMobile {
@@ -69,4 +74,17 @@ $dropzone-file-preview-sidebar-width-open: 420px;
   @media (min-width: $max-container-width) {
     @content;
   }
+}
+
+@mixin withSidebar {
+  display: flex;
+}
+
+@mixin withNavbar {
+  padding-top: $navbar-height * 2;
+}
+
+@mixin normalizeTypography {
+  margin: 0;
+  padding: 0;
 }

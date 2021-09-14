@@ -1,0 +1,7 @@
+@import "../../../theme/base";
+
+.headline1 {
+  color: var(--color-text-headline-1);
+  @include font-properties($typography-headline-1);
+  @include normalizeTypography;
+}

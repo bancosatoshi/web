@@ -1,9 +1,7 @@
 @import "../../theme/base";
 
-$NAVBAR_HEIGHT: 112px;
-$LOGO_WIDTH: 153px;
-
 .navbar {
+  background-color: var(--color-background);
   z-index: $z-index-navigation;
   position: absolute;
   width: 100%;
@@ -12,22 +10,26 @@ $LOGO_WIDTH: 153px;
   right: 0;
 
   &__logo {
-    height: $NAVBAR_HEIGHT;
+    &--color {
+      color: var(--color-navbar-logo);
+    }
+
+    height: $navbar-height;
     display: flex;
     justify-content: center;
     flex-direction: column;
 
     a {
-      width: $LOGO_WIDTH * 1.2;
+      width: $navbar-logo-width * 1.2;
     }
 
     svg {
-      width: $LOGO_WIDTH;
+      width: $navbar-logo-width;
     }
   }
 
   &__right {
-    height: $NAVBAR_HEIGHT;
+    height: $navbar-height;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -35,8 +37,8 @@ $LOGO_WIDTH: 153px;
   }
 
   &__language-selector {
-    background-color: $color-dark-1;
-    color: $color-brand-light;
+    background-color: var(--color-button-secondary);
+    color: var(--color-button-secondary-text);
     padding: $space-xs;
     border-radius: $border-radius;
     font-size: $font-size-2;
@@ -49,14 +51,14 @@ $LOGO_WIDTH: 153px;
     }
 
     &:hover {
-      background-color: $color-dark-2;
+      background-color: var(--color-button-secondary-hover);
       cursor: pointer;
     }
 
     svg {
       width: 14px;
       height: auto;
-      color: $color-brand-light;
+      color: var(--color-button-secondary-text);
       margin-right: $space-xs;
     }
   }

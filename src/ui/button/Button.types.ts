@@ -1,11 +1,11 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react';
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
 
 export type ButtonCommonProps = {
   children: ReactNode;
-  color?: 'primary' | 'secondary' | 'success' | 'danger' | 'dark' | 'light';
+  color?: "primary" | "secondary" | "success" | "danger" | "dark" | "light";
   // auto size means m on destkop and xs on mobile
-  size?: 'xs' | 's' | 'm' | 'l' | 'auto';
-  variant?: 'contained' | 'outlined' | 'inverted' | 'text';
+  size?: "xs" | "s" | "m" | "l" | "auto";
+  variant?: "contained" | "outlined" | "inverted" | "text";
   isLoading?: boolean;
   rightIcon?: ReactNode;
   leftIcon?: ReactNode;
@@ -13,18 +13,18 @@ export type ButtonCommonProps = {
 
 export type LinkButtonProps = Omit<
   DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>,
-  'ref'
+  "ref"
 > & {
   disabled?: undefined;
   type?: undefined;
-  as: 'a';
+  as: "a";
 };
 
 export type DefaultButtonProps = Omit<
   DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
-  'ref'
+  "ref"
 > & {
-  as?: 'button';
+  as?: "button";
   href?: undefined;
 };
 

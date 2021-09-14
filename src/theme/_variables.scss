@@ -4,11 +4,11 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 $mq-x-small: 0px !default;
-$mq-small: 360px !default;
-$mq-medium: 480px !default;
-$mq-large: 768px !default;
-$mq-large-plus: 1000px !default;
-$mq-x-large: 1280px !default;
+$mq-small: 540px !default;
+$mq-medium: 740px !default;
+$mq-large: 960px !default;
+$mq-large-plus: 1360px !default;
+$mq-x-large: 1540px !default;
 
 $breakpoints: () !default;
 $breakpoints: map-merge(
@@ -70,12 +70,12 @@ $color-brand-bright-45: lighten($color-brand-brighter, 45%) !default;
 //Gray dark
 $color-white: #ffffff !default;
 $color-white-50: rgba($color-white, 0.5) !default;
-$color-black: #000000 !default;
-$color-dark-1: #31343c !default;
+$color-black: #2e2639 !default;
+$color-dark-1: #1e1e24 !default;
 $color-dark-2: #4a4b6d !default;
-$color-dark-3: #6e7278 !default;
-$color-dark-4: #8e949a !default;
-$color-dark-5: #b1b5b9 !default;
+$color-dark-3: #5b5b65 !default;
+$color-dark-4: #8a8a98 !default;
+$color-dark-5: #d0d0da !default;
 $color-dark-70: rgba($color-dark-1, 0.7) !default;
 $color-dark-50: rgba($color-dark-1, 0.5) !default;
 $color-dark-40: rgba($color-dark-1, 0.4) !default;
@@ -161,6 +161,40 @@ $font-weight-regular: 400 !default;
 $font-weight-medium: 500 !default;
 $font-weight-bold: 700 !default;
 $color-base: $color-dark-2 !default;
+
+// Eclipse font sizes
+$font-size-headline-1: rem(40);
+$font-size-headline-2: rem(32);
+$font-size-headline-3: rem(28);
+$font-size-headline-4: rem(28);
+$font-size-headline-5: rem(24);
+$font-size-headline-6: rem(20);
+$font-size-headline-7: rem(18);
+$font-size-text: rem(16);
+$font-size-text-bold: $font-size-text;
+$font-size-subtitle: rem(16);
+$font-size-subtitle-semi-bold: $font-size-subtitle;
+$font-size-button-label: $font-size-text;
+$font-size-mini-button-label: rem(14);
+$font-size-description: rem(12);
+$font-size-mini-description: rem(9);
+
+$typography-headline-1: (
+  font: (
+    size: $font-size-headline-1,
+    weight: $font-weight-bold,
+    fontFamily: $font-family-text,
+    lineHeight: 1,
+  ),
+);
+
+$typography-text: (
+  font: (
+    size: $font-size-text,
+    weight: $font-weight-regular,
+    fontFamily: $font-family-text,
+  ),
+);
 
 //Default font sizes
 $font-size-1: rem(11) !default; //0.6875

@@ -1,11 +1,11 @@
-import { DetailedHTMLProps, HTMLAttributes, CSSProperties, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, CSSProperties, ReactNode } from "react";
 
 type ModalCommonProps = {
   isOpened: boolean;
   children: ReactNode;
-  'aria-labelledby': string;
-  'aria-describedby'?: string;
-  size?: 's' | 'm' | 'l';
+  "aria-labelledby": string;
+  "aria-describedby"?: string;
+  size?: "s" | "m" | "l";
   className?: string;
   style?: CSSProperties;
   isPortalDisabled?: boolean;
@@ -16,7 +16,7 @@ type ModalCommonProps = {
 
 // Fullscreen modal cannot have close icon with position fixed because it is not accessible then
 export type ModalFullscreenProps = ModalCommonProps & {
-  fullscreenVariant: 'default' | 'mobile-only';
+  fullscreenVariant: "default" | "mobile-only";
 };
 
 export type ModalNotFullscreenProps = ModalCommonProps & {

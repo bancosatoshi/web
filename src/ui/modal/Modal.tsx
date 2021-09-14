@@ -5,12 +5,7 @@ import { IconButton } from "../iconButton/IconButton";
 import { CloseIcon } from "../icons/CloseIcon";
 import { CloseButton } from "./CloseButton/CloseButton";
 import styles from "./Modal.module.scss";
-import {
-  ModalFullscreenProps,
-  ModalItemProps,
-  ModalNotFullscreenProps,
-  ModalProps,
-} from "./Modal.types";
+import { ModalFullscreenProps, ModalItemProps, ModalNotFullscreenProps, ModalProps } from "./Modal.types";
 
 export const MODAL_ANIMATION_TIME = 300;
 
@@ -105,9 +100,7 @@ export const Modal = ({
           })}
           style={style}
         >
-          {withCloseIcon && (
-            <CloseButton className={styles["modal__close-button"]} onClick={onClose} />
-          )}
+          {withCloseIcon && <CloseButton className={styles["modal__close-button"]} onClick={onClose} />}
           {children}
         </div>
       </div>

@@ -2,12 +2,18 @@ import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Home } from "../app/Home/Home";
+import { Home } from "../app/home/Home";
 
 const Index: NextPage = () => {
   const { t } = useTranslation("home");
   const { locale } = useRouter();
+
+  useLayoutEffect(() => {
+    // @todo set with a toggle button from navbar or footer
+    document.body.dataset.theme = "dark";
+  }, []);
 
   return (
     <>
