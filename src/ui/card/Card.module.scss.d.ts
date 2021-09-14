@@ -1,5 +1,8 @@
 export type Styles = {
-  'headline1': string;
+  'card': string;
+  'card__background-image': string;
+  'card__content': string;
+  'card__link': string;
 };
 
 export type ClassNames = keyof Styles;

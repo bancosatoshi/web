@@ -188,11 +188,57 @@ $typography-headline-1: (
   ),
 );
 
+$typography-headline-2: (
+  font: (
+    size: $font-size-headline-2,
+    weight: $font-weight-bold,
+    fontFamily: $font-family-text,
+    lineHeight: 1,
+  ),
+);
+
+$typography-headline-3: (
+  font: (
+    size: $font-size-headline-3,
+    weight: $font-weight-bold,
+    fontFamily: $font-family-text,
+    lineHeight: 1,
+  ),
+);
+
+$typography-headline-4: (
+  font: (
+    size: $font-size-headline-4,
+    weight: $font-weight-medium,
+    fontFamily: $font-family-text,
+    lineHeight: 1,
+  ),
+);
+
+$typography-headline-5: (
+  font: (
+    size: $font-size-headline-5,
+    weight: $font-weight-bold,
+    fontFamily: $font-family-text,
+    lineHeight: 1,
+  ),
+);
+
+$typography-headline-6: (
+  font: (
+    size: $font-size-headline-6,
+    weight: $font-weight-medium,
+    fontFamily: $font-family-text,
+    lineHeight: 1,
+  ),
+);
+
 $typography-text: (
   font: (
     size: $font-size-text,
     weight: $font-weight-regular,
     fontFamily: $font-family-text,
+    // lineHeight: 1.9,
   ),
 );
 
@@ -200,6 +246,46 @@ $typography-text-bold: (
   font: (
     size: $font-size-text,
     weight: $font-weight-bold,
+    fontFamily: $font-family-text,
+  ),
+);
+
+$typography-subtitle: (
+  font: (
+    size: $font-size-subtitle,
+    weight: $font-weight-medium,
+    fontFamily: $font-family-text,
+  ),
+);
+
+$typography-button-label: (
+  font: (
+    size: $font-size-button-label,
+    weight: $font-weight-bold,
+    fontFamily: $font-family-text,
+  ),
+);
+
+$typography-mini-button-label: (
+  font: (
+    size: $font-size-mini-button-label,
+    weight: $font-weight-medium,
+    fontFamily: $font-family-text,
+  ),
+);
+
+$typography-description: (
+  font: (
+    size: $font-size-description,
+    weight: $font-weight-regular,
+    fontFamily: $font-family-text,
+  ),
+);
+
+$typography-mini-description: (
+  font: (
+    size: $font-size-mini-description,
+    weight: $font-weight-regular,
     fontFamily: $font-family-text,
   ),
 );

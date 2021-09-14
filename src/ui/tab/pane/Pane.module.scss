@@ -1,7 +1,7 @@
 @import "../../../theme/base";
 
 .pane {
-  display: none;
+  min-height: 30vh;
 
   &__active {
     display: block;

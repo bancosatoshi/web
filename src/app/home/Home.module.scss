@@ -15,4 +15,19 @@
   &__main-panel {
     @include withNavbar;
   }
+
+  &__tab-pane {
+    &--container {
+      padding-top: $space-m;
+      padding-bottom: $space-m;
+      margin-left: -$space-default;
+      margin-right: -$space-default;
+    }
+  }
+
+  &__my-properties {
+    &--card {
+      margin-bottom: $space-default;
+    }
+  }
 }

@@ -1,5 +1,7 @@
 import clsx from "clsx";
+import { Col, Container, Row } from "react-grid-system";
 import { useTranslation } from "react-i18next";
+import { Card } from "../../ui/card/Card";
 import { CityIcon } from "../../ui/icons/CityIcon";
 import { MainPanel } from "../../ui/mainpanel/MainPanel";
 import { NavBar } from "../../ui/navbar/NavBar";
@@ -11,6 +13,19 @@ import { HomeProps } from "./Home.types";
 
 export const Home: React.FC<HomeProps> = () => {
   const { t } = useTranslation("home");
+  const myProperties = [
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+  ];
 
   return (
     <div className={clsx(styles["home"])}>
@@ -28,7 +43,30 @@ export const Home: React.FC<HomeProps> = () => {
             <Tab.Item paneId="explore">Explore</Tab.Item>
           </Tab.Navigation>
           <Tab.Pane id="my-properties">
-            <MainPanel.Container>My Properties</MainPanel.Container>
+            <MainPanel.Container className={styles["home__tab-pane--container"]}>
+              <Container fluid>
+                <Row>
+                  {myProperties.map((property) => (
+                    <Col lg={4}>
+                      <Card backgroundImageUrl={property} className={styles["home__my-properties--card"]} url="#">
+                        <Card.Content>
+                          <Typography.MiniDescription>Antigua, Guatemala</Typography.MiniDescription>
+                          <Typography.Text>Villas de San Isidro</Typography.Text>
+                          <Row>
+                            <Col>
+                              <Typography.Description>23% Share</Typography.Description>
+                            </Col>
+                            <Col>
+                              <Typography.Description>$122k Valuation</Typography.Description>
+                            </Col>
+                          </Row>
+                        </Card.Content>
+                      </Card>
+                    </Col>
+                  ))}
+                </Row>
+              </Container>
+            </MainPanel.Container>
           </Tab.Pane>
           <Tab.Pane id="explore">
             <MainPanel.Container>Explore</MainPanel.Container>

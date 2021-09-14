@@ -1,0 +1,22 @@
+@import "../../theme/base";
+
+.card {
+  background-color: var(--color-background);
+  border-radius: $border-radius;
+
+  &__content {
+    padding: $space-default;
+  }
+
+  &__background-image {
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+  }
+
+  &__link {
+    cursor: pointer;
+  }
+}
