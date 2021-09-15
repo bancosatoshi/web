@@ -290,6 +290,14 @@ $typography-mini-description: (
   ),
 );
 
+$typography-link: (
+  font: (
+    size: $font-size-text,
+    weight: $font-weight-regular,
+    fontFamily: $font-family-text,
+  ),
+);
+
 //Default font sizes
 $font-size-1: rem(11) !default; //0.6875
 $font-size-2: rem(13) !default; //0.8125
@@ -600,7 +608,6 @@ $space-xs: $space-default / 4 !default;
 $space-s: $space-default / 2 !default;
 $space-m: $space-default !default; // 16px
 $space-ml: $space-default * 1.5 !default; // 24px
-$space-m-1: $space-ml !default; // 24px
 $space-l: $space-default * 2 !default; // 32px
 $space-xl: $space-default * 4 !default; // 64
 $space-xxl: $space-default * 5 !default; // 80px
@@ -731,3 +738,4 @@ $switch-min-width: 60px !default;
 
 // Main Panel
 $main-panel-container-space-x: $space-xxl;
+$main-panel-container-space-y: $space-xxl;

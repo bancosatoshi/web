@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { default as NextLink, LinkProps } from "next/link";
 import styles from "./Typography.module.scss";
 import { TypographyProps } from "./Typography.types";
 
@@ -58,6 +59,12 @@ const MiniDescription: React.FC<TypographyProps> = ({ children, className }) => 
   <p className={clsx(styles["typography__mini-description"], className)}>{children}</p>
 );
 
+const Link: React.FC<TypographyProps & LinkProps> = ({ children, className, href }) => (
+  <NextLink href={href}>
+    <a className={clsx(styles["typography__link"], className)}>{children}</a>
+  </NextLink>
+);
+
 Typography.Headline1 = Headline1;
 Typography.Headline2 = Headline2;
 Typography.Headline3 = Headline3;
@@ -71,3 +78,4 @@ Typography.ButtonLabel = ButtonLabel;
 Typography.MiniButtonLabel = MiniButtonLabel;
 Typography.Description = Description;
 Typography.MiniDescription = MiniDescription;
+Typography.Link = Link;

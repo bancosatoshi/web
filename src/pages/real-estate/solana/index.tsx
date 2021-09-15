@@ -1,8 +1,9 @@
+import { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Home } from "../app/home/Home";
-import { AppLayout } from "../layouts/app-layout/AppLayout";
+import { Home } from "../../../app/home/Home";
+import { AppLayout } from "../../../layouts/app-layout/AppLayout";
 
-const Index = () => (
+const SolanaRealEstate: NextPage = () => (
   <AppLayout>
     <Home />
   </AppLayout>
@@ -14,4 +15,4 @@ export const getStaticProps = async ({ locale }) => ({
   },
 });
 
-export default Index;
+export default SolanaRealEstate;

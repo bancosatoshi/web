@@ -19,6 +19,7 @@
     color: var(--color-typography-headline-3);
     @include font-properties($typography-headline-3);
     @include normalizeTypography;
+    margin-bottom: $space-s;
   }
 
   &__headline4 {
@@ -31,6 +32,7 @@
     color: var(--color-typography-headline-5);
     @include font-properties($typography-headline-5);
     @include normalizeTypography;
+    margin-bottom: $space-xs;
   }
 
   &__headline6 {
@@ -79,6 +81,12 @@
   &__mini-description {
     color: var(--color-typography-mini-description);
     @include font-properties($typography-mini-description);
+    @include normalizeTypography;
+  }
+
+  &__link {
+    color: var(--color-typography-link);
+    @include font-properties($typography-link);
     @include normalizeTypography;
   }
 }

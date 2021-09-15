@@ -1,0 +1,58 @@
+@import "../../../../theme/base";
+
+.property {
+  position: relative;
+
+  &__main {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__main-panel {
+    &--container {
+      @include withNavbar;
+      padding-bottom: $main-panel-container-space-y;
+      flex-basis: 60%;
+    }
+  }
+
+  &__details {
+    > section {
+      margin-bottom: $space-l;
+    }
+  }
+
+  &__location {
+    &--map {
+      margin: $space-default 0;
+      border-radius: $border-radius;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 210px;
+    }
+  }
+
+  &__sidebar {
+    @include withNavbar;
+    background-color: var(--color-background);
+    padding-right: $main-panel-container-space-x;
+    padding-left: $main-panel-container-space-x;
+    flex-grow: 1;
+    flex-basis: 40%;
+
+    > div {
+      margin-bottom: $space-l;
+    }
+  }
+
+  &__media {
+    padding: $space-l 0;
+    &--single-image {
+      img {
+        border-radius: $border-radius;
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}

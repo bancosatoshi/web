@@ -35,6 +35,7 @@ export const Home: React.FC<HomeProps> = () => {
       </Sidebar>
       <MainPanel className={styles["home__main-panel"]}>
         <MainPanel.Container>
+          <Typography.Subtitle>Solana</Typography.Subtitle>
           <Typography.Headline1>Real Estate</Typography.Headline1>
         </MainPanel.Container>
         <Tab defaultPaneId="my-properties">
