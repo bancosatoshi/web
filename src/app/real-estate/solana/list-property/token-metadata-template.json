@@ -1,28 +1,24 @@
 {
-    "name": "Solflare X NFT",
-    "symbol": "",
-    "description": "Celebratory Solflare NFT for the Solflare X launch",
-    "seller_fee_basis_points": 0,
-    "image": "https://www.arweave.net/abcd5678?ext=png",
-    "animation_url": "https://www.arweave.net/efgh1234?ext=mp4",
-    "external_url": "https://solflare.com",
+    "name": "Real Estate Property NFT",
+    "symbol": "MY_HOME (Can be whatever)",
+    "description": "This is a property description. Write a summary of the property main features, (or something)",
+    "image": "https://THE_COVER_IMAGE OF THE ASSET.png",
+    "animation_url": "https://REPLACE IF THERE's AN ANIMATION FILE, (like 3d visualizations)",
+    "external_url": "https://nfme.aufacicenta.com/en/real-estate/solana/",
+    "seller_fee_basis_points": 100,
     "attributes": [
         {
-            "trait_type": "web",
-            "value": "yes"
+            "trait_type": "location",
+            "value": "14.5686528,-90.5216"
         },
         {
-            "trait_type": "mobile",
-            "value": "yes"
-        },
-        {
-            "trait_type": "extension",
-            "value": "yes"
+            "trait_type": "rooms",
+            "value": 4
         }
     ],
     "collection": {
-        "name": "Solflare X NFT",
-        "family": "Solflare"
+        "name": "My Properties Collection",
+        "family": "NFME"
     },
     "properties": {
         "files": [
@@ -39,13 +35,12 @@
                 "uri": "https://www.arweave.net/efgh1234?ext=mp4",
                 "type": "video/mp4"
             }
-        ],
-        "category": "video",
-        "creators": [
-            {
-                "address": "SOLFLR15asd9d21325bsadythp547912501b",
-                "share": 100
-            }
         ]
-    }
+    },
+    "creators": [
+        {
+            "address": "SOLFLR15asd9d21325bsadythp547912501b",
+            "share": 100
+        }
+    ]
 }

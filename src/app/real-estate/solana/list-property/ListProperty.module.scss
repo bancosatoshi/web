@@ -16,4 +16,10 @@
   &__attachments {
     margin-top: $space-xl;
   }
+
+  &__special-attributes {
+    &--card {
+      margin-top: $space-default;
+    }
+  }
 }

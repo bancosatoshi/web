@@ -3,6 +3,7 @@ import Prism from "prismjs";
 import { useState } from "react";
 import Editor from "react-simple-code-editor";
 import { Button } from "../../../../ui/button/Button";
+import { Card } from "../../../../ui/card/Card";
 import { Grid } from "../../../../ui/grid/Grid";
 import { MainPanel } from "../../../../ui/mainpanel/MainPanel";
 import { ModalNavbar } from "../../../../ui/navbar/modal-navbar/ModalNavbar";
@@ -49,6 +50,40 @@ export const ListProperty: React.FC<ListPropertyProps> = ({}) => {
                 <Button fullWidth>List Property</Button>
                 <section className={styles["list-property__attachments"]}>
                   <Typography.Headline5>Attachments</Typography.Headline5>
+                  <Typography.Text>
+                    While we integrate this feature, navigate to{" "}
+                    <Typography.Anchor href="https://blockchainassetregistry.com" target="_blank">
+                      blockchainassetregistry.com
+                    </Typography.Anchor>{" "}
+                    to upload your assets. Paste the <code>uri</code> of the file in the editor afterwards.
+                  </Typography.Text>
+                </section>
+                <section className={styles["list-property__attachments"]}>
+                  <Typography.Headline5>Special Attributes</Typography.Headline5>
+                  <Typography.Text>
+                    Copy &amp; Paste the examples in the <code>attributes</code> part of the editor.
+                  </Typography.Text>
+                  <Card className={styles["list-property__special-attributes--card"]}>
+                    <Card.Content>
+                      <Typography.Headline6>location</Typography.Headline6>
+                      <Typography.Description>
+                        Displays a map from latitude and longitude (get the values from google maps or similar) in the
+                        property page. Location values will be encrypted for your security.
+                      </Typography.Description>
+                      <pre>
+                        <code className="language-json">
+                          {JSON.stringify(
+                            {
+                              trait_type: "location",
+                              value: "14.5686528,-90.5216",
+                            },
+                            null,
+                            2,
+                          )}
+                        </code>
+                      </pre>
+                    </Card.Content>
+                  </Card>
                 </section>
               </Grid.Col>
             </Grid.Row>
