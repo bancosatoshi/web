@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 export type TabContextControllerProps = {
   children: ReactNode;
-  defaultPaneId?: string;
+  defaultPaneId: string;
 };
 
 export type TabContextType = {

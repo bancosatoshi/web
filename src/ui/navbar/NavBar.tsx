@@ -1,12 +1,11 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactChild, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-grid-system";
 import { AufacicentaLogo } from "../icons/AufacicentaLogo";
-import { GloveIcon } from "../icons/GloveIcon";
 import styles from "./NavBar.module.scss";
+import { NavBarProps } from "./NavBar.types";
 
-export const NavBar: React.FC<{ children?: ReactChild }> = ({ children }) => {
+export const NavBar: React.FC<NavBarProps> = ({ children }) => {
   const { locale, locales } = useRouter();
   const [nextLocale, setNextLocale] = useState(undefined);
 
@@ -33,13 +32,13 @@ export const NavBar: React.FC<{ children?: ReactChild }> = ({ children }) => {
           <Col lg={2} xs={6} sm={6}>
             <div className={styles.navbar__right}>
               {children && children}
-              <div className={styles["navbar__language-selector"]}>
+              {/* <div className={styles["navbar__language-selector"]}>
                 <Link href="/" locale={nextLocale}>
                   <a>
                     <GloveIcon /> {nextLocale}
                   </a>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </Col>
         </Row>

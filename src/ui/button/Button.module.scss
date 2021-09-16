@@ -33,12 +33,12 @@ $HALF_LOADER_SIZE: 15px;
 
   &__icon {
     display: inline-block;
-    margin-bottom: -#{$space-xs};
     vertical-align: middle;
 
     svg {
       width: $space-default;
       height: $space-default;
+      fill: var(--color-button-primary-text);
     }
 
     &--on-left {
@@ -118,6 +118,10 @@ $HALF_LOADER_SIZE: 15px;
     font-weight: $font-weight-medium;
     color: $color-white;
     background: $color-status-ok;
+
+    svg {
+      fill: var(--color-button-secondary-text);
+    }
 
     &:hover,
     &:active,

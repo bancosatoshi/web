@@ -1,0 +1,56 @@
+@import "../../theme/base";
+
+.wallet-selector {
+  height: $navbar-height;
+  position: relative;
+  align-items: center;
+  display: flex;
+
+  &__widget {
+    background-color: var(--color-background);
+    border: 2px solid var(--color-button-secondary);
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    top: $navbar-height;
+    position: absolute;
+    width: 420px;
+    right: 0;
+  }
+
+  &__chain-network-dropdowns {
+    display: flex;
+    button {
+      border-top: 0;
+      &:hover {
+        cursor: default;
+      }
+      &:nth-child(1) {
+        border-left: 0;
+        border-right-width: 1px;
+      }
+      &:nth-child(2) {
+        border-right: 0;
+        border-left-width: 1px;
+      }
+    }
+  }
+
+  &__balance {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-background-contrast);
+    padding: $space-m;
+  }
+
+  &__connect {
+    padding: $space-m;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    border-radius: 0;
+  }
+}
