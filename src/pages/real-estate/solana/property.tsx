@@ -1,9 +1,10 @@
+import { GetStaticProps, NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { PropertyContainer } from "../../../app/real-estate/solana/property/PropertyContainer";
 import { AppLayout } from "../../../layouts/app-layout/AppLayout";
 import { DashboardLayout } from "../../../layouts/dashboard-layout/DashboardLayout";
 
-const Property = () => (
+const Property: NextPage = () => (
   <AppLayout>
     <DashboardLayout>
       <PropertyContainer />
@@ -11,9 +12,9 @@ const Property = () => (
   </AppLayout>
 );
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "property"])),
+    ...(await serverSideTranslations(locale!, ["common", "property"])),
   },
 });
 

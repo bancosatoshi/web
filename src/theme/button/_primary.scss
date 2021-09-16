@@ -1,10 +1,10 @@
 .button_primary {
   @include font-properties($typography-button-label);
+  background-color: var(--color-button-primary);
+  border-radius: $border-radius-button;
   text-transform: uppercase;
   padding: 13px 24px;
-  background-color: $color-brand;
-  color: $color-white;
-  border-radius: $border-radius;
+  color: var(--color-button-primary-text);
   border: none;
   min-width: 88px;
   transition: background-color $duration-medium, color $duration-medium;
@@ -12,8 +12,9 @@
 
   &:hover,
   &:focus {
-    background: $color-brand-bright radial-gradient(circle, transparent 1%, $color-brand-bright 1%) center/15000%;
-    color: $color-white;
+    background: var(--color-button-primary-hover)
+      radial-gradient(circle, transparent 1%, var(--color-button-primary-hover) 1%) center/15000%;
+    color: var(--color-button-primary-hover-text);
   }
 
   &:focus {

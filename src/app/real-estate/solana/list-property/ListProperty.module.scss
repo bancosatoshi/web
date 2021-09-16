@@ -1,0 +1,19 @@
+@import "../../../../theme/base";
+
+.list-property {
+  position: relative;
+
+  &__main-panel {
+    &--container {
+      @include withNavbar;
+    }
+  }
+
+  &__editor {
+    padding: $space-m 0;
+  }
+
+  &__attachments {
+    margin-top: $space-xl;
+  }
+}

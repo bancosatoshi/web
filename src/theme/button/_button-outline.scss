@@ -1,11 +1,9 @@
 .button-outline {
+  @include font-properties($typography-button-label);
   padding: 11px 22px;
-  font-weight: $font-weight-medium;
-  font-size: $font-size-4;
-  line-height: 1.47;
-  color: $color-brand;
-  border-radius: $border-radius-pill;
-  border: 2px solid $color-brand;
+  color: var(--color-button-primary-text);
+  border-radius: $border-radius-button;
+  border: 2px solid var(--color-button-primary-text);
   min-width: 88px;
   transition: background $duration-slow, border-color $duration-medium, color $duration-medium;
   background-position: center;

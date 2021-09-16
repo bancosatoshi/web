@@ -20,6 +20,7 @@ export type Styles = {
   'button--danger': string;
   'button--dark': string;
   'button--extra-small': string;
+  'button--full-width': string;
   'button--inverted': string;
   'button--large': string;
   'button--light': string;

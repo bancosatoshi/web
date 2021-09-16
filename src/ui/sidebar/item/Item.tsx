@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-grid-system";
 import styles from "./Item.module.scss";
 import { ItemProps } from "./Item.types";
 
-export const Item: React.FC<ItemProps> = ({ children, className, text, icon }) => {
+export const Item: React.FC<ItemProps> = ({ className, text, icon }) => {
   return (
     <div className={clsx(styles["item"], className)}>
       <Container>

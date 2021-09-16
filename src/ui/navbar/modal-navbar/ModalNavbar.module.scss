@@ -1,0 +1,47 @@
+@import "../../../theme/base";
+
+.modal-navbar {
+  background-color: var(--color-background);
+  z-index: $z-index-navigation;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &__title {
+    height: $navbar-height;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    > p {
+      margin: 0;
+    }
+  }
+
+  &__right {
+    height: $navbar-height;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__close-button {
+    height: $navbar-height;
+    width: $navbar-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--color-button-secondary-hover);
+      cursor: pointer;
+    }
+
+    > svg {
+      color: var(--color-button-secondary-text);
+    }
+  }
+}

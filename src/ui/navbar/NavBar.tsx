@@ -11,7 +11,7 @@ export const NavBar: React.FC<{ children?: ReactChild }> = ({ children }) => {
   const [nextLocale, setNextLocale] = useState(undefined);
 
   const getNextLocale = () => {
-    const currentLocaleIndex = locales.indexOf(locale);
+    const currentLocaleIndex = locales!.indexOf(locale!);
     setNextLocale(locales[currentLocaleIndex + 1] ? locales[currentLocaleIndex + 1] : locales[0]);
   };
 
@@ -20,32 +20,30 @@ export const NavBar: React.FC<{ children?: ReactChild }> = ({ children }) => {
   });
 
   return (
-    <>
-      <div className={styles.navbar}>
-        <Container fluid>
-          <Row justify="between">
-            <Col lg={3} xs={6} sm={6}>
-              <div className={styles.navbar__logo}>
-                <a href="#">
-                  <AufacicentaLogo className={styles["navbar__logo--color"]} />
-                </a>
+    <div className={styles.navbar}>
+      <Container fluid>
+        <Row justify="between">
+          <Col lg={3} xs={6} sm={6}>
+            <div className={styles.navbar__logo}>
+              <a href="#">
+                <AufacicentaLogo className={styles["navbar__logo--color"]} />
+              </a>
+            </div>
+          </Col>
+          <Col lg={2} xs={6} sm={6}>
+            <div className={styles.navbar__right}>
+              {children && children}
+              <div className={styles["navbar__language-selector"]}>
+                <Link href="/" locale={nextLocale}>
+                  <a>
+                    <GloveIcon /> {nextLocale}
+                  </a>
+                </Link>
               </div>
-            </Col>
-            <Col lg={2} xs={6} sm={6}>
-              <div className={styles.navbar__right}>
-                {children && children}
-                <div className={styles["navbar__language-selector"]}>
-                  <Link href="/" locale={nextLocale}>
-                    <a>
-                      <GloveIcon /> {nextLocale}
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 };

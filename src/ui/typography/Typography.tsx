@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { default as NextLink, LinkProps } from "next/link";
 import styles from "./Typography.module.scss";
-import { TypographyProps } from "./Typography.types";
+import { AnchorProps, TypographyProps } from "./Typography.types";
 
 export const Typography: React.FC<TypographyProps> & {
   Headline1: React.FC<TypographyProps>;
@@ -18,6 +18,7 @@ export const Typography: React.FC<TypographyProps> & {
   Description: React.FC<TypographyProps>;
   MiniDescription: React.FC<TypographyProps>;
   Link: React.FC<TypographyProps & LinkProps>;
+  Anchor: React.FC<AnchorProps>;
 } = ({ children, className }) => {
   return <div className={clsx(styles["typography"], className)}>{children}</div>;
 };
@@ -80,6 +81,12 @@ const Link: React.FC<TypographyProps & LinkProps> = ({ children, className, href
   </NextLink>
 );
 
+const Anchor: React.FC<AnchorProps> = ({ children, className, ...props }) => (
+  <a className={clsx(styles["typography__link"], className)} {...props}>
+    {children}
+  </a>
+);
+
 Typography.Headline1 = Headline1;
 Typography.Headline2 = Headline2;
 Typography.Headline3 = Headline3;
@@ -94,3 +101,4 @@ Typography.MiniButtonLabel = MiniButtonLabel;
 Typography.Description = Description;
 Typography.MiniDescription = MiniDescription;
 Typography.Link = Link;
+Typography.Anchor = Anchor;

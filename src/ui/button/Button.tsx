@@ -1,9 +1,8 @@
 /* eslint-disable react/button-has-type */
-import React, { ForwardedRef, forwardRef } from "react";
 import clsx from "clsx";
-
-import { ButtonProps, DefaultButtonProps, LinkButtonProps } from "./Button.types";
+import React, { ForwardedRef, forwardRef } from "react";
 import styles from "./Button.module.scss";
+import { ButtonProps, DefaultButtonProps, LinkButtonProps } from "./Button.types";
 
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (
@@ -20,6 +19,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       className,
       as: TagName = "button",
       "aria-label": ariaLabel,
+      fullWidth = false,
       ...restProps
     },
     ref,
@@ -45,6 +45,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         [styles["button--large"]]: size === "l",
         // loader
         [styles["button--loading"]]: isLoading,
+        // width
+        [styles["button--full-width"]]: fullWidth,
       },
       className,
     );

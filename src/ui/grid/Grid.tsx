@@ -1,16 +1,22 @@
 import clsx from "clsx";
-import { Col as RGSCol, Row as RGSRow } from "react-grid-system";
+import React from "react";
+import { Col as RGSCol, Container as RGSContainer, Row as RGSRow } from "react-grid-system";
 import styles from "./Grid.module.scss";
-import { ColProps, GridProps, RowProps } from "./Grid.types";
+import { ColProps, ContainerProps, GridProps, RowProps } from "./Grid.types";
 
-export const Grid: React.FC<GridProps> & { Col: React.FC<ColProps>; Row: React.FC<RowProps> } = ({
-  children,
-  className,
-}) => {
+export const Grid: React.FC<GridProps> & {
+  Col: React.FC<ColProps>;
+  Row: React.FC<RowProps>;
+  Container: React.FC<ContainerProps>;
+} = ({ children, className }) => {
   return <div className={clsx(styles["grid"], className)}>{children}</div>;
 };
 
-// TODO create Container and Row extensions
+const Container: React.FC<RowProps> = ({ children, className, ...props }) => (
+  <RGSContainer className={clsx(className)} {...props}>
+    {children}
+  </RGSContainer>
+);
 
 const Row: React.FC<RowProps> = ({ children, className, ...props }) => (
   <RGSRow className={clsx(className)} {...props}>
@@ -26,3 +32,4 @@ const Col: React.FC<ColProps> = ({ children, justifyContent, className, ...props
 
 Grid.Row = Row;
 Grid.Col = Col;
+Grid.Container = Container;

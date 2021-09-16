@@ -1,5 +1,12 @@
 import { LegacyRef, ReactNode } from "react";
-import { Col, ColProps as RGSColProps, Row, RowProps as RGSRowProps } from "react-grid-system";
+import {
+  Col,
+  ColProps as RGSColProps,
+  Container,
+  ContainerProps as RGSContainerProps,
+  Row,
+  RowProps as RGSRowProps,
+} from "react-grid-system";
 
 export type GridProps = {
   children: ReactNode;
@@ -17,4 +24,10 @@ export type RowProps = RGSRowProps & {
   children: ReactNode;
   className?: string;
   ref?: LegacyRef<Row>;
+};
+
+export type ContainerProps = RGSContainerProps & {
+  children: ReactNode;
+  className?: string;
+  ref?: LegacyRef<Container>;
 };

@@ -53,7 +53,7 @@ body[data-theme="dark"] {
   --color-status-unknown: #f4f6f8;
 
   // Brand
-  --color-brand: #2d3575;
+  --color-brand: #4807ea;
   --color-brand-bright: #5d6ff1;
   --color-brand-brighter: #a2acf1;
   --color-brand-light: #e2e2d6;
@@ -75,6 +75,7 @@ body[data-theme="dark"] {
 
   // Background
   --color-background: var(--color-black);
+  --color-background-contrast: var(--color-dark-11);
 
   // Sidebar
   --color-sidebar-item: var(--color-white);
@@ -83,6 +84,10 @@ body[data-theme="dark"] {
   --color-navbar-logo: var(--color-brand-bright);
 
   // Button
+  --color-button-primary: var(--color-brand);
+  --color-button-primary-text: var(--color-dark-3);
+  --color-button-primary-hover: var(--color-brand);
+  --color-button-primary-hover-text: var(--color-white);
   --color-button-secondary: var(--color-dark-8);
   --color-button-secondary-text: var(--color-dark-4);
   --color-button-secondary-hover: var(--color-dark-10);

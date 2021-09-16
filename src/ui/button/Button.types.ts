@@ -9,6 +9,7 @@ export type ButtonCommonProps = {
   isLoading?: boolean;
   rightIcon?: ReactNode;
   leftIcon?: ReactNode;
+  fullWidth?: boolean;
 };
 
 export type LinkButtonProps = Omit<
