@@ -6,6 +6,7 @@ export type Styles = {
   'property__main-panel--container': string;
   'property__media': string;
   'property__media--single-image': string;
+  'property__ownership--card': string;
   'property__sidebar': string;
 };
 

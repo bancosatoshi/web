@@ -73,10 +73,8 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &--extra-small {
+    @include font-properties($typography-mini-button-label);
     padding: $space-s 20px;
-    font-size: $font-size-3;
-    font-weight: $font-weight-medium;
-    line-height: 1.75;
   }
 
   // "m" on desktop and "xs" on mobile
@@ -105,15 +103,14 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &--secondary {
-    font-weight: $font-weight-medium;
-    color: $color-dark-1;
-    background: $color-light-3;
+    color: var(--color-button-secondary-text);
+    background: var(--color-button-secondary);
 
     &:hover,
     &:active,
     &:focus {
-      color: $color-dark-1;
-      background: $color-light-2;
+      color: var(--color-button-secondary-hover-text);
+      background: var(--color-button-secondary-hover);
     }
   }
 
@@ -291,8 +288,8 @@ $HALF_LOADER_SIZE: 15px;
   // Outlined variant
 
   &--outlined {
-    background-color: transparent;
     @extend .button-outline;
+    background-color: transparent;
 
     &.button--extra-small {
       padding: 6px 18px;
@@ -319,15 +316,15 @@ $HALF_LOADER_SIZE: 15px;
     }
 
     &.button--secondary {
-      border-color: $color-light-3;
-      color: $color-dark-1;
+      border-color: var(--color-button-secondary);
+      color: var(--color-button-secondary-text);
 
       &:active,
       &:hover,
       &:focus {
-        border-color: $color-light-3;
-        color: $color-dark-1;
-        background: $color-light-3;
+        border-color: var(--color-button-secondary-hover);
+        background: var(--color-button-secondary-hover);
+        color: var(--color-button-secondary-hover-text);
       }
     }
 

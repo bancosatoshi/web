@@ -1,13 +1,10 @@
 .button_primary {
-  font-family: $font-family-text;
+  @include font-properties($typography-button-label);
   text-transform: uppercase;
   padding: 13px 24px;
   background-color: $color-brand;
-  font-weight: $font-weight-medium;
-  font-size: $font-size-4;
-  line-height: 1.47;
   color: $color-white;
-  border-radius: 28px;
+  border-radius: $border-radius;
   border: none;
   min-width: 88px;
   transition: background-color $duration-medium, color $duration-medium;

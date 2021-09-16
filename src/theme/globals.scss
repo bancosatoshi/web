@@ -80,12 +80,13 @@ body[data-theme="dark"] {
   --color-sidebar-item: var(--color-white);
 
   // Navbar
-  --color-navbar-logo: var(--color-white);
+  --color-navbar-logo: var(--color-brand-bright);
 
   // Button
-  --color-button-secondary: var(--color-dark-9);
+  --color-button-secondary: var(--color-dark-8);
+  --color-button-secondary-text: var(--color-dark-4);
   --color-button-secondary-hover: var(--color-dark-10);
-  --color-button-secondary-text: var(--color-white);
+  --color-button-secondary-hover-text: var(--color-white);
 
   // Typography
   --color-typography-headline-1: var(--color-white);
@@ -119,4 +120,8 @@ body[data-theme="dark"] {
   --color-value-increase-bright: #00bb8e;
   --color-value-decrease: #ff7c35;
   --color-value-decrease-bright: #e76823;
+}
+
+hr {
+  border-color: var(--color-dark-9);
 }

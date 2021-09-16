@@ -55,4 +55,11 @@
       }
     }
   }
+
+  &__ownership {
+    &--card {
+      background-color: var(--color-dark-11);
+      margin-top: $space-default;
+    }
+  }
 }

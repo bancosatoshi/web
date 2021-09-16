@@ -1,4 +1,8 @@
 import clsx from "clsx";
+import { Col, Row } from "react-grid-system";
+import { Button } from "../../../../ui/button/Button";
+import { Card } from "../../../../ui/card/Card";
+import { Grid } from "../../../../ui/grid/Grid";
 import { MainPanel } from "../../../../ui/mainpanel/MainPanel";
 import { Typography } from "../../../../ui/typography/Typography";
 import styles from "./Property.module.scss";
@@ -43,15 +47,79 @@ export const Property: React.FC<PropertyProps> = ({}) => {
       <div className={clsx(styles["property__sidebar"])}>
         <div>
           <Typography.Headline5>Identified by</Typography.Headline5>
-          <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+          <div>
+            <Card className={styles["property__ownership--card"]}>
+              <Card.Content>
+                <Typography.Description>Token Metadata</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+              </Card.Content>
+            </Card>
+            <Card className={styles["property__ownership--card"]}>
+              <Card.Content>
+                <Typography.Description>SPL Token</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+              </Card.Content>
+            </Card>
+          </div>
         </div>
         <div>
-          <Typography.Headline5>Verifiers</Typography.Headline5>
-          <Typography.Description>Verifiers act as entities that back this property</Typography.Description>
+          <Row>
+            <Col>
+              <Typography.Headline5>Owners</Typography.Headline5>
+              <Typography.Description>Wallets (or programs) that hold a share of the property</Typography.Description>
+            </Col>
+            <Grid.Col justifyContent="end">
+              <Button variant="outlined" size="xs" color="secondary">
+                Buy Ownership
+              </Button>
+            </Grid.Col>
+          </Row>
+          <div>
+            <Card className={styles["property__ownership--card"]}>
+              <Card.Content>
+                <Typography.Description>23% Ownership</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+                <hr />
+                <Typography.Description>At Transaction</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+              </Card.Content>
+            </Card>
+            <Card className={styles["property__ownership--card"]}>
+              <Card.Content>
+                <Typography.Description>34% Ownership</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+                <hr />
+                <Typography.Description>At Transaction</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+              </Card.Content>
+            </Card>
+          </div>
         </div>
         <div>
-          <Typography.Headline5>Owners</Typography.Headline5>
-          <Typography.Description>Wallets (or programs) that hold a share of the property</Typography.Description>
+          <Row>
+            <Col>
+              <Typography.Headline5>Verifiers</Typography.Headline5>
+              <Typography.Description>
+                Verifiers act as entities that back this property ownership
+              </Typography.Description>
+            </Col>
+            <Grid.Col justifyContent="end">
+              <Button variant="outlined" size="xs" color="secondary">
+                Verify Property
+              </Button>
+            </Grid.Col>
+          </Row>
+          <div>
+            <Card className={styles["property__ownership--card"]}>
+              <Card.Content>
+                <Typography.Description>Wallet Address</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+                <hr />
+                <Typography.Description>At Transaction</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+              </Card.Content>
+            </Card>
+          </div>
         </div>
       </div>
     </main>

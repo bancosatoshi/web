@@ -58,6 +58,7 @@
     color: var(--color-typography-subtitle);
     @include font-properties($typography-subtitle);
     @include normalizeTypography;
+    margin-bottom: $space-xs;
   }
 
   &__button-label {
