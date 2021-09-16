@@ -153,7 +153,7 @@ $border-radius-pill: 32px !default;
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-display: "quiche-sans", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
-$font-family-text: "brother-1816", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
+$font-family-text: "input-mono-narrow", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
 $font-family-monospace: "GT America Mono" !default;
 $font-family-base: $font-family-display !default;
 $font-size-base: 16 !default;
@@ -238,7 +238,7 @@ $typography-text: (
     size: $font-size-text,
     weight: $font-weight-regular,
     fontFamily: $font-family-text,
-    // lineHeight: 1.9,
+    lineHeight: 1.5,
   ),
 );
 
