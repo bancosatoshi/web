@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Col, Row } from "react-grid-system";
 import { Button } from "../../../../ui/button/Button";
 import { Card } from "../../../../ui/card/Card";
+import { CircularProgress } from "../../../../ui/circular-progress/CircularProgress";
 import { Grid } from "../../../../ui/grid/Grid";
 import { MainPanel } from "../../../../ui/mainpanel/MainPanel";
 import { Typography } from "../../../../ui/typography/Typography";
@@ -74,6 +75,22 @@ export const Property: React.FC<PropertyProps> = ({}) => {
               </Button>
             </Grid.Col>
           </Row>
+          <Card className={styles["property__ownership--card"]}>
+            <Card.Content>
+              <Grid.Row align="center">
+                <Grid.Col lg={3}>
+                  <CircularProgress size={70} strokeWidth={5} percentage={80} />
+                </Grid.Col>
+                <Grid.Col>
+                  <Typography.Description>Sold</Typography.Description>
+                  <Typography.Text>SOL 345.02 of SOL 600.00</Typography.Text>
+                  <Typography.MiniDescription>
+                    USD 46,980.01 of USD 65,000.00 at <Typography.Link href="#">1 SOL = 25.99 USD</Typography.Link>
+                  </Typography.MiniDescription>
+                </Grid.Col>
+              </Grid.Row>
+            </Card.Content>
+          </Card>
           <div>
             <Card className={styles["property__ownership--card"]}>
               <Card.Content>
