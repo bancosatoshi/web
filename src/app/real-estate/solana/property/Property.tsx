@@ -61,6 +61,12 @@ export const Property: React.FC<PropertyProps> = ({}) => {
                 <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
               </Card.Content>
             </Card>
+            <Card className={styles["property__ownership--card"]}>
+              <Card.Content>
+                <Typography.Description>Created By</Typography.Description>
+                <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
+              </Card.Content>
+            </Card>
           </div>
         </div>
         <div>
