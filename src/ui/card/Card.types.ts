@@ -6,3 +6,8 @@ export type CardProps = {
   backgroundImageUrl?: string;
   url?: string;
 };
+
+export type CardContentProps = {
+  children: ReactNode;
+  className?: string;
+};

@@ -1,12 +1,16 @@
 import clsx from "clsx";
+import React from "react";
 import styles from "./MainPanel.module.scss";
-import { MainPanelProps } from "./MainPanel.types";
+import { MainPanelContainerProps, MainPanelProps } from "./MainPanel.types";
 
-export const MainPanel: React.FC<MainPanelProps> = ({ children, className }) => {
+export const MainPanel: React.FC<MainPanelProps> & { Container: React.FC<MainPanelContainerProps> } = ({
+  children,
+  className,
+}) => {
   return <div className={clsx(styles["main-panel"], className)}>{children}</div>;
 };
 
-const Container = ({ children, className }) => (
+const Container: React.FC<MainPanelContainerProps> = ({ children, className }) => (
   <div className={clsx(styles["main-panel__container"], className)}>{children}</div>
 );
 

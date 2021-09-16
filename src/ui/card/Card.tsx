@@ -1,8 +1,14 @@
 import clsx from "clsx";
+import React from "react";
 import styles from "./Card.module.scss";
-import { CardProps } from "./Card.types";
+import { CardContentProps, CardProps } from "./Card.types";
 
-export const Card: React.FC<CardProps> = ({ children, className, backgroundImageUrl, url }) => {
+export const Card: React.FC<CardProps> & { Content: React.FC<CardContentProps> } = ({
+  children,
+  className,
+  backgroundImageUrl,
+  url,
+}) => {
   return (
     <div
       className={clsx(styles["card"], className, {
@@ -22,6 +28,8 @@ export const Card: React.FC<CardProps> = ({ children, className, backgroundImage
   );
 };
 
-const Content = ({ children, className }) => <div className={clsx(styles["card__content"], className)}>{children}</div>;
+const Content: React.FC<CardContentProps> = ({ children, className }) => (
+  <div className={clsx(styles["card__content"], className)}>{children}</div>
+);
 
 Card.Content = Content;

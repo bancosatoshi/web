@@ -3,7 +3,22 @@ import { default as NextLink, LinkProps } from "next/link";
 import styles from "./Typography.module.scss";
 import { TypographyProps } from "./Typography.types";
 
-export const Typography: React.FC<TypographyProps> = ({ children, className }) => {
+export const Typography: React.FC<TypographyProps> & {
+  Headline1: React.FC<TypographyProps>;
+  Headline2: React.FC<TypographyProps>;
+  Headline3: React.FC<TypographyProps>;
+  Headline4: React.FC<TypographyProps>;
+  Headline5: React.FC<TypographyProps>;
+  Headline6: React.FC<TypographyProps>;
+  Text: React.FC<TypographyProps>;
+  TextBold: React.FC<TypographyProps>;
+  Subtitle: React.FC<TypographyProps>;
+  ButtonLabel: React.FC<TypographyProps>;
+  MiniButtonLabel: React.FC<TypographyProps>;
+  Description: React.FC<TypographyProps>;
+  MiniDescription: React.FC<TypographyProps>;
+  Link: React.FC<TypographyProps & LinkProps>;
+} = ({ children, className }) => {
   return <div className={clsx(styles["typography"], className)}>{children}</div>;
 };
 

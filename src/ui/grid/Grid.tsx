@@ -1,9 +1,12 @@
 import clsx from "clsx";
-import { Col as RGSCol, ColProps, Row as RGSRow, RowProps } from "react-grid-system";
+import { Col as RGSCol, Row as RGSRow } from "react-grid-system";
 import styles from "./Grid.module.scss";
-import { GridProps } from "./Grid.types";
+import { ColProps, GridProps, RowProps } from "./Grid.types";
 
-export const Grid: React.FC<GridProps> = ({ children, className }) => {
+export const Grid: React.FC<GridProps> & { Col: React.FC<ColProps>; Row: React.FC<RowProps> } = ({
+  children,
+  className,
+}) => {
   return <div className={clsx(styles["grid"], className)}>{children}</div>;
 };
 
@@ -15,12 +18,7 @@ const Row: React.FC<RowProps> = ({ children, className, ...props }) => (
   </RGSRow>
 );
 
-const Col: React.FC<ColProps & { justifyContent: "end" | "center" }> = ({
-  children,
-  justifyContent,
-  className,
-  ...props
-}) => (
+const Col: React.FC<ColProps> = ({ children, justifyContent, className, ...props }) => (
   <RGSCol className={clsx(className, { [styles["col__justify-content--end"]]: justifyContent === "end" })} {...props}>
     {children}
   </RGSCol>
