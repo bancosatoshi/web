@@ -1,11 +1,11 @@
 @import "../../theme/base";
 
 .main-panel {
-  background-color: var(--color-background-contrast);
   position: relative;
-  overflow-y: auto;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--color-background-contrast);
 
   &__container {
     padding: 0 $main-panel-container-space-x;

@@ -1,39 +1,40 @@
 @import "../../../theme/base";
 
 .modal-navbar {
-  background-color: var(--color-background);
-  z-index: $z-index-navigation;
   position: absolute;
-  width: 100%;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  z-index: $z-index-navigation;
+  width: 100%;
+  background-color: var(--color-background);
 
   &__title {
-    height: $navbar-height;
-    justify-content: center;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: $navbar-height;
+
     > p {
       margin: 0;
     }
   }
 
   &__right {
-    height: $navbar-height;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-end;
+    height: $navbar-height;
   }
 
   &__close-button {
-    height: $navbar-height;
-    width: $navbar-height;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: $navbar-height;
+    height: $navbar-height;
 
     &:hover {
       background-color: var(--color-button-secondary-hover);

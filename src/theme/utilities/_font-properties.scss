@@ -1,5 +1,6 @@
 @mixin font-properties($fs-map) {
   font-size: get("font.size", $fs-map);
+
   @if deep-map-check($fs-map, "font", "lineHeight") {
     line-height: get("font.lineHeight", $fs-map);
   }
@@ -21,7 +22,6 @@
   @if deep-map-check($fs-map, "font", "letterSpacing") {
     letter-spacing: get("font.letterSpacing", $fs-map);
   }
-
   @if map-get($map: $fs-map, $key: sizes) {
     @each $break-point in get("sizes", $fs-map) {
       $bp: nth($break-point, 1);

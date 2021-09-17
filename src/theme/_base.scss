@@ -4,7 +4,6 @@
 @import "./utilities/functions/rem";
 @import "./utilities/functions/str-explode.scss";
 @import "./utilities/font-properties";
-
 @import "_variables";
 
 $color-primary: #f8d663;
@@ -66,15 +65,12 @@ $sidebar-width: 320px;
     @content;
   }
 }
-
 @mixin withSidebar {
   display: flex;
 }
-
 @mixin withNavbar {
   padding-top: $navbar-height * 2;
 }
-
 @mixin normalizeTypography {
   margin: 0;
   padding: 0;

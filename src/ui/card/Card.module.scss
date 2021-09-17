@@ -1,19 +1,19 @@
 @import "../../theme/base";
 
 .card {
-  background-color: var(--color-background);
   border-radius: $border-radius;
+  background-color: var(--color-background);
 
   &__content {
     padding: $space-default;
   }
 
   &__background-image {
-    border-top-right-radius: $border-radius;
+    height: 150px;
     border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 150px;
   }
 
   &__link {

@@ -2,9 +2,8 @@
 
 .home {
   position: relative;
-
-  background-color: var(--color-background);
   height: 100vh;
+  background-color: var(--color-background);
 
   @include withSidebar;
 
@@ -18,10 +17,10 @@
 
   &__tab-pane {
     &--container {
+      margin-right: -$space-default;
+      margin-left: -$space-default;
       padding-top: $space-m;
       padding-bottom: $space-m;
-      margin-left: -$space-default;
-      margin-right: -$space-default;
     }
   }
 

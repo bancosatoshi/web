@@ -1,20 +1,21 @@
 .button_primary {
-  @include font-properties($typography-button-label);
-  background-color: var(--color-button-primary);
-  border-radius: $border-radius-button;
-  text-transform: uppercase;
-  padding: 13px 24px;
-  color: var(--color-button-primary-text);
-  border: none;
   min-width: 88px;
-  transition: background-color $duration-medium, color $duration-medium;
+  border: none;
+  border-radius: $border-radius-button;
+  padding: 13px 24px;
+  text-transform: uppercase;
+  color: var(--color-button-primary-text);
+  background-color: var(--color-button-primary);
   background-position: center;
+  transition: background-color $duration-medium, color $duration-medium;
+
+  @include font-properties($typography-button-label);
 
   &:hover,
   &:focus {
+    color: var(--color-button-primary-hover-text);
     background: var(--color-button-primary-hover)
       radial-gradient(circle, transparent 1%, var(--color-button-primary-hover) 1%) center/15000%;
-    color: var(--color-button-primary-hover-text);
   }
 
   &:focus {
@@ -36,6 +37,7 @@
     }
   }
   // Left for legacy
+
   &__icon {
     vertical-align: middle;
     margin: {
@@ -59,27 +61,33 @@
 
   // # Modifiers
   // Size
+
   &_medium,
   &_large {
-    font-size: $font-size-5;
     border-radius: $border-radius-pill;
+    font-size: $font-size-5;
   }
+
   &_medium {
     padding: 17px $space-l;
     line-height: 22px;
   }
+
   &_large {
     padding: 20px $space-l;
     line-height: 1.5;
   }
   // Color
+
   &_invert {
-    background-color: $color-white;
     color: $color-brand;
+    background-color: $color-white;
+
     &:hover {
       color: $color-brand;
       background: $color-brand-light radial-gradient(circle, transparent 1%, $color-brand-light 1%) center/15000%;
     }
+
     &:active {
       background-color: $color-brand-brighter;
       background-size: 100%;

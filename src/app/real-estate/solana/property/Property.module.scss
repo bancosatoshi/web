@@ -10,9 +10,10 @@
 
   &__main-panel {
     &--container {
-      @include withNavbar;
-      padding-bottom: $main-panel-container-space-y;
       flex-basis: 60%;
+      padding-bottom: $main-panel-container-space-y;
+
+      @include withNavbar;
     }
   }
 
@@ -24,21 +25,22 @@
 
   &__location {
     &--map {
+      height: 210px;
       margin: $space-default 0;
       border-radius: $border-radius;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 210px;
     }
   }
 
   &__sidebar {
-    @include withNavbar;
-    background-color: var(--color-background);
+    flex-basis: 40%;
+    flex-grow: 1;
     padding-right: $main-panel-container-space-x;
     padding-left: $main-panel-container-space-x;
-    flex-grow: 1;
-    flex-basis: 40%;
+    background-color: var(--color-background);
+
+    @include withNavbar;
 
     > div {
       margin-bottom: $space-l;
@@ -47,19 +49,20 @@
 
   &__media {
     padding: $space-l 0;
+
     &--single-image {
       img {
-        border-radius: $border-radius;
-        height: auto;
         width: 100%;
+        height: auto;
+        border-radius: $border-radius;
       }
     }
   }
 
   &__ownership {
     &--card {
-      background-color: var(--color-dark-11);
       margin-top: $space-default;
+      background-color: var(--color-dark-11);
     }
   }
 }

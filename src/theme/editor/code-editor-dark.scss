@@ -10,44 +10,44 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #ccc;
-  background: none;
-  font-family: $font-family-text;
   font-size: 1em;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
+  font-family: $font-family-text;
   line-height: 1.5;
-
+  white-space: pre;
+  text-align: left;
+  color: #ccc;
+  word-wrap: normal;
+  word-break: normal;
+  word-spacing: normal;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  background: none;
 }
 
 /* Code blocks */
+
 pre[class*="language-"] {
-  padding: 1em;
   margin: 0.5em 0;
+  padding: 1em;
   overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: var(--color-dark-9);
   border-radius: $border-radius;
+  background: var(--color-dark-9);
 }
 
 /* Inline code */
+
 :not(pre) > code[class*="language-"] {
-  padding: 0.1em;
   border-radius: 0.3em;
+  padding: 0.1em;
   white-space: normal;
 }
 
@@ -113,6 +113,7 @@ pre[class*="language-"] {
 .token.bold {
   font-weight: bold;
 }
+
 .token.italic {
   font-style: italic;
 }

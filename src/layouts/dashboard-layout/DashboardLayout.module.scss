@@ -2,9 +2,8 @@
 
 .dashboard-layout {
   position: relative;
-
-  background-color: var(--color-background);
   height: 100vh;
+  background-color: var(--color-background);
 
   @include withSidebar;
 

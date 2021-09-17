@@ -4,96 +4,110 @@
   color: $color-brand;
 
   &__headline1 {
+    margin-bottom: $space-s;
     color: var(--color-typography-headline-1);
+
     @include font-properties($typography-headline-1);
     @include normalizeTypography;
-    margin-bottom: $space-s;
   }
 
   &__headline2 {
     color: var(--color-typography-headline-2);
+
     @include font-properties($typography-headline-2);
     @include normalizeTypography;
   }
 
   &__headline3 {
+    margin-bottom: $space-s;
     color: var(--color-typography-headline-3);
+
     @include font-properties($typography-headline-3);
     @include normalizeTypography;
-    margin-bottom: $space-s;
   }
 
   &__headline4 {
     color: var(--color-typography-headline-4);
+
     @include font-properties($typography-headline-4);
     @include normalizeTypography;
   }
 
   &__headline5 {
+    margin-bottom: $space-xs;
     color: var(--color-typography-headline-5);
+
     @include font-properties($typography-headline-5);
     @include normalizeTypography;
-    margin-bottom: $space-xs;
   }
 
   &__headline6 {
+    margin-bottom: $space-xs;
     color: var(--color-typography-headline-6);
+
     @include font-properties($typography-headline-6);
     @include normalizeTypography;
-    margin-bottom: $space-xs;
   }
 
   &__text {
+    margin-bottom: $space-s;
     color: var(--color-typography-text);
+
     @include font-properties($typography-text);
     @include normalizeTypography;
-    margin-bottom: $space-s;
   }
 
   &__text-bold {
     color: var(--color-typography-text-bold);
+
     @include font-properties($typography-text-bold);
     @include normalizeTypography;
   }
 
   &__subtitle {
+    margin-bottom: $space-xs;
     color: var(--color-typography-subtitle);
+
     @include font-properties($typography-subtitle);
     @include normalizeTypography;
-    margin-bottom: $space-xs;
   }
 
   &__button-label {
     color: var(--color-typography-button-label);
+
     @include font-properties($typography-button-label);
     @include normalizeTypography;
   }
 
   &__mini-button-label {
     color: var(--color-typography-mini-button-label);
+
     @include font-properties($typography-mini-button-label);
     @include normalizeTypography;
   }
 
   &__description {
+    margin-bottom: $space-xs;
     color: var(--color-typography-description);
+
     @include font-properties($typography-description);
     @include normalizeTypography;
-    margin-bottom: $space-xs;
   }
 
   &__mini-description {
     color: var(--color-typography-mini-description);
+
     @include font-properties($typography-mini-description);
     @include normalizeTypography;
   }
 
   &__link {
+    font-size: inherit;
+    text-decoration: none;
     color: var(--color-typography-link);
+
     @include font-properties($typography-link);
     @include normalizeTypography;
-    text-decoration: none;
-    font-size: inherit;
 
     &:hover {
       text-decoration: underline;

@@ -1,15 +1,15 @@
 @import "../../../theme/base";
 
 .item {
-  color: var(--color-sidebar-item);
   margin-bottom: $space-default;
+  color: var(--color-sidebar-item);
 
   &__icon {
     &--wrapper {
-      min-height: 32px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-height: 32px;
 
       svg {
         width: 18px;
@@ -20,10 +20,10 @@
 
   &__text {
     &--wrapper {
-      min-height: 32px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      min-height: 32px;
 
       @include font-properties($typography-text);
     }
