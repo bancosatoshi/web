@@ -6,21 +6,22 @@ $LOADER_SIZE: 30px;
 $HALF_LOADER_SIZE: 15px;
 
 .button {
-  @extend .button_primary;
   display: inline-block;
   min-width: auto;
   white-space: nowrap;
   text-align: center;
   cursor: pointer;
 
+  @extend .button_primary;
+
   &[disabled] {
     cursor: not-allowed;
   }
 
   &__content {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    position: relative;
 
     &--loading {
       opacity: 0;
@@ -48,13 +49,15 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &__icon--left {
-    @extend .button__icon;
     margin-right: $space-s;
+
+    @extend .button__icon;
   }
 
   &__icon--right {
-    @extend .button__icon;
     margin-left: $space-s;
+
+    @extend .button__icon;
   }
 
   &--large {
@@ -73,8 +76,9 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &--extra-small {
-    @include font-properties($typography-mini-button-label);
     padding: $space-s 20px;
+
+    @include font-properties($typography-mini-button-label);
   }
 
   // "m" on desktop and "xs" on mobile
@@ -84,10 +88,6 @@ $HALF_LOADER_SIZE: 15px;
     font-size: $font-size-3;
     font-weight: $font-weight-medium;
     line-height: 1.75;
-
-    &.button--outlined {
-      padding: 6px 20px;
-    }
 
     // default values from .button size "m"
     @include atTablet {
@@ -99,6 +99,10 @@ $HALF_LOADER_SIZE: 15px;
       &.button--outlined {
         padding: 11px 22px;
       }
+    }
+
+    &.button--outlined {
+      padding: 6px 20px;
     }
   }
 
@@ -292,8 +296,9 @@ $HALF_LOADER_SIZE: 15px;
   // Outlined variant
 
   &--outlined {
-    @extend .button-outline;
     background-color: transparent;
+
+    @extend .button-outline;
 
     &.button--extra-small {
       padding: 6px 18px;
@@ -327,8 +332,8 @@ $HALF_LOADER_SIZE: 15px;
       &:hover,
       &:focus {
         border-color: var(--color-button-secondary-hover);
-        background: var(--color-button-secondary-hover);
         color: var(--color-button-secondary-hover-text);
+        background: var(--color-button-secondary-hover);
       }
     }
 

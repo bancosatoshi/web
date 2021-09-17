@@ -10,14 +10,14 @@ html {
 
 html,
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-family: $font-family-display;
 }
 
 a {
-  color: inherit;
   text-decoration: underline;
+  color: inherit;
 }
 
 * {
@@ -52,12 +52,6 @@ body[data-theme="dark"] {
   --color-status-critical-lighter: #fff5f5;
   --color-status-unknown: #f4f6f8;
 
-  // Brand
-  --color-brand: #4807ea;
-  --color-brand-bright: #5d6ff1;
-  --color-brand-brighter: #a2acf1;
-  --color-brand-light: #e2e2d6;
-
   //Gray dark
   --color-white: #ffffff;
   --color-black: #000000;
@@ -73,6 +67,10 @@ body[data-theme="dark"] {
   --color-dark-2: #f5f5ff;
   --color-dark-1: #ffffff;
 
+  // Brand
+  --color-primary: #4807ea;
+  --color-secondary: --color-dark-4;
+
   // Background
   --color-background: var(--color-black);
   --color-background-contrast: var(--color-dark-11);
@@ -81,12 +79,12 @@ body[data-theme="dark"] {
   --color-sidebar-item: var(--color-white);
 
   // Navbar
-  --color-navbar-logo: var(--color-brand-bright);
+  --color-navbar-logo: var(--color-primary);
 
   // Button
-  --color-button-primary: var(--color-brand);
-  --color-button-primary-text: var(--color-dark-3);
-  --color-button-primary-hover: var(--color-brand);
+  --color-button-primary: var(--color-primary);
+  --color-button-primary-text: var(--color-white);
+  --color-button-primary-hover: var(--color-primary);
   --color-button-primary-hover-text: var(--color-white);
   --color-button-secondary: var(--color-dark-8);
   --color-button-secondary-text: var(--color-dark-4);
@@ -95,7 +93,6 @@ body[data-theme="dark"] {
 
   // Typography
   --color-typography-headline-1: var(--color-white);
-  --color-typography-text: var(--color-white);
   --color-typography-headline-2: var(--color-white);
   --color-typography-headline-3: var(--color-white);
   --color-typography-headline-4: var(--color-white);

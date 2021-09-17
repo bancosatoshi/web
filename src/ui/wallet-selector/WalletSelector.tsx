@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 
+import { WalletSelectorChain } from "../../context/wallet-selector/WalletSelectorContext.types";
 import { useWalletSelectorContext } from "../../hooks/useWalletSelectorContext/useWalletSelectorContext";
 import { Button } from "../button/Button";
 import { Card } from "../card/Card";
@@ -15,21 +16,18 @@ export const WalletSelector: React.FC<WalletSelectorProps> = ({ className }) => 
 
   const [isWidgetVisible, setIsWidgetVisible] = useState(false);
   const [isChainsListVisible, setIsChainsListVisible] = useState(false);
-  const [isNetworksListVisible, setIsNetworksListVisible] = useState(false);
 
   const handleOnConnectWalletClick = () => {
     setIsWidgetVisible(!isWidgetVisible);
-    setIsNetworksListVisible(false);
     setIsChainsListVisible(false);
   };
 
   const handleOnChainsListClick = () => {
     setIsChainsListVisible(!isChainsListVisible);
-    setIsNetworksListVisible(false);
   };
 
-  const handleOnNetworksListClick = () => {
-    setIsNetworksListVisible(!isNetworksListVisible);
+  const handleOnChainCardClick = (chain: WalletSelectorChain) => {
+    wallet.onSetChain(chain);
     setIsChainsListVisible(false);
   };
 
@@ -52,28 +50,25 @@ export const WalletSelector: React.FC<WalletSelectorProps> = ({ className }) => 
                 color="secondary"
                 size="s"
                 fullWidth
-                className={styles["wallet-selector__button"]}
                 rightIcon={<ChevronIcon variant="down" />}
                 onClick={handleOnChainsListClick}
               >
-                {wallet.isConnected ? wallet.chain : "Chain"}
+                {wallet.chain ?? "Chain"}
               </Button>
               <Button
                 variant="outlined"
                 color="secondary"
                 size="s"
                 fullWidth
-                className={styles["wallet-selector__button"]}
-                rightIcon={<ChevronIcon variant="down" />}
-                onClick={handleOnNetworksListClick}
+                className={styles["wallet-selector__button--disable-hover"]}
               >
-                {wallet.isConnected ? wallet.network : "Network"}
+                {wallet.network ?? "Network"}
               </Button>
               {isChainsListVisible && (
                 <div className={styles["wallet-selector__chain-network-dropdowns--chains-list"]}>
                   <Card
                     className={styles["wallet-selector__chain-network-dropdowns--chains-list-card"]}
-                    onClick={() => null}
+                    onClick={() => handleOnChainCardClick(WalletSelectorChain.solana)}
                   >
                     <Card.Content>
                       <Typography.Text>Solana</Typography.Text>
@@ -81,25 +76,6 @@ export const WalletSelector: React.FC<WalletSelectorProps> = ({ className }) => 
                         Solana is the fastest blockchain in the world and the fastest growing ecosystem in crypto, with
                         over 400 projects spanning DeFi, NFTs, Web3 and more.
                       </Typography.Description>
-                    </Card.Content>
-                  </Card>
-                  <Card url="#" className={styles["wallet-selector__chain-network-dropdowns--chains-list-card"]}>
-                    <Card.Content>
-                      <Typography.Text>Ethereum</Typography.Text>
-                      <Typography.Description>
-                        Ethereum is the fastest blockchain in the world and the fastest growing ecosystem in crypto,
-                        with over 400 projects spanning DeFi, NFTs, Web3 and more.
-                      </Typography.Description>
-                    </Card.Content>
-                  </Card>
-                </div>
-              )}
-              {isNetworksListVisible && (
-                <div className={styles["wallet-selector__chain-network-dropdowns--networks-list"]}>
-                  <Card>
-                    <Card.Content>
-                      <Typography.Text>mainnet-beta</Typography.Text>
-                      <Typography.Description>https://mainnet.solana.com</Typography.Description>
                     </Card.Content>
                   </Card>
                 </div>

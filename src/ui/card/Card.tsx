@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> & { Content: React.FC<CardContentProps> }
   <div
     {...props}
     className={clsx(styles.card, className, {
-      [styles.card__link]: !!url,
+      [styles.card__link]: !!url || !!props.onClick,
     })}
   >
     {backgroundImageUrl && (

@@ -1,18 +1,19 @@
 .button-outline {
-  @include font-properties($typography-button-label);
-  border: 2px solid var(--color-button-primary-text);
-  color: var(--color-button-primary-text);
+  min-width: 88px;
+  border: 2px solid var(--color-button-primary);
   border-radius: $border-radius-button;
   padding: 11px 22px;
-  min-width: 88px;
+  color: var(--color-button-primary-text);
   background-position: center;
   transition: background $duration-slow, border-color $duration-medium, color $duration-medium;
 
+  @include font-properties($typography-button-label);
+
   &:hover,
   &:focus {
-    color: $color-white;
-    border-color: $color-brand;
-    background: $color-brand;
+    border-color: var(--color-button-primary-hover);
+    color: var(--color-button-primary-hover-text);
+    background: var(--color-button-primary-hover);
   }
 
   &:focus {
@@ -41,47 +42,49 @@
 
   &_medium,
   &_large {
-    font-size: $font-size-5;
     border-radius: $border-radius-pill;
+    font-size: $font-size-5;
   }
+
   &_medium {
     padding: 15px $space-l;
     line-height: 22px;
   }
+
   &_large {
     padding: 18px $space-l;
     line-height: 1.5;
   }
 
   &_inverse {
-    color: $color-black;
     border-color: $color-black;
+    color: $color-black;
 
     &:hover {
+      border-color: $color-black;
       color: $color-white;
       background-color: $color-black;
-      border-color: $color-black;
     }
   }
 
   &_inverse-thin {
-    color: $color-dark-1;
     border-color: $color-light-2;
     border-width: 1px;
+    color: $color-dark-1;
     box-shadow: $shadow-input;
 
-    &.button-outline_medium {
+    &.button-outline--medium {
       padding: 16px $space-l;
     }
 
-    &.button-outline_large {
+    &.button-outline--large {
       padding: 19px $space-l;
     }
 
     &:hover {
+      border-color: $color-dark-1;
       color: $color-white;
       background-color: $color-dark-1;
-      border-color: $color-dark-1;
     }
   }
 }

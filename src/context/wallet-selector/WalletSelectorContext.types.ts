@@ -4,10 +4,15 @@ export type WalletSelectorContextControllerProps = {
   children: ReactNode;
 };
 
+export enum WalletSelectorChain {
+  solana = "solana",
+}
+
 export type WalletSelectorContextType = {
-  address: string;
-  network: string;
+  address?: string;
+  network?: string;
   balance: string;
-  chain: string;
+  chain?: WalletSelectorChain;
   isConnected: boolean;
+  onSetChain: (chain: WalletSelectorChain) => void;
 };
