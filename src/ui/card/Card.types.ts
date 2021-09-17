@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
-export type CardProps = {
+export type CardProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
   className?: string;
   backgroundImageUrl?: string;

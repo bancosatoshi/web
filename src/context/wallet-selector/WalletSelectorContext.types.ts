@@ -9,4 +9,5 @@ export type WalletSelectorContextType = {
   network: string;
   balance: string;
   chain: string;
+  isConnected: boolean;
 };

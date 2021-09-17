@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { default as NextLink, LinkProps } from "next/link";
+import NextLink, { LinkProps } from "next/link";
+
 import styles from "./Typography.module.scss";
 import { AnchorProps, TypographyProps } from "./Typography.types";
 
@@ -19,36 +20,34 @@ export const Typography: React.FC<TypographyProps> & {
   MiniDescription: React.FC<TypographyProps>;
   Link: React.FC<TypographyProps & LinkProps>;
   Anchor: React.FC<AnchorProps>;
-} = ({ children, className }) => {
-  return <div className={clsx(styles["typography"], className)}>{children}</div>;
-};
+} = ({ children, className }) => <div className={clsx(styles.typography, className)}>{children}</div>;
 
 const Headline1: React.FC<TypographyProps> = ({ children, className }) => (
-  <h1 className={clsx(styles["typography__headline1"], className)}>{children}</h1>
+  <h1 className={clsx(styles.typography__headline1, className)}>{children}</h1>
 );
 
 const Headline2: React.FC<TypographyProps> = ({ children, className }) => (
-  <h2 className={clsx(styles["typography__headline2"], className)}>{children}</h2>
+  <h2 className={clsx(styles.typography__headline2, className)}>{children}</h2>
 );
 
 const Headline3: React.FC<TypographyProps> = ({ children, className }) => (
-  <h3 className={clsx(styles["typography__headline3"], className)}>{children}</h3>
+  <h3 className={clsx(styles.typography__headline3, className)}>{children}</h3>
 );
 
 const Headline4: React.FC<TypographyProps> = ({ children, className }) => (
-  <h4 className={clsx(styles["typography__headline4"], className)}>{children}</h4>
+  <h4 className={clsx(styles.typography__headline4, className)}>{children}</h4>
 );
 
 const Headline5: React.FC<TypographyProps> = ({ children, className }) => (
-  <h5 className={clsx(styles["typography__headline5"], className)}>{children}</h5>
+  <h5 className={clsx(styles.typography__headline5, className)}>{children}</h5>
 );
 
 const Headline6: React.FC<TypographyProps> = ({ children, className }) => (
-  <h6 className={clsx(styles["typography__headline6"], className)}>{children}</h6>
+  <h6 className={clsx(styles.typography__headline6, className)}>{children}</h6>
 );
 
 const Text: React.FC<TypographyProps> = ({ children, className }) => (
-  <p className={clsx(styles["typography__text"], className)}>{children}</p>
+  <p className={clsx(styles.typography__text, className)}>{children}</p>
 );
 
 const TextBold: React.FC<TypographyProps> = ({ children, className }) => (
@@ -56,7 +55,7 @@ const TextBold: React.FC<TypographyProps> = ({ children, className }) => (
 );
 
 const Subtitle: React.FC<TypographyProps> = ({ children, className }) => (
-  <p className={clsx(styles["typography__subtitle"], className)}>{children}</p>
+  <p className={clsx(styles.typography__subtitle, className)}>{children}</p>
 );
 
 const ButtonLabel: React.FC<TypographyProps> = ({ children, className }) => (
@@ -68,7 +67,7 @@ const MiniButtonLabel: React.FC<TypographyProps> = ({ children, className }) => 
 );
 
 const Description: React.FC<TypographyProps> = ({ children, className }) => (
-  <p className={clsx(styles["typography__description"], className)}>{children}</p>
+  <p className={clsx(styles.typography__description, className)}>{children}</p>
 );
 
 const MiniDescription: React.FC<TypographyProps> = ({ children, className }) => (
@@ -77,12 +76,12 @@ const MiniDescription: React.FC<TypographyProps> = ({ children, className }) => 
 
 const Link: React.FC<TypographyProps & LinkProps> = ({ children, className, href }) => (
   <NextLink href={href}>
-    <a className={clsx(styles["typography__link"], className)}>{children}</a>
+    <a className={clsx(styles.typography__link, className)}>{children}</a>
   </NextLink>
 );
 
 const Anchor: React.FC<AnchorProps> = ({ children, className, ...props }) => (
-  <a className={clsx(styles["typography__link"], className)} {...props}>
+  <a className={clsx(styles.typography__link, className)} {...props}>
     {children}
   </a>
 );

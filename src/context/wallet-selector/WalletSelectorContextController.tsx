@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { WalletSelectorContext } from "./WalletSelectorContext";
 import { WalletSelectorContextControllerProps } from "./WalletSelectorContext.types";
 
@@ -7,9 +8,10 @@ export const WalletSelectorContextController = ({ children }: WalletSelectorCont
   const [chain, setChain] = useState("");
   const [address, setAddress] = useState("PwDiXFxQsGra4sFFTT8r1QWRMd4vfumiWC1jfWNfdYT");
   const [balance, setBalance] = useState("0.00");
+  const [isConnected, setIsConnected] = useState(false);
 
   return (
-    <WalletSelectorContext.Provider value={{ chain, network, address, balance }}>
+    <WalletSelectorContext.Provider value={{ chain, network, address, balance, isConnected }}>
       {children}
     </WalletSelectorContext.Provider>
   );

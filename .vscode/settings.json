@@ -2,6 +2,6 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports": false,
     "source.fixAll": true,
-    "source.fixAll.stylelint": false
+    "source.fixAll.stylelint": true
   }
 }
