@@ -1,6 +1,4 @@
 @mixin font-properties($fs-map) {
-  font-size: get("font.size", $fs-map);
-
   @if deep-map-check($fs-map, "font", "lineHeight") {
     line-height: get("font.lineHeight", $fs-map);
   }
@@ -27,12 +25,12 @@
       $bp: nth($break-point, 1);
 
       @media screen and (min-width: map-get($map: $breakpoints, $key: $bp)) {
-        font-size: get("sizes.#{$bp}.font.size", $fs-map);
-
         @if not deep-map-check($fs-map, "sizes.#{$bp}.font.lineHeight") {
           line-height: get("sizes.#{$bp}.font.lineHeight", $fs-map);
         }
+        font-size: get("sizes.#{$bp}.font.size", $fs-map);
       }
     }
   }
+  font-size: get("font.size", $fs-map);
 }

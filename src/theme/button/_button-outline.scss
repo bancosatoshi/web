@@ -1,4 +1,5 @@
 .button-outline {
+  @include font-properties($typography-button-label);
   min-width: 88px;
   border: 2px solid var(--color-button-primary);
   border-radius: $border-radius-button;
@@ -6,8 +7,6 @@
   color: var(--color-button-primary-text);
   background-position: center;
   transition: background $duration-slow, border-color $duration-medium, color $duration-medium;
-
-  @include font-properties($typography-button-label);
 
   &:hover,
   &:focus {

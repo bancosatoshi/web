@@ -90,20 +90,18 @@
   }
 
   &__header {
+    @include font-properties($text-1);
     border-bottom: $border-divider;
     padding: $space-m-1;
     color: $color-dark-1;
-
-    @include font-properties($text-1);
   }
 
   &__content {
+    @include font-properties($text-2);
     max-height: 80vh;
     margin: 12px $space-l;
     overflow-y: auto;
     color: $color-dark-1;
-
-    @include font-properties($text-2);
 
     &:last-child {
       margin-bottom: $space-l;
@@ -111,11 +109,6 @@
   }
 
   &__actions {
-    display: flex;
-    flex-flow: column;
-    justify-content: flex-end;
-    padding: $space-ml;
-
     @include atTablet {
       flex-flow: row;
       padding: $space-l;
@@ -125,6 +118,10 @@
         margin: 0 0 0 $space-m;
       }
     }
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    padding: $space-ml;
 
     > *:not(:first-child) {
       width: 100%;

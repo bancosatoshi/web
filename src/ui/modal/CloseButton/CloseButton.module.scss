@@ -1,11 +1,10 @@
 @import "/src/theme/_base";
 
 .close-button {
-  margin-right: -$space-s;
-  margin-left: $space-xs;
-  color: $color-dark-1;
-
   @include atTablet {
     margin-right: 0;
   }
+  margin-right: -$space-s;
+  margin-left: $space-xs;
+  color: $color-dark-1;
 }

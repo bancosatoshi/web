@@ -1,6 +1,6 @@
 export type Styles = {
-  'item': string;
-  'item__active': string;
+  item: string;
+  item__active: string;
 };
 
 export type ClassNames = keyof Styles;

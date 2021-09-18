@@ -37,6 +37,8 @@ export type Styles = {
   "button-outline_inverse-thin": string;
   "button-outline_large": string;
   "button-outline_medium": string;
+  "button-outline--large": string;
+  "button-outline--medium": string;
   spin: string;
 };
 

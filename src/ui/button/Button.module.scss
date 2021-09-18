@@ -6,13 +6,12 @@ $LOADER_SIZE: 30px;
 $HALF_LOADER_SIZE: 15px;
 
 .button {
+  @extend .button_primary;
   display: inline-block;
   min-width: auto;
   white-space: nowrap;
   text-align: center;
   cursor: pointer;
-
-  @extend .button_primary;
 
   &[disabled] {
     cursor: not-allowed;
@@ -49,15 +48,13 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &__icon--left {
-    margin-right: $space-s;
-
     @extend .button__icon;
+    margin-right: $space-s;
   }
 
   &__icon--right {
-    margin-left: $space-s;
-
     @extend .button__icon;
+    margin-left: $space-s;
   }
 
   &--large {
@@ -76,18 +73,13 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &--extra-small {
-    padding: $space-s 20px;
-
     @include font-properties($typography-mini-button-label);
+    padding: $space-s 20px;
   }
 
   // "m" on desktop and "xs" on mobile
 
   &--auto-size {
-    padding: $space-s 20px;
-    font-size: $font-size-3;
-    font-weight: $font-weight-medium;
-    line-height: 1.75;
 
     // default values from .button size "m"
     @include atTablet {
@@ -100,6 +92,10 @@ $HALF_LOADER_SIZE: 15px;
         padding: 11px 22px;
       }
     }
+    padding: $space-s 20px;
+    font-size: $font-size-3;
+    font-weight: $font-weight-medium;
+    line-height: 1.75;
 
     &.button--outlined {
       padding: 6px 20px;
@@ -296,9 +292,8 @@ $HALF_LOADER_SIZE: 15px;
   // Outlined variant
 
   &--outlined {
-    background-color: transparent;
-
     @extend .button-outline;
+    background-color: transparent;
 
     &.button--extra-small {
       padding: 6px 18px;
@@ -391,16 +386,6 @@ $HALF_LOADER_SIZE: 15px;
   // Loader classes
 
   &__loading-floating-border {
-    position: absolute;
-    top: calc(50% - #{$HALF_LOADER_SIZE});
-    left: calc(50% - #{$HALF_LOADER_SIZE});
-    width: $LOADER_SIZE;
-    height: $LOADER_SIZE;
-    border: $space-xxs solid transparent;
-    border-top: $space-xxs solid $color-white;
-    border-radius: $border-radius-circle;
-    animation: spin 2s linear infinite;
-
     @keyframes spin {
       0% {
         transform: rotate(0deg);
@@ -410,6 +395,15 @@ $HALF_LOADER_SIZE: 15px;
         transform: rotate(360deg);
       }
     }
+    position: absolute;
+    top: calc(50% - #{$HALF_LOADER_SIZE});
+    left: calc(50% - #{$HALF_LOADER_SIZE});
+    width: $LOADER_SIZE;
+    height: $LOADER_SIZE;
+    border: $space-xxs solid transparent;
+    border-top: $space-xxs solid $color-white;
+    border-radius: $border-radius-circle;
+    animation: spin 2s linear infinite;
   }
 
   &__loader {
