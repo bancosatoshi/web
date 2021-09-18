@@ -72,6 +72,6 @@ $sidebar-width: 320px;
   padding-top: $navbar-height * 2;
 }
 @mixin normalizeTypography {
-  margin: 0;
+  margin-top: 0;
   padding: 0;
 }
