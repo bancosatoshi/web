@@ -1,6 +1,6 @@
 export type Styles = {
-  'col__justify-content--end': string;
-  'grid': string;
+  "col__justify-content--end": string;
+  grid: string;
 };
 
 export type ClassNames = keyof Styles;

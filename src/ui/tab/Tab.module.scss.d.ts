@@ -1,5 +1,5 @@
 export type Styles = {
-  'tab': string;
+  tab: string;
 };
 
 export type ClassNames = keyof Styles;

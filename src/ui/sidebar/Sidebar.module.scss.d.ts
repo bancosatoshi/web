@@ -1,5 +1,5 @@
 export type Styles = {
-  'sidebar': string;
+  sidebar: string;
 };
 
 export type ClassNames = keyof Styles;

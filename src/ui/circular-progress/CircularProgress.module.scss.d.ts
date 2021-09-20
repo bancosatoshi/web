@@ -1,5 +1,5 @@
 export type Styles = {
-  'circular-progress': string;
+  "circular-progress": string;
 };
 
 export type ClassNames = keyof Styles;
