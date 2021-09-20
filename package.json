@@ -51,6 +51,7 @@
     "eslint-plugin-testing-library": "^3.10.2",
     "eslint-plugin-unicorn": "^29.0.0",
     "inquirer-directory": "^2.2.0",
+    "next-transpile-modules": "^8.0.0",
     "node-sass": "^5.0.0",
     "plop": "^2.7.4",
     "prettier": "^2.4.1",
