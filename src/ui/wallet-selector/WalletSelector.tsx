@@ -91,7 +91,9 @@ export const WalletSelector: React.FC<WalletSelectorProps> = ({ className }) => 
               </Typography.MiniDescription>
             </div>
             <div className={styles["wallet-selector__connect"]}>
-              <Button size="xs">{wallet.isConnected ? "Disconnect" : "Connect"}</Button>
+              <Button size="xs" onClick={() => wallet.onClickConnect()}>
+                {wallet.isConnected ? "Disconnect" : "Connect"}
+              </Button>
             </div>
           </div>
         </>

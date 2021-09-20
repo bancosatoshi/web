@@ -80,7 +80,6 @@ $HALF_LOADER_SIZE: 15px;
   // "m" on desktop and "xs" on mobile
 
   &--auto-size {
-
     // default values from .button size "m"
     @include atTablet {
       padding: 13px $space-ml;
@@ -170,16 +169,16 @@ $HALF_LOADER_SIZE: 15px;
 
   &.button--inverted,
   &.button--text {
-    background-color: $color-white;
+    background-color: transparent;
 
     &.button--primary {
-      color: $color-brand;
+      color: var(--color-button-primary);
 
       &:active,
       &:hover,
       &:focus {
         color: $color-brand-bright;
-        background: $color-brand-light;
+        background-color: transparent;
       }
 
       &[disabled] {
@@ -189,12 +188,12 @@ $HALF_LOADER_SIZE: 15px;
     }
 
     &.button--secondary {
-      background-color: $color-white;
+      background-color: transparent;
 
       &:active,
       &:hover,
       &:focus {
-        background: $color-light-3;
+        background-color: transparent;
       }
 
       &[disabled] {
@@ -205,12 +204,12 @@ $HALF_LOADER_SIZE: 15px;
 
     &.button--success {
       color: $color-status-ok;
-      background-color: $color-white;
+      background-color: transparent;
 
       &:active,
       &:hover,
       &:focus {
-        background: $color-status-ok-lighter;
+        background-color: transparent;
       }
 
       &[disabled] {
@@ -221,12 +220,12 @@ $HALF_LOADER_SIZE: 15px;
 
     &.button--danger {
       color: $color-status-critical;
-      background-color: $color-white;
+      background-color: transparent;
 
       &:active,
       &:hover,
       &:focus {
-        background: $color-status-critical-lighter;
+        background-color: transparent;
       }
 
       &[disabled] {
@@ -237,12 +236,12 @@ $HALF_LOADER_SIZE: 15px;
 
     &.button--dark {
       color: $color-dark-1;
-      background-color: $color-white;
+      background-color: transparent;
 
       &:active,
       &:hover,
       &:focus {
-        background: $color-light-3;
+        background-color: transparent;
       }
 
       &[disabled] {
@@ -253,12 +252,12 @@ $HALF_LOADER_SIZE: 15px;
 
     &.button--light {
       color: $color-dark-4;
-      background-color: $color-white;
+      background-color: transparent;
 
       &:active,
       &:hover,
       &:focus {
-        background: $color-light-3;
+        background-color: transparent;
       }
 
       &[disabled] {
@@ -269,7 +268,6 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &.button--text {
-    padding: 0;
     font-weight: 400;
     transition: opacity $duration-medium;
 
