@@ -1,6 +1,7 @@
 /* eslint-disable react/button-has-type */
 import clsx from "clsx";
 import React, { ForwardedRef, forwardRef } from "react";
+
 import styles from "./Button.module.scss";
 import { ButtonProps, DefaultButtonProps, LinkButtonProps } from "./Button.types";
 
@@ -47,6 +48,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         [styles["button--loading"]]: isLoading,
         // width
         [styles["button--full-width"]]: fullWidth,
+        // link
+        [styles["button--link"]]: TagName === "a",
       },
       className,
     );

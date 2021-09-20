@@ -1,11 +1,8 @@
-import clsx from 'clsx';
-import { NavigationProps } from './Navigation.types';
-import styles from './Navigation.module.scss';
+import clsx from "clsx";
 
-export const Navigation: React.FC<NavigationProps> = ({ children, className }) => {
-  return (
-    <div className={clsx(styles['navigation'], className)}>
-      {children}
-    </div>
-  );
-};
+import { NavigationProps } from "./Navigation.types";
+import styles from "./Navigation.module.scss";
+
+export const Navigation: React.FC<NavigationProps> = ({ children, className }) => (
+  <div className={clsx(styles.navigation, className)}>{children}</div>
+);

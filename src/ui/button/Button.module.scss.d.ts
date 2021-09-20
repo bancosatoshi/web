@@ -24,6 +24,7 @@ export type Styles = {
   "button--inverted": string;
   "button--large": string;
   "button--light": string;
+  "button--link": string;
   "button--loading": string;
   "button--medium": string;
   "button--outlined": string;

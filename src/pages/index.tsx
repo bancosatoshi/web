@@ -1,10 +1,11 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { Home } from "../app/home/Home";
+
+import { Properties } from "../app/real-estate/solana/properties/Properties";
 import { AppLayout } from "../layouts/app-layout/AppLayout";
 
 const Index = () => (
   <AppLayout>
-    <Home />
+    <Properties />
   </AppLayout>
 );
 

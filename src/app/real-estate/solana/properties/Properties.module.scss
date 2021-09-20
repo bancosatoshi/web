@@ -1,10 +1,9 @@
-@import "../../theme/base";
+@import "../../../../theme/base";
 
-.home {
-  @include withSidebar;
-  position: relative;
-  height: 100vh;
-  background-color: var(--color-background);
+.properties {
+  &__main {
+    position: relative;
+  }
 
   &__sidebar {
     @include withNavbar;
@@ -12,6 +11,10 @@
 
   &__main-panel {
     @include withNavbar;
+
+    &--container {
+      @include withNavbar;
+    }
   }
 
   &__tab-pane {
