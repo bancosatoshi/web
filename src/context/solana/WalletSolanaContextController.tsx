@@ -13,8 +13,8 @@ import {
 import { clusterApiUrl } from "@solana/web3.js";
 
 import { WalletModalProvider } from "../../ui/solana/wallet-selector-modal/WalletModalProvider";
-import { WalletSelectorContextController } from "../wallet-selector/WalletSelectorContextController";
 
+import { WalletSelectorContextController } from "./wallet-selector/WalletSelectorContextController";
 import { WalletSolanaContextControllerProps } from "./WalletSolanaContext.types";
 import { WalletSolanaContext } from "./WalletSolanaContext";
 

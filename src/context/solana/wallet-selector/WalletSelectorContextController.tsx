@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { useWallet as useSolanaWallet } from "@solana/wallet-adapter-react";
+import { useConnection as useSolanaConnection, useWallet as useSolanaWallet } from "@solana/wallet-adapter-react";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 
-import { useWalletModal as useSolanaWalletModal } from "../../ui/solana/wallet-selector-modal/useWalletModal";
+import { useWalletModal as useSolanaWalletModal } from "../../../ui/solana/wallet-selector-modal/useWalletModal";
 
 import { WalletSelectorContext } from "./WalletSelectorContext";
 import {
@@ -16,25 +17,28 @@ export const WalletSelectorContextController = ({ children }: WalletSelectorCont
   const [address, setAddress] = useState<WalletSelectorContextType["address"]>(undefined);
   const [balance, setBalance] = useState("0.00");
   const [isConnected, setIsConnected] = useState(false);
-  const [isConnectionRequested, setIsConnectionRequested] = useState(false);
 
   const { setVisible: setSolanaWalletsModalVisible } = useSolanaWalletModal();
-  const { connected: isSolanaWalletConnected, publicKey: solanaAddress } = useSolanaWallet();
+  const { connected: isSolanaWalletConnected, publicKey: solanaPublicKey } = useSolanaWallet();
+  const { connection: solanaConnection } = useSolanaConnection();
 
   useEffect(() => {
     if (isSolanaWalletConnected) {
       setIsConnected(true);
-      setAddress(solanaAddress!.toString());
+      setAddress(solanaPublicKey!.toString());
+      setNetwork(WalletAdapterNetwork.Devnet);
+      setChain(WalletSelectorChain.solana);
+      solanaConnection
+        .getBalance(solanaPublicKey!)
+        .then((solanaBalance) => setBalance(`SOL ${(solanaBalance / 1000000000).toFixed(2).toString()}`));
     }
-  }, [isSolanaWalletConnected, solanaAddress]);
+  }, [isSolanaWalletConnected, solanaConnection, solanaPublicKey]);
 
   const onSetChain = (c: WalletSelectorChain) => {
     setChain(c);
   };
 
   const onClickConnect = () => {
-    setIsConnectionRequested(true);
-
     if (chain === WalletSelectorChain.solana) {
       setSolanaWalletsModalVisible(true);
     }
