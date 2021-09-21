@@ -1,8 +1,10 @@
 import clsx from "clsx";
 import React, { KeyboardEvent, useEffect, useState } from "react";
 import { CSSTransition } from "react-transition-group";
+
 import { IconButton } from "../iconButton/IconButton";
 import { CloseIcon } from "../icons/CloseIcon";
+
 import { CloseButton } from "./CloseButton/CloseButton";
 import styles from "./Modal.module.scss";
 import { ModalFullscreenProps, ModalItemProps, ModalNotFullscreenProps, ModalProps } from "./Modal.types";

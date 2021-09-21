@@ -6,6 +6,7 @@
 $navbar-height: 70px;
 $navbar-logo-width: 153px;
 
+// Z-index
 $z-index-navigation: 3;
 $z-index-modal: 4;
 $z-index-form-dropdown: 5;
@@ -748,3 +749,8 @@ $switch-min-width: 60px !default;
 // Main Panel
 $main-panel-container-space-x: $space-xxl;
 $main-panel-container-space-y: $space-xxl;
+
+// Opacity
+$opacity-high: 0.9;
+$opacity-mid: 0.5;
+$opacity-low: 0.3;

@@ -1,3 +1,4 @@
+import router from "next/router";
 import { useTranslation } from "react-i18next";
 
 import { useRoutes } from "../../../../hooks/useRoutes/useRoutes";
@@ -16,17 +17,10 @@ export const Properties: React.FC<PropertiesProps> = () => {
   const routes = useRoutes();
 
   const myProperties = [
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
-    "https://cdn.corporatefinanceinstitute.com/assets/real-estate.jpeg",
+    {
+      img: "https://i.pinimg.com/564x/fc/62/18/fc62180f74d38deb00a4f63a88eae76a.jpg",
+      tokenMetadataId: "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s",
+    },
   ];
 
   return (
@@ -55,7 +49,11 @@ export const Properties: React.FC<PropertiesProps> = () => {
               <Grid.Row>
                 {myProperties.map((property) => (
                   <Grid.Col lg={4}>
-                    <Card backgroundImageUrl={property} className={styles["properties__my-properties--card"]} url="#">
+                    <Card
+                      backgroundImageUrl={property.img}
+                      className={styles["properties__my-properties--card"]}
+                      onClick={() => router.push(routes.realEstate.solana.property(property.tokenMetadataId))}
+                    >
                       <Card.Content>
                         <Typography.MiniDescription>Antigua, Guatemala</Typography.MiniDescription>
                         <Typography.Text>Villas de San Isidro</Typography.Text>

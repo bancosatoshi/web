@@ -19,13 +19,13 @@ a.icon-button {
   }
 
   &.icon-button--super-extra-small {
-    width: $space-m-1;
-    height: $space-m-1;
+    width: $space-m;
+    height: $space-m;
     padding: 0;
 
     svg {
-      max-width: $space-m-1;
-      max-height: $space-m-1;
+      max-width: $space-m;
+      max-height: $space-m;
     }
 
     &.icon-button--loading {
