@@ -2,6 +2,6 @@ import { ReactNode } from "react";
 
 export type TabProps = {
   children: ReactNode;
-  defaultPaneId?: string;
+  defaultPaneId: string;
   className?: string;
 };

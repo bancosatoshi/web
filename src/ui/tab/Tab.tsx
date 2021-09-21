@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import React from "react";
+
 import { TabContextController } from "../../context/tab/TabContextController";
+
 import { Item } from "./item/Item";
 import { ItemProps } from "./item/Item.types";
 import { Navigation } from "./navigation/Navigation";
@@ -14,13 +16,11 @@ export const Tab: React.FC<TabProps> & {
   Navigation: React.FC<NavigationProps>;
   Item: React.FC<ItemProps>;
   Pane: React.FC<PaneProps>;
-} = ({ children, className, defaultPaneId }) => {
-  return (
-    <TabContextController defaultPaneId={defaultPaneId}>
-      <div className={clsx(styles["tab"], className)}>{children}</div>
-    </TabContextController>
-  );
-};
+} = ({ children, className, defaultPaneId }) => (
+  <TabContextController defaultPaneId={defaultPaneId}>
+    <div className={clsx(styles.tab, className)}>{children}</div>
+  </TabContextController>
+);
 
 Tab.Navigation = Navigation;
 Tab.Item = Item;
