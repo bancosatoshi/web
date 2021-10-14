@@ -1,40 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Non Fungible Me
+https://github.com/aufacicenta/nonfungibleme
 
-## Getting Started
+The decentralized, anonymous and immutable collection of everything, YOU!
 
-First, run the development server:
+## Summary
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+NFME is a __Web Blockchain UI__ that features a multi-chain wallet widget. The NFME web dashboard can be __used to read and update smart-contract data__.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+For the Solana Ignition Hackaton 2021, NFME is designed for __Real Estate assets trading and investment in the Solana Blockchain__.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Inspiration
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+NFT technology is booming. Solana provides low tx fees, high TPS and Rust smart-contracts that enable powerful blockchain functionalities.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as
-[API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The Real Estate NFT Market is still to be explored, and Non Fungible Me borns inspired by providing the optimal UX to interact with Metaplex Token Metadata Programs, structured to include Real Estate information.
 
-## Learn More
+## What it does
 
-To learn more about Next.js, take a look at the following resources:
+### Buy Real Estate Property Ownership
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NFME can read [Metaplex Token Metadata](https://docs.metaplex.com/nft-standard) of Solana Blockchain programs. A Solana wallet can buy partial ownership of a Real Estate NFT.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions
-are welcome!
+### Post Real Estate NFTs
 
-## Deploy on Vercel
+NFME provides a modern web UI to [create Metaplex Token Metadata](https://nfme.aufacicenta.com/real-estate/solana/list-property). For Real Estate properties, NFME features special metadata attributes such as Location & Attachments, which can be encrypted to be __accessed only by owners or whitelisted members, acting as a DAO__.
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+### Index NFT Metadata
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Only if the user requests so, NFME can [index the NFTs](https://nfme.aufacicenta.com/en/real-estate/solana) for the community to browse and find them easier.
+
+### Multi-chain Wallet Widget
+
+Starting with the Solana Blockchain, NFME features a Wallet Widget, that connects with Solana's main wallets to interact with a given smart-contract or program.
+
+___
+
+
+Starting with the Solana Blockchain, NFME allows a user to [anonymously create NFTs](https://nfme.aufacicenta.com/real-estate/solana/list-property) by setting metadata as per the [Metaplex Token Metadata Standard](https://docs.metaplex.com/nft-standard).
+
+NFME can then [read the token metadata](https://nfme.aufacicenta.com/en/real-estate/solana/property?tokenMetadataId=metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s) and provide feature-specific interactions with the smart-contract or program.
+
+Only if the user requests so, NFME can [index the NFTs](https://nfme.aufacicenta.com/en/real-estate/solana) for the community to browse and find them easier.
+
+NFME __protects user privacy and sensible information__ by encrypting selected metadata attributes; decrypting these values may require a wallet to be a partial owner of the NFT.
+
+______
+
+## How we built it
+
+[NFME is an open-source NextJS web application](https://github.com/aufacicenta/nonfungibleme) (desktop) with 3 main pages:
+
+a) [Real Estate Index (My Properties & Explore)](https://nfme.aufacicenta.com/en/real-estate/solana)
+b) [Property Details](https://nfme.aufacicenta.com/en/real-estate/solana/property?tokenMetadataId=metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s)
+c) [List a Property](https://nfme.aufacicenta.com/real-estate/solana/list-property)
+
+## Challenges we ran into
+
+### With listing a property
+
+Providing the fastest and most reliable UX for creating a Solana Metaplex Token Metadata NFT is still a challenge. For Proof-of-Concept purposes, the NFME UI presents an editor with a Token Metadata template to be filled manually. [Data validation](https://github.com/aufacicenta/nonfungibleme/issues/6) is still not implemented.
+
+## Accomplishments that we're proud of
+
+## What we learned
+
+## What's next for Non Fungible Me: Real Estate
