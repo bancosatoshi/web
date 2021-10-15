@@ -15,7 +15,6 @@ import { PropertyProps } from "./Property.types";
 
 export const Property: React.FC<PropertyProps> = ({}) => {
   const [isRegisterInterestModalOpen, setIsRegisterInterestModalOpen] = useState(false);
-  const [isVerifyPropertyInfoModalOpen, setIsVerifyPropertyInfoModalOpen] = useState(false);
   const [isBuyOwnershipInfoModalOpen, setIsBuyOwnershipInfoModalOpen] = useState(false);
 
   return (
@@ -203,37 +202,6 @@ export const Property: React.FC<PropertyProps> = ({}) => {
               </Card>
             </div>
           </div>
-          <div>
-            <Row>
-              <Col>
-                <Typography.Headline5 className={styles["property__sidebar--heading"]}>Verifiers</Typography.Headline5>
-                <Typography.Description>
-                  Verifiers act as entities that back this property ownership
-                </Typography.Description>
-              </Col>
-              <Grid.Col justifyContent="end">
-                <Button
-                  variant="outlined"
-                  size="xs"
-                  color="secondary"
-                  onClick={() => setIsVerifyPropertyInfoModalOpen(true)}
-                >
-                  Verify Property
-                </Button>
-              </Grid.Col>
-            </Row>
-            <div>
-              <Card className={styles["property__ownership--card"]}>
-                <Card.Content>
-                  <Typography.Description>Wallet Address</Typography.Description>
-                  <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
-                  <hr />
-                  <Typography.Description>At Transaction</Typography.Description>
-                  <Typography.Link href="#">metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s</Typography.Link>
-                </Card.Content>
-              </Card>
-            </div>
-          </div>
         </div>
       </main>
 
@@ -311,74 +279,6 @@ export const Property: React.FC<PropertyProps> = ({}) => {
               </Grid.Col>
               <Grid.Col>
                 <Button>Pay 2 SOL</Button>
-              </Grid.Col>
-            </Grid.Row>
-          </Modal.Actions>
-        </Modal>
-      )}
-
-      {isVerifyPropertyInfoModalOpen && (
-        <Modal isOpened onClose={() => null} aria-labelledby="Register Interest Modal Window">
-          <Modal.Header>
-            <Typography.Headline3 className={styles["property__register-interest-modal--header"]}>
-              Become A Verifier
-            </Typography.Headline3>
-          </Modal.Header>
-          <Modal.Content>
-            <Typography.Text>
-              Solana Real Estate NFT properties' verifiers are real persons (you know, everything is virtual now), that
-              act as whitnesses of the asset. They'd normally live at a maximum 30mins distance of the asset and should
-              be available to visit and whitness the asset within a 7 days period since the publication of the asset.
-            </Typography.Text>
-            <Typography.Headline5>OK, but how does I enroll as a verifier?</Typography.Headline5>
-            <Typography.Text>
-              To enroll as a verifier, you need to pay the enrollment fee, which is 5 SOL and input your personal
-              information with a Telegram Messenger account.
-            </Typography.Text>
-            <Typography.Text>
-              The 80% of the 5 SOL enrollment fee stays in an escrow program and will act as a stake during your
-              involvement as a verifier. You can withdraw your stake at any time. If you incur in any penalties, a
-              partial or a total amount of the stake may be withdrawn from the escrow by decision of the DAO.
-            </Typography.Text>
-            <Typography.Text>
-              20% of the 5 SOL enrollment fee goes to THE PLATFORM and it is not refundable.
-            </Typography.Text>
-            <Typography.Text>
-              Your personal information is securely encrypted within the Telegram servers, only you and the property
-              owner may access this information.
-            </Typography.Text>
-            <Typography.Headline5>OK, but how do I get notified?</Typography.Headline5>
-            <Typography.Text>
-              Once you've input your personal information with the Telegram Passport interface, THE PLATFORM will
-              securely store your Telegram username and @nonfungiblemebot will let you know if an asset is within your
-              range to be witnessed and assessed by you.
-            </Typography.Text>
-            <Typography.Headline5>OK, but what do I earn as a verifier?</Typography.Headline5>
-            <Typography.Text>
-              For every property you witness and as long as your 5 SOL enrollment stays in escrow, you'll earn 0.5% of
-              each property ownership purchase. Sounds good, no?
-            </Typography.Text>
-            <Typography.Headline5>Are there any penalties?</Typography.Headline5>
-            <Typography.Text>
-              Yes, there are. As a verifier, you'll act as a solely witness and state under oath that the asset complies
-              with the information provided by the creator. You'll visit the actual real-life asset and confirm (with a
-              provided form and digital statement) that the asset is real, and that it is in the state that it is
-              described in the asset media, attachments &amp; location.
-            </Typography.Text>
-            <Typography.Text>
-              Interested parties or current owners may raise a complaint about a verifier wrong-doing and the case will
-              be sent to the DAO for resolution. The penalty may be the partial or total loss of your stake.
-            </Typography.Text>
-          </Modal.Content>
-          <Modal.Actions>
-            <Grid.Row>
-              <Grid.Col>
-                <Button color="secondary" variant="outlined" onClick={() => setIsVerifyPropertyInfoModalOpen(false)}>
-                  Nevermind
-                </Button>
-              </Grid.Col>
-              <Grid.Col>
-                <Button>Enroll as verifier</Button>
               </Grid.Col>
             </Grid.Row>
           </Modal.Actions>
