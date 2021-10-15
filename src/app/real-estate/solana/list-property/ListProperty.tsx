@@ -1,7 +1,10 @@
+/* eslint-disable react/no-danger */
 import clsx from "clsx";
-import Prism from "prismjs";
 import { useState } from "react";
 import Editor from "react-simple-code-editor";
+import hljs from "highlight.js";
+import json from "highlight.js/lib/languages/json";
+import "highlight.js/styles/shades-of-purple.css";
 
 import { Button } from "../../../../ui/button/Button";
 import { Card } from "../../../../ui/card/Card";
@@ -14,9 +17,7 @@ import styles from "./ListProperty.module.scss";
 import { ListPropertyProps } from "./ListProperty.types";
 import TokenMetadataTemplate from "./token-metadata-template.json";
 
-const loadLanguages = require("prismjs/components/index");
-
-loadLanguages(["JSON"]);
+hljs.registerLanguage("json", json);
 
 export const ListProperty: React.FC<ListPropertyProps> = ({}) => {
   const [value, setValue] = useState(JSON.stringify(TokenMetadataTemplate, null, 2));
@@ -42,7 +43,7 @@ export const ListProperty: React.FC<ListPropertyProps> = ({}) => {
                       <Editor
                         value={value}
                         onValueChange={(code) => setValue(code)}
-                        highlight={(code) => Prism.highlight(code, Prism.languages.js, "javascript")}
+                        highlight={(code) => hljs.highlight(code, { language: "JSON" }).value}
                         padding={10}
                       />
                     </code>
@@ -76,16 +77,22 @@ export const ListProperty: React.FC<ListPropertyProps> = ({}) => {
                         property page. Location values will be encrypted for your security.
                       </Typography.Description>
                       <pre>
-                        <code className="language-json">
-                          {JSON.stringify(
-                            {
-                              trait_type: "location",
-                              value: "14.5686528,-90.5216",
-                            },
-                            null,
-                            2,
-                          )}
-                        </code>
+                        <code
+                          className="language-json"
+                          dangerouslySetInnerHTML={{
+                            __html: hljs.highlight(
+                              JSON.stringify(
+                                {
+                                  trait_type: "location",
+                                  value: "14.5686528,-90.5216",
+                                },
+                                null,
+                                2,
+                              ),
+                              { language: "JSON" },
+                            ).value,
+                          }}
+                        />
                       </pre>
                     </Card.Content>
                   </Card>
