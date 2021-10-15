@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import { WalletSolanaContext } from "../../context/solana/WalletSolanaContext";
+import { WalletSolanaContext } from "../../context/solana/SolanaWalletContext";
 
 export const useSolanaContext = () => {
   const context = useContext(WalletSolanaContext);

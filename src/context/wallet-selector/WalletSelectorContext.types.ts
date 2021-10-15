@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 export type WalletSelectorContextControllerProps = {
   children: ReactNode;
-};
+} & WalletSelectorContextType;
 
 export enum WalletSelectorChain {
   solana = "solana",

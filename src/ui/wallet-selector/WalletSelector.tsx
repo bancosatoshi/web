@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 
-import { WalletSelectorChain } from "../../context/solana/wallet-selector/WalletSelectorContext.types";
+import { WalletSelectorChain } from "../../context/wallet-selector/WalletSelectorContext.types";
 import { useWalletSelectorContext } from "../../hooks/useWalletSelectorContext/useWalletSelectorContext";
 import { Button } from "../button/Button";
 import { Card } from "../card/Card";
