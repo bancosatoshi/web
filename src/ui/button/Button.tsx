@@ -12,7 +12,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       color = "primary",
       type = "button",
       variant = "contained",
-      size = "m",
+      size = "s",
       disabled = false,
       leftIcon,
       rightIcon,
@@ -41,6 +41,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
         [styles["button--text"]]: variant === "text",
         // sizes
         [styles["button--extra-small"]]: size === "xs",
+        [styles["button--small"]]: size === "s",
         [styles["button--auto-size"]]: size === "auto",
         [styles["button--medium"]]: size === "m",
         [styles["button--large"]]: size === "l",

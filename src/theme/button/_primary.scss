@@ -22,14 +22,14 @@
   }
 
   &:active {
-    background-color: $color-brand;
+    background-color: var(--color-primary);
     background-size: 100%;
     transition: background 0s;
   }
 
   &:disabled,
   &[disabled] {
-    background: $color-light-1;
+    background: var(--color-dark-1);
 
     * {
       pointer-events: none;
@@ -79,16 +79,17 @@
   // Color
 
   &_invert {
-    color: $color-brand;
-    background-color: $color-white;
+    color: var(--color-primary);
+    background-color: var(--color-white);
 
     &:hover {
-      color: $color-brand;
-      background: $color-brand-light radial-gradient(circle, transparent 1%, $color-brand-light 1%) center/15000%;
+      color: var(--color-primary);
+      background: var(--color-primary)-light radial-gradient(circle, transparent 1%, var(--color-primary)-light 1%)
+        center/15000%;
     }
 
     &:active {
-      background-color: $color-brand-brighter;
+      background-color: var(--color-primary)-brighter;
       background-size: 100%;
     }
   }

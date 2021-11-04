@@ -1,7 +1,7 @@
 @import "../../theme/base";
 
 .grid {
-  color: $color-brand;
+  color: var(--color-primary);
 }
 
 .col {

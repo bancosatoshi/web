@@ -69,88 +69,6 @@ $grid-columns: (1, 2, 3, 4, 5, 6, 7, 8, 12) !default;
 $container-mw: 1440px !default;
 $container-mw-xl: 1600px !default;
 
-// Brand
-$color-brand: #2d3575 !default;
-$color-brand-bright: #5d6ff1 !default;
-$color-brand-brighter: #a2acf1 !default;
-$color-brand-light: #e2e2d6 !default;
-$color-brand-20: rgba($color-brand, 0.2) !default;
-$color-brand-bright-45: lighten($color-brand-brighter, 45%) !default;
-
-//Gray dark
-$color-white: #ffffff !default;
-$color-white-50: rgba($color-white, 0.5) !default;
-$color-black: #2e2639 !default;
-$color-dark-1: #1e1e24 !default;
-$color-dark-2: #4a4b6d !default;
-$color-dark-3: #5b5b65 !default;
-$color-dark-4: #8a8a98 !default;
-$color-dark-5: #d0d0da !default;
-$color-dark-70: rgba($color-dark-1, 0.7) !default;
-$color-dark-50: rgba($color-dark-1, 0.5) !default;
-$color-dark-40: rgba($color-dark-1, 0.4) !default;
-$color-dark-20: rgba($color-dark-1, 0.2) !default;
-$color-dark-10: rgba($color-dark-1, 0.1) !default;
-$color-dark-05: rgba($color-dark-1, 0.05) !default;
-
-//Gray light
-$color-light-1: #c8cacb !default;
-$color-light-2: #dee0e2 !default;
-$color-light-3: #f4f6f8 !default;
-
-// Status colors
-$color-status-normal: #009ccc !default;
-$color-status-normal-light: #d6f5ff !default;
-$color-status-normal-lighter: #f0fbff !default;
-$color-status-ok: #00cc99 !default;
-$color-status-ok-light: #d6fff5 !default;
-$color-status-ok-lighter: #e6fff9 !default;
-$color-status-warning: #fad105 !default;
-$color-status-warning-light: #fffdb8 !default;
-$color-status-warning-lighter: #fffeeb !default;
-$color-status-critical: #bd2d00 !default;
-$color-status-critical-light: #ffe2e0 !default;
-$color-status-critical-lighter: #fff5f5 !default;
-$color-status-unknown: #f4f6f8 !default;
-
-// Data Visualization colors
-$color-value-increase: #00d3a1 !default;
-$color-value-increase-bright: #00bb8e !default;
-$color-value-decrease: #ff7c35 !default;
-$color-value-decrease-bright: #e76823 !default;
-
-$status-colors: () !default;
-$status-colors: map-merge(
-  (
-    normal: $color-status-normal,
-    success: $color-status-ok,
-    warning: $color-status-warning,
-    error: $color-status-critical,
-  ),
-  $status-colors
-);
-
-$status-colors-light: () !default;
-$status-colors-light: map-merge(
-  (
-    normal: $color-status-normal-light,
-    success: $color-status-ok-light,
-    warning: $color-status-warning-light,
-    error: $color-status-critical-light,
-  ),
-  $status-colors-light
-);
-
-// Background colors
-$color-background-1: $color-brand-light !default;
-$color-background-2: $color-light-2 !default;
-$color-background-3: $color-light-3 !default;
-$color-background-4: $color-dark-1 !default;
-$color-background: $color-brand-light !default;
-$color-background-dark: $color-light-1 !default;
-$color-background-light: #f7f9fa !default;
-$color-background-inverse: $color-dark-1 !default;
-
 // Border radius sizes
 $border-radius: 3px !default;
 $border-radius-medium: 5px !default;
@@ -164,14 +82,13 @@ $border-radius-button: 32px !default;
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-display: "quiche-sans", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
-$font-family-text: "input-mono-narrow", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
+$font-family-text: "agenda", "input-mono-narrow", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
 $font-family-monospace: "GT America Mono" !default;
 $font-family-base: $font-family-display !default;
 $font-size-base: 16 !default;
 $font-weight-regular: 400 !default;
 $font-weight-medium: 500 !default;
 $font-weight-bold: 700 !default;
-$color-base: $color-dark-2 !default;
 
 // Eclipse font sizes
 $font-size-headline-1: rem(40);
@@ -272,7 +189,7 @@ $typography-subtitle: (
 $typography-button-label: (
   font: (
     size: $font-size-button-label,
-    weight: $font-weight-bold,
+    weight: $font-weight-medium,
     fontFamily: $font-family-text,
   ),
 );
@@ -318,307 +235,15 @@ $font-size-5: rem(16) !default; //1
 
 $line-height-baseline: 1.6 !default;
 
-//Text sizes
-$text-1: (
-  font: (
-    size: rem(20),
-    lineHeight: 1.6,
-    fontFamily: $font-family-text,
-    weight: $font-weight-regular,
-  ),
-) !default;
-$text-2: (
-  font: (
-    size: rem(18),
-    lineHeight: 1.556,
-    fontFamily: $font-family-text,
-    weight: $font-weight-regular,
-  ),
-) !default;
-$text-3: (
-  font: (
-    size: $font-size-5,
-    lineHeight: 1.625,
-    fontFamily: $font-family-text,
-    weight: $font-weight-regular,
-  ),
-) !default;
-$text-4: (
-  font: (
-    size: $font-size-1,
-    lineHeight: 1.42,
-    fontFamily: $font-family-text,
-    weight: $font-weight-regular,
-  ),
-) !default;
-
-$text-monospace-1: (
-  font: (
-    size: $font-size-2,
-    lineHeight: 1.538,
-    fontFamily: $font-family-monospace,
-  ),
-) !default;
-
-$text-lead-0: (
-  font: (
-    size: rem(24),
-    lineHeight: 1.42,
-    color: $color-dark-1,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(26),
-        lineHeight: 1.38,
-      ),
-    ),
-  ),
-) !default;
-
-$text-lead-1: (
-  font: (
-    size: rem(22),
-    lineHeight: 1.5,
-    color: $color-dark-1,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(24),
-        lineHeight: 1.41,
-      ),
-    ),
-  ),
-) !default;
-
-$text-lead-2: (
-  font: (
-    size: rem(20),
-    lineHeight: 1.5,
-    color: $color-dark-1,
-  ),
-) !default;
-
-$text-lead-3: (
-  font: (
-    size: rem(18),
-    lineHeight: 1.555556,
-    color: $color-dark-1,
-  ),
-) !default;
-
-//Heading sizes
-$text-heading-level-1: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(36),
-    lineHeight: 1.222,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(48),
-        lineHeight: 1.167,
-      ),
-    ),
-  ),
-) !default;
-
-$text-heading-level-2: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(28),
-    lineHeight: 1.286,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(34),
-        lineHeight: 1.24,
-      ),
-    ),
-  ),
-) !default;
-
-$text-heading-level-3: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(22),
-    lineHeight: 1.36,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(26),
-        lineHeight: 1.308,
-      ),
-    ),
-  ),
-) !default;
-
-$text-heading-level-4: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(20),
-    lineHeight: 1.4,
-  ),
-) !default;
-
-$text-heading-level-5: (
-  font: (
-    weight: $font-weight-regular,
-    size: $font-size-5,
-    lineHeight: 1.5,
-  ),
-) !default;
-
-$text-heading-level-6: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(16),
-    lineHeight: 1.5,
-  ),
-) !default;
-
-$text-heading-level-7: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(18),
-    lineHeight: 1.444,
-  ),
-) !default;
-
-$text-heading-eyebrow: (
-  font: (
-    size: rem(16),
-    lineHeight: 1.25,
-    fontFamily: $font-family-monospace,
-  ),
-) !default;
-
-$text-form-label: (
-  font: (
-    color: $color-dark-1,
-    weight: $font-weight-regular,
-    size: $font-size-5,
-    lineHeight: 1.25,
-  ),
-) !default;
-
-// Heading Display
-$text-display-0: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(48),
-    lineHeight: 0.95,
-    stretch: expanded,
-  ),
-  sizes: (
-    md: (
-      font: (
-        size: rem(56),
-        lineHeight: 1.1,
-      ),
-    ),
-    lgP: (
-      font: (
-        size: rem(64),
-        lineHeight: 1.125,
-      ),
-    ),
-  ),
-) !default;
-$text-display-1: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(40),
-    lineHeight: 1.2,
-    stretch: expanded,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(56),
-        lineHeight: 1.143,
-      ),
-    ),
-  ),
-) !default;
-
-$text-display-2: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(30),
-    lineHeight: 1.26,
-    stretch: expanded,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(40),
-        lineHeight: 1.2,
-      ),
-    ),
-  ),
-) !default;
-
-$text-display-3: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(24),
-    lineHeight: 1.333,
-    stretch: expanded,
-  ),
-  sizes: (
-    lgP: (
-      font: (
-        size: rem(28),
-        lineHeight: 1.28,
-      ),
-    ),
-  ),
-) !default;
-
-$text-display-4: (
-  font: (
-    weight: $font-weight-medium,
-    size: rem(22),
-    lineHeight: 1.363,
-    stretch: expanded,
-  ),
-) !default;
-
-// Links
-$link-1: (
-  font: (
-    size: rem(20),
-    lineHeight: 1.6,
-  ),
-) !default;
-
-$link-2: (
-  font: (
-    size: rem(17),
-    lineHeight: 1.58,
-  ),
-) !default;
-
-$link-3: (
-  font: (
-    size: $font-size-5,
-    lineHeight: 1.625,
-  ),
-) !default;
-
 // Spacing
 $space-default: 16px !default;
+$gutter-width: $space-default * 2;
 $space-xxs: $space-default / 8 !default;
 $space-xs: $space-default / 4 !default;
 $space-s: $space-default / 2 !default;
 $space-m: $space-default !default; // 16px
 $space-ml: $space-default * 1.5 !default; // 24px
-$space-l: $space-default * 2 !default; // 32px
+$space-l: $space-default * 3 !default; // 32px
 $space-xl: $space-default * 4 !default; // 64
 $space-xxl: $space-default * 5 !default; // 80px
 $space-xxxl: $space-default * 6 !default; // 96px
@@ -642,36 +267,36 @@ $space-stack-xl: 0 0 $space-xl 0 !default;
 
 // Shadows
 $shadow-radius: $border-radius-medium !default;
-$shadow-dropdown: 0 5px 10px 0 $color-dark-05 !default;
-$shadow-overlay: 0 5px 15px 0 $color-dark-10 !default;
-$shadow-fluffy: 0 17px 22px 0 $color-dark-10 !default;
-$shadow-input: 0 1px 1px $color-dark-05 !default;
-$shadow-select: 0 2px 2px $color-dark-05 !default;
+$shadow-dropdown: 0 5px 10px 0 var(--color-dark-5) !default;
+$shadow-overlay: 0 5px 15px 0 var(--color-dark-10) !default;
+$shadow-fluffy: 0 17px 22px 0 var(--color-dark-10) !default;
+$shadow-input: 0 1px 1px var(--color-dark-5) !default;
+$shadow-select: 0 2px 2px var(--color-dark-5) !default;
 
-$shadow-sm: 0 1px 1px 0 rgba($color-dark-1, 0.05) !default;
-$shadow-md: 0 2px 2px 0 rgba($color-dark-1, 0.05) !default;
+$shadow-sm: 0 1px 1px 0 rgba(var(--color-dark-1), 0.05) !default;
+$shadow-md: 0 2px 2px 0 rgba(var(--color-dark-1), 0.05) !default;
 
 // Borders
-$border: 1px solid $color-dark-5 !default;
-$border-disabled: 1px solid $color-light-1 !default;
-$border-brand: 1px solid $color-brand !default;
-$border-error: 1px solid $color-status-critical !default;
-$border-dark: 1px solid $color-dark-1 !default;
-$border-divider: 1px solid $color-light-2 !default;
+$border: 1px solid var(--color-dark-5) !default;
+$border-disabled: 1px solid var(--color-dark-1) !default;
+$border-brand: 1px solid var(--color-primary) !default;
+$border-error: 1px solid var(--color-status-critical) !default;
+$border-dark: 1px solid var(--color-dark-1) !default;
+$border-divider: 1px solid var(--color-dark-3) !default;
 $border-divider-inverse: 1px solid #3b3e42 !default;
 
 // legacy
-$border-light: 1px solid $color-light-2 !default;
+$border-light: 1px solid var(--color-dark-3) !default;
 
 // Box Shadows
 $box-shadow-default-width: 2px !default;
 $box-shadow-border: 0 1px 1px rgba(9, 10, 11, 0.05) !default;
-$box-shadow-border-large: 0 0 0 $box-shadow-default-width $color-brand-bright !default;
-$box-shadow-focus: 0 0 0 3px rgba($color-light-2, 0.3) !default;
-$box-shadow-focus-large: 0 0 0 6px $color-brand-light !default;
-$box-shadow-error: 0 0 0 3px $color-status-critical-lighter !default;
-$box-shadow-ok: 0 0 0 3px $color-status-ok-lighter !default;
-$box-shadow-warning: 0 0 0 3px $color-status-warning-lighter !default;
+$box-shadow-border-large: 0 0 0 $box-shadow-default-width var(--color-primary)-bright !default;
+$box-shadow-focus: 0 0 0 3px rgba(var(--color-dark-3), 0.3) !default;
+$box-shadow-focus-large: 0 0 0 6px var(--color-primary)-light !default;
+$box-shadow-error: 0 0 0 3px var(--color-status-critical)-lighter !default;
+$box-shadow-ok: 0 0 0 3px var(--color-status-ok-lighter) !default;
+$box-shadow-warning: 0 0 0 3px var(--color-status-warning-lighter) !default;
 
 // Animations
 $animation-rotate: rotate;
@@ -754,3 +379,41 @@ $main-panel-container-space-y: $space-xxl;
 $opacity-high: 0.9;
 $opacity-mid: 0.5;
 $opacity-low: 0.3;
+
+// FORMS
+$dropdown-item-height: 50px !default;
+
+// Z-levels box-shadow
+.z-depth-0 {
+  box-shadow: none !important;
+}
+
+/* 2dp elevation modified*/
+.z-depth-1 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.z-depth-1-half {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* 6dp elevation modified*/
+.z-depth-2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* 12dp elevation modified*/
+.z-depth-3 {
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* 16dp elevation */
+.z-depth-4 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12),
+    0 8px 10px -7px rgba(0, 0, 0, 0.2);
+}
+
+/* 24dp elevation */
+.z-depth-5 {
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12),
+    0 11px 15px -7px rgba(0, 0, 0, 0.2);
+}

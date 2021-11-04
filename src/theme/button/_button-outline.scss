@@ -20,15 +20,15 @@
   }
 
   &:active {
-    background-color: $color-brand-bright;
+    background-color: var(--color-primary)-bright;
   }
 
   &:disabled,
   &[disabled] {
-    background-color: $color-light-1;
+    background-color: var(--color-dark-1);
 
     &:hover {
-      background-color: $color-light-1;
+      background-color: var(--color-dark-1);
     }
   }
 
@@ -61,15 +61,15 @@
 
     &:hover {
       border-color: $color-black;
-      color: $color-white;
+      color: var(--color-white);
       background-color: $color-black;
     }
   }
 
   &_inverse-thin {
-    border-color: $color-light-2;
+    border-color: var(--color-dark-2);
     border-width: 1px;
-    color: $color-dark-1;
+    color: var(--color-dark-1);
     box-shadow: $shadow-input;
 
     &.button-outline--medium {
@@ -81,9 +81,9 @@
     }
 
     &:hover {
-      border-color: $color-dark-1;
-      color: $color-white;
-      background-color: $color-dark-1;
+      border-color: var(--color-dark-1);
+      color: var(--color-white);
+      background-color: var(--color-dark-1);
     }
   }
 }

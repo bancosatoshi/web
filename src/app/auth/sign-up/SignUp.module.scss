@@ -1,0 +1,8 @@
+@import "../../../theme/base";
+
+.sign-up {
+  &__instructions {
+    margin-bottom: $space-l;
+    text-align: center;
+  }
+}

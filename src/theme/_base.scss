@@ -65,13 +65,20 @@ $sidebar-width: 320px;
     @content;
   }
 }
+
 @mixin withSidebar {
   display: flex;
 }
+
 @mixin withNavbar {
   padding-top: $navbar-height * 2;
 }
+
 @mixin normalizeTypography {
   margin-top: 0;
   padding: 0;
+}
+
+@mixin noSelect {
+  user-select: none;
 }

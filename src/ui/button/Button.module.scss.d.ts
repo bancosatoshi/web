@@ -30,6 +30,7 @@ export type Styles = {
   "button--outlined": string;
   "button--primary": string;
   "button--secondary": string;
+  "button--small": string;
   "button--success": string;
   "button--text": string;
   "button-outline": string;

@@ -42,7 +42,7 @@
   button.modal__close-button--float {
     position: absolute;
     top: $space-m;
-    background-color: $color-white;
+    background-color: var(--color-white);
   }
 
   &__wrapper {
@@ -90,14 +90,14 @@
   }
 
   &__header {
-    @include font-properties($text-1);
+    @include font-properties($typography-headline-1);
     border-bottom: $border-divider;
     padding: $space-l;
-    color: $color-dark-1;
+    color: var(--color-typography-text);
   }
 
   &__content {
-    @include font-properties($text-2);
+    @include font-properties($typography-text);
     max-height: 50vh;
     padding: $space-l;
     overflow-y: auto;

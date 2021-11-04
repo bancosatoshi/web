@@ -4,8 +4,17 @@
   border-radius: $border-radius;
   background-color: var(--color-background);
 
+  &__shadow {
+    @extend .z-depth-1;
+  }
+
   &__content {
     padding: $space-default;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__background-image {

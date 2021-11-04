@@ -1,7 +1,7 @@
 @import "../../theme/base";
 
 .typography {
-  color: $color-brand;
+  color: var(--color-primary);
 
   &__headline1 {
     @include font-properties($typography-headline-1);

@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import { Col as RGSCol, Container as RGSContainer, Row as RGSRow } from "react-grid-system";
+
 import styles from "./Grid.module.scss";
 import { ColProps, ContainerProps, GridProps, RowProps } from "./Grid.types";
 
@@ -8,9 +9,7 @@ export const Grid: React.FC<GridProps> & {
   Col: React.FC<ColProps>;
   Row: React.FC<RowProps>;
   Container: React.FC<ContainerProps>;
-} = ({ children, className }) => {
-  return <div className={clsx(styles["grid"], className)}>{children}</div>;
-};
+} = ({ children, className }) => <div className={clsx(styles.grid, className)}>{children}</div>;
 
 const Container: React.FC<RowProps> = ({ children, className, ...props }) => (
   <RGSContainer className={clsx(className)} {...props}>

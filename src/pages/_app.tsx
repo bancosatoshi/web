@@ -1,7 +1,6 @@
 import { appWithTranslation } from "next-i18next";
 import { AppProps } from "next/app";
 import { setConfiguration } from "react-grid-system";
-import "../theme/editor/code-editor-dark.scss";
 import "../theme/globals.scss";
 import "../theme/solana/wallet-selector-modal.scss";
 
