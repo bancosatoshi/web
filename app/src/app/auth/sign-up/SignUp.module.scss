@@ -1,0 +1,14 @@
+@import "../../../theme/base";
+
+.sign-up {
+  display: block;
+
+  &__instructions {
+    margin-bottom: $space-l;
+  }
+
+  &__footer {
+    padding: $space-l 0;
+    text-align: center;
+  }
+}
