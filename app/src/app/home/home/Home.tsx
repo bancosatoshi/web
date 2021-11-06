@@ -34,7 +34,7 @@ export const Home: React.FC<HomeProps> = ({ className }) => (
               Nuestro protocolo de inversión respalda el éxito de los emprendedores.
             </Typography.TextLead>
             <Card className={styles["home__auth-email-card"]} shadow>
-              <Card.Content className={styles["home__auth-email-card--content"]}>
+              <Card.Content>
                 <AuthEmailForm autoFocus />
               </Card.Content>
             </Card>
@@ -75,10 +75,7 @@ export const Home: React.FC<HomeProps> = ({ className }) => (
         </Grid.Row>
       </Container>
     </section>
-    <section
-      id="perfil-del-empresario"
-      className={clsx(styles.home__section, styles["home__section--perfil-del-empresario"])}
-    >
+    <section id="perfil-del-empresario" className={clsx(styles.home__section)}>
       <Container>
         <Typography.Headline2>Perfil del Empresarix</Typography.Headline2>
       </Container>

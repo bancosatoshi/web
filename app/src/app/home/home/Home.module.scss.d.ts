@@ -1,4 +1,5 @@
 export type Styles = {
+  home: string;
   "home__auth-email-card": string;
   "home__intro--image": string;
   home__section: string;

@@ -1,6 +1,8 @@
 @import "../../../theme/base";
 
 .home {
+  display: block;
+
   &__section {
     min-height: 70vh;
   }

@@ -1,4 +1,5 @@
 export type Styles = {
+  "sign-up": string;
   "sign-up__footer": string;
   "sign-up__instructions": string;
   "z-depth-0": string;

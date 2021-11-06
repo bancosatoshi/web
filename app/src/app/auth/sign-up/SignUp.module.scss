@@ -1,6 +1,8 @@
 @import "../../../theme/base";
 
 .sign-up {
+  display: block;
+
   &__instructions {
     margin-bottom: $space-l;
   }
