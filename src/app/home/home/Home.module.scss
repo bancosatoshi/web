@@ -19,4 +19,26 @@
       }
     }
   }
+
+  &__section {
+    &--como-funciona {
+      min-height: 30vh;
+      background-color: var(--color-background);
+
+      h2 {
+        font-family: $font-family-display;
+        margin-bottom: $space-default;
+      }
+
+      &--box {
+        min-height: 30vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+    }
+
+    &--perfil-del-empresario {
+    }
+  }
 }

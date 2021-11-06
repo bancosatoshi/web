@@ -20,7 +20,12 @@
     }
 
     a {
-      width: $navbar-logo-width * 1.2;
+      @include font-properties($typography-headline-6);
+      color: var(--color-typography-text);
+
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     svg {
@@ -28,12 +33,41 @@
     }
   }
 
+  &__center {
+    display: flex;
+    justify-content: center;
+
+    &--item {
+      height: $navbar-height;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: $space-default;
+
+      p {
+        color: var(--color-typography-subtitle);
+        font-weight: $font-weight-medium;
+        margin: 0;
+      }
+    }
+  }
+
   &__right {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    height: $navbar-height;
+    justify-content: flex-end;
+
+    &--item {
+      height: $navbar-height;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: $space-default;
+
+      p {
+        font-weight: $font-weight-medium;
+        margin: 0;
+      }
+    }
   }
 
   &__language-selector {

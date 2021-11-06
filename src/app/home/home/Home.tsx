@@ -30,6 +30,9 @@ export const Home: React.FC<HomeProps> = ({ className }) => (
               Invierte en empresarixs dedicados a cumplir sus metas,
               <br /> desde 1 SAT.
             </Typography.TextLead>
+            <Typography.TextLead>
+              Nuestro protocolo de inversión respalda el éxito de los emprendedores.
+            </Typography.TextLead>
             <Card className={styles["home__auth-email-card"]} shadow>
               <Card.Content className={styles["home__auth-email-card--content"]}>
                 <AuthEmailForm autoFocus />
@@ -44,29 +47,57 @@ export const Home: React.FC<HomeProps> = ({ className }) => (
         </Grid.Row>
       </Container>
     </section>
-    {/* <Typography.Text>
-          Tu inversión te convierte en Socio del Desarrollo de Empresarios
-          <br />
-          dedicados a cumplir sus metas.
-        </Typography.Text>
-        <Typography.Text>
-          Banco Satoshi es el nuevo banco de inversión en proyectos productivos, con Bitcoin.
-        </Typography.Text>
-        <Typography.Text>Invierte en proyectos productivos con Bitcoin</Typography.Text> */}
-    {/* <Button variant="outlined">Aplicar como inversionista</Button>
-        <Button variant="outlined">Aplicar como empresarix</Button> */}
-    <section id="perfil-del-empresario" className={styles.home__section}>
-      <Typography.Headline2>Perfil del Empresarix</Typography.Headline2>
+    <section id="como-funciona" className={clsx(styles.home__section, styles["home__section--como-funciona"])}>
+      <Container>
+        <Grid.Row>
+          <Grid.Col lg={4}>
+            <div className={styles["home__section--como-funciona--box"]}>
+              <Typography.Headline2>Invierte</Typography.Headline2>
+              <Typography.Text>
+                Descubre e invierte en negocios evaluados con nuestro Protocolo de Inversión, desde 1 SAT.
+              </Typography.Text>
+            </div>
+          </Grid.Col>
+          <Grid.Col lg={4}>
+            <div className={styles["home__section--como-funciona--box"]}>
+              <Typography.Headline2>Da Seguimiento</Typography.Headline2>
+              <Typography.Text>Banco Satoshi reporta avances trimestrales para mantenerte actualizado.</Typography.Text>
+            </div>
+          </Grid.Col>
+          <Grid.Col lg={4}>
+            <div className={styles["home__section--como-funciona--box"]}>
+              <Typography.Headline2>Colecta tu ROI</Typography.Headline2>
+              <Typography.Text>
+                Recibe una parte de las utilidades del negocio. Conforme el negocio crece, tu portafolio también.
+              </Typography.Text>
+            </div>
+          </Grid.Col>
+        </Grid.Row>
+      </Container>
+    </section>
+    <section
+      id="perfil-del-empresario"
+      className={clsx(styles.home__section, styles["home__section--perfil-del-empresario"])}
+    >
+      <Container>
+        <Typography.Headline2>Perfil del Empresarix</Typography.Headline2>
+      </Container>
     </section>
     <section id="perfil-del-empresario" className={styles.home__section}>
-      <Typography.Headline2>0 Volatilidad, con DAI</Typography.Headline2>
+      <Container>
+        <Typography.Headline2>0 Volatilidad, con DAI</Typography.Headline2>
+      </Container>
     </section>
     <section id="proceso-de-evaluacion" className={styles.home__section}>
-      <Typography.Headline2>Nuestro Proceso de Evaluación</Typography.Headline2>
-      <Typography.Text>Protocolo de Inversión</Typography.Text>
+      <Container>
+        <Typography.Headline2>Nuestro Proceso de Evaluación</Typography.Headline2>
+        <Typography.Text>Protocolo de Inversión</Typography.Text>
+      </Container>
     </section>
     <section id="beneficios" className={styles.home__section}>
-      <Typography.Headline2>Beneficios de Invertir con Banco Satoshi</Typography.Headline2>
+      <Container>
+        <Typography.Headline2>Beneficios de Invertir con Banco Satoshi</Typography.Headline2>
+      </Container>
     </section>
   </div>
 );

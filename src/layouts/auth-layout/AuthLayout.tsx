@@ -15,10 +15,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children }) => {
 
   return (
     <div className={clsx(styles["auth-layout"])}>
-      <NavBar>
-        <Typography.Text>Sala de Inversión</Typography.Text>
-        <Typography.Text>Iniciar Sesión</Typography.Text>
-      </NavBar>
+      <NavBar />
       <MainPanel className={styles["auth-layout__main-panel"]}>{children}</MainPanel>
     </div>
   );

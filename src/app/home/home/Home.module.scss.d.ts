@@ -2,6 +2,8 @@ export type Styles = {
   "home__auth-email-card": string;
   "home__intro--image": string;
   home__section: string;
+  "home__section--como-funciona": string;
+  "home__section--como-funciona--box": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

@@ -1,9 +1,12 @@
 export type Styles = {
   navbar: string;
+  navbar__center: string;
+  "navbar__center--item": string;
   "navbar__language-selector": string;
   navbar__logo: string;
   "navbar__logo--color": string;
   navbar__right: string;
+  "navbar__right--item": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;
