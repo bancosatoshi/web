@@ -12,6 +12,7 @@ export const Typography: React.FC<TypographyProps> & {
   Headline5: React.FC<TypographyProps>;
   Headline6: React.FC<TypographyProps>;
   Text: React.FC<TypographyProps>;
+  TextLead: React.FC<TypographyProps>;
   TextBold: React.FC<TypographyProps>;
   Subtitle: React.FC<TypographyProps>;
   ButtonLabel: React.FC<TypographyProps>;
@@ -48,6 +49,10 @@ const Headline6: React.FC<TypographyProps> = ({ children, className }) => (
 
 const Text: React.FC<TypographyProps> = ({ children, className }) => (
   <p className={clsx(styles.typography__text, className)}>{children}</p>
+);
+
+const TextLead: React.FC<TypographyProps> = ({ children, className }) => (
+  <p className={clsx(styles["typography__text-lead"], className)}>{children}</p>
 );
 
 const TextBold: React.FC<TypographyProps> = ({ children, className }) => (
@@ -93,6 +98,7 @@ Typography.Headline4 = Headline4;
 Typography.Headline5 = Headline5;
 Typography.Headline6 = Headline6;
 Typography.Text = Text;
+Typography.TextLead = TextLead;
 Typography.TextBold = TextBold;
 Typography.Subtitle = Subtitle;
 Typography.ButtonLabel = ButtonLabel;

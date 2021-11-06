@@ -81,7 +81,7 @@ textarea.materialize-textarea {
     @extend %custom-success-message;
   }
   &:focus.valid ~ label {
-    color: $input-success-color;
+    color: var(--color-typography-text);
   }
 
   // Invalid Input Style
@@ -171,11 +171,12 @@ textarea.materialize-textarea {
   position: relative;
 
   & > label {
+    @include font-properties($typography-description);
     color: var(--color-typography-subtitle);
     position: absolute;
     top: 0;
     left: $space-s;
-    font-size: 1rem;
+    font-size: $font-size-text;
     cursor: text;
     transition: transform 0.2s ease-out, color 0.2s ease-out;
     transform-origin: 0% 100%;

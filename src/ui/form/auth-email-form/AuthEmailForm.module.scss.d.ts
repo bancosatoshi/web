@@ -1,9 +1,9 @@
 export type Styles = {
-  "list-property": string;
-  "list-property__attachments": string;
-  "list-property__editor": string;
-  "list-property__main-panel--container": string;
-  "list-property__special-attributes--card": string;
+  "auth-email-form": string;
+  "auth-email-form__inline-wrapper": string;
+  "auth-email-form__inline-wrapper--button": string;
+  "auth-email-form__inline-wrapper--form": string;
+  "auth-email-form__input": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

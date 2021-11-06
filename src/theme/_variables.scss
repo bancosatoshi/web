@@ -75,30 +75,31 @@ $border-radius-medium: 5px !default;
 $border-radius-large: 8px !default;
 $border-radius-circle: 50% !default;
 $border-radius-pill: 32px !default;
-$border-radius-button: 32px !default;
+$border-radius-button: $border-radius !default;
 
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-display: "quiche-sans", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
-$font-family-text: "agenda", "input-mono-narrow", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
+$font-family-display: "desire-pro", "quiche-sans", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
+$font-family-text: "houschka-pro", "input-mono-narrow", "Helvetica Neue", "Helvetica", Arial, sans-serif !default;
 $font-family-monospace: "GT America Mono" !default;
-$font-family-base: $font-family-display !default;
+$font-family-base: $font-family-text !default;
 $font-size-base: 16 !default;
-$font-weight-regular: 400 !default;
-$font-weight-medium: 500 !default;
+$font-weight-regular: 500 !default;
+$font-weight-medium: 600 !default;
 $font-weight-bold: 700 !default;
 
 // Eclipse font sizes
-$font-size-headline-1: rem(40);
+$font-size-headline-1: 4.5rem;
 $font-size-headline-2: rem(32);
 $font-size-headline-3: rem(28);
-$font-size-headline-4: rem(28);
+$font-size-headline-4: 1.25rem;
 $font-size-headline-5: rem(24);
 $font-size-headline-6: rem(20);
 $font-size-headline-7: rem(18);
 $font-size-text: rem(16);
+$font-size-text-lead: 1.25rem;
 $font-size-text-bold: $font-size-text;
 $font-size-subtitle: rem(16);
 $font-size-subtitle-semi-bold: $font-size-subtitle;
@@ -110,8 +111,8 @@ $font-size-mini-description: rem(9);
 $typography-headline-1: (
   font: (
     size: $font-size-headline-1,
-    weight: $font-weight-bold,
-    fontFamily: $font-family-text,
+    weight: 400,
+    fontFamily: $font-family-display,
     lineHeight: 1,
   ),
 );
@@ -164,6 +165,15 @@ $typography-headline-6: (
 $typography-text: (
   font: (
     size: $font-size-text,
+    weight: $font-weight-regular,
+    fontFamily: $font-family-text,
+    lineHeight: 1.5,
+  ),
+);
+
+$typography-text-lead: (
+  font: (
+    size: $font-size-text-lead,
     weight: $font-weight-regular,
     fontFamily: $font-family-text,
     lineHeight: 1.5,
@@ -241,12 +251,12 @@ $gutter-width: $space-default * 2;
 $space-xxs: $space-default / 8 !default;
 $space-xs: $space-default / 4 !default;
 $space-s: $space-default / 2 !default;
-$space-m: $space-default !default; // 16px
-$space-ml: $space-default * 1.5 !default; // 24px
-$space-l: $space-default * 3 !default; // 32px
-$space-xl: $space-default * 4 !default; // 64
-$space-xxl: $space-default * 5 !default; // 80px
-$space-xxxl: $space-default * 6 !default; // 96px
+$space-m: $space-default !default;
+$space-ml: $space-default * 2 !default;
+$space-l: $space-default * 3 !default;
+$space-xl: $space-default * 4 !default;
+$space-xxl: $space-default * 5 !default;
+$space-xxxl: $space-default * 6 !default;
 
 $space-inset-default: $space-m $space-m $space-m $space-m !default;
 $space-inset-xs: $space-xs $space-xs $space-xs $space-xs !default;

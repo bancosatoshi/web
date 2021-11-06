@@ -52,6 +52,13 @@
     color: var(--color-typography-text);
   }
 
+  &__text-lead {
+    @include font-properties($typography-text-lead);
+    @include normalizeTypography;
+    margin-bottom: $space-s;
+    color: var(--color-typography-text);
+  }
+
   &__text-bold {
     @include font-properties($typography-text-bold);
     @include normalizeTypography;

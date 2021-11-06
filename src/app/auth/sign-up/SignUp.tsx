@@ -18,19 +18,25 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => (
             <Card shadow>
               <Card.Content>
                 <div className={styles["sign-up__instructions"]}>
-                  <Typography.Headline3>Ingresa Sin Contraseña</Typography.Headline3>
+                  <Typography.Headline3>Inicia Sesión sin Contraseña</Typography.Headline3>
                   <Typography.Subtitle>
-                    Enviaremos un correo a tu bandeja de entrada con las instrucciones.
+                    Enviaremos un correo a tu bandeja de entrada
+                    <br />
+                    con las instrucciones.
                   </Typography.Subtitle>
                 </div>
                 <Form>
                   <Form.TextInput autoFocus label="Correo Electrónico" id="email" type="email" />
                   <Card.Actions>
-                    <Button variant="outlined">Ingresar con correo</Button>
+                    <Button variant="outlined">Enviar Correo</Button>
                   </Card.Actions>
                 </Form>
               </Card.Content>
             </Card>
+            <div className={styles["sign-up__footer"]}>
+              <Typography.Subtitle>Banco Satoshi ∞ Tu Banco de Inversión</Typography.Subtitle>
+              <Typography.Description>Aviso de Privacidad ∞ Términos y Condiciones</Typography.Description>
+            </div>
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>

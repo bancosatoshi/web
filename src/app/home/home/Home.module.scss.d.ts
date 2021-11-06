@@ -1,9 +1,7 @@
 export type Styles = {
-  "list-property": string;
-  "list-property__attachments": string;
-  "list-property__editor": string;
-  "list-property__main-panel--container": string;
-  "list-property__special-attributes--card": string;
+  "home__auth-email-card": string;
+  "home__intro--image": string;
+  home__section: string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

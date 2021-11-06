@@ -1,0 +1,22 @@
+@import "../../../theme/base";
+
+.home {
+  &__section {
+    min-height: 70vh;
+  }
+
+  &__auth-email-card {
+    margin-top: $space-l;
+  }
+
+  &__intro {
+    &--image {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 350px;
+        height: auto;
+      }
+    }
+  }
+}
