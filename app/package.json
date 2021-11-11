@@ -54,6 +54,7 @@
     "node-sass": "^5.0.0",
     "plop": "^2.7.4",
     "prettier": "^2.4.1",
+    "sass-loader": "^12.3.0",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "^4.0.0",
