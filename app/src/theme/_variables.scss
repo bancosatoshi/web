@@ -159,6 +159,8 @@ $typography-headline-6: (
     weight: $font-weight-medium,
     fontFamily: $font-family-text,
     lineHeight: 1,
+    transform: uppercase,
+    color: var(--color-typography-headline-6),
   ),
 );
 
