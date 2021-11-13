@@ -7,7 +7,7 @@ export const BusinessDetailsContainer = () => {
   const [content, setContent] = React.useState<string | undefined>();
 
   React.useEffect(() => {
-    const wp = new WPAPI({ endpoint: "http://cms.bancosatoshi.com/wp-json" });
+    const wp = new WPAPI({ endpoint: "https://cms.bancosatoshi.com/wp-json" });
 
     const getPostByBusinessSlug = async () => {
       try {
