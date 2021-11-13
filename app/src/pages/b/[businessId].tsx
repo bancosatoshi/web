@@ -31,7 +31,7 @@ const getPageContentByBusinessSlug = async (slug: string) => {
     return {
       asHtmlString: page.content.rendered,
       media: {
-        featuredImageUrl: media?.media_details?.sizes?.medium?.source_url,
+        featuredImageUrl: media?.media_details?.sizes?.large?.source_url,
       },
     };
   } catch {
