@@ -6,12 +6,14 @@ import { Grid } from "ui/grid/Grid";
 import { BusinessDetailsProps } from "./BusinessDetails.types";
 import styles from "./BusinessDetails.module.scss";
 import { BusinessContent } from "./BusinessContent/BusinessContent";
+import { BusinessHeader } from "./BusinessHeader/BusinessHeader";
 
 export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ content }) => (
   <div className={clsx(styles["business-details"])}>
     <Container>
       <Grid.Row>
-        <Grid.Col lg={6}>
+        <Grid.Col lg={8}>
+          <BusinessHeader content={content} />
           <BusinessContent content={content} />
         </Grid.Col>
       </Grid.Row>

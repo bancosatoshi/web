@@ -1,4 +1,4 @@
-export type BusinessContentProps = {
+export type BusinessHeaderProps = {
   content: string;
   className?: string;
 };
