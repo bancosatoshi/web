@@ -1,5 +1,6 @@
 export type Styles = {
   "business-details": string;
+  "business-details__box": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

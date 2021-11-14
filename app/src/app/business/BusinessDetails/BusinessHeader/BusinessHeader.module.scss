@@ -10,6 +10,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 280px;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
   }
 
   &__description {
@@ -17,7 +19,7 @@
   }
 
   &__info {
-    padding: $space-default 0;
+    padding: $space-default;
   }
 
   &__map {

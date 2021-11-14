@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Container } from "react-grid-system";
 
 import { Grid } from "ui/grid/Grid";
+import { Card } from "ui/card/Card";
 
 import { BusinessDetailsProps } from "./BusinessDetails.types";
 import styles from "./BusinessDetails.module.scss";
@@ -13,8 +14,10 @@ export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ content }) => 
     <Container>
       <Grid.Row>
         <Grid.Col lg={8}>
-          <BusinessHeader content={content} />
-          <BusinessContent content={content} />
+          <Card className={styles["business-details__box"]} shadow>
+            <BusinessHeader content={content} />
+            <BusinessContent content={content} />
+          </Card>
         </Grid.Col>
       </Grid.Row>
     </Container>
