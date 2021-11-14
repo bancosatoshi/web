@@ -12,6 +12,7 @@
 
   &__cta-text {
     margin-top: $space-default;
+    text-align: center;
   }
 
   &__terms {
@@ -45,14 +46,19 @@
   }
 
   &__goal {
-    padding: $space-ml 0;
+    padding: $space-m 0;
     h4,
     p {
       margin-bottom: 0;
     }
 
+    p {
+      line-height: 1;
+    }
+
     > div {
-      margin-bottom: $space-default;
+      background-color: var(--color-background-contrast);
+      margin-bottom: $space-s;
       border-left: 2px solid var(--color-status-info);
       padding-left: $space-s;
       display: flex;
