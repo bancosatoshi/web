@@ -1,4 +1,6 @@
+import { BusinessDetailsContent } from "../BusinessDetails.types";
+
 export type BusinessContentProps = {
-  content: string;
+  content: BusinessDetailsContent;
   className?: string;
 };

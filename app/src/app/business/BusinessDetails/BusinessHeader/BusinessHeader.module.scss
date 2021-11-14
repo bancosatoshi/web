@@ -2,6 +2,7 @@
 
 .business-header {
   display: block;
+  margin-top: -$navbar-height + $space-default;
 
   &__cover-image {
     display: block;
@@ -9,5 +10,28 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 280px;
+  }
+
+  &__description {
+    margin-bottom: $space-ml;
+  }
+
+  &__info {
+    padding: $space-default 0;
+  }
+
+  &__map {
+    height: 210px;
+    background-color: var(--color-dark-3);
+  }
+
+  &__link {
+    &--website {
+      display: block;
+    }
+
+    &--social {
+      display: block;
+    }
   }
 }

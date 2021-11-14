@@ -32,7 +32,7 @@ export const BusinessContent: React.FC<BusinessContentProps> = ({ className, con
       <div
         id="business-content"
         className={clsx(styles["business-content"], className, "entry-content")}
-        dangerouslySetInnerHTML={{ __html: content }}
+        dangerouslySetInnerHTML={{ __html: content.asHtmlString }}
       />
     </>
   );

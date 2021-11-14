@@ -1,7 +1,6 @@
-import { BusinessDetailsMedia } from "../BusinessDetails.types";
+import { BusinessDetailsContent } from "../BusinessDetails.types";
 
 export type BusinessHeaderProps = {
-  content: string;
-  media: BusinessDetailsMedia;
+  content: BusinessDetailsContent;
   className?: string;
 };

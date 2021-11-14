@@ -8,12 +8,12 @@ import styles from "./BusinessDetails.module.scss";
 import { BusinessContent } from "./BusinessContent/BusinessContent";
 import { BusinessHeader } from "./BusinessHeader/BusinessHeader";
 
-export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ content, media }) => (
+export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ content }) => (
   <div className={clsx(styles["business-details"])}>
     <Container>
       <Grid.Row>
         <Grid.Col lg={8}>
-          <BusinessHeader content={content} media={media} />
+          <BusinessHeader content={content} />
           <BusinessContent content={content} />
         </Grid.Col>
       </Grid.Row>
