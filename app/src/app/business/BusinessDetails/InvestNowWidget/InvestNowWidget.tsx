@@ -47,7 +47,10 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, con
                   </Grid.Col>
                 </Grid.Row>
               </div>
-              <Button fullWidth>Depositar BTC</Button>
+              <Button fullWidth>
+                Depositar BTC&nbsp;
+                <Icon name="icon-power" />
+              </Button>
               <div className={styles["invest-now-widget__goal"]}>
                 <div>
                   <Typography.Headline4>
