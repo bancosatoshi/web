@@ -10,6 +10,12 @@
     height: 0;
   }
 
+  &__cta-button {
+    &--icon {
+      margin-left: $space-default;
+    }
+  }
+
   &__cta-text {
     margin-top: $space-default;
     text-align: center;

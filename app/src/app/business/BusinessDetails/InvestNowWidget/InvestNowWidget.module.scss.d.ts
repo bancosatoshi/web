@@ -1,5 +1,6 @@
 export type Styles = {
   "invest-now-widget": string;
+  "invest-now-widget__cta-button--icon": string;
   "invest-now-widget__cta-text": string;
   "invest-now-widget__fixed-col": string;
   "invest-now-widget__goal": string;
