@@ -5,6 +5,7 @@ import { Card } from "ui/card/Card";
 import { Typography } from "ui/typography/Typography";
 import { Grid } from "ui/grid/Grid";
 import { Button } from "ui/button/Button";
+import { Icon } from "ui/icon/Icon";
 
 import { InvestNowWidgetProps } from "./InvestNowWidget.types";
 import styles from "./InvestNowWidget.module.scss";
@@ -36,15 +37,21 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, con
               <Button fullWidth>Depositar BTC</Button>
               <div className={styles["invest-now-widget__goal"]}>
                 <div>
-                  <Typography.Headline4>3500 SAT</Typography.Headline4>
+                  <Typography.Headline4>
+                    <Icon name="icon-bag-dollar" /> 3500 SAT
+                  </Typography.Headline4>
                   <Typography.Description>Invertidos hasta hoy: $3,000.00 USD</Typography.Description>
                 </div>
                 <div>
-                  <Typography.Headline4>23</Typography.Headline4>
+                  <Typography.Headline4>
+                    <Icon name="icon-users" /> 23
+                  </Typography.Headline4>
                   <Typography.Description>Inversionistas</Typography.Description>
                 </div>
                 <div>
-                  <Typography.Headline4>15 días</Typography.Headline4>
+                  <Typography.Headline4>
+                    <Icon name="icon-timer" /> 15 días
+                  </Typography.Headline4>
                   <Typography.Description>Restantes para invertir</Typography.Description>
                 </div>
               </div>
