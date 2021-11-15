@@ -6,6 +6,7 @@ import { Typography } from "ui/typography/Typography";
 import { Grid } from "ui/grid/Grid";
 import { Button } from "ui/button/Button";
 import { Icon } from "ui/icon/Icon";
+import { Tooltip } from "ui/tooltip/Tooltip";
 
 import { InvestNowWidgetProps } from "./InvestNowWidget.types";
 import styles from "./InvestNowWidget.module.scss";
@@ -17,7 +18,13 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, con
         <Grid.Col lg={4} offset={{ lg: 8 }} className={styles["invest-now-widget__fixed-col"]}>
           <Card shadow>
             <Card.Content>
-              <Typography.Description>Nivel de Riesgo: Medio</Typography.Description>
+              <Typography.Description>
+                Nivel de Riesgo: Medio{" "}
+                <Tooltip
+                  title="Nivel de Riesgo Medio"
+                  description={`${content.title} tiene una edad de 2 años. Tiene libros contables en orden y tiene un score 8.5 de 10 en el Protocolo de Inversión.`}
+                />
+              </Typography.Description>
               <hr />
               <Typography.Headline3 className={styles["invest-now-widget__cta-text"]}>
                 Invierte en {content.title}
