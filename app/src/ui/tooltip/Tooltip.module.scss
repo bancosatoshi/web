@@ -40,7 +40,7 @@
       padding: $space-s;
       @include boxShadowInset;
 
-      p {
+      p:not([class*="title"]) {
         margin-bottom: 0;
       }
     }
@@ -48,5 +48,9 @@
     &--visible {
       display: block;
     }
+  }
+
+  &__title {
+    margin-bottom: $space-xs;
   }
 }

@@ -33,7 +33,13 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, con
                 <Grid.Row>
                   <Grid.Col lg={6}>
                     <Typography.Headline4>1.5x</Typography.Headline4>
-                    <Typography.Text>Retorno sobre tu inversión.</Typography.Text>
+                    <Typography.Text>
+                      Retorno sobre tu inversión.{" "}
+                      <Tooltip
+                        title="ROI"
+                        description={`Si inviertes 10 SAT, ${content.title} se compromete a devolverte 15 SAT a lo largo de la vida útil del acuerdo: Nov 21, 2025.`}
+                      />
+                    </Typography.Text>
                   </Grid.Col>
                   <Grid.Col lg={6}>
                     <Typography.Headline4>25 SAT</Typography.Headline4>

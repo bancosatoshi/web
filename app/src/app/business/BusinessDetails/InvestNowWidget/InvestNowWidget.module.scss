@@ -20,7 +20,9 @@
     margin-bottom: $space-default;
     h4,
     p {
-      margin-bottom: 0;
+      &:not([class*="title"]) {
+        margin-bottom: 0;
+      }
     }
     p {
       line-height: 1;

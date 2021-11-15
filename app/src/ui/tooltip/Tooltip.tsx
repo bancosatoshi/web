@@ -34,7 +34,7 @@ export const Tooltip: React.FC<TooltipProps> = ({ className, title, description 
         >
           <div>
             {!!title && (
-              <Typography.Description>
+              <Typography.Description className={styles.tooltip__title}>
                 <strong>{title}</strong>
               </Typography.Description>
             )}
