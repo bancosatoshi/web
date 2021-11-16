@@ -48,9 +48,7 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => {
                   <div className={styles["sign-up__instructions"]}>
                     <Typography.Headline3>Inicia Sesión sin Contraseña</Typography.Headline3>
                     <Typography.Subtitle>
-                      Enviaremos un correo a tu bandeja de entrada
-                      <br />
-                      con las instrucciones.
+                      Enviaremos un correo a tu bandeja de entrada con las instrucciones.
                     </Typography.Subtitle>
                   </div>
                   <AuthEmailForm
