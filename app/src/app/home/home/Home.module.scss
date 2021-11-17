@@ -1,7 +1,7 @@
-@import "../../../theme/base";
+@import "src/theme/base";
 
 .home {
-  display: block;
+  padding-top: $navbar-height;
 
   &__section {
     min-height: 70vh;
@@ -19,6 +19,10 @@
         width: 350px;
         height: auto;
       }
+    }
+
+    &--cta {
+      margin-top: $space-ml;
     }
   }
 

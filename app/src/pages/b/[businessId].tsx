@@ -5,11 +5,14 @@ import { BusinessDetailsContainer } from "app/business/BusinessDetails/BusinessD
 import { AppLayout } from "layouts/app-layout/AppLayout";
 import { AuthLayout } from "layouts/auth-layout/AuthLayout";
 import { BusinessDetailsProps } from "app/business/BusinessDetails/BusinessDetails.types";
+import { CheckoutContextController } from "context/checkout/CheckoutContextController";
 
 const Index: NextPage<BusinessDetailsProps> = ({ content }) => (
   <AppLayout>
     <AuthLayout>
-      <BusinessDetailsContainer content={content} />
+      <CheckoutContextController>
+        <BusinessDetailsContainer content={content} />
+      </CheckoutContextController>
     </AuthLayout>
   </AppLayout>
 );
@@ -39,6 +42,7 @@ const getPageContentByBusinessSlug = async (slug: string) => {
       longitude: page?.custom_fields?.longitude,
       instagram: page?.custom_fields?.instagram,
       website: page?.custom_fields?.website,
+      markerIcon: page?.custom_fields?.marker_icon,
       media: {
         featuredImageUrl: media?.media_details?.sizes?.large?.source_url,
       },
