@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 
 import { CheckoutContext } from "./CheckoutContext";
-import { CheckoutContextControllerProps, CheckoutState } from "./CheckoutContext.types";
+import { BTCPayCheckoutOptions, CheckoutContextControllerProps, CheckoutState } from "./CheckoutContext.types";
 
 export const CheckoutContextController = ({ children }: CheckoutContextControllerProps) => {
-  const [checkout, setCheckoutState] = useState<CheckoutState>(undefined);
+  const [checkoutState, setCheckoutState] = useState<CheckoutState>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | undefined>(undefined);
 
   const auth = useAuthContext();
 
-  const getCheckoutURL = async () => {
+  const getCheckoutURL = async ({ checkout }: BTCPayCheckoutOptions) => {
     try {
       setIsLoading(true);
 
@@ -31,7 +31,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ metadata, storeId }),
+        body: JSON.stringify({ metadata, storeId, checkout }),
       });
 
       const content = await response.json();
@@ -47,7 +47,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
       setIsLoading(false);
     } catch (error_) {
       // @TODO handle error
-      console.error(error_);
+      console.log(error_);
       setError(
         "Error at CheckoutContextController:getCheckoutURL. Check server logs as this may have happened in the API side.",
       );
@@ -56,7 +56,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
   };
 
   return (
-    <CheckoutContext.Provider value={{ getCheckoutURL, checkout, isLoading, error }}>
+    <CheckoutContext.Provider value={{ getCheckoutURL, checkoutState, isLoading, error }}>
       {children}
     </CheckoutContext.Provider>
   );

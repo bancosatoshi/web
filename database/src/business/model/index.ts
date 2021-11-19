@@ -1,4 +1,4 @@
-import BusinessModel from "./BusinessModel";
-import BusinessInfoModel from "./BusinessInfoModel";
+import BusinessModel, { BusinessModelArgs } from "./BusinessModel";
+import BusinessInfoModel, { BusinessInfoModelArgs } from "./BusinessInfoModel";
 
-export { BusinessModel, BusinessInfoModel };
+export { BusinessModel, BusinessInfoModel, BusinessInfoModelArgs, BusinessModelArgs };

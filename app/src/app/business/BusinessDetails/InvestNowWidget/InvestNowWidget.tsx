@@ -20,19 +20,19 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, con
   const auth = useAuthContext();
   const router = useRouter();
   const routes = useRoutes();
-  const { getCheckoutURL, checkout, isLoading: isCheckoutLoading, error: checkoutError } = useCheckoutContext();
+  const { getCheckoutURL, checkoutState, isLoading: isCheckoutLoading, error: checkoutError } = useCheckoutContext();
 
   useEffect(() => {
-    if (!checkout?.url) {
+    if (!checkoutState?.url) {
       return;
     }
 
-    router.push(checkout.url);
-  }, [checkout, router]);
+    router.push(checkoutState.url);
+  }, [checkoutState, router]);
 
   const handleOnInvestNowClick = () => {
     if (auth.hasActiveSession) {
-      getCheckoutURL();
+      getCheckoutURL({ checkout: { redirectURL: `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}` } });
     } else {
       router.push(`${routes.auth.signIn}?redirectTo=${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`);
     }

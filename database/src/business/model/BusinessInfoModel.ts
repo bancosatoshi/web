@@ -1,6 +1,6 @@
 import { DataTypes, Model, ModelOptions } from "sequelize";
 
-export type TelegramModelArgs = {
+export type BusinessInfoModelArgs = {
   id?: string;
   business_id: string;
   established_at: Date;
@@ -8,7 +8,7 @@ export type TelegramModelArgs = {
   updated_at: Date;
 };
 
-export class BusinessInfoModel extends Model<TelegramModelArgs> {
+export class BusinessInfoModel extends Model<BusinessInfoModelArgs> {
   public static tableName = "business_info";
 
   public static rawAttributes = {
