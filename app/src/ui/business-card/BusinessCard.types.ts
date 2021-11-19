@@ -1,20 +1,16 @@
-import { ReactNode, CSSProperties } from "react";
-
-interface BusinessCardData {
-  businessBackground: string;
-  businessAvatar: string;
-  title: string;
+type BusinessCardData = {
+  cover: string;
+  name: string;
   description: string;
   location: string;
-  raised: string;
+  raised: number;
   investors: number;
   daysLeft?: number;
   payback?: string;
-}
+};
 
 export type BusinessCardProps = {
   className?: string;
-  businessLink: string;
+  pageLink: string;
   content: BusinessCardData;
-  isExpandable?: boolean;
 };
