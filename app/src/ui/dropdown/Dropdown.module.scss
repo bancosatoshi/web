@@ -1,5 +1,9 @@
 @import "src/theme/base";
 
 .dropdown {
-  display: block;
+  position: relative;
+
+  &__menu {
+    position: absolute;
+  }
 }

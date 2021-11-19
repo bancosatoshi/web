@@ -14,34 +14,34 @@ export const Dropdown: React.FC<DropdownProps> & {
   Item: React.FC<ItemProps>;
 } = ({ children, className }) => {
   return (
-    <div className={clsx(styles["dropdown-menu"], className)}>
+    <div className={clsx(styles["dropdown"], className)}>
       <ToggleContextController>{children}</ToggleContextController>
     </div>
   );
 };
 
-const Toggle: React.FC<ToggleProps> = ({ children }) => {
-  return <>{children}</>;
+const Toggle: React.FC<ToggleProps> = ({ children, ...props }) => {
+  return <div {...props}>{children}</div>;
 };
 
-const Menu: React.FC<MenuProps> = ({ children }) => {
+const Menu: React.FC<MenuProps> = ({ children, className, ...props }) => {
   const { display } = useToggleContext();
 
   return (
     <>
       {display && (
-        <div>
-          <Container>{children}</Container>
+        <div className={clsx(styles["dropdown__menu"], className)}>
+          <Container {...props}>{children}</Container>
         </div>
       )}
     </>
   );
 };
 
-const Item: React.FC<ItemProps> = ({ children }) => {
+const Item: React.FC<ItemProps> = ({ children, className, ...props }) => {
   return (
     <Grid.Row>
-      <Grid.Col>{children}</Grid.Col>
+      <Grid.Col {...props}>{children}</Grid.Col>
     </Grid.Row>
   );
 };
