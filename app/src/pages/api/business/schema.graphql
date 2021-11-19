@@ -1,0 +1,18 @@
+type Business {
+  businessInfoId: String
+  businessInvestmentCampaignPlanId: String
+  id: String!
+  userId: String!
+}
+
+input GetBusinessesByUserIdInput {
+  userId: String!
+}
+
+type Mutation {
+  createBusiness: Business!
+}
+
+type Query {
+  getBusinessesByUserId(input: GetBusinessesByUserIdInput!): [Business]!
+}
