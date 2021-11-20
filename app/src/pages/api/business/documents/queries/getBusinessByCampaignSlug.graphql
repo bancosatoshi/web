@@ -1,5 +1,5 @@
-query GetBusinessByCampaignSlug($input: GetBusinessByCampaignSlugInput!) {
-  getBusinessByCampaignSlug(input: $input) {
+query GetBusinessCampaignBySlug($input: GetBusinessCampaignBySlugInput!) {
+  getBusinessCampaignBySlug(input: $input) {
     id
     userId
     info {

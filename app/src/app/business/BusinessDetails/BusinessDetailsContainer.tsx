@@ -1,4 +1,4 @@
-import { useGetBusinessByCampaignSlugQuery } from "api/codegen";
+import { useGetBusinessCampaignBySlugQuery } from "api/codegen";
 import { useRouter } from "next/router";
 import React from "react";
 
@@ -11,14 +11,14 @@ export const BusinessDetailsContainer = ({ content }: BusinessDetailsProps) => {
   const { campaignSlug } = router.query;
 
   const {
-    data: getBusinessByCampaignSlugQueryData,
-    error: getBusinessByCampaignSlugQueryError,
+    data: getBusinessCampaignBySlugQueryData,
+    error: getBusinessCampaignBySlugQueryError,
     loading: isGetBusinessByCampaignSlugQueryLoading,
-  } = useGetBusinessByCampaignSlugQuery({ variables: { input: { slug: campaignSlug as string } } });
+  } = useGetBusinessCampaignBySlugQuery({ variables: { input: { slug: campaignSlug as string } } });
 
-  if (getBusinessByCampaignSlugQueryError || !getBusinessByCampaignSlugQueryData) {
+  if (getBusinessCampaignBySlugQueryError || !getBusinessCampaignBySlugQueryData) {
     // @TODO redirect to generic error page
-    console.log(getBusinessByCampaignSlugQueryError);
+    console.log(getBusinessCampaignBySlugQueryError);
 
     return null;
   }
@@ -28,7 +28,7 @@ export const BusinessDetailsContainer = ({ content }: BusinessDetailsProps) => {
     return "loading";
   }
 
-  const campaign = getBusinessByCampaignSlugQueryData.getBusinessByCampaignSlug;
+  const campaign = getBusinessCampaignBySlugQueryData.getBusinessCampaignBySlug;
 
   return <BusinessDetails content={content} campaign={campaign} />;
 };

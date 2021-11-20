@@ -1,4 +1,4 @@
-import { GetBusinessByCampaignSlugQuery } from "api/codegen";
+import { GetBusinessByCampaignSlugQuery, GetBusinessCampaignBySlugQuery } from "api/codegen";
 import { ReactNode } from "react";
 
 export type BusinessDetailsContent = {
@@ -23,5 +23,5 @@ export type BusinessDetailsMedia = {
 export type BusinessDetailsProps = {
   children?: ReactNode;
   content: BusinessDetailsContent;
-  campaign: GetBusinessByCampaignSlugQuery["getBusinessByCampaignSlug"];
+  campaign: GetBusinessCampaignBySlugQuery["getBusinessCampaignBySlug"];
 };
