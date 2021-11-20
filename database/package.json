@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bancosatoshi/web.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/bancosatoshi"
+  },
   "scripts": {
     "start": "ts-node ./src",
     "start:debug": "ts-node-dev --inspect=9226 --no-notify --respawn ./src",
