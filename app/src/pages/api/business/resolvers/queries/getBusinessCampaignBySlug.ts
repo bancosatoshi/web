@@ -19,7 +19,7 @@ const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = a
       ],
     });
 
-    if (!data) {
+    if (!data || !data.business || !data.business.business_info) {
       throw new Error(`getBusinessCampaignBySlug: unable to find a record with slug ${input.slug}`);
     }
 

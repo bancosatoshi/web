@@ -2,10 +2,12 @@ import { useGetBusinessCampaignBySlugQuery } from "api/codegen";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { BusinessDetails } from "./BusinessDetails";
-import { BusinessDetailsProps } from "./BusinessDetails.types";
+import { Typography } from "ui/typography/Typography";
 
-export const BusinessDetailsContainer = ({ content }: BusinessDetailsProps) => {
+import { BusinessDetails } from "./BusinessDetails";
+import { BusinessFundingCampaignContainerProps } from "./BusinessDetails.types";
+
+export const BusinessDetailsContainer = ({ content }: BusinessFundingCampaignContainerProps) => {
   const router = useRouter();
 
   const { campaignSlug } = router.query;
@@ -25,7 +27,7 @@ export const BusinessDetailsContainer = ({ content }: BusinessDetailsProps) => {
 
   if (isGetBusinessByCampaignSlugQueryLoading) {
     // @TODO set a generic loading template
-    return "loading";
+    return <Typography.Text>loading</Typography.Text>;
   }
 
   const campaign = getBusinessCampaignBySlugQueryData.getBusinessCampaignBySlug;

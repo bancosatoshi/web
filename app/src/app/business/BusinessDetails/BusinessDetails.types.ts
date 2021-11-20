@@ -1,4 +1,4 @@
-import { GetBusinessByCampaignSlugQuery, GetBusinessCampaignBySlugQuery } from "api/codegen";
+import { GetBusinessCampaignBySlugQuery } from "api/codegen";
 import { ReactNode } from "react";
 
 export type BusinessDetailsContent = {
@@ -18,6 +18,11 @@ export type BusinessDetailsContent = {
 
 export type BusinessDetailsMedia = {
   featuredImageUrl?: string;
+};
+
+export type BusinessFundingCampaignContainerProps = {
+  children?: ReactNode;
+  content: BusinessDetailsContent;
 };
 
 export type BusinessDetailsProps = {
