@@ -1,7 +1,10 @@
 {
   "name": "@bancosatoshi/app",
   "version": "0.1.0",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bancosatoshi/web.git"
+  },
   "scripts": {
     "dev": "next dev -p 3001",
     "dev:debug": "NODE_OPTIONS='--inspect=9300' next dev -p 3001 & npm run scss:class-types:watch",
@@ -16,6 +19,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.17",
+    "@bancosatoshi/database": "^1.0.1",
     "@googlemaps/react-wrapper": "^1.1.12",
     "@supabase/supabase-js": "^1.28.0",
     "apollo-server-micro": "^3.5.0",
