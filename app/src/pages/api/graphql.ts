@@ -13,8 +13,6 @@ import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByU
 import getBusinessCampaignBySlug from "./business/resolvers/queries/getBusinessCampaignBySlug";
 import createBusiness from "./business/resolvers/mutations/createBusiness";
 
-console.log(path.join(process.cwd(), "/src/pages/api/business/schema.graphql"));
-
 const schemas = loadTypedefsSync(path.join(process.cwd(), "/src/pages/api/business/schema.graphql"), {
   loaders: [new GraphQLFileLoader()],
 });
