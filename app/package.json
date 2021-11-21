@@ -38,6 +38,7 @@
     "react-grid-system": "^7.1.2",
     "react-transition-group": "^4.4.1",
     "rxjs": "^6.6.6",
+    "sequelize": "^6.12.0-alpha.1",
     "wpapi": "^1.2.2"
   },
   "devDependencies": {
