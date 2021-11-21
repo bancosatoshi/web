@@ -1,11 +1,15 @@
 import { ApolloServer } from "apollo-server-micro";
+import { BusinessInfoModelArgs, BusinessModelArgs } from "@bancosatoshi/database/business/model";
 import { loadTypedefsSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { NextApiRequest, NextApiResponse } from "next";
 import { DocumentNode } from "graphql";
 import { Resolvers } from "api/codegen/resolvers-types";
+import databaseConnection from "src/providers/database";
+import { Model, ModelCtor, Sequelize } from "sequelize";
 
 import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByUserId";
+import getBusinessByCampaignSlug from "./business/resolvers/queries/getBusinessByCampaignSlug";
 import createBusiness from "./business/resolvers/mutations/createBusiness";
 
 const schemas = loadTypedefsSync(`./src/pages/api/business/schema.graphql`, {
@@ -17,14 +21,28 @@ const typeDefs = schemas.map((schema) => schema.document) as DocumentNode[];
 const resolvers: Resolvers = {
   Query: {
     getBusinessesByUserId,
+    getBusinessByCampaignSlug,
   },
   Mutation: {
     createBusiness,
   },
 };
 
+export type ResolversContext = {
+  req: NextApiRequest;
+  database: {
+    driver: Sequelize;
+    business: {
+      businessModel: ModelCtor<Model<BusinessModelArgs>>;
+      businessInfoModel: ModelCtor<Model<BusinessInfoModelArgs>>;
+    };
+  };
+};
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const apolloServer = new ApolloServer({ typeDefs, resolvers, context: { req } });
+  const database = await databaseConnection.init();
+
+  const apolloServer = new ApolloServer({ typeDefs, resolvers, context: { req, database } });
   const startServer = apolloServer.start();
 
   res.setHeader("Access-Control-Allow-Credentials", "true");

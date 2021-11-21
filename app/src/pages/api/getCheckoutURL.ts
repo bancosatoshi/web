@@ -5,8 +5,10 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const metadata = { businessId: req.body.metadata.businessId, buyerEmail: req.body.metadata.buyerEmail };
-    const { storeId } = req.body;
+    const { storeId, checkout } = req.body;
+
     const endpoint = `${process.env.BTC_PAY_SERVER_BASE_URL}/stores/${storeId}/invoices`;
+
     const headers = {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -16,7 +18,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const response = await fetch(endpoint, {
       method: "POST",
       headers,
-      body: JSON.stringify({ metadata }),
+      body: JSON.stringify({
+        metadata,
+        checkout: { redirectUrl: `${checkout.redirectURL}?invoiceId={InvoiceId}&orderId={OrderId}`.replace(/#/, "") },
+      }),
     });
 
     const content = await response.json();
