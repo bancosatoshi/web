@@ -9,6 +9,7 @@ yarn
 yarn publish:prepare
 
 cp package.json build
+cp .npmrc build
 
 cd $ROOT/build
 
