@@ -11,13 +11,14 @@ const Index: NextPage<BusinessDetailsProps> = ({ content }) => (
   <AppLayout>
     <AuthLayout>
       <CheckoutContextController>
+        {/* @TODO We may need to rename this to BusinessCampaignContainer */}
         <BusinessDetailsContainer content={content} />
       </CheckoutContextController>
     </AuthLayout>
   </AppLayout>
 );
 
-const getPageContentByBusinessSlug = async (slug: string) => {
+const getPageContentByBusinessCampaignSlug = async (slug: string) => {
   try {
     const wp = new WPAPI({ endpoint: "https://cms.bancosatoshi.com/wp-json" });
 
@@ -55,13 +56,13 @@ const getPageContentByBusinessSlug = async (slug: string) => {
 };
 
 export async function getStaticPaths() {
-  return { paths: [{ params: { businessId: "el-comalote-gt" } }], fallback: false };
+  return { paths: [{ params: { campaignSlug: "el-comalote-gt" } }], fallback: false };
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-  const slug = params!.businessId;
+  const slug = params!.campaignSlug;
 
-  const content = await getPageContentByBusinessSlug(slug as string);
+  const content = await getPageContentByBusinessCampaignSlug(slug as string);
 
   return { props: { content } };
 }

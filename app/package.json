@@ -1,5 +1,5 @@
 {
-  "name": "@aufacicenta/website",
+  "name": "@bancosatoshi/app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -52,6 +52,7 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.9",
     "@types/react-transition-group": "^4.4.3",
+    "@types/sequelize": "^4.28.10",
     "@types/wpapi": "^1.1.1",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
@@ -76,6 +77,7 @@
     "plop": "^2.7.4",
     "prettier": "^2.4.1",
     "sass-loader": "^12.3.0",
+    "sequelize": "^6.12.0-alpha.1",
     "stylelint": "^13.12.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "^4.0.0",

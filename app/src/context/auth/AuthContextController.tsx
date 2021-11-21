@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Session } from "@supabase/gotrue-js";
 import { useRouter } from "next/router";
 import { client as supabase } from "src/providers/supabase/client";
-import { useCreateBusinessMutation } from "api/codegen";
 
 import { useRoutes } from "hooks/useRoutes/useRoutes";
 
@@ -16,8 +15,6 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
 
   const router = useRouter();
   const routes = useRoutes();
-
-  const [createBusinessMutation] = useCreateBusinessMutation();
 
   useEffect(() => {
     const currentSession = supabase.auth.session();
@@ -39,10 +36,8 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
             credentials: "same-origin",
             body: JSON.stringify({ event, session: s }),
           });
-
-          await createBusinessMutation();
         } catch (error) {
-          console.error(error);
+          console.log(error);
         }
       }
     });
