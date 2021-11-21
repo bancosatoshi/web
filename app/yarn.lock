@@ -851,8 +851,8 @@
 
 "@bancosatoshi/database@^1.0.1":
   version "1.0.1"
-  resolved "https://npm.pkg.github.com/download/@bancosatoshi/database/1.0.1/e672d25e33ac9828b337f9e06ed080c3f6048f90d252a7766f6dfa1ef9f4beb0#479be2986c8f6d1033c7c864ba5c2f9c002c37d6"
-  integrity sha512-dgmKKwWAPxmOZ19+TCYim44wvdLyIYNmF3m34NAMPLuGWwNR6bdOrd6fB53w1OEoVnNcgzQI98BQQ72lJ77r4w==
+  resolved "https://registry.yarnpkg.com/@bancosatoshi/database/-/database-1.0.1.tgz#af674db3562e9ccf1d470301273ecc37ab2c568b"
+  integrity sha512-F/fZR18uwZpCdX7ZecxmPKdDX/IhCQPjBBScYxpMNOsihGG9OODnGwR3eV/BMQLxHjRRWkwTUlhGtAONaCNtPw==
   dependencies:
     cardinal "^2.1.1"
     mysql2 "^2.3.3"
