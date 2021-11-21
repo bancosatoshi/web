@@ -7,12 +7,15 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { DocumentNode } from "graphql";
 import { Resolvers } from "api/codegen/resolvers-types";
 import databaseConnection from "src/providers/database";
+import path from "path";
 
 import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByUserId";
 import getBusinessCampaignBySlug from "./business/resolvers/queries/getBusinessCampaignBySlug";
 import createBusiness from "./business/resolvers/mutations/createBusiness";
 
-const schemas = loadTypedefsSync(`./src/pages/api/business/schema.graphql`, {
+console.log(path.join(process.cwd(), "/src/pages/api/business/schema.graphql"));
+
+const schemas = loadTypedefsSync(path.join(process.cwd(), "/src/pages/api/business/schema.graphql"), {
   loaders: [new GraphQLFileLoader()],
 });
 
