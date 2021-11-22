@@ -6,6 +6,9 @@ export type BusinessFundingCampaignPlanModelArgs = {
   business_id: string;
   slug: string;
   btcpayserver_store_id: string;
+  investment_multiple: number;
+  total_sats_invested?: number;
+  expires_at: Date;
   created_at?: Date;
   updated_at?: Date;
 };
@@ -36,6 +39,19 @@ export class BusinessFundingCampaignPlanModel extends Model<BusinessFundingCampa
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+    },
+    investment_multiple: {
+      type: DataTypes.DECIMAL,
+      allowNull: true,
+    },
+    total_sats_invested: {
+      type: DataTypes.FLOAT,
+      allowNull: true,
+      defaultValue: 0.0,
+    },
+    expires_at: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
     created_at: {
       type: DataTypes.DATE,

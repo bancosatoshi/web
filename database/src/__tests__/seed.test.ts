@@ -33,6 +33,8 @@ describe("init", () => {
       business_id: businessRecord.getDataValue("id"),
       slug: "el-comalote-gt",
       btcpayserver_store_id: "6e39hBHXvVwWvJUhSb2wKoBden7Ze4zrEDmq3F3f3Gex",
+      investment_multiple: 1.5,
+      expires_at: new Date("2021-12-25"),
     });
   });
 
