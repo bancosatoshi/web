@@ -6,7 +6,6 @@ const config = {
   port: Number(process.env.MYSQL_PORT),
   user: process.env.MYSQL_ROOT_USER,
   password: process.env.MYSQL_ROOT_PASSWORD,
-  username: process.env.MYSQL_ROOT_USER,
   database: process.env.MYSQL_DATABASE,
 };
 
@@ -15,7 +14,7 @@ export const init = async () => {
 
   return {
     driver,
-    business: business.init(driver),
+    business: await business.init(driver),
   };
 };
 

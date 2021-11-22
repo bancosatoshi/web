@@ -1,18 +1,19 @@
 import { ApolloServer } from "apollo-server-micro";
-import { BusinessInfoModelArgs, BusinessModelArgs } from "@bancosatoshi/database/business/model";
+import { BusinessModels } from "@bancosatoshi/database/business";
+import { Driver } from "@bancosatoshi/database";
 import { loadTypedefsSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
 import { NextApiRequest, NextApiResponse } from "next";
 import { DocumentNode } from "graphql";
 import { Resolvers } from "api/codegen/resolvers-types";
 import databaseConnection from "src/providers/database";
-import { Model, ModelCtor, Sequelize } from "sequelize";
+import path from "path";
 
 import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByUserId";
-import getBusinessByCampaignSlug from "./business/resolvers/queries/getBusinessByCampaignSlug";
+import getBusinessCampaignBySlug from "./business/resolvers/queries/getBusinessCampaignBySlug";
 import createBusiness from "./business/resolvers/mutations/createBusiness";
 
-const schemas = loadTypedefsSync(`./src/pages/api/business/schema.graphql`, {
+const schemas = loadTypedefsSync(path.join(process.cwd(), "/src/pages/api/business/schema.graphql"), {
   loaders: [new GraphQLFileLoader()],
 });
 
@@ -21,7 +22,7 @@ const typeDefs = schemas.map((schema) => schema.document) as DocumentNode[];
 const resolvers: Resolvers = {
   Query: {
     getBusinessesByUserId,
-    getBusinessByCampaignSlug,
+    getBusinessCampaignBySlug,
   },
   Mutation: {
     createBusiness,
@@ -31,11 +32,8 @@ const resolvers: Resolvers = {
 export type ResolversContext = {
   req: NextApiRequest;
   database: {
-    driver: Sequelize;
-    business: {
-      businessModel: ModelCtor<Model<BusinessModelArgs>>;
-      businessInfoModel: ModelCtor<Model<BusinessInfoModelArgs>>;
-    };
+    driver: typeof Driver;
+    business: BusinessModels;
   };
 };
 

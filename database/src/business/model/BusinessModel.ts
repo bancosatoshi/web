@@ -1,14 +1,17 @@
 import { DataTypes, Model, ModelOptions } from "sequelize";
+import { BusinessInfoModel } from ".";
 
 export type BusinessModelArgs = {
   id?: string;
   user_id: string;
-  created_at: Date;
-  updated_at: Date;
+  created_at?: Date;
+  updated_at?: Date;
 };
 
 export class BusinessModel extends Model<BusinessModelArgs> {
   public static tableName = "business";
+
+  public business_info?: BusinessInfoModel;
 
   public static rawAttributes = {
     id: {
@@ -24,12 +27,12 @@ export class BusinessModel extends Model<BusinessModelArgs> {
     },
     created_at: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: new Date(),
     },
     updated_at: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: new Date(),
     },
   };
@@ -38,6 +41,7 @@ export class BusinessModel extends Model<BusinessModelArgs> {
     paranoid: true,
     underscored: true,
     tableName: BusinessModel.tableName,
+    timestamps: true,
   };
 }
 

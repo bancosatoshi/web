@@ -12,7 +12,27 @@
       "skipFiles": ["${workspaceRoot}/app/node_modules/**/*", "<node_internals>/**"],
       "sourceMapPathOverrides": {
         "webpack:///./*": "${workspaceRoot}/app/*",
-      }
+      },
     },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "DB: Jest Current File",
+      "program": "${workspaceFolder}/database/node_modules/.bin/jest",
+      "cwd": "${workspaceFolder}/database",
+      "args": [
+        "--config",
+        "${workspaceFolder}/database/jest.config.js",
+        "--verbose",
+        "--runInBand",
+        "${fileBasenameNoExtension}"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceFolder}/database/node_modules/jest/bin/jest"
+      }
+    }
   ]
 }

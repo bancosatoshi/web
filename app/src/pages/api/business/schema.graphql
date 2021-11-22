@@ -8,17 +8,17 @@ type Business {
 type BusinessCampaign {
   btcPayServerStoreId: String
   businessId: String
-  id: Int!
+  id: String!
   slug: String
 }
 
 type BusinessInfo {
   businessId: String
   establisedAt: String
-  id: Int!
+  id: String!
 }
 
-input GetBusinessByCampaignSlugInput {
+input GetBusinessCampaignBySlugInput {
   slug: String!
 }
 
@@ -31,6 +31,6 @@ type Mutation {
 }
 
 type Query {
-  getBusinessByCampaignSlug(input: GetBusinessByCampaignSlugInput!): Business!
+  getBusinessCampaignBySlug(input: GetBusinessCampaignBySlugInput!): Business!
   getBusinessesByUserId(input: GetBusinessesByUserIdInput!): [Business]!
 }
