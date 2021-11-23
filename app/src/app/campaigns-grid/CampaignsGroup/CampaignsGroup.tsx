@@ -14,7 +14,7 @@ export const CampaignsGroup: React.FC<CampaignsGroupProps> = ({ campaigns, class
         {campaigns.length > 0 &&
           campaigns.map((campaign) => (
             <Grid.Col key={campaign!.id}>
-              <BusinessCampaignCard campaign={campaign} />
+              <BusinessCampaignCard campaign={campaign!} />
             </Grid.Col>
           ))}
       </Grid.Row>

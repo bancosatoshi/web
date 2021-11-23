@@ -45,7 +45,7 @@ export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, classNa
             <Grid.Col>
               <Typography.Headline3>Campañas Recientes</Typography.Headline3>
               <Typography.Link href="">Ver Más</Typography.Link>
-              <CampaignsGroup campaigns={campaigns} limit={5} />
+              <CampaignsGroup campaigns={campaigns} />
             </Grid.Col>
           </Grid.Row>
         </Container>

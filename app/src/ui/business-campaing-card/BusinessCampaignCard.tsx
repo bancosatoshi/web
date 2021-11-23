@@ -31,11 +31,11 @@ export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ camp
               <img
                 className={styles["campaign-card__cover"]}
                 src={campaign.content.media.featuredImageUrl}
-                alt={campaign?.title}
+                alt={campaign.content.title}
               />
-              <Typography.Headline4>{campaign?.title}</Typography.Headline4>
-              <Typography.Subtitle>{campaign.country}</Typography.Subtitle>
-              <Typography.Description>{campaign?.description}</Typography.Description>
+              <Typography.Headline4>{campaign.content.title}</Typography.Headline4>
+              <Typography.Subtitle>{campaign.content.country}</Typography.Subtitle>
+              <Typography.Description>{campaign.content.description}</Typography.Description>
               <Container fluid>
                 <Grid.Row>
                   <Grid.Col className={styles["campaign-card__short"]}>
@@ -43,10 +43,9 @@ export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ camp
                     <Typography.MiniDescription>Raised</Typography.MiniDescription>
                   </Grid.Col>
                   <Grid.Col className={styles["campaign-card__short"]}>
-                    <Typography.Headline6>{campaign?.investors}</Typography.Headline6>
-                    <Typography.MiniDescription>
-                      {campaign?.investors > 1 ? "Investors" : "Investor"}
-                    </Typography.MiniDescription>
+                    {/* @TODO add investors count */}
+                    <Typography.Headline6>123</Typography.Headline6>
+                    <Typography.MiniDescription>{2 > 1 ? "Investors" : "Investor"}</Typography.MiniDescription>
                   </Grid.Col>
                 </Grid.Row>
                 <Visible lg xl>

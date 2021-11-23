@@ -25,6 +25,8 @@ const getActiveBusinessCampaigns: QueryResolvers["getActiveBusinessCampaigns"] =
 
       return {
         id: campaign.getDataValue("id"),
+        businessId: campaign.getDataValue("business_id"),
+        expiresAt: campaign.getDataValue("expires_at"),
         slug,
         totalSatsInvested: campaign.getDataValue("total_sats_invested"),
         investmentMultiple: campaign.getDataValue("investment_multiple"),
