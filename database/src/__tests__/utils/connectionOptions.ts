@@ -1,4 +1,4 @@
-export const databaseConfig = {
+export default {
   host: process.env.MYSQL_HOST,
   port: Number(process.env.MYSQL_PORT),
   user: process.env.MYSQL_ROOT_USER,

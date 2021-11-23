@@ -1,14 +1,14 @@
 import database from "../../index";
 import business, { BusinessModels } from "../../business";
 import { Sequelize } from "sequelize/dist";
-import { config } from "../utils/db";
+import connectionOptions from "../utils/connectionOptions";
 
 describe("Business", () => {
   let driver: Sequelize;
   let businessModels: BusinessModels;
 
   beforeAll(async () => {
-    driver = await database.connect(config);
+    driver = await database.connect(connectionOptions);
     businessModels = await business.init(driver);
   });
 

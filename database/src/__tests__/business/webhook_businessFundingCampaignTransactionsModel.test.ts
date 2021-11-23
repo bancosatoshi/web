@@ -1,8 +1,8 @@
 import database from "../../index";
 import business, { BusinessModels } from "../../business";
 import { Sequelize } from "sequelize/dist";
-import { databaseConfig } from "../util/database-config";
 import faker from "faker";
+import connectionOptions from "../utils/connectionOptions";
 
 describe("init", () => {
   let driver: Sequelize;
@@ -11,7 +11,7 @@ describe("init", () => {
   const user_id = faker.datatype.uuid();
 
   beforeAll(async () => {
-    driver = await database.connect(databaseConfig, { force: true, logging: false });
+    driver = await database.connect(connectionOptions, { force: true, logging: false });
     businessModels = await business.init(driver, { force: true, logging: false });
   });
 
