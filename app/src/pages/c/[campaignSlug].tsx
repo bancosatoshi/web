@@ -5,7 +5,7 @@ import { AppLayout } from "layouts/app-layout/AppLayout";
 import { AuthLayout } from "layouts/auth-layout/AuthLayout";
 import { BusinessDetailsProps } from "app/business/BusinessDetails/BusinessDetails.types";
 import { CheckoutContextController } from "context/checkout/CheckoutContextController";
-import { getPageContentByBusinessCampaignSlug } from "lib/wordpress/getPageContentBySlug";
+import { getPageContentByBusinessCampaignSlug } from "providers/wordpress/getPageContentBySlug";
 
 const Index: NextPage<BusinessDetailsProps> = ({ content }) => (
   <AppLayout>

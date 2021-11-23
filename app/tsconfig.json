@@ -24,7 +24,7 @@
       "context/*": ["src/context/*"],
       "layouts/*": ["src/layouts/*"],
       "api/*": ["src/pages/api/*"],
-      "lib/*": ["src/lib/*"]
+      "providers/*": ["src/providers/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
