@@ -8,12 +8,7 @@ import { Typography } from "ui/typography/Typography";
 import { Container, Visible } from "react-grid-system";
 import { BusinessCampaignCardProps } from "./BusinessCampaign.types";
 
-export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({
-  content,
-  campaign,
-  onClick,
-  className,
-}) => {
+export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ campaign, className, ...props }) => {
   //@TODO Implement i18n
 
   const truncateRaisedAmount = (raised: number) => {
@@ -27,7 +22,7 @@ export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({
   };
 
   return (
-    <div className={clsx(styles["campaign-card"], className)} onClick={onClick}>
+    <div className={clsx(styles["campaign-card"], className)} {...props}>
       <Container>
         <Grid.Row>
           <Grid.Col sm={6} lg={4} xl={6}>
@@ -35,12 +30,12 @@ export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({
               <Card.Content>
                 <img
                   className={styles["campaign-card__cover"]}
-                  src={content?.media.featuredImageUrl}
-                  alt={`A representative image of ${content?.title}`}
+                  src={campaign.media.featuredImageUrl}
+                  alt={`A representative image of ${campaign?.title}`}
                 />
-                <Typography.Headline4>{content?.title}</Typography.Headline4>
-                <Typography.Subtitle>{content.country}</Typography.Subtitle>
-                <Typography.Description>{content?.description}</Typography.Description>
+                <Typography.Headline4>{campaign?.title}</Typography.Headline4>
+                <Typography.Subtitle>{campaign.country}</Typography.Subtitle>
+                <Typography.Description>{campaign?.description}</Typography.Description>
                 <Container fluid>
                   <Grid.Row>
                     <Grid.Col className={styles["campaign-card__short"]}>
