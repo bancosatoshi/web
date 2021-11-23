@@ -1,0 +1,25 @@
+query GetBusinessCampaigns {
+  getBusinessCampaigns {
+    id
+    slug
+    totalSatsInvested
+    investmentMultiple
+    btcPayServerStoreId
+    content {
+      asHtmlString
+      category
+      country
+      description
+      establishedAt
+      instagram
+      latitude
+      longitude
+      markerIcon
+      title
+      website
+      media {
+        featuredImageUrl
+      }
+    }
+  }
+}
