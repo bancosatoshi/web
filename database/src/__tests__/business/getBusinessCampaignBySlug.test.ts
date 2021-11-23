@@ -1,14 +1,7 @@
 import database from "../../index";
 import business, { BusinessModels } from "../../business";
 import { Sequelize } from "sequelize/dist";
-
-const config = {
-  host: process.env.MYSQL_HOST,
-  port: Number(process.env.MYSQL_PORT),
-  user: process.env.MYSQL_ROOT_USER,
-  password: process.env.MYSQL_ROOT_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-};
+import { config } from "../utils/db";
 
 describe("init", () => {
   let driver: Sequelize;

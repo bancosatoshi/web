@@ -1,5 +1,8 @@
+import moment from "moment";
 import { Association, DataTypes, Model, ModelCtor, ModelOptions } from "sequelize";
 import { BusinessModel } from ".";
+
+type ModelAttributes = typeof Model.rawAttributes;
 
 export type BusinessFundingCampaignPlanModelArgs = {
   id?: string;
@@ -9,6 +12,8 @@ export type BusinessFundingCampaignPlanModelArgs = {
   investment_multiple: number;
   total_sats_invested?: number;
   expires_at: Date;
+  is_active?: boolean;
+  days_left?: number;
   created_at?: Date;
   updated_at?: Date;
 };
@@ -18,7 +23,7 @@ export class BusinessFundingCampaignPlanModel extends Model<BusinessFundingCampa
 
   public business?: BusinessModel;
 
-  public static rawAttributes = {
+  public static rawAttributes: ModelAttributes = {
     id: {
       type: DataTypes.UUID,
       allowNull: false,
@@ -52,6 +57,24 @@ export class BusinessFundingCampaignPlanModel extends Model<BusinessFundingCampa
     expires_at: {
       type: DataTypes.DATE,
       allowNull: true,
+    },
+    is_active: {
+      type: DataTypes.VIRTUAL(DataTypes.BOOLEAN, ["expires_at"]),
+      get() {
+        const expirationDate = this.getDataValue("expires_at");
+        const isActive = moment().isBefore(expirationDate);
+
+        return isActive;
+      },
+    },
+    days_left: {
+      type: DataTypes.VIRTUAL(DataTypes.NUMBER, ["expires_at"]),
+      get() {
+        const expirationDate = this.getDataValue("expires_at");
+        const daysLeft = moment(expirationDate).diff(moment(), "days");
+
+        return daysLeft >= 0 ? daysLeft : 0;
+      },
     },
     created_at: {
       type: DataTypes.DATE,
