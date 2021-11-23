@@ -1,4 +1,4 @@
-import { Association, DataTypes, Model, ModelCtor, ModelOptions } from "sequelize";
+import { DataTypes, Model, ModelOptions } from "sequelize";
 import { BusinessModel } from ".";
 
 export type BusinessFundingCampaignPlanModelArgs = {

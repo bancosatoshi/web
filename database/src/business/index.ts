@@ -1,6 +1,7 @@
 import { Model, ModelCtor, Sequelize, SyncOptions } from "sequelize";
 import {
   BusinessFundingCampaignPlanModel,
+  BusinessFundingCampaignTransactionsModel,
   BusinessFundingCampaignPlanModelArgs,
   BusinessModelArgs,
   BusinessInfoModelArgs,
@@ -12,6 +13,7 @@ export type BusinessModels = {
   businessModel: ModelCtor<BusinessModel>;
   businessInfoModel: ModelCtor<BusinessInfoModel>;
   businessFundingCampaignPlanModel: ModelCtor<BusinessFundingCampaignPlanModel>;
+  businessFundingCampaignTransactionsModel: ModelCtor<BusinessFundingCampaignTransactionsModel>;
 };
 
 export default {
@@ -30,6 +32,12 @@ export default {
       BusinessFundingCampaignPlanModel.config,
     );
 
+    const BusinessFundingCampaignTransactions = driver.define(
+      BusinessFundingCampaignTransactionsModel.tableName,
+      BusinessFundingCampaignTransactionsModel.rawAttributes,
+      BusinessFundingCampaignTransactionsModel.config,
+    );
+
     Business.hasOne(BusinessInfo, {
       foreignKey: { allowNull: true },
     });
@@ -43,7 +51,16 @@ export default {
       constraints: false,
     });
 
+    BusinessFundingCampaignTransactions.hasMany(BusinessFundingCampaignPlan, {
+      foreignKey: { allowNull: true },
+      constraints: false,
+    });
+
     BusinessFundingCampaignPlan.belongsTo(Business, {
+      foreignKey: { allowNull: true },
+    });
+
+    BusinessFundingCampaignPlan.belongsTo(BusinessFundingCampaignTransactions, {
       foreignKey: { allowNull: true },
     });
 
@@ -54,6 +71,7 @@ export default {
       businessModel: driver.model(BusinessModel.tableName),
       businessInfoModel: driver.model(BusinessInfoModel.tableName),
       businessFundingCampaignPlanModel: driver.model(BusinessFundingCampaignPlanModel.tableName),
+      businessFundingCampaignTransactionsModel: driver.model(BusinessFundingCampaignTransactionsModel.tableName),
     };
   },
 };
