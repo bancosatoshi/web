@@ -1,44 +1,39 @@
+import { BusinessCampaign } from "api/codegen";
 import { QueryResolvers } from "api/codegen/resolvers-types";
 import { ResolversContext } from "api/graphql";
-import { getPageContentByBusinessCampaignSlug } from "src/providers/wordpress/getPageContentBySlug";
+
+import { getPageContentByBusinessCampaignSlug } from "providers/wordpress/getPageContentBySlug";
 
 const getActiveBusinessCampaigns: QueryResolvers["getActiveBusinessCampaigns"] = async (
   _,
+  _params,
   { database }: ResolversContext,
 ) => {
   try {
-    const model = database.business.businessFundingCampaignPlanModel;
-    const data = await model.findAll({ where: { "": "" } });
+    const { businessFundingCampaignPlanModel } = database.business;
 
-    if (!data || !data.length) {
-      throw new Error(`getBusinessCampaigns: unable to find business campaigns records`);
+    // @TODO we should get this from the business DAO. My bad, I noticed the need of the DAO today
+    const activeCampaigns = await businessFundingCampaignPlanModel.findAll();
+
+    if (!activeCampaigns || !activeCampaigns.length) {
+      throw new Error(`getActiveBusinessCampaigns: unable to find business campaigns records`);
     }
 
-    const mergeCampaignDataWithWordpressContent = data.map(async (bc) => {
-      const slug = bc.getDataValue("slug");
-      const pageData = await getPageContentByBusinessCampaignSlug(slug);
+    const mergeCampaignDataWithWordpressContent = activeCampaigns.map(async (campaign) => {
+      const slug = campaign.getDataValue("slug");
+      const content = await getPageContentByBusinessCampaignSlug(slug);
 
       return {
-        id: bc.getDataValue("id"),
+        id: campaign.getDataValue("id"),
         slug,
-        totalSatsInvested: bc.getDataValue("total_sats_invested"),
-        investmentMultiple: bc.getDataValue("investment_multiple"),
-        btcPayServerStoreId: bc.getDataValue("btcpayserver_store_id"),
-        content: {
-          ...pageData,
-        },
-      };
+        totalSatsInvested: campaign.getDataValue("total_sats_invested"),
+        investmentMultiple: campaign.getDataValue("investment_multiple"),
+        btcPayServerStoreId: campaign.getDataValue("btcpayserver_store_id"),
+        content,
+      } as BusinessCampaign;
     });
 
-    const businessCampaignsData = await Promise.allSettled(mergeCampaignDataWithWordpressContent);
-
-    const businessCampaigns = businessCampaignsData.reduce((bcs: any, currentBusinessCampaign) => {
-      if (currentBusinessCampaign.status !== "rejected") {
-        bcs.concat(currentBusinessCampaign.value);
-      }
-    }, []);
-
-    return businessCampaigns;
+    return await Promise.all(mergeCampaignDataWithWordpressContent);
   } catch (error) {
     return error;
   }

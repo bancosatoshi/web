@@ -1,7 +1,6 @@
-import { GetBusinessCampaignsQuery } from "api/codegen";
+import { GetActiveBusinessCampaignsQuery } from "api/codegen";
 
-export type BusinessCampaigns = GetBusinessCampaignsQuery["getBusinessCampaigns"];
-export type BusinessCampaign = any; //BusinessCampaigns[0];
+export type BusinessCampaigns = GetActiveBusinessCampaignsQuery["getActiveBusinessCampaigns"];
 
 export type CampaignsGridProps = {
   className?: string;

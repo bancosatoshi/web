@@ -60,9 +60,8 @@ describe("init", () => {
       ],
     });
 
-    expect(data.get("is_active")).toBeDefined();
     expect(data.get("is_active")).toBeTruthy();
-    expect(data.get("days_left")).toBeDefined();
+    // @TODO this will fail at some point because the date is hardcoded
     expect(data.get("days_left")).toBe(31);
   });
 });

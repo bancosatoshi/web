@@ -1,4 +1,5 @@
 export type Styles = {
+  "campaigns-grid": string;
   "campaigns-grid__intro--cta": string;
   "campaigns-grid__section": string;
   "campaigns-grid__section--favorites": string;

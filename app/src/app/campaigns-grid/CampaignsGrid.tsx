@@ -1,11 +1,12 @@
 import clsx from "clsx";
-import styles from "./CampaignsGrid.module.scss";
+import { Container } from "react-grid-system";
 
 import { Grid } from "ui/grid/Grid";
 import { Button } from "ui/button/Button";
-import { Container } from "react-grid-system";
 import { Typography } from "ui/typography/Typography";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
+
+import styles from "./CampaignsGrid.module.scss";
 import { CampaignsGridProps } from "./CampaignsGrid.types";
 import { CampaignsGroup } from "./CampaignsGroup/CampaignsGroup";
 
