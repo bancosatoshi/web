@@ -29,6 +29,8 @@ describe("init", () => {
 
     await businessModels.businessFundingCampaignPlanModel.create({
       business_id: businessRecord.getDataValue("id"),
+      investment_multiple: 0,
+      expires_at: new Date(),
       slug,
       btcpayserver_store_id: "6e39hBHXvVwWvJUhSb2wKoBden7Ze4zrEDmq3F3f3Gex",
     });

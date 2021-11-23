@@ -33,6 +33,8 @@ describe("init", () => {
     const businessFundingCampaignRecord = await businessModels.businessFundingCampaignPlanModel.create(
       {
         business_id,
+        investment_multiple: 0,
+        expires_at: new Date(),
         slug: faker.lorem.slug(),
         btcpayserver_store_id: faker.datatype.uuid(),
       },
