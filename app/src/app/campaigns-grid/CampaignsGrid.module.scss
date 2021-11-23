@@ -1,0 +1,13 @@
+@import "src/theme/base";
+
+.campaigns-grid {
+  &__section {
+    min-height: 70vh;
+  }
+
+  &__intro {
+    &--cta {
+      margin-top: $space-ml;
+    }
+  }
+}
