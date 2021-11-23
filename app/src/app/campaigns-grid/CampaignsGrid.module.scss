@@ -1,9 +1,10 @@
 @import "src/theme/base";
 
 .campaigns-grid {
+  display: block;
+
   &__section {
-    min-height: 50vh;
-    padding: $space-xl 0;
+    padding: $navbar-height 0;
   }
 
   &__intro {

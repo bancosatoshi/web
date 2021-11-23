@@ -1,11 +1,12 @@
 import clsx from "clsx";
-import styles from "./CampaignsGrid.module.scss";
+import { Container } from "react-grid-system";
 
 import { Grid } from "ui/grid/Grid";
 import { Button } from "ui/button/Button";
-import { Container } from "react-grid-system";
 import { Typography } from "ui/typography/Typography";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
+
+import styles from "./CampaignsGrid.module.scss";
 import { CampaignsGridProps } from "./CampaignsGrid.types";
 import { CampaignsGroup } from "./CampaignsGroup/CampaignsGroup";
 
@@ -44,7 +45,7 @@ export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, classNa
             <Grid.Col>
               <Typography.Headline3>Campañas Recientes</Typography.Headline3>
               <Typography.Link href="">Ver Más</Typography.Link>
-              <CampaignsGroup campaigns={campaigns} limit={5} />
+              <CampaignsGroup campaigns={campaigns} />
             </Grid.Col>
           </Grid.Row>
         </Container>

@@ -1,19 +1,19 @@
 type Business {
   activeCampaign: BusinessCampaign
   id: String!
-  info: BusinessInfo
+  info: BusinessInfo!
   userId: String!
 }
 
 type BusinessCampaign {
-  btcPayServerStoreId: String
-  businessId: String
-  content: BusinessCampaignContent
+  btcPayServerStoreId: String!
+  businessId: String!
+  content: BusinessCampaignContent!
   expiresAt: Date!
   id: String!
-  investmentMultiple: Float
-  slug: String
-  totalSatsInvested: Int
+  investmentMultiple: Float!
+  slug: String!
+  totalSatsInvested: Int!
 }
 
 type BusinessCampaignContent {
@@ -34,8 +34,8 @@ type BusinessCampaignContentMedia {
 }
 
 type BusinessInfo {
-  businessId: String
-  establisedAt: String
+  businessId: String!
+  establisedAt: String!
   id: String!
 }
 

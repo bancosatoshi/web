@@ -1,4 +1,4 @@
-import { BusinessCampaign } from "app/campaigns-grid/CampaignsGrid.types";
+import { BusinessCampaign } from "api/codegen";
 
 export type BusinessCampaignCardProps = {
   className?: string;

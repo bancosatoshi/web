@@ -1,8 +1,6 @@
-import { BusinessCampaign, BusinessCampaigns } from "../CampaignsGrid.types";
+import { GetActiveBusinessCampaignsQuery } from "api/codegen";
 
 export type CampaignsGroupProps = {
   className?: string;
-  limit?: number | undefined;
-  campaigns: BusinessCampaigns;
-  filter?: (bc: BusinessCampaign) => boolean;
+  campaigns: GetActiveBusinessCampaignsQuery["getActiveBusinessCampaigns"];
 };
