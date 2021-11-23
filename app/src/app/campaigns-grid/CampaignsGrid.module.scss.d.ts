@@ -1,6 +1,8 @@
 export type Styles = {
   "campaigns-grid__intro--cta": string;
   "campaigns-grid__section": string;
+  "campaigns-grid__section--favorites": string;
+  "campaigns-grid__section--intro": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

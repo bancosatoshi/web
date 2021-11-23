@@ -15,25 +15,34 @@ export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, classNa
   return (
     <div className={clsx(styles["campaigns-grid"], className)}>
       {!auth.hasActiveSession && (
-        <section id="intro" className={styles["campaigns-grid__section"]}>
+        <section
+          id="intro"
+          className={clsx(styles["campaigns-grid__section"], styles["campaigns-grid__section--intro"])}
+        >
           <Container>
             <Grid.Row>
               <Grid.Col>
                 <Typography.Headline1>Explora e Invierte con Bitcoin</Typography.Headline1>
-                <Typography.TextLead>Diversifíca tu portafolio invirtiendo en negocios locales</Typography.TextLead>
-              </Grid.Col>
-              <Grid.Col>
-                <Button size="l">Comienza A Invertir</Button>
+                <Typography.TextLead>
+                  Diversifica tu portafolio con ingresos pasivos desde 1{" "}
+                  <abbr title="La unidad más pequeña de Bitcoin">SAT</abbr>
+                </Typography.TextLead>
+                <div className={styles["campaigns-grid__intro--cta"]}>
+                  <Button size="l">Crea una Cuenta</Button>
+                </div>
               </Grid.Col>
             </Grid.Row>
           </Container>
         </section>
       )}
-      <section id="favorites">
+      <section
+        id="favorites"
+        className={clsx(styles["campaigns-grid__section"], styles["campaigns-grid__section--favorites"])}
+      >
         <Container>
           <Grid.Row>
             <Grid.Col>
-              <Typography.Headline3>Favoritos de Nuestros SATBackers</Typography.Headline3>
+              <Typography.Headline3>Campañas Recientes</Typography.Headline3>
               <Typography.Link href="">Ver Más</Typography.Link>
               <CampaignsGroup campaigns={campaigns} limit={5} />
             </Grid.Col>

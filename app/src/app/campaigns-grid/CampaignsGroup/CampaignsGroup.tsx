@@ -11,13 +11,11 @@ export const CampaignsGroup: React.FC<CampaignsGroupProps> = ({ campaigns, limit
     <div className={clsx(styles["campaigns-group"], className)}>
       <Container>
         <Grid.Row>
-          {campaigns.map((campaignData) => {
-            return (
-              <Grid.Col>
-                <BusinessCampaignCard campaign={campaignData} />
-              </Grid.Col>
-            );
-          })}
+          {campaigns.map((campaignData) => (
+            <Grid.Col>
+              <BusinessCampaignCard campaign={campaignData} />
+            </Grid.Col>
+          ))}
         </Grid.Row>
       </Container>
     </div>

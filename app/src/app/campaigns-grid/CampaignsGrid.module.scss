@@ -2,12 +2,28 @@
 
 .campaigns-grid {
   &__section {
-    min-height: 70vh;
+    min-height: 50vh;
+    padding: $space-xl 0;
   }
 
   &__intro {
     &--cta {
       margin-top: $space-ml;
+    }
+  }
+
+  &__section {
+    &--intro {
+      text-align: center;
+    }
+
+    &--favorites {
+      min-height: 30vh;
+      background-color: var(--color-background);
+
+      h2 {
+        font-family: $font-family-display;
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { useGetBusinessCampaignsQuery } from "api/codegen";
+import { useGetActiveBusinessCampaignsQuery } from "api/codegen";
 import { Typography } from "ui/typography/Typography";
 import { CampaignsGrid } from "./CampaignsGrid";
 
@@ -7,7 +7,7 @@ export const CampaignsGridContainer = () => {
     data: getBusinessCampaignsQueryData,
     error: getBusinessCampaignsQueryError,
     loading: isGetBusinessByCampaignsQueryLoading,
-  } = useGetBusinessCampaignsQuery();
+  } = useGetActiveBusinessCampaignsQuery();
 
   if (!getBusinessCampaignsQueryData || getBusinessCampaignsQueryError) {
     console.log(getBusinessCampaignsQueryError?.graphQLErrors);
@@ -19,11 +19,7 @@ export const CampaignsGridContainer = () => {
     return <Typography.Text>loading</Typography.Text>;
   }
 
-  if (getBusinessCampaignsQueryData) {
-    console.log(getBusinessCampaignsQueryData.getBusinessCampaigns);
-  }
-
-  const campaigns = getBusinessCampaignsQueryData.getBusinessCampaigns;
+  const campaigns = getBusinessCampaignsQueryData.getActiveBusinessCampaigns;
 
   return <CampaignsGrid campaigns={campaigns} />;
 };

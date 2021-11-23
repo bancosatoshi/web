@@ -4,7 +4,7 @@ import { AppLayout } from "layouts/app-layout/AppLayout";
 import { AuthLayout } from "layouts/auth-layout/AuthLayout";
 import { CampaignsGridContainer } from "app/campaigns-grid/CampaignsGridContainer";
 
-const Businesses: NextPage = () => (
+const BusinessCampaigns: NextPage = () => (
   <AppLayout>
     <AuthLayout>
       <CampaignsGridContainer />
@@ -12,4 +12,4 @@ const Businesses: NextPage = () => (
   </AppLayout>
 );
 
-export default Businesses;
+export default BusinessCampaigns;
