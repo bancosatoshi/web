@@ -9,7 +9,7 @@ import { Resolvers } from "api/codegen/resolvers-types";
 import databaseConnection from "src/providers/database";
 import path from "path";
 
-import getBusinessCampaigns from "./business/resolvers/queries/getBusinessCampaigns";
+import getActiveBusinessCampaigns from "./business/resolvers/queries/getActiveBusinessCampaigns";
 import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByUserId";
 import getBusinessCampaignBySlug from "./business/resolvers/queries/getBusinessCampaignBySlug";
 import createBusiness from "./business/resolvers/mutations/createBusiness";
@@ -22,7 +22,7 @@ const typeDefs = schemas.map((schema) => schema.document) as DocumentNode[];
 
 const resolvers: Resolvers = {
   Query: {
-    getBusinessCampaigns,
+    getActiveBusinessCampaigns,
     getBusinessesByUserId,
     getBusinessCampaignBySlug,
   },

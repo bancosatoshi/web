@@ -9,30 +9,28 @@ type BusinessCampaign {
   btcPayServerStoreId: String
   businessId: String
   content: BusinessCampaignContent
-  expiresAt: Date
+  expiresAt: Date!
   id: String!
   investmentMultiple: Float
   slug: String
-  totalSatsInvested: Float
+  totalSatsInvested: Int
 }
 
 type BusinessCampaignContent {
-  asHtmlString: String
-  category: String
-  country: String
-  description: String
-  establishedAt: String
-  instagram: String
-  latitude: String
-  longitude: String
-  markerIcon: String
-  media: BusinessCampaignContentMedia
-  title: String
-  website: String
+  asHtmlString: String!
+  category: String!
+  country: String!
+  description: String!
+  instagram: String!
+  latitude: String!
+  longitude: String!
+  media: BusinessCampaignContentMedia!
+  title: String!
+  website: String!
 }
 
 type BusinessCampaignContentMedia {
-  featuredImageUrl: String
+  featuredImageUrl: String!
 }
 
 type BusinessInfo {
@@ -56,7 +54,7 @@ type Mutation {
 }
 
 type Query {
+  getActiveBusinessCampaigns: [BusinessCampaign]!
   getBusinessCampaignBySlug(input: GetBusinessCampaignBySlugInput!): Business!
-  getBusinessCampaigns: [BusinessCampaign]!
   getBusinessesByUserId(input: GetBusinessesByUserIdInput!): [Business]!
 }

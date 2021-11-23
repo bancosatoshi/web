@@ -1,21 +1,25 @@
 import { QueryResolvers } from "api/codegen/resolvers-types";
 import { ResolversContext } from "api/graphql";
-import { getPageContentByBusinessCampaignSlug } from "lib/wordpress/getPageContentBySlug";
+import { getPageContentByBusinessCampaignSlug } from "src/providers/wordpress/getPageContentBySlug";
 
-const getBusinessCampaigns: QueryResolvers["getBusinessCampaigns"] = async (_, { database }: ResolversContext) => {
+const getActiveBusinessCampaigns: QueryResolvers["getActiveBusinessCampaigns"] = async (
+  _,
+  { database }: ResolversContext,
+) => {
   try {
-    const data = await database.business.businessFundingCampaignPlanModel.findAll();
+    const model = database.business.businessFundingCampaignPlanModel;
+    const data = await model.findAll({ where: { "": "" } });
 
     if (!data || !data.length) {
       throw new Error(`getBusinessCampaigns: unable to find business campaigns records`);
     }
 
-    const businessCampaignsData = data.map(async (bc) => {
+    const mergeCampaignDataWithWordpressContent = data.map(async (bc) => {
       const slug = bc.getDataValue("slug");
       const pageData = await getPageContentByBusinessCampaignSlug(slug);
 
       return {
-        id: bc.getDataValue("id") as string,
+        id: bc.getDataValue("id"),
         slug,
         totalSatsInvested: bc.getDataValue("total_sats_invested"),
         investmentMultiple: bc.getDataValue("investment_multiple"),
@@ -26,9 +30,9 @@ const getBusinessCampaigns: QueryResolvers["getBusinessCampaigns"] = async (_, {
       };
     });
 
-    const businessCampaignsDataResolved = await Promise.allSettled(businessCampaignsData);
+    const businessCampaignsData = await Promise.allSettled(mergeCampaignDataWithWordpressContent);
 
-    const businessCampaigns = businessCampaignsDataResolved.reduce((bcs: any, currentBusinessCampaign) => {
+    const businessCampaigns = businessCampaignsData.reduce((bcs: any, currentBusinessCampaign) => {
       if (currentBusinessCampaign.status !== "rejected") {
         bcs.concat(currentBusinessCampaign.value);
       }
@@ -40,4 +44,4 @@ const getBusinessCampaigns: QueryResolvers["getBusinessCampaigns"] = async (_, {
   }
 };
 
-export default getBusinessCampaigns;
+export default getActiveBusinessCampaigns;

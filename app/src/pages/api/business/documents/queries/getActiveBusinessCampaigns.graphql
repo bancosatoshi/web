@@ -1,0 +1,12 @@
+query GetActiveBusinessCampaigns {
+  getActiveBusinessCampaigns {
+    id
+    slug
+    totalSatsInvested
+    investmentMultiple
+    btcPayServerStoreId
+    content {
+      ...BusinessCampaignContent
+    }
+  }
+}
