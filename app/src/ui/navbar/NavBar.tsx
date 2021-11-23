@@ -3,6 +3,7 @@ import { Col, Container, Row } from "react-grid-system";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { Typography } from "../typography/Typography";
 import { useRoutes } from "hooks/useRoutes/useRoutes";
+import { BancoSatoshiLogo } from "ui/icons/BancoSatoshiLogo";
 
 import styles from "./NavBar.module.scss";
 import { NavBarProps } from "./NavBar.types";
@@ -18,9 +19,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
           <Col lg={3} xs={6} sm={6}>
             <div className={styles.navbar__logo}>
               <Typography.Link href={routes.home}>
-                Banco
-                <br />
-                Satoshi
+                <BancoSatoshiLogo />
               </Typography.Link>
             </div>
           </Col>
