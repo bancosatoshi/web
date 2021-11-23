@@ -7,7 +7,7 @@ const getBusinessCampaigns: QueryResolvers["getBusinessCampaigns"] = async (_, {
     const data = await database.business.businessFundingCampaignPlanModel.findAll();
 
     if (!data || !data.length) {
-      throw new Error(`getBusinessCampaigns: unable to find business campaigns records: ${JSON.stringify(database)}`);
+      throw new Error(`getBusinessCampaigns: unable to find business campaigns records`);
     }
 
     const businessCampaignsData = data.map(async (bc) => {
