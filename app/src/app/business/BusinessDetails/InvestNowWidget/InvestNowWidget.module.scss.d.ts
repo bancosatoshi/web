@@ -6,6 +6,7 @@ export type Styles = {
   "invest-now-widget__cta-text": string;
   "invest-now-widget__fixed-col": string;
   "invest-now-widget__goal": string;
+  "invest-now-widget__risk-level": string;
   "invest-now-widget__terms": string;
   "invest-now-widget__warnings": string;
   "z-depth-0": string;

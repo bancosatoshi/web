@@ -10,22 +10,11 @@
   background-color: var(--color-background);
 
   &__logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: $navbar-height;
-
-    &--color {
-      color: var(--color-navbar-logo);
-    }
-
     a {
-      @include font-properties($typography-headline-6);
-      color: var(--color-typography-text);
-
-      &:hover {
-        text-decoration: none;
-      }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: $navbar-height;
     }
 
     svg {
@@ -46,7 +35,6 @@
 
       p {
         color: var(--color-typography-subtitle);
-        font-weight: $font-weight-medium;
         margin: 0;
       }
     }
@@ -62,8 +50,8 @@
       justify-content: center;
       flex-direction: column;
 
-      p {
-        font-weight: $font-weight-medium;
+      a {
+        font-weight: $font-weight-bold;
         margin: 0;
       }
     }

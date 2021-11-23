@@ -1,10 +1,11 @@
 @import "src/theme/base";
 
 .home {
-  padding-top: $navbar-height;
+  min-height: 100vh;
+  background-color: var(--color-primary);
 
   &__section {
-    min-height: 70vh;
+    display: block;
   }
 
   &__auth-email-card {
@@ -12,6 +13,11 @@
   }
 
   &__intro {
+    &--headline {
+      margin-bottom: $space-ml;
+      color: var(--color-white);
+    }
+
     &--image {
       display: flex;
       justify-content: center;
@@ -24,9 +30,35 @@
     &--cta {
       margin-top: $space-ml;
     }
+
+    &--text-block {
+      margin-bottom: $space-ml;
+    }
   }
 
   &__section {
+    &--intro {
+      padding: $navbar-height 0;
+      background-color: var(--color-secondary);
+    }
+
+    &--cta-banner {
+      min-height: 30vh;
+      padding: $navbar-height 0;
+      background-color: var(--color-primary);
+
+      &--welcome {
+        color: var(--color-white);
+      }
+
+      &--cta {
+        @include font-properties($typography-headline-3);
+        display: block;
+        color: var(--color-white);
+        text-align: right;
+      }
+    }
+
     &--como-funciona {
       min-height: 30vh;
       background-color: var(--color-background);

@@ -31,9 +31,9 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => {
                   <Card.Content>
                     <div className={styles["sign-up__instructions"]}>
                       <Typography.Headline3>Ya has iniciado sesión</Typography.Headline3>
-                      <Typography.Subtitle>
+                      <Typography.Text>
                         Si no es tu cuenta, cambia de cuenta o navega a tu panel de control.
-                      </Typography.Subtitle>
+                      </Typography.Text>
                     </div>
                   </Card.Content>
                   <Card.Actions>
@@ -47,9 +47,9 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => {
                 <Card.Content>
                   <div className={styles["sign-up__instructions"]}>
                     <Typography.Headline3>Inicia Sesión sin Contraseña</Typography.Headline3>
-                    <Typography.Subtitle>
+                    <Typography.Text>
                       Enviaremos un correo a tu bandeja de entrada con las instrucciones.
-                    </Typography.Subtitle>
+                    </Typography.Text>
                   </div>
                   <AuthEmailForm
                     autoFocus
@@ -60,7 +60,7 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => {
               )}
             </Card>
             <div className={styles["sign-up__footer"]}>
-              <Typography.Subtitle>Banco Satoshi ∞ Tu Banco de Inversión, con Bitcoin</Typography.Subtitle>
+              <Typography.Text>Banco Satoshi ∞ Tu Banco de Inversión y Desarrollo, con Bitcoin.</Typography.Text>
               <Typography.Description>Aviso de Privacidad ∞ Términos y Condiciones</Typography.Description>
             </div>
           </Grid.Col>

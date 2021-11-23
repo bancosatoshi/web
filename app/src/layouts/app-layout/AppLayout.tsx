@@ -23,7 +23,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
       <Head>
         <title>{t("head.og.title")}</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://use.typekit.net/ksy7ppe.css" />
+        <link rel="stylesheet" href="https://use.typekit.net/gnn2apg.css" />
         <meta name="description" content={t("head.og.description")} />
         <meta property="og:title" content={t("head.og.title")} />
         <meta property="og:description" content={t("head.og.description")} />
