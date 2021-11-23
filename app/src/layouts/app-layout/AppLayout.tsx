@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { GQLClient } from "src/providers/graphql/client";
 
+import { ToastContextController } from "context/toast/ToastContextController";
+
 import { AppLayoutProps } from "./AppLayout.types";
 
 export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
@@ -35,7 +37,9 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
         <link rel="preload" href="/icons/icomoon.svg" as="font" crossOrigin="" />
       </Head>
       <ApolloProvider client={GQLClient}>
-        <main>{children}</main>
+        <ToastContextController>
+          <main>{children}</main>
+        </ToastContextController>
       </ApolloProvider>
     </>
   );
