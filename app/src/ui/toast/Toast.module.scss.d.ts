@@ -1,6 +1,7 @@
 export type Styles = {
   toast: string;
   "toast__close-button": string;
+  toast__content: string;
   toast__icon: string;
   toast__title: string;
   "toast--confirmation": string;

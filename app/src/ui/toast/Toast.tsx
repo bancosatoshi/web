@@ -26,7 +26,7 @@ export const Toast = ({ title, actionText, children, className, style, variant, 
       {variant === "confirmation" && <Icon name="icon-checkmark-circle" />}
       {variant === "error" && <Icon name="icon-warning" />}
     </div>
-    <div>
+    <div className={styles.toast__content}>
       <Typography.Text className={styles.toast__title}>{title}</Typography.Text>
       {children}
     </div>

@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { client as supabase } from "src/providers/supabase/client";
 
 import { useRoutes } from "hooks/useRoutes/useRoutes";
+import { useToastContext } from "hooks/useToastContext/useToastContext";
+import { Typography } from "ui/typography/Typography";
 
 import { AuthContext } from "./AuthContext";
 import { AuthContextControllerProps, AuthContextLoginValues } from "./AuthContext.types";
@@ -15,6 +17,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
 
   const router = useRouter();
   const routes = useRoutes();
+  const toast = useToastContext();
 
   useEffect(() => {
     const currentSession = supabase.auth.session();
@@ -59,10 +62,31 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       if (error) {
         throw new Error(error.message);
       }
-    } catch {
-      // @TODO handle auth error
+    } catch (_error) {
+      // @TODO log to error logger
+      console.log(_error);
+
+      // @TODO i18n
+      toast.addToast({
+        variant: "error",
+        title: "Error",
+        withTimeout: false,
+        children: <Typography.Text>No pudimos enviar un correo de ingreso. Intenta de nuevo.</Typography.Text>,
+      });
     } finally {
       setIsLoading(false);
+
+      // @TODO i18n
+      toast.addToast({
+        variant: "confirmation",
+        title: "Revisa tu correo",
+        withTimeout: false,
+        children: (
+          <Typography.Text>
+            Enviamos un link de ingreso sin contraseña a tu correo. Da click en él para iniciar sesión.
+          </Typography.Text>
+        ),
+      });
     }
   };
 
@@ -81,10 +105,27 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       } else {
         router.push(routes.auth.signIn);
       }
-    } catch {
-      // @TODO handle auth error
+    } catch (error) {
+      // @TODO log to error logger
+      console.log(error);
+
+      // @TODO i18n
+      toast.addToast({
+        variant: "error",
+        title: "Error",
+        withTimeout: false,
+        children: <Typography.Text>No pudimos cerrar tu sesión. Intenta de nuevo.</Typography.Text>,
+      });
     } finally {
       setIsLoading(false);
+
+      // @TODO i18n
+      toast.addToast({
+        variant: "confirmation",
+        title: "Sesión Terminada",
+        withTimeout: false,
+        children: <Typography.Text>Has cerrado sesión existosamente.</Typography.Text>,
+      });
     }
   };
 
