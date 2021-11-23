@@ -67,7 +67,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       console.log(_error);
 
       // @TODO i18n
-      toast.addToast({
+      toast.trigger({
         variant: "error",
         title: "Error",
         withTimeout: false,
@@ -77,13 +77,13 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       setIsLoading(false);
 
       // @TODO i18n
-      toast.addToast({
+      toast.trigger({
         variant: "confirmation",
         title: "Revisa tu correo",
         withTimeout: false,
         children: (
           <Typography.Text>
-            Enviamos un link de ingreso sin contraseña a tu correo. Da click en él para iniciar sesión.
+            Enviamos un link de ingreso sin contraseña a tu bandeja de entrada. Da click en él para iniciar sesión.
           </Typography.Text>
         ),
       });
@@ -110,7 +110,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       console.log(error);
 
       // @TODO i18n
-      toast.addToast({
+      toast.trigger({
         variant: "error",
         title: "Error",
         withTimeout: false,
@@ -120,11 +120,11 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       setIsLoading(false);
 
       // @TODO i18n
-      toast.addToast({
+      toast.trigger({
         variant: "confirmation",
         title: "Sesión Terminada",
         withTimeout: false,
-        children: <Typography.Text>Has cerrado sesión existosamente.</Typography.Text>,
+        children: <Typography.Text>Has cerrado sesión exitosamente.</Typography.Text>,
       });
     }
   };

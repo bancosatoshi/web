@@ -59,7 +59,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
       setIsLoading(false);
 
       // @TODO i18n
-      toast.addToast({
+      toast.trigger({
         variant: "error",
         title: "Error",
         withTimeout: false,

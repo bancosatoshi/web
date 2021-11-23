@@ -17,5 +17,5 @@ export type ToastOptions = {
 };
 
 export type ToastContextType = {
-  addToast: (toast: ToastOptions) => void;
+  trigger: (toast: ToastOptions) => void;
 };

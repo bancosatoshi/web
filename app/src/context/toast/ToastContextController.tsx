@@ -17,7 +17,7 @@ export const ToastContextController = ({ children }: ToastContextProviderProps) 
   const removeToast = (toastToRemoveId: string) =>
     setToasts((oldToasts) => oldToasts.filter(({ id }) => id !== toastToRemoveId));
 
-  const addToast = useCallback((newToast: ToastOptions) => {
+  const trigger = useCallback((newToast: ToastOptions) => {
     const id = createId();
     setToasts((currentToasts) => [...currentToasts, { ...newToast, id }]);
 
@@ -66,7 +66,7 @@ export const ToastContextController = ({ children }: ToastContextProviderProps) 
   );
 
   return (
-    <ToastContext.Provider value={{ addToast }}>
+    <ToastContext.Provider value={{ trigger }}>
       {children}
       {toastWrapper({ toastItems: toasts.filter((toast) => toast.position === "top"), position: "top" })}
       {toastWrapper({
