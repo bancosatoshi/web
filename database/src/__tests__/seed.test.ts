@@ -1,14 +1,7 @@
 import database from "../index";
 import business, { BusinessModels } from "../business";
 import { Sequelize } from "sequelize/dist";
-
-const config = {
-  host: process.env.MYSQL_HOST,
-  port: Number(process.env.MYSQL_PORT),
-  user: process.env.MYSQL_ROOT_USER,
-  password: process.env.MYSQL_ROOT_PASSWORD,
-  database: process.env.MYSQL_DATABASE,
-};
+import { config } from "./utils/db";
 
 describe("init", () => {
   let driver: Sequelize;
@@ -33,6 +26,8 @@ describe("init", () => {
       business_id: businessRecord.getDataValue("id"),
       slug: "el-comalote-gt",
       btcpayserver_store_id: "6e39hBHXvVwWvJUhSb2wKoBden7Ze4zrEDmq3F3f3Gex",
+      investment_multiple: 1.5,
+      expires_at: new Date("2021-12-25"),
     });
   });
 
@@ -50,5 +45,23 @@ describe("init", () => {
     });
 
     expect(data.getDataValue("id")).toBeDefined();
+  });
+
+  test("getBusinessCampaignBySlug: virtuals", async () => {
+    const data = await businessModels.businessFundingCampaignPlanModel.findOne({
+      where: {
+        slug: "el-comalote-gt",
+      },
+      include: [
+        {
+          model: businessModels.businessModel,
+          include: [businessModels.businessInfoModel],
+        },
+      ],
+    });
+
+    expect(data.get("is_active")).toBeTruthy();
+    // @TODO this will fail at some point because the date is hardcoded
+    expect(data.get("days_left")).toBe(31);
   });
 });

@@ -2,14 +2,14 @@ import { NextPage } from "next";
 
 import { AppLayout } from "layouts/app-layout/AppLayout";
 import { AuthLayout } from "layouts/auth-layout/AuthLayout";
+import { CampaignsGridContainer } from "app/campaigns-grid/CampaignsGridContainer";
 
-const Businesses: NextPage = () => (
+const BusinessCampaigns: NextPage = () => (
   <AppLayout>
     <AuthLayout>
-      {/* @TODO Business Grid Implementation */}
-      <></>
+      <CampaignsGridContainer />
     </AuthLayout>
   </AppLayout>
 );
 
-export default Businesses;
+export default BusinessCampaigns;

@@ -27,3 +27,6 @@ generates:
     hooks:
       afterOneFileWrite:
         - prettier --write
+    config:
+      scalars:
+        Date: Date
