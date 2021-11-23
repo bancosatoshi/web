@@ -4,6 +4,7 @@ import { Typography } from "ui/typography/Typography";
 import { Grid } from "ui/grid/Grid";
 import { MapMarker } from "ui/map/map-marker/MapMarker";
 import { MapView } from "ui/map/map-view/MapView";
+import { Icon } from "ui/icon/Icon";
 
 import { BusinessHeaderProps } from "./BusinessHeader.types";
 import styles from "./BusinessHeader.module.scss";
@@ -55,7 +56,7 @@ export const BusinessHeader: React.FC<BusinessHeaderProps> = ({ className, conte
                   className={styles["business-header__link--social"]}
                   href={`https://instagram.com/${content.instagram}`}
                 >
-                  {content.instagram}
+                  <Icon name="icon-instagram" />
                 </Typography.Link>
               </Grid.Col>
             </Grid.Row>

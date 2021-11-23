@@ -45,13 +45,15 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, con
           <Grid.Col lg={4} offset={{ lg: 8 }} className={styles["invest-now-widget__fixed-col"]}>
             <Card shadow>
               <Card.Content>
-                <Tooltip.Wrapper>
-                  <Typography.Description>Nivel de Riesgo: Medio</Typography.Description>
-                  <Tooltip
-                    title="Nivel de Riesgo Medio"
-                    description={`${content.title} tiene una edad de 2 años. Tiene libros contables en orden y tiene un score 8.5 de 10 en el Protocolo de Inversión.`}
-                  />
-                </Tooltip.Wrapper>
+                <div className={styles["invest-now-widget__risk-level"]}>
+                  <Tooltip.Wrapper>
+                    <Typography.Description>Nivel de Riesgo: Medio</Typography.Description>
+                    <Tooltip
+                      title="Nivel de Riesgo Medio"
+                      description={`${content.title} tiene una edad de 2 años. Tiene libros contables en orden y tiene un score 8.5 de 10 en el Protocolo de Inversión.`}
+                    />
+                  </Tooltip.Wrapper>
+                </div>
                 <hr />
                 <Typography.Headline3 className={styles["invest-now-widget__cta-text"]}>
                   Invierte en {content.title}

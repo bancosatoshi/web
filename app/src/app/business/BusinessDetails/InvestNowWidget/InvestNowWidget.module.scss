@@ -6,6 +6,16 @@
   z-index: $z-index-navigation;
   margin-top: $space-default;
 
+  &__risk-level {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: $space-default;
+
+    p {
+      margin: 0;
+    }
+  }
+
   &__fixed-col {
     height: 0;
   }
@@ -75,11 +85,10 @@
       background-color: var(--color-background-contrast);
       margin-bottom: $space-s;
       border-left: 2px solid var(--color-status-info);
-      padding-left: $space-s;
+      padding: $space-s;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 49px;
       &:last-child {
         margin-bottom: 0;
       }
