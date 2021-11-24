@@ -15,7 +15,12 @@ export const CampaignsGroup: React.FC<CampaignsGroupProps> = ({
   const variant = singleLine ? "line" : "collection";
 
   return (
-    <div className={clsx(styles["campaigns-group"], styles[`campaigns-group__${variant}`], className)}>
+    <div
+      className={clsx(styles["campaigns-group"], className, {
+        [styles["campaigns-group__collection"]]: variant === "collection",
+        [styles["campaigns-group__line"]]: variant === "line",
+      })}
+    >
       <Grid.Container>
         <Grid.Row nowrap={singleLine}>
           {campaigns.length &&
