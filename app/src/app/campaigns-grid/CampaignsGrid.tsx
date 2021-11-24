@@ -24,8 +24,8 @@ export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, classNa
   };
 
   const onCampaignClickHandler = (campaign: BusinessCampaign) => {
-    const campaignPage = routes.campaign + campaign.slug;
-    router.push(campaignPage);
+    const campaignPageRoute = `${routes.campaign}${campaign.slug}`;
+    router.push(campaignPageRoute);
   };
 
   return (
