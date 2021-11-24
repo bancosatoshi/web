@@ -2,6 +2,8 @@
 
 .campaign-card {
   cursor: pointer;
+  width: 100%;
+  margin: $space-s;
 
   &__cover {
     object-fit: cover;

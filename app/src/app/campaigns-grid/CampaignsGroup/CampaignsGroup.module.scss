@@ -1,5 +1,13 @@
 @import "src/theme/base";
 
 .campaigns-group {
-  display: block;
+  padding: $space-s;
+
+  &__line {
+    overflow-x: scroll;
+  }
+
+  &__collection {
+    overflow-y: scroll;
+  }
 }

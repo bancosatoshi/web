@@ -53,7 +53,7 @@ export const Home: React.FC<HomeProps> = ({ className }) => {
               </Typography.Headline4>
             </Grid.Col>
             <Grid.Col lg={5}>
-              <Typography.Link className={styles["home__section--cta-banner--cta"]} href={routes.invest.map}>
+              <Typography.Link className={styles["home__section--cta-banner--cta"]} href={routes.invest.grid}>
                 Visita la Sala de Inversión <Icon name="icon-chevron-right-circle" />
               </Typography.Link>
             </Grid.Col>
