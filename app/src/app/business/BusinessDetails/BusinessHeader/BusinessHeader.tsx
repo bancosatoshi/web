@@ -31,7 +31,8 @@ export const BusinessHeader: React.FC<BusinessHeaderProps> = ({ className, conte
               <MapView mapOptions={mapOptions}>
                 <MapMarker
                   markerOptions={{
-                    icon: content.markerIcon,
+                    // @TODO set a real icon
+                    icon: "some icon",
                   }}
                 />
               </MapView>

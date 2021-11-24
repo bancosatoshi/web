@@ -46,7 +46,7 @@ export class BusinessFundingCampaignPlanModel extends Model<BusinessFundingCampa
       unique: true,
     },
     investment_multiple: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
     },
     total_sats_invested: {
