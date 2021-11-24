@@ -7,17 +7,7 @@ const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = a
   { database }: ResolversContext,
 ) => {
   try {
-    const data = await database.business.businessFundingCampaignPlanModel.findOne({
-      where: {
-        slug: input.slug,
-      },
-      include: [
-        {
-          model: database.business.businessModel,
-          include: [database.business.businessInfoModel],
-        },
-      ],
-    });
+    const data = await database.dao.business_funding_campaign_plan.getBySlug({ slug: input.slug });
 
     if (!data || !data.business || !data.business.business_info) {
       throw new Error(`getBusinessCampaignBySlug: unable to find a record with slug ${input.slug}`);

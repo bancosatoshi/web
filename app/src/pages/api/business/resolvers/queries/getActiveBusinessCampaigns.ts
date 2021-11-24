@@ -10,10 +10,7 @@ const getActiveBusinessCampaigns: QueryResolvers["getActiveBusinessCampaigns"] =
   { database }: ResolversContext,
 ) => {
   try {
-    const { businessFundingCampaignPlanModel } = database.business;
-
-    // @TODO we should get this from the business DAO. My bad, I noticed the need of the DAO today
-    const activeCampaigns = await businessFundingCampaignPlanModel.findAll();
+    const activeCampaigns = await database.dao.business_funding_campaign_plan.getAllActive();
 
     if (!activeCampaigns || !activeCampaigns.length) {
       throw new Error(`getActiveBusinessCampaigns: unable to find business campaigns records`);

@@ -3,6 +3,9 @@ import BusinessInfoModel, { BusinessInfoModelArgs } from "./BusinessInfoModel";
 import BusinessFundingCampaignPlanModel, {
   BusinessFundingCampaignPlanModelArgs,
 } from "./BusinessFundingCampaignPlanModel";
+import BusinessFundingCampaignTransactionsModel, {
+  BusinessFundingCampaignTransactionsModelArgs,
+} from "./BusinessFundingCampaignTransactionsModel";
 
 export {
   BusinessModel,
@@ -11,4 +14,6 @@ export {
   BusinessModelArgs,
   BusinessFundingCampaignPlanModel,
   BusinessFundingCampaignPlanModelArgs,
+  BusinessFundingCampaignTransactionsModel,
+  BusinessFundingCampaignTransactionsModelArgs,
 };
