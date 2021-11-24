@@ -13,7 +13,7 @@ type RouteMap = {
     grid: string;
     map: string;
   };
-  campaign: string;
+  campaign: (campaignSlug: string) => string;
   home: string;
 };
 
@@ -33,5 +33,5 @@ export const useRoutes: () => RouteMap = () => ({
     map: "/i/map", // @TODO resolve i18n paths for all languages
   },
   home: "/",
-  campaign: "/c/",
+  campaign: (campaignSlug) => `/c/${campaignSlug}`,
 });

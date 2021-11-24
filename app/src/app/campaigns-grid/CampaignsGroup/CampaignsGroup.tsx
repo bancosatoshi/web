@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { Container } from "react-grid-system";
 
 import { BusinessCampaignCard } from "ui/business-campaing-card/BusinessCampaignCard";
 import { Grid } from "ui/grid/Grid";
@@ -12,13 +11,12 @@ export const CampaignsGroup: React.FC<CampaignsGroupProps> = ({
   singleLine = true,
   onCampaignClick,
   className,
-  ...props
 }) => {
   const variant = singleLine ? "line" : "collection";
 
   return (
-    <div className={clsx(styles[`campaigns-group`], styles[`campaigns-group__${variant}`], className)}>
-      <Container>
+    <div className={clsx(styles["campaigns-group"], styles[`campaigns-group__${variant}`], className)}>
+      <Grid.Container>
         <Grid.Row nowrap={singleLine}>
           {campaigns.length &&
             campaigns.map((campaign) => (
@@ -27,7 +25,7 @@ export const CampaignsGroup: React.FC<CampaignsGroupProps> = ({
               </Grid.Col>
             ))}
         </Grid.Row>
-      </Container>
+      </Grid.Container>
     </div>
   );
 };

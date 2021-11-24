@@ -1,6 +1,5 @@
 export type Styles = {
   "campaign-card": string;
-  "campaign-card__cover": string;
   "campaign-card__short": string;
   "z-depth-0": string;
   "z-depth-1": string;
