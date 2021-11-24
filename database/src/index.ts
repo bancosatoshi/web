@@ -1,6 +1,8 @@
 import mysql from "mysql2/promise";
 import { Sequelize, SyncOptions } from "sequelize";
 
+export const Driver = Sequelize;
+
 export default {
   async connect(config: mysql.ConnectionOptions, options?: SyncOptions) {
     try {
@@ -15,6 +17,7 @@ export default {
         username: config.user,
         database: config.database,
         dialect: "mysql",
+        dialectModule: require("mysql2"),
       });
 
       await sequelize.authenticate();

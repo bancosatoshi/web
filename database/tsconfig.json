@@ -6,14 +6,15 @@
     "sourceMap": true,
     "outDir": "./build",
     "rootDir": "./src",
+    "sourceRoot": "./",
     "strict": true,
     "noImplicitAny": false,
     "strictNullChecks": false,
-    "typeRoots": ["node_modules/@types"],
+    "types": ["jest", "node"],
     "esModuleInterop": true,
     "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./src/index.ts", "./src/business"]
+  "include": ["./src"]
 }

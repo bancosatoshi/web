@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { Container } from "react-grid-system";
 
 import { Grid } from "ui/grid/Grid";
 import { Card } from "ui/card/Card";
@@ -12,10 +11,10 @@ import { BusinessContent } from "./BusinessContent/BusinessContent";
 import { BusinessHeader } from "./BusinessHeader/BusinessHeader";
 import { InvestNowWidget } from "./InvestNowWidget/InvestNowWidget";
 
-export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ content }) => (
+export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign: { content } }) => (
   <div className={clsx(styles["business-details"])}>
     <InvestNowWidget content={content} />
-    <Container>
+    <Grid.Container>
       <Grid.Row>
         <Grid.Col lg={8}>
           <Card className={styles["business-details__box"]} shadow>
@@ -35,6 +34,6 @@ export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ content }) => 
           </Card>
         </Grid.Col>
       </Grid.Row>
-    </Container>
+    </Grid.Container>
   </div>
 );

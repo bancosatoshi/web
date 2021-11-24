@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
+import { useToastContext } from "hooks/useToastContext/useToastContext";
+import { Typography } from "ui/typography/Typography";
 
 import { CheckoutContext } from "./CheckoutContext";
 import { BTCPayCheckoutOptions, CheckoutContextControllerProps, CheckoutState } from "./CheckoutContext.types";
@@ -11,6 +13,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
   const [error, setError] = useState<string | undefined>(undefined);
 
   const auth = useAuthContext();
+  const toast = useToastContext();
 
   const getCheckoutURL = async ({ checkout }: BTCPayCheckoutOptions) => {
     try {
@@ -48,10 +51,20 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
     } catch (error_) {
       // @TODO handle error
       console.log(error_);
+
       setError(
         "Error at CheckoutContextController:getCheckoutURL. Check server logs as this may have happened in the API side.",
       );
+
       setIsLoading(false);
+
+      // @TODO i18n
+      toast.trigger({
+        variant: "error",
+        title: "Error",
+        withTimeout: false,
+        children: <Typography.Text>No pudimos generar un link de depósito de BTC. Intenta de nuevo.</Typography.Text>,
+      });
     }
   };
 

@@ -1,0 +1,9 @@
+fragment BusinessCampaign on BusinessCampaign {
+  id
+  slug
+  expiresAt
+  investmentMultiple
+  totalSatsInvested
+  businessId
+  btcPayServerStoreId
+}

@@ -1,15 +1,18 @@
 import { DataTypes, Model, ModelOptions } from "sequelize";
+import { BusinessModel } from ".";
 
 export type BusinessInfoModelArgs = {
   id?: string;
   business_id: string;
   established_at: Date;
-  created_at: Date;
-  updated_at: Date;
+  created_at?: Date;
+  updated_at?: Date;
 };
 
 export class BusinessInfoModel extends Model<BusinessInfoModelArgs> {
   public static tableName = "business_info";
+
+  public business?: BusinessModel;
 
   public static rawAttributes = {
     id: {
@@ -28,12 +31,12 @@ export class BusinessInfoModel extends Model<BusinessInfoModelArgs> {
     },
     created_at: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: new Date(),
     },
     updated_at: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: new Date(),
     },
   };

@@ -1,14 +1,17 @@
 {
   "name": "@bancosatoshi/database",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "license": "MIT",
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bancosatoshi/web.git"
+  },
   "scripts": {
     "start": "ts-node ./src",
     "start:debug": "ts-node-dev --inspect=9226 --no-notify --respawn ./src",
     "clean": "rimraf build",
-    "compile": "npm run clean && tsc",
+    "compile": "tsc",
     "publish:prepare": "npm run clean && npm run compile",
     "test": "jest"
   },
@@ -16,14 +19,19 @@
     "build": "build"
   },
   "dependencies": {
-    "mysql2": "^2.2.5",
-    "sequelize": "^6.5.0"
+    "cardinal": "^2.1.1",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.0-alpha.1"
   },
   "devDependencies": {
+    "@types/faker": "^5.5.9",
     "@types/jest": "^26.0.4",
     "@types/node": "^14.11.8",
     "@types/sequelize": "^4.28.9",
+    "faker": "^5.5.3",
     "jest": "^26.1.0",
+    "pg-hstore": "^2.3.4",
     "prettier": "^2.4.1",
     "ts-jest": "^26.1.2",
     "ts-node-dev": "^1.0.0-pre.50",

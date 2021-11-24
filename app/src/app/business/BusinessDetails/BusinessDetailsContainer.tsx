@@ -1,34 +1,38 @@
-import { useGetBusinessByCampaignSlugQuery } from "api/codegen";
+import { useGetBusinessCampaignBySlugQuery } from "api/codegen";
 import { useRouter } from "next/router";
 import React from "react";
 
-import { BusinessDetails } from "./BusinessDetails";
-import { BusinessDetailsProps } from "./BusinessDetails.types";
+import { Typography } from "ui/typography/Typography";
 
-export const BusinessDetailsContainer = ({ content }: BusinessDetailsProps) => {
+import { BusinessDetails } from "./BusinessDetails";
+
+export const BusinessDetailsContainer = () => {
   const router = useRouter();
 
   const { campaignSlug } = router.query;
 
   const {
-    data: getBusinessByCampaignSlugQueryData,
-    error: getBusinessByCampaignSlugQueryError,
+    data: getBusinessCampaignBySlugQueryData,
+    error: getBusinessCampaignBySlugQueryError,
     loading: isGetBusinessByCampaignSlugQueryLoading,
-  } = useGetBusinessByCampaignSlugQuery({ variables: { input: { slug: campaignSlug as string } } });
+  } = useGetBusinessCampaignBySlugQuery({ variables: { input: { slug: campaignSlug as string } } });
 
-  if (getBusinessByCampaignSlugQueryError || !getBusinessByCampaignSlugQueryData) {
+  if (isGetBusinessByCampaignSlugQueryLoading) {
+    // @TODO set a generic loading template
+    return <Typography.Text>loading</Typography.Text>;
+  }
+
+  if (
+    getBusinessCampaignBySlugQueryError ||
+    !getBusinessCampaignBySlugQueryData?.getBusinessCampaignBySlug?.activeCampaign
+  ) {
     // @TODO redirect to generic error page
-    console.log(getBusinessByCampaignSlugQueryError);
+    console.log(getBusinessCampaignBySlugQueryError);
 
     return null;
   }
 
-  if (isGetBusinessByCampaignSlugQueryLoading) {
-    // @TODO set a generic loading template
-    return "loading";
-  }
+  const campaign = getBusinessCampaignBySlugQueryData.getBusinessCampaignBySlug.activeCampaign;
 
-  const campaign = getBusinessByCampaignSlugQueryData.getBusinessByCampaignSlug;
-
-  return <BusinessDetails content={content} campaign={campaign} />;
+  return <BusinessDetails campaign={campaign} />;
 };

@@ -1,5 +1,5 @@
-query GetBusinessByCampaignSlug($input: GetBusinessByCampaignSlugInput!) {
-  getBusinessByCampaignSlug(input: $input) {
+query GetBusinessCampaignBySlug($input: GetBusinessCampaignBySlugInput!) {
+  getBusinessCampaignBySlug(input: $input) {
     id
     userId
     info {
@@ -8,10 +8,10 @@ query GetBusinessByCampaignSlug($input: GetBusinessByCampaignSlugInput!) {
       establisedAt
     }
     activeCampaign {
-      id
-      businessId
-      slug
-      btcPayServerStoreId
+      ...BusinessCampaign
+      content {
+        ...BusinessCampaignContent
+      }
     }
   }
 }

@@ -1,117 +1,63 @@
 import clsx from "clsx";
 import { Container } from "react-grid-system";
-import dynamic from "next/dynamic";
 
 import { Typography } from "ui/typography/Typography";
-import { Card } from "ui/card/Card";
-import { AuthEmailFormProps } from "ui/form/auth-email-form/AuthEmailForm.types";
 import { Grid } from "ui/grid/Grid";
-import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
-import { AuthContextLoginValues } from "context/auth/AuthContext.types";
-import { Button } from "ui/button/Button";
+import { Icon } from "ui/icon/Icon";
+import { useRoutes } from "hooks/useRoutes/useRoutes";
 
 import styles from "./Home.module.scss";
 import { HomeProps } from "./Home.types";
 
-const AuthEmailForm = dynamic<AuthEmailFormProps>(
-  () => import("ui/form/auth-email-form/AuthEmailForm").then((mod) => mod.AuthEmailForm),
-  { ssr: false },
-);
-
 export const Home: React.FC<HomeProps> = ({ className }) => {
-  const auth = useAuthContext();
+  const routes = useRoutes();
 
   return (
     <div className={clsx(styles.home, className)}>
-      <section id="intro" className={styles.home__section}>
+      <section id="intro" className={clsx(styles.home__section, styles["home__section--intro"])}>
         <Container>
           <Grid.Row>
-            <Grid.Col lg={6}>
-              <Typography.Headline1>
+            <Grid.Col lg={7}>
+              <Typography.Headline1 className={styles["home__intro--headline"]}>
                 Invierte en Negocios
                 <br />
-                con Bitcoin
+                con Bitcoin.
               </Typography.Headline1>
-              <Typography.TextLead>
-                Invierte en empresarixs dedicados a cumplir sus metas,
-                <br /> desde 1 SAT.
-              </Typography.TextLead>
-              <Typography.TextLead>
-                Nuestro protocolo de inversión respalda el éxito de los emprendedores.
-              </Typography.TextLead>
-              {auth.hasActiveSession ? (
-                <div className={styles["home__intro--cta"]}>
-                  <Button size="l">Visita la sala de inversión</Button>
-                </div>
-              ) : (
-                <Card className={styles["home__auth-email-card"]} shadow>
-                  <Card.Content>
-                    <AuthEmailForm
-                      autoFocus
-                      onSubmit={(values) => auth.handleLogin(values as AuthContextLoginValues)}
-                      isLoading={auth.isLoading}
-                    />
-                  </Card.Content>
-                </Card>
-              )}
-            </Grid.Col>
-            <Grid.Col lg={6}>
-              <div className={styles["home__intro--image"]}>
-                <img src="/home/emprendedor-home.png" alt="Emprendedor" />
+              <div className={styles["home__intro--text-block"]}>
+                <Typography.Text>Como inversionista</Typography.Text>
+                <Typography.TextLead>
+                  Diversifica tu portafolio con ingresos pasivos
+                  <br />
+                  <strong>desde 1 SAT</strong>.
+                </Typography.TextLead>
+              </div>
+              <div className={styles["home__intro--text-block"]}>
+                <Typography.Text>Como empresarix</Typography.Text>
+                <Typography.TextLead>
+                  Accede a capital de inversión global
+                  <br />y ejecuta tus ideas.
+                </Typography.TextLead>
               </div>
             </Grid.Col>
           </Grid.Row>
         </Container>
       </section>
-      <section id="como-funciona" className={clsx(styles.home__section, styles["home__section--como-funciona"])}>
+      <section id="cta-banner" className={clsx(styles.home__section, styles["home__section--cta-banner"])}>
         <Container>
           <Grid.Row>
-            <Grid.Col lg={4}>
-              <div className={styles["home__section--como-funciona--box"]}>
-                <Typography.Headline2>Invierte</Typography.Headline2>
-                <Typography.Text>
-                  Descubre e invierte en negocios evaluados con nuestro Protocolo de Inversión, desde 1 SAT.
-                </Typography.Text>
-              </div>
+            <Grid.Col lg={7}>
+              <Typography.Headline4 className={styles["home__section--cta-banner--welcome"]}>
+                Bienvenido a tu banco de inversión y desarrollo,
+                <br />
+                con Bitcoin.
+              </Typography.Headline4>
             </Grid.Col>
-            <Grid.Col lg={4}>
-              <div className={styles["home__section--como-funciona--box"]}>
-                <Typography.Headline2>Da Seguimiento</Typography.Headline2>
-                <Typography.Text>
-                  Banco Satoshi reporta avances trimestrales para mantenerte actualizado.
-                </Typography.Text>
-              </div>
-            </Grid.Col>
-            <Grid.Col lg={4}>
-              <div className={styles["home__section--como-funciona--box"]}>
-                <Typography.Headline2>Colecta tu ROI</Typography.Headline2>
-                <Typography.Text>
-                  Recibe una parte de las utilidades del negocio. Conforme el negocio crece, tu portafolio también.
-                </Typography.Text>
-              </div>
+            <Grid.Col lg={5}>
+              <Typography.Link className={styles["home__section--cta-banner--cta"]} href={routes.invest.map}>
+                Visita la Sala de Inversión <Icon name="icon-chevron-right-circle" />
+              </Typography.Link>
             </Grid.Col>
           </Grid.Row>
-        </Container>
-      </section>
-      <section id="perfil-del-empresario" className={clsx(styles.home__section)}>
-        <Container>
-          <Typography.Headline2>Perfil del Empresarix</Typography.Headline2>
-        </Container>
-      </section>
-      <section id="perfil-del-empresario" className={styles.home__section}>
-        <Container>
-          <Typography.Headline2>0 Volatilidad, con DAI</Typography.Headline2>
-        </Container>
-      </section>
-      <section id="proceso-de-evaluacion" className={styles.home__section}>
-        <Container>
-          <Typography.Headline2>Nuestro Proceso de Evaluación</Typography.Headline2>
-          <Typography.Text>Protocolo de Inversión</Typography.Text>
-        </Container>
-      </section>
-      <section id="beneficios" className={styles.home__section}>
-        <Container>
-          <Typography.Headline2>Beneficios de Invertir con Banco Satoshi</Typography.Headline2>
         </Container>
       </section>
     </div>

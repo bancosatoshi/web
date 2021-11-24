@@ -9,6 +9,9 @@ type RouteMap = {
   auth: {
     signIn: string;
   };
+  invest: {
+    map: string;
+  };
   home: string;
 };
 
@@ -22,6 +25,9 @@ export const useRoutes: () => RouteMap = () => ({
   },
   auth: {
     signIn: "/a/ingresa", // @TODO resolve i18n paths for all languages
+  },
+  invest: {
+    map: "/i/map", // @TODO resolve i18n paths for all languages
   },
   home: "/",
 });
