@@ -11,17 +11,17 @@ export const CampaignsGridContainer = () => {
     loading: isGetBusinessByCampaignsQueryLoading,
   } = useGetActiveBusinessCampaignsQuery();
 
-  if (getBusinessCampaignsQueryError || !getBusinessCampaignsQueryData) {
+  if (isGetBusinessByCampaignsQueryLoading) {
+    // @TODO set a generic loading template
+    return <Typography.Text>loading</Typography.Text>;
+  }
+
+  if (getBusinessCampaignsQueryError || !getBusinessCampaignsQueryData?.getActiveBusinessCampaigns) {
     // @TODO redirect to generic error page
 
     console.log(getBusinessCampaignsQueryError);
 
     return null;
-  }
-
-  if (isGetBusinessByCampaignsQueryLoading) {
-    // @TODO set a generic loading template
-    return <Typography.Text>loading</Typography.Text>;
   }
 
   const campaigns = getBusinessCampaignsQueryData.getActiveBusinessCampaigns;

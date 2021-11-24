@@ -1,6 +1,6 @@
-import { BusinessDetailsContent } from "../BusinessDetails.types";
+import { BusinessCampaignContent } from "api/codegen";
 
 export type BusinessContentProps = {
-  content: BusinessDetailsContent;
+  content: BusinessCampaignContent;
   className?: string;
 };

@@ -35,7 +35,7 @@ type BusinessCampaignContentMedia {
 
 type BusinessInfo {
   businessId: String!
-  establisedAt: String!
+  establisedAt: Date!
   id: String!
 }
 

@@ -8,10 +8,10 @@ query GetBusinessCampaignBySlug($input: GetBusinessCampaignBySlugInput!) {
       establisedAt
     }
     activeCampaign {
-      id
-      businessId
-      slug
-      btcPayServerStoreId
+      ...BusinessCampaign
+      content {
+        ...BusinessCampaignContent
+      }
     }
   }
 }
