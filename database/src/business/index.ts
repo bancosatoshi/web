@@ -1,23 +1,12 @@
-import { Model, ModelCtor, Sequelize, SyncOptions } from "sequelize";
-import {
-  BusinessFundingCampaignPlanModel,
-  BusinessFundingCampaignTransactionsModel,
-  BusinessFundingCampaignPlanModelArgs,
-  BusinessModelArgs,
-  BusinessInfoModelArgs,
-} from "./model";
+import { Sequelize, SyncOptions } from "sequelize";
+import { BusinessFundingCampaignPlanModel, BusinessFundingCampaignTransactionsModel } from "./model";
+import { BusinessDAO } from "../dao/types";
 import BusinessInfoModel from "./model/BusinessInfoModel";
 import BusinessModel from "./model/BusinessModel";
-
-export type BusinessModels = {
-  businessModel: ModelCtor<BusinessModel>;
-  businessInfoModel: ModelCtor<BusinessInfoModel>;
-  businessFundingCampaignPlanModel: ModelCtor<BusinessFundingCampaignPlanModel>;
-  businessFundingCampaignTransactionsModel: ModelCtor<BusinessFundingCampaignTransactionsModel>;
-};
+import dao from "../dao";
 
 export default {
-  init: async (driver: Sequelize, syncOptions?: SyncOptions): Promise<BusinessModels> => {
+  init: async (driver: Sequelize, syncOptions?: SyncOptions): Promise<BusinessDAO> => {
     const Business = driver.define(BusinessModel.tableName, BusinessModel.rawAttributes, BusinessModel.config);
 
     const BusinessInfo = driver.define(
@@ -68,10 +57,35 @@ export default {
     await driver.sync(syncOptions);
 
     return {
-      businessModel: driver.model(BusinessModel.tableName),
-      businessInfoModel: driver.model(BusinessInfoModel.tableName),
-      businessFundingCampaignPlanModel: driver.model(BusinessFundingCampaignPlanModel.tableName),
-      businessFundingCampaignTransactionsModel: driver.model(BusinessFundingCampaignTransactionsModel.tableName),
+      business: {
+        create: dao.business.create(driver.model(BusinessModel.tableName)),
+      },
+      business_info: {
+        create: dao.business_info.create(driver.model(BusinessInfoModel.tableName)),
+      },
+      business_funding_campaign_plan: {
+        create: dao.business_funding_campaign_plan.create(driver.model(BusinessFundingCampaignPlanModel.tableName)),
+        getBySlug: dao.business_funding_campaign_plan.getBySlug(
+          driver.model(BusinessFundingCampaignPlanModel.tableName),
+          driver.model(BusinessModel.tableName),
+          driver.model(BusinessInfoModel.tableName),
+        ),
+        getAllActive: dao.business_funding_campaign_plan.getAllActive(
+          driver.model(BusinessFundingCampaignPlanModel.tableName),
+        ),
+      },
+      business_funding_campaign_transactions: {
+        create: dao.business_funding_campaign_transactions.create(
+          driver.model(BusinessFundingCampaignTransactionsModel.tableName),
+        ),
+        findAllByUserId: dao.business_funding_campaign_transactions.findAllByUserId(
+          driver.model(BusinessFundingCampaignTransactionsModel.tableName),
+        ),
+        findAllByBusinessFundingCampaignId:
+          dao.business_funding_campaign_transactions.findAllByBusinessFundingCampaignId(
+            driver.model(BusinessFundingCampaignTransactionsModel.tableName),
+          ),
+      },
     };
   },
 };
