@@ -11,10 +11,13 @@ const config = {
 
 export const init = async () => {
   const driver = await database.connect(config);
+  const businessDAO = await business.init(driver);
 
   return {
     driver,
-    business: await business.init(driver),
+    dao: {
+      ...businessDAO,
+    },
   };
 };
 

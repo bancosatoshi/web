@@ -1,5 +1,4 @@
 import { ApolloServer } from "apollo-server-micro";
-import { BusinessModels } from "@bancosatoshi/database/business";
 import { Driver } from "@bancosatoshi/database";
 import { loadTypedefsSync } from "@graphql-tools/load";
 import { GraphQLFileLoader } from "@graphql-tools/graphql-file-loader";
@@ -8,6 +7,7 @@ import { DocumentNode } from "graphql";
 import { Resolvers } from "api/codegen/resolvers-types";
 import databaseConnection from "src/providers/database";
 import path from "path";
+import { BusinessDAO } from "@bancosatoshi/database/dao/types";
 
 import getActiveBusinessCampaigns from "./business/resolvers/queries/getActiveBusinessCampaigns";
 import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByUserId";
@@ -35,7 +35,7 @@ export type ResolversContext = {
   req: NextApiRequest;
   database: {
     driver: typeof Driver;
-    business: BusinessModels;
+    dao: BusinessDAO;
   };
 };
 

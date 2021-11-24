@@ -1,5 +1,5 @@
 import moment from "moment";
-import { Association, DataTypes, Model, ModelCtor, ModelOptions } from "sequelize";
+import { DataTypes, Model, ModelOptions } from "sequelize";
 import { BusinessModel } from ".";
 
 type ModelAttributes = typeof Model.rawAttributes;
