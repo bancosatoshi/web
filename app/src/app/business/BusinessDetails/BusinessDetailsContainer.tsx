@@ -5,9 +5,8 @@ import React from "react";
 import { Typography } from "ui/typography/Typography";
 
 import { BusinessDetails } from "./BusinessDetails";
-import { BusinessFundingCampaignContainerProps } from "./BusinessDetails.types";
 
-export const BusinessDetailsContainer = ({ content }: BusinessFundingCampaignContainerProps) => {
+export const BusinessDetailsContainer = () => {
   const router = useRouter();
 
   const { campaignSlug } = router.query;
@@ -18,19 +17,22 @@ export const BusinessDetailsContainer = ({ content }: BusinessFundingCampaignCon
     loading: isGetBusinessByCampaignSlugQueryLoading,
   } = useGetBusinessCampaignBySlugQuery({ variables: { input: { slug: campaignSlug as string } } });
 
-  if (getBusinessCampaignBySlugQueryError || !getBusinessCampaignBySlugQueryData) {
+  if (isGetBusinessByCampaignSlugQueryLoading) {
+    // @TODO set a generic loading template
+    return <Typography.Text>loading</Typography.Text>;
+  }
+
+  if (
+    getBusinessCampaignBySlugQueryError ||
+    !getBusinessCampaignBySlugQueryData?.getBusinessCampaignBySlug?.activeCampaign
+  ) {
     // @TODO redirect to generic error page
     console.log(getBusinessCampaignBySlugQueryError);
 
     return null;
   }
 
-  if (isGetBusinessByCampaignSlugQueryLoading) {
-    // @TODO set a generic loading template
-    return <Typography.Text>loading</Typography.Text>;
-  }
+  const campaign = getBusinessCampaignBySlugQueryData.getBusinessCampaignBySlug.activeCampaign;
 
-  const campaign = getBusinessCampaignBySlugQueryData.getBusinessCampaignBySlug;
-
-  return <BusinessDetails content={content} campaign={campaign} />;
+  return <BusinessDetails campaign={campaign} />;
 };

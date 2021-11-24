@@ -849,10 +849,10 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@bancosatoshi/database@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@bancosatoshi/database/-/database-1.0.4.tgz#658112ab65c9b57609ada2f216e74bb41989259e"
-  integrity sha512-zb/WtVlGgkd+Xss3/lQXmVOMOMHj3A4f50ZLRWIodE7U210JISBe42LIi/Yy/HXGmDGgK7yIDAntcHSNwPGbZw==
+"@bancosatoshi/database@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@bancosatoshi/database/-/database-2.0.1.tgz#a8126ee780325dc74dc9a6b3ef964b426484e827"
+  integrity sha512-mAKIzQLwnRVBysb2n3mpkRwPBHxy+W+kwxR1m/TwL0dUXJQWGD2IyRq8Jbf9Vaa6HGQBISoR0ZBvL2tNYaMMgQ==
   dependencies:
     cardinal "^2.1.1"
     moment "^2.29.1"
