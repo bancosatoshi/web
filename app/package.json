@@ -23,6 +23,7 @@
     "@googlemaps/react-wrapper": "^1.1.12",
     "@supabase/supabase-js": "^1.28.0",
     "apollo-server-micro": "^3.5.0",
+    "bitcoin-units": "^0.3.0",
     "clsx": "^1.1.1",
     "final-form": "^4.20.4",
     "graphql": "^16.0.1",
