@@ -1,5 +1,7 @@
 export type Styles = {
   "campaigns-group": string;
+  "campaigns-group__collection": string;
+  "campaigns-group__line": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

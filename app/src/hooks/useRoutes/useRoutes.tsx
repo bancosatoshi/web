@@ -10,8 +10,10 @@ type RouteMap = {
     signIn: string;
   };
   invest: {
+    grid: string;
     map: string;
   };
+  campaign: (campaignSlug: string) => string;
   home: string;
 };
 
@@ -27,7 +29,9 @@ export const useRoutes: () => RouteMap = () => ({
     signIn: "/a/ingresa", // @TODO resolve i18n paths for all languages
   },
   invest: {
+    grid: "/i",
     map: "/i/map", // @TODO resolve i18n paths for all languages
   },
   home: "/",
+  campaign: (campaignSlug) => `/c/${campaignSlug}`,
 });
