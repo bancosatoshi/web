@@ -12,6 +12,7 @@ type RouteMap = {
   invest: {
     grid: string;
     map: string;
+    data: string;
   };
   campaign: (campaignSlug: string) => string;
   home: string;
@@ -30,7 +31,8 @@ export const useRoutes: () => RouteMap = () => ({
   },
   invest: {
     grid: "/i",
-    map: "/i/map", // @TODO resolve i18n paths for all languages
+    map: "/i/map",
+    data: "/i/data", // @TODO resolve i18n paths for all languages
   },
   home: "/",
   campaign: (campaignSlug) => `/c/${campaignSlug}`,
