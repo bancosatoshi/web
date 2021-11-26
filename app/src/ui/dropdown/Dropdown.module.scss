@@ -9,11 +9,11 @@
 
   &__item {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     padding: $space-s;
-    border-bottom: $border-light;
+    border: $border-light;
     transition: all $duration-faster $ease-in-expo;
+    border-top: none;
 
     &:hover {
       cursor: pointer;
@@ -22,7 +22,7 @@
       outline-offset: -1px;
 
       p {
-        font-weight: bold;
+        font-weight: $font-weight-bold;
       }
     }
   }

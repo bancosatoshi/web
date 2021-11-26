@@ -1,0 +1,16 @@
+@import "src/theme/base";
+
+.investment-nav-item {
+  &__menu {
+    width: 100%;
+    background-color: var(--color-background);
+  }
+
+  &__icon {
+    width: 35%;
+  }
+
+  &__label {
+    width: 65%;
+  }
+}
