@@ -1,0 +1,25 @@
+@import "src/theme/base";
+
+.account-widget {
+  &__menu-toggle {
+    padding: $space-default;
+    border: 2px solid var(--color-secondary);
+    border-radius: $border-radius-circle;
+    padding: $space-default;
+  }
+
+  &__menu {
+    top: 110%;
+    right: 40%;
+    background-color: var(--color-background);
+    width: 200%;
+  }
+
+  &__icon {
+    width: 35%;
+  }
+
+  &__label {
+    width: 60%;
+  }
+}

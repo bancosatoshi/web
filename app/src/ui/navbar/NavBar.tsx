@@ -7,6 +7,8 @@ import { BancoSatoshiLogo } from "ui/icons/BancoSatoshiLogo";
 
 import styles from "./NavBar.module.scss";
 import { NavBarProps } from "./NavBar.types";
+import { InvestmentNavItem } from "./investment-nav-item/InvestmentNavItem";
+import { AccountWidget } from "./account-widget/AccountWidget";
 
 export const NavBar: React.FC<NavBarProps> = () => {
   const auth = useAuthContext();
@@ -26,7 +28,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
           <Col lg={6} xs={6} sm={6}>
             <div className={styles.navbar__center}>
               <div className={styles["navbar__center--item"]}>
-                <Typography.Text>Sala de Inversión</Typography.Text>
+                <InvestmentNavItem />
               </div>
               <div className={styles["navbar__center--item"]}>
                 <Typography.Text>Cómo Funciona</Typography.Text>
@@ -40,7 +42,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
             <div className={styles.navbar__right}>
               <div className={styles["navbar__right--item"]}>
                 {auth.hasActiveSession ? (
-                  <Typography.Text>Mi Cuenta</Typography.Text>
+                  <AccountWidget />
                 ) : (
                   <Typography.Link href={routes.auth.signIn}>Iniciar Sesión</Typography.Link>
                 )}
