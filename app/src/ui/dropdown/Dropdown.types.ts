@@ -13,6 +13,7 @@ export type ToggleProps = {
 export type MenuProps = {
   children: ReactNode;
   className?: string;
+  open: boolean;
 } & ContainerProps;
 
 export type ItemProps = {

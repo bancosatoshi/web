@@ -6,4 +6,24 @@
   &__menu {
     position: absolute;
   }
+
+  &__item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: $space-s;
+    border-bottom: $border-light;
+    transition: all $duration-faster $ease-in-expo;
+
+    &:hover {
+      cursor: pointer;
+      border-left: 5px solid var(--color-secondary);
+      outline: 2px solid var(--color-secondary);
+      outline-offset: -1px;
+
+      p {
+        font-weight: bold;
+      }
+    }
+  }
 }
