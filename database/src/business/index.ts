@@ -70,6 +70,11 @@ export default {
           driver.model(BusinessModel.tableName),
           driver.model(BusinessInfoModel.tableName),
         ),
+        getByBtcPayServerStoreId: dao.business_funding_campaign_plan.getByBtcPayServerStoreId(
+          driver.model(BusinessFundingCampaignPlanModel.tableName),
+          driver.model(BusinessModel.tableName),
+          driver.model(BusinessInfoModel.tableName),
+        ),
         getAllActive: dao.business_funding_campaign_plan.getAllActive(
           driver.model(BusinessFundingCampaignPlanModel.tableName),
         ),

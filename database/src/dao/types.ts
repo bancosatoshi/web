@@ -20,6 +20,9 @@ export type BusinessDAO = {
     create: (args: BusinessFundingCampaignPlanModelArgs) => Promise<BusinessFundingCampaignPlanModel>;
     getBySlug: (args: Pick<BusinessFundingCampaignPlanModelArgs, "slug">) => Promise<BusinessFundingCampaignPlanModel>;
     getAllActive: () => Promise<BusinessFundingCampaignPlanModel[]>;
+    getByBtcPayServerStoreId: (
+      args: Pick<BusinessFundingCampaignPlanModelArgs, "btcpayserver_store_id">,
+    ) => Promise<BusinessFundingCampaignPlanModel>;
   };
   business_funding_campaign_transactions: {
     create: (args: BusinessFundingCampaignTransactionsModelArgs) => Promise<BusinessFundingCampaignTransactionsModel>;
