@@ -8,13 +8,20 @@ import { BusinessFundingCampaignTransactionsModelArgs } from "@bancosatoshi/data
 
 import { BtcPayServerWebhookRequestBody } from "./btc-pay-server.types";
 import getInvoicePaymentMethod from "providers/btcpay/getInvoicePaymentMethod";
+import getWebhookSecretByStoreId from "providers/aws/getWebhookSecretByStoreId";
 
 const bitcoin = require("bitcoin-units");
 
-const headerSignatureMatchesWebhookKey = (sig: string, body: BtcPayServerWebhookRequestBody) => {
+const headerSignatureMatchesWebhookKey = async (sig: string, body: BtcPayServerWebhookRequestBody) => {
+  const webhookKey = await getWebhookSecretByStoreId(body.storeId);
+
+  if (!webhookKey) {
+    return false;
+  }
+
   // @TODO we'll probably need to create a map of storeId => webhook_btcpay_sig because each store has its own webhook key
   // sha256=HMAC256(UTF8(webhook's secret), body)
-  const hmac = crypto.createHmac("sha256", process.env.WEBHOOKS_BTCPAY_SIG!);
+  const hmac = crypto.createHmac("sha256", webhookKey);
   const digest = Buffer.from(`sha256=${hmac.update(JSON.stringify(body)).digest("hex")}`, "utf8");
   const checksum = Buffer.from(sig, "utf8");
 
@@ -29,12 +36,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { headers } = req;
     const data: BtcPayServerWebhookRequestBody = req.body;
 
-    if (!headerSignatureMatchesWebhookKey(headers["btcpay-sig"] as string, data)) {
-      throw new Error("api/webhooks/btc-pay-server: invalid BTCPAY_SIG");
-    }
-
     if (!data || !data.invoiceId || !data.storeId) {
       throw new Error("api/webhooks/btc-pay-server: invalid data. no invoice ID");
+    }
+
+    if (!(await headerSignatureMatchesWebhookKey(headers["btcpay-sig"] as string, data))) {
+      throw new Error("api/webhooks/btc-pay-server: invalid BTCPAY_SIG");
     }
 
     const btcpayserver_store_id = data.storeId;
