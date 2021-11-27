@@ -1,4 +1,4 @@
-import AWS from "aws-sdk";
+import AWS from "./aws";
 
 let region = "us-east-2",
   secretName = "arn:aws:secretsmanager:us-east-2:111975705704:secret:bancosatoshi_btcpay_storeid_to_webhook_key-G7FTqq";
