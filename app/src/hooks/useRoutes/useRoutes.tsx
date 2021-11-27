@@ -9,6 +9,11 @@ type RouteMap = {
   auth: {
     signIn: string;
   };
+  api: {
+    getCheckoutURL: string;
+    auth: string;
+    graphql: string;
+  };
   invest: {
     grid: string;
     map: string;
@@ -17,7 +22,7 @@ type RouteMap = {
   home: string;
 };
 
-export const useRoutes: () => RouteMap = () => ({
+export const routes: RouteMap = {
   realEstate: {
     solana: {
       properties: "/real-estate/solana",
@@ -28,10 +33,17 @@ export const useRoutes: () => RouteMap = () => ({
   auth: {
     signIn: "/a/ingresa", // @TODO resolve i18n paths for all languages
   },
+  api: {
+    getCheckoutURL: `/api/getCheckoutURL`,
+    auth: `/api/auth`,
+    graphql: `/api/graphql`,
+  },
   invest: {
     grid: "/i",
     map: "/i/map", // @TODO resolve i18n paths for all languages
   },
   home: "/",
   campaign: (campaignSlug) => `/c/${campaignSlug}`,
-});
+};
+
+export const useRoutes: () => RouteMap = () => routes;

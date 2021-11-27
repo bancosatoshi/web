@@ -33,7 +33,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
 
       if (event === "SIGNED_IN" && s?.user?.id) {
         try {
-          await fetch("/api/auth", {
+          await fetch(routes.api.auth, {
             method: "POST",
             headers: new Headers({ "Content-Type": "application/json" }),
             credentials: "same-origin",

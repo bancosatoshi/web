@@ -13,6 +13,7 @@ import getActiveBusinessCampaigns from "./business/resolvers/queries/getActiveBu
 import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByUserId";
 import getBusinessCampaignBySlug from "./business/resolvers/queries/getBusinessCampaignBySlug";
 import createBusiness from "./business/resolvers/mutations/createBusiness";
+import { routes } from "hooks/useRoutes/useRoutes";
 
 const schemas = loadTypedefsSync(path.join(process.cwd(), "/src/pages/api/business/schema.graphql"), {
   loaders: [new GraphQLFileLoader()],
@@ -58,7 +59,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   await startServer;
 
   await apolloServer.createHandler({
-    path: "/api/graphql",
+    path: routes.api.graphql,
   })(req, res);
 
   return null;
