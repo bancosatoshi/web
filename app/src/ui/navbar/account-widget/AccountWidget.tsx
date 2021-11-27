@@ -11,7 +11,7 @@ import { Session } from "@supabase/gotrue-js";
 
 export const AccountWidget: React.FC<AccountWidgetProps> = ({ className }) => {
   const { isOpen, close: closeMenu, open: openMenu } = useToggle(false);
-  const { session } = useAuthContext();
+  const { session, handleLogout } = useAuthContext();
 
   const getUserNickname = (currentSession: Session | null) => {
     const userEmail = currentSession?.user?.email;
@@ -22,7 +22,9 @@ export const AccountWidget: React.FC<AccountWidgetProps> = ({ className }) => {
 
   useTimeout(
     () => {
-      closeMenu();
+      if (isOpen) {
+        closeMenu();
+      }
     },
     [isOpen],
     6000,
@@ -33,8 +35,8 @@ export const AccountWidget: React.FC<AccountWidgetProps> = ({ className }) => {
       <Dropdown.Toogle onMouseEnter={() => openMenu()}>
         <div className={styles["account-widget__menu-toggle"]}>{getUserNickname(session)}</div>
       </Dropdown.Toogle>
-      <Dropdown.Menu className={styles["account-widget__menu"]} open={isOpen}>
-        <Dropdown.Item>
+      <Dropdown.Menu className={styles["account-widget__menu"]} open={isOpen} onMouseLeave={closeMenu}>
+        <Dropdown.Item onClick={handleLogout}>
           <Icon name="icon-exit" className={styles["account-widget__icon"]} />
           <Typography.Text className={styles["account-widget__label"]}>Salir</Typography.Text>
         </Dropdown.Item>
