@@ -16,7 +16,7 @@ import { useCheckoutContext } from "hooks/useCheckoutContext/useCheckoutContext"
 import { InvestNowWidgetProps } from "./InvestNowWidget.types";
 import styles from "./InvestNowWidget.module.scss";
 
-export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, content }) => {
+export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, campaign }) => {
   const auth = useAuthContext();
   const router = useRouter();
   const routes = useRoutes();
@@ -32,11 +32,16 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, con
 
   const handleOnInvestNowClick = () => {
     if (auth.hasActiveSession) {
-      getCheckoutURL({ checkout: { redirectURL: `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}` } });
+      getCheckoutURL({
+        checkout: { redirectURL: `${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}` },
+        campaign,
+      });
     } else {
       router.push(`${routes.auth.signIn}?redirectTo=${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`);
     }
   };
+
+  const content = campaign.content;
 
   return (
     <div className={clsx(styles["invest-now-widget"], className)}>

@@ -1,10 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
+import { BTCPayInvoiceMetadata } from "context/checkout/CheckoutContext.types";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
-    const metadata = { businessId: req.body.metadata.businessId, buyerEmail: req.body.metadata.buyerEmail };
+    const metadata: BTCPayInvoiceMetadata = {
+      businessId: req.body.metadata.businessId,
+      buyerEmail: req.body.metadata.buyerEmail,
+      campaignId: req.body.metadata.campaignId,
+    };
+
     const { storeId, checkout } = req.body;
 
     const endpoint = `${process.env.BTC_PAY_SERVER_BASE_URL}/stores/${storeId}/invoices`;

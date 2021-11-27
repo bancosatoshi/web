@@ -11,21 +11,21 @@ import { BusinessContent } from "./BusinessContent/BusinessContent";
 import { BusinessHeader } from "./BusinessHeader/BusinessHeader";
 import { InvestNowWidget } from "./InvestNowWidget/InvestNowWidget";
 
-export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign: { content } }) => (
+export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign }) => (
   <div className={clsx(styles["business-details"])}>
-    <InvestNowWidget content={content} />
+    <InvestNowWidget campaign={campaign} />
     <Grid.Container>
       <Grid.Row>
         <Grid.Col lg={8}>
           <Card className={styles["business-details__box"]} shadow>
-            <BusinessHeader content={content} />
+            <BusinessHeader content={campaign.content} />
             <Tab defaultPaneId="business-content-tab">
               <Tab.Navigation>
                 <Tab.Item paneId="business-content-tab">Oportunidad de Inversión</Tab.Item>
                 <Tab.Item paneId="business-financials-tab">Finanzas y Datos</Tab.Item>
               </Tab.Navigation>
               <Tab.Pane id="business-content-tab">
-                <BusinessContent content={content} />
+                <BusinessContent content={campaign.content} />
               </Tab.Pane>
               <Tab.Pane id="business-financials-tab">
                 <Typography.Text>Finanzas y Datos</Typography.Text>
