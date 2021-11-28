@@ -1,8 +1,5 @@
 export type Styles = {
-  dropdown: string;
-  dropdown__item: string;
-  dropdown__menu: string;
-  "dropdown__menu--backdrop": string;
+  switch: string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

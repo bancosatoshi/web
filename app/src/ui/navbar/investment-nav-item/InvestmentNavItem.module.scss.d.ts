@@ -1,6 +1,6 @@
 export type Styles = {
   "investment-nav-item__icon": string;
-  "investment-nav-item__label": string;
+  "investment-nav-item__info": string;
   "investment-nav-item__menu": string;
   "z-depth-0": string;
   "z-depth-1": string;

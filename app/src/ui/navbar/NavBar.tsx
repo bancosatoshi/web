@@ -27,9 +27,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
           </Col>
           <Col lg={6} xs={6} sm={6}>
             <div className={styles.navbar__center}>
-              <div className={styles["navbar__center--item"]}>
-                <InvestmentNavItem />
-              </div>
+              <InvestmentNavItem className={styles["navbar__center--item"]} />
               <div className={styles["navbar__center--item"]}>
                 <Typography.Text>Cómo Funciona</Typography.Text>
               </div>
@@ -42,7 +40,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
             <div className={styles.navbar__right}>
               <div className={styles["navbar__right--item"]}>
                 {auth.hasActiveSession ? (
-                  <AccountWidget />
+                  <AccountWidget className={styles["navbar__right--item"]} />
                 ) : (
                   <Typography.Link href={routes.auth.signIn}>Iniciar Sesión</Typography.Link>
                 )}

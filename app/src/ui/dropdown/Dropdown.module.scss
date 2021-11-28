@@ -5,25 +5,29 @@
 
   &__menu {
     position: absolute;
+    background-color: var(--color-background);
+    z-index: $z-index-navigation;
+
+    &--backdrop {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: $z-index-navigation - 1;
+      background-color: transparent;
+    }
   }
 
   &__item {
     display: flex;
     align-items: center;
     padding: $space-s;
-    border: $border-light;
-    transition: all $duration-faster $ease-in-expo;
-    border-top: none;
+    border: 3px solid var(--color-background);
 
     &:hover {
       cursor: pointer;
-      border-left: 5px solid var(--color-secondary);
-      outline: 2px solid var(--color-secondary);
-      outline-offset: -1px;
-
-      p {
-        font-weight: $font-weight-bold;
-      }
+      border-left-color: var(--color-primary);
     }
   }
 }

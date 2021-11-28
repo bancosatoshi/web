@@ -4,7 +4,7 @@ import { ColProps, ContainerProps } from "ui/grid/Grid.types";
 export type DropdownProps = {
   children: ReactNode;
   className?: string;
-};
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 export type ToggleProps = {
   children: ReactNode;
@@ -13,7 +13,8 @@ export type ToggleProps = {
 export type MenuProps = {
   children: ReactNode;
   className?: string;
-  open: boolean;
+  isVisible: boolean;
+  onClose: () => void;
 } & ContainerProps;
 
 export type ItemProps = {

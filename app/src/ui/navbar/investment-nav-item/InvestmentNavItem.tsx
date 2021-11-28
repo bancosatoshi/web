@@ -3,46 +3,47 @@ import styles from "./InvestmentNavItem.module.scss";
 import { Dropdown } from "ui/dropdown/Dropdown";
 import { Icon } from "ui/icon/Icon";
 import { Typography } from "ui/typography/Typography";
-import { useTimeout } from "hooks/useTimeout/useTimeout";
 import { useToggle } from "hooks/useToggle/useToggle";
 import { useRoutes } from "hooks/useRoutes/useRoutes";
 import { useRouter } from "next/router";
 
-export const InvestmentNavItem: React.FC<InvestmentNavItemProps> = ({ className }) => {
+export const InvestmentNavItem: React.FC<InvestmentNavItemProps> = ({ ...props }) => {
   const routes = useRoutes();
   const router = useRouter();
-
-  const redirect = (route: string) => router.push(route);
-
-  const { isOpen, close: closeMenu, open: openMenu } = useToggle(false);
-
-  useTimeout(
-    () => {
-      closeMenu();
-    },
-    [isOpen],
-    5000,
-  );
+  const { isVisible, toggle } = useToggle();
 
   return (
-    <Dropdown>
-      <Dropdown.Toogle onMouseEnter={openMenu}>
+    <Dropdown {...props}>
+      <Dropdown.Toggle onMouseEnter={toggle}>
         <Typography.Text>
-          Sala de Inversión <Icon name="icon-chevron-down" />
+          Sala de Inversión {"  "}
+          {isVisible ? <Icon name="icon-chevron-up" /> : <Icon name="icon-chevron-down" />}
         </Typography.Text>
-      </Dropdown.Toogle>
-      <Dropdown.Menu className={styles["investment-nav-item__menu"]} open={isOpen}>
-        <Dropdown.Item onClick={() => redirect(routes.invest.grid)}>
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu className={styles["investment-nav-item__menu"]} onClose={toggle} isVisible={isVisible}>
+        <Dropdown.Item onClick={() => router.push(routes.invest.grid)}>
           <Icon name="icon-grid" className={styles["investment-nav-item__icon"]} />
-          <Typography.Text className={styles["investment-nav-item__label"]}>Galería</Typography.Text>
+          <div className={styles["investment-nav-item__info"]}>
+            <Typography.TextBold>Galería </Typography.TextBold>
+            <Typography.MiniDescription>Navega por las campañas de inversión activas</Typography.MiniDescription>
+          </div>
         </Dropdown.Item>
-        <Dropdown.Item onClick={() => redirect(routes.invest.map)}>
-          <Icon name="icon-map" className={styles["investment-nav-item__icon"]} />
-          <Typography.Text className={styles["investment-nav-item__label"]}>Mapa</Typography.Text>
+        <Dropdown.Item onClick={() => router.push(routes.invest.map)}>
+          <Icon name="icon-map2" className={styles["investment-nav-item__icon"]} />
+          <div className={styles["investment-nav-item__info"]}>
+            <Typography.TextBold>Mapa</Typography.TextBold>
+            <Typography.MiniDescription>Descubre negocios cerca de ti</Typography.MiniDescription>
+          </div>
         </Dropdown.Item>
-        <Dropdown.Item onClick={() => redirect(routes.invest.data)}>
-          <Icon name="icon-database" className={styles["investment-nav-item__icon"]} />
-          <Typography.Text className={styles["investment-nav-item__label"]}>Datos</Typography.Text>
+        <Dropdown.Item onClick={() => router.push(routes.invest.data)}>
+          <Icon name="icon-file-stats" className={styles["investment-nav-item__icon"]} />
+          <div className={styles["investment-nav-item__info"]}>
+            <Typography.TextBold>Datos</Typography.TextBold>
+            <Typography.MiniDescription>
+              Analiza y compara todas las oportunidades de inversión disponibles
+            </Typography.MiniDescription>
+          </div>
         </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>

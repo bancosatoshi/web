@@ -3,16 +3,18 @@
 .account-widget {
   &__menu-toggle {
     padding: $space-default;
+    background-color: var(--color-background);
     border: 2px solid var(--color-secondary);
     border-radius: $border-radius-circle;
     padding: $space-default;
   }
 
   &__menu {
-    top: 110%;
-    right: 40%;
-    background-color: var(--color-background);
-    width: 200%;
+    right: 0;
+    top: 100%;
+    width: 250%;
+    border-top: $border-light;
+    box-shadow: $box-shadow-focus-large;
   }
 
   &__icon {
@@ -20,6 +22,6 @@
   }
 
   &__label {
-    width: 60%;
+    width: 65%;
   }
 }

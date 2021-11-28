@@ -2,15 +2,22 @@
 
 .investment-nav-item {
   &__menu {
-    width: 100%;
-    background-color: var(--color-background);
+    left: -15%;
+    top: 100%;
+    width: 125%;
+    border-top: $border-light;
+    box-shadow: $box-shadow-focus-large;
   }
 
   &__icon {
-    width: 35%;
+    width: 25%;
+    font-size: 1.5rem;
+    color: var(--color-status-info);
   }
 
-  &__label {
-    width: 65%;
+  &__info {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
   }
 }
