@@ -5,7 +5,13 @@ import { useToastContext } from "hooks/useToastContext/useToastContext";
 import { Typography } from "ui/typography/Typography";
 
 import { CheckoutContext } from "./CheckoutContext";
-import { BTCPayCheckoutOptions, CheckoutContextControllerProps, CheckoutState } from "./CheckoutContext.types";
+import {
+  BTCPayCheckoutOptions,
+  BTCPayInvoiceMetadata,
+  CheckoutContextControllerProps,
+  CheckoutState,
+} from "./CheckoutContext.types";
+import { useRoutes } from "hooks/useRoutes/useRoutes";
 
 export const CheckoutContextController = ({ children }: CheckoutContextControllerProps) => {
   const [checkoutState, setCheckoutState] = useState<CheckoutState>(undefined);
@@ -14,21 +20,21 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
 
   const auth = useAuthContext();
   const toast = useToastContext();
+  const routes = useRoutes();
 
-  const getCheckoutURL = async ({ checkout }: BTCPayCheckoutOptions) => {
+  const getCheckoutURL = async ({ checkout, campaign }: BTCPayCheckoutOptions) => {
     try {
       setIsLoading(true);
 
-      // @TODO get businessId from business mcs
-      const businessId = "6e39hBHXvVwWvJUhSb2wKoBden7Ze4zrEDmq3F3f3Gex";
-      const buyerEmail = auth.session?.user?.email;
+      const buyerEmail = auth.session?.user?.email!;
 
-      // @TODO get store id from business mcs
-      const storeId = "6e39hBHXvVwWvJUhSb2wKoBden7Ze4zrEDmq3F3f3Gex";
+      const businessId = campaign.businessId;
+      const storeId = campaign.btcPayServerStoreId;
+      const campaignId = campaign.id;
 
-      const metadata = { businessId, buyerEmail };
+      const metadata: BTCPayInvoiceMetadata = { businessId, buyerEmail, campaignId };
 
-      const response = await fetch(`/api/getCheckoutURL`, {
+      const response = await fetch(routes.api.getCheckoutURL, {
         method: "POST",
         headers: {
           Accept: "application/json",

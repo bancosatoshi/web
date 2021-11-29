@@ -1,3 +1,4 @@
+import { BusinessCampaign } from "api/codegen";
 import { ReactNode } from "react";
 
 export type CheckoutContextControllerProps = {
@@ -9,6 +10,13 @@ export type BTCPayCheckoutOptions = {
   checkout: {
     redirectURL: string;
   };
+  campaign: BusinessCampaign;
+};
+
+export type BTCPayInvoiceMetadata = {
+  businessId: string;
+  campaignId: string;
+  buyerEmail: string;
 };
 
 export type CheckoutState =
