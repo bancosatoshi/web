@@ -7,6 +7,8 @@ import { BancoSatoshiLogo } from "ui/icons/BancoSatoshiLogo";
 
 import styles from "./NavBar.module.scss";
 import { NavBarProps } from "./NavBar.types";
+import { Icon } from "ui/icon/Icon";
+import clsx from "clsx";
 
 export const NavBar: React.FC<NavBarProps> = () => {
   const auth = useAuthContext();
@@ -25,8 +27,34 @@ export const NavBar: React.FC<NavBarProps> = () => {
           </Col>
           <Col lg={6} xs={6} sm={6}>
             <div className={styles.navbar__center}>
-              <div className={styles["navbar__center--item"]}>
-                <Typography.Text>Sala de Inversión</Typography.Text>
+              <div className={clsx(styles["navbar__center--item"], styles["navbar__center--item-dropdown"])}>
+                <Typography.Link href={routes.invest.grid}>Sala de Inversión</Typography.Link>
+                <div className={clsx(styles["navbar__dropdown"], "dropdown")}>
+                  <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.map}>
+                    <div className={styles["navbar__dropdown--item-icon"]}>
+                      <Icon name="icon-map2" />
+                    </div>
+                    <div className={styles["navbar__dropdown--item-text"]}>
+                      <Typography.Text>Mapa</Typography.Text>
+                    </div>
+                  </Typography.Link>
+                  <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.data}>
+                    <div className={styles["navbar__dropdown--item-icon"]}>
+                      <Icon name="icon-file-stats" />
+                    </div>
+                    <div className={styles["navbar__dropdown--item-text"]}>
+                      <Typography.Text>Tabla</Typography.Text>
+                    </div>
+                  </Typography.Link>
+                  <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.grid}>
+                    <div className={styles["navbar__dropdown--item-icon"]}>
+                      <Icon name="icon-grid" />
+                    </div>
+                    <div className={styles["navbar__dropdown--item-text"]}>
+                      <Typography.Text>Grid</Typography.Text>
+                    </div>
+                  </Typography.Link>
+                </div>
               </div>
               <div className={styles["navbar__center--item"]}>
                 <Typography.Text>Cómo Funciona</Typography.Text>

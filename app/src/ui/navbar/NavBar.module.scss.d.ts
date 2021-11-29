@@ -2,6 +2,11 @@ export type Styles = {
   navbar: string;
   navbar__center: string;
   "navbar__center--item": string;
+  "navbar__center--item-dropdown": string;
+  navbar__dropdown: string;
+  "navbar__dropdown--item": string;
+  "navbar__dropdown--item-icon": string;
+  "navbar__dropdown--item-text": string;
   "navbar__language-selector": string;
   navbar__logo: string;
   navbar__right: string;

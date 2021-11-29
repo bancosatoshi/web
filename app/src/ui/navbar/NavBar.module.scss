@@ -1,4 +1,4 @@
-@import "../../theme/base";
+@import "src/theme/base";
 
 .navbar {
   position: absolute;
@@ -8,6 +8,64 @@
   z-index: $z-index-navigation;
   width: 100%;
   background-color: var(--color-background);
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 210px;
+    display: none;
+    @extend .z-depth-1;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &--item {
+      display: flex;
+      background-color: var(--color-background);
+      border-left: 2px solid var(--color-background);
+      &:last-child {
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--color-background-contrast);
+        border-left: 2px solid var(--color-primary);
+      }
+
+      &-icon,
+      &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: $space-default;
+      }
+    }
+  }
+
+  &__center--item,
+  &__right--item {
+    p {
+      margin: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      :global {
+        .dropdown {
+          display: block;
+        }
+      }
+    }
+  }
 
   &__logo {
     a {
@@ -26,7 +84,15 @@
     display: flex;
     justify-content: center;
 
+    a {
+      color: var(--color-typography-subtitle);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
     &--item {
+      position: relative;
       height: $navbar-height;
       display: flex;
       justify-content: center;
@@ -37,6 +103,12 @@
         color: var(--color-typography-subtitle);
         margin: 0;
       }
+
+      &-dropdown {
+        &:hover {
+          background-color: var(--color-background-contrast);
+        }
+      }
     }
   }
 
@@ -45,6 +117,7 @@
     justify-content: flex-end;
 
     &--item {
+      position: relative;
       height: $navbar-height;
       display: flex;
       justify-content: center;
