@@ -156,4 +156,19 @@
       color: var(--color-button-secondary-text);
     }
   }
+
+  &__account-widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid var(--color-secondary);
+
+    &:hover {
+      background-color: var(--color-background-contrast);
+    }
+  }
 }

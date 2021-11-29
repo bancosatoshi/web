@@ -1,5 +1,6 @@
 export type Styles = {
   navbar: string;
+  "navbar__account-widget": string;
   navbar__center: string;
   "navbar__center--item": string;
   "navbar__center--item-dropdown": string;

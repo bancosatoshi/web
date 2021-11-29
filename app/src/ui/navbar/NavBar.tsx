@@ -13,6 +13,14 @@ import clsx from "clsx";
 export const NavBar: React.FC<NavBarProps> = () => {
   const auth = useAuthContext();
   const routes = useRoutes();
+  const { session, handleLogout } = useAuthContext();
+
+  const getUserNickname = () => {
+    const userEmail = session?.user?.email;
+    const userNickname = userEmail?.slice(0, 2).toUpperCase();
+
+    return userNickname;
+  };
 
   return (
     <div className={styles.navbar}>
@@ -68,7 +76,19 @@ export const NavBar: React.FC<NavBarProps> = () => {
             <div className={styles.navbar__right}>
               <div className={styles["navbar__right--item"]}>
                 {auth.hasActiveSession ? (
-                  <Typography.Text>Mi Cuenta</Typography.Text>
+                  <div className={styles["navbar__account-widget"]}>
+                    <Typography.Text>{getUserNickname()}</Typography.Text>
+                    <div className={clsx(styles["navbar__dropdown"], "dropdown")}>
+                      <div className={styles["navbar__dropdown--item"]} onClick={handleLogout}>
+                        <div className={styles["navbar__dropdown--item-icon"]}>
+                          <Icon name="icon-exit" />
+                        </div>
+                        <div className={styles["navbar__dropdown--item-text"]}>
+                          <Typography.Text>Cerrar Sesión</Typography.Text>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 ) : (
                   <Typography.Link href={routes.auth.signIn}>Iniciar Sesión</Typography.Link>
                 )}
