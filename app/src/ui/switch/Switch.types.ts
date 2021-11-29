@@ -1,6 +1,6 @@
-import { ReactNode, CSSProperties } from 'react';
+import { DetailedHTMLProps, InputHTMLAttributes, ReactNode } from "react";
 
 export type SwitchProps = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
-};
+} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;

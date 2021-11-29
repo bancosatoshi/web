@@ -5,7 +5,7 @@ import { ThemeContextControllerProps } from "./ThemeContext.types";
 
 const changeTheme = (themeState: boolean) => {
   const theme = themeState ? "dark" : "light";
-  const root = document.querySelector("html");
+  const root = document.querySelector("body");
   root?.setAttribute("data-theme", theme);
 };
 

@@ -10,18 +10,18 @@ import { useRouter } from "next/router";
 export const InvestmentNavItem: React.FC<InvestmentNavItemProps> = ({ ...props }) => {
   const routes = useRoutes();
   const router = useRouter();
-  const { isVisible, toggle } = useToggle();
+  const [isMenuVisible, toggle] = useToggle();
 
   return (
     <Dropdown {...props}>
       <Dropdown.Toggle onMouseEnter={toggle}>
         <Typography.Text>
           Sala de Inversión {"  "}
-          {isVisible ? <Icon name="icon-chevron-up" /> : <Icon name="icon-chevron-down" />}
+          {isMenuVisible ? <Icon name="icon-chevron-up" /> : <Icon name="icon-chevron-down" />}
         </Typography.Text>
       </Dropdown.Toggle>
 
-      <Dropdown.Menu className={styles["investment-nav-item__menu"]} onClose={toggle} isVisible={isVisible}>
+      <Dropdown.Menu className={styles["investment-nav-item__menu"]} onClose={toggle} isVisible={isMenuVisible}>
         <Dropdown.Item onClick={() => router.push(routes.invest.grid)}>
           <Icon name="icon-grid" className={styles["investment-nav-item__icon"]} />
           <div className={styles["investment-nav-item__info"]}>
