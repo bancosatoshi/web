@@ -12,15 +12,26 @@
   &__menu {
     right: 0;
     top: 100%;
-    width: 250%;
+    width: 260%;
     border-top: $border-light;
     box-shadow: $box-shadow-focus-large;
   }
 
+  &__switch {
+    display: flex;
+    justify-content: center;
+  }
+
   &__icon {
     width: 35%;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--color-status-info);
+  }
+
+  &__toggle-icons {
+    font-size: 1.25rem;
+    color: var(--color-status-info);
+    font-weight: $font-weight-bold;
   }
 
   &__label {

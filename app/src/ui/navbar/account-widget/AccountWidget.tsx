@@ -33,11 +33,16 @@ export const AccountWidget: React.FC<AccountWidgetProps> = ({ ...props }) => {
           <Icon name="icon-home" className={styles["account-widget__icon"]} />
           <Typography.Subtitle className={styles["account-widget__label"]}>Panel de Control</Typography.Subtitle>
         </Dropdown.Item>
-        <Dropdown.Item>{""}</Dropdown.Item>
-        <Dropdown.Item>
+        <Dropdown.Item className={styles["account-widget__switch"]}>
+          <Switch id="theme-switch" type="checkbox" checked={false} onChange={() => {}}>
+            <Typography.Text>ES</Typography.Text>
+            <Typography.Text>EN</Typography.Text>
+          </Switch>
+        </Dropdown.Item>
+        <Dropdown.Item className={styles["account-widget__switch"]}>
           <Switch id="theme-switch" type="checkbox" checked={themeState} onChange={switchTheme}>
-            <Icon name="icon-sun" className={styles["account-widget__icon"]} />
-            <Icon name="icon-moon" className={styles["account-widget__icon"]} />
+            <Icon name="icon-sun" className={styles["account-widget__toggle-icons"]} />
+            <Icon name="icon-moon" className={styles["account-widget__toggle-icons"]} />
           </Switch>
         </Dropdown.Item>
         <Dropdown.Item onClick={handleLogout}>

@@ -3,6 +3,8 @@ export type Styles = {
   "account-widget__label": string;
   "account-widget__menu": string;
   "account-widget__menu-toggle": string;
+  "account-widget__switch": string;
+  "account-widget__toggle-icons": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

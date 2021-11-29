@@ -1,5 +1,39 @@
 @import "src/theme/base";
 
 .switch {
-  display: block;
+  position: relative;
+  width: 80%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border: $border-light;
+  border-radius: $border-radius-pill;
+  padding: $space-s;
+
+  p {
+    margin: 0;
+  }
+
+  &__checkbox {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__ball {
+    width: 30%;
+    height: 70%;
+    position: absolute;
+    left: 5%;
+    border-radius: $border-radius-circle;
+    background-color: var(--color-secondary);
+    transition: transform $duration-medium $ease-in-out-circle;
+  }
+
+  &__checkbox:checked + &__ball {
+    transform: translateX(200%);
+  }
 }

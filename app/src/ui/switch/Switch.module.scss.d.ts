@@ -1,5 +1,7 @@
 export type Styles = {
   switch: string;
+  switch__ball: string;
+  switch__checkbox: string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;
