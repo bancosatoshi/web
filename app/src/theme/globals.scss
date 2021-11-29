@@ -35,7 +35,7 @@ a {
   }
 }
 
-body[data-theme="dark"] {
+html[data-theme="dark"] {
   // Status colors
   --color-status-info: #0062ff;
   --color-status-info-light: #d6f5ff;
@@ -121,7 +121,7 @@ body[data-theme="dark"] {
   --color-input-border: var(--color-dark-10);
 }
 
-body[data-theme="light"] {
+html[data-theme="light"] {
   // Status colors
   --color-status-info: #a57ebf;
   --color-status-info-light: #d6f5ff;

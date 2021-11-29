@@ -1,7 +1,6 @@
 import { ApolloProvider } from "@apollo/client";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { GQLClient } from "src/providers/graphql/client";
 
@@ -12,11 +11,6 @@ import { AppLayoutProps } from "./AppLayout.types";
 export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   const { t } = useTranslation("home");
   const { locale } = useRouter();
-
-  useEffect(() => {
-    // @todo set with a toggle button from navbar or footer
-    document.body.dataset.theme = "light";
-  }, []);
 
   return (
     <>
