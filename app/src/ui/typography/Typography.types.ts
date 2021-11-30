@@ -1,6 +1,6 @@
-import { AnchorHTMLAttributes, ReactNode } from "react";
+import { AnchorHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 
-export type TypographyProps = {
+export type TypographyProps = HTMLAttributes<HTMLParagraphElement> & {
   children: ReactNode;
   className?: string;
   inline?: boolean;
