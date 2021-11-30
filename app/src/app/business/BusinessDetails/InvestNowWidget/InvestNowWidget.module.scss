@@ -3,7 +3,7 @@
 .invest-now-widget {
   position: fixed;
   width: 100%;
-  z-index: $z-index-navigation;
+  z-index: $z-index-content;
   margin-top: $space-default;
 
   &__risk-level {
