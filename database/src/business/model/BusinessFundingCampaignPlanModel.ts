@@ -8,7 +8,6 @@ export type BusinessFundingCampaignPlanModelArgs = {
   slug: string;
   btcpayserver_store_id: string;
   investment_multiple: number;
-  total_sats_invested: number;
   expires_at: Date;
   is_active?: boolean;
   days_left?: number;
@@ -52,11 +51,6 @@ export class BusinessFundingCampaignPlanModel extends Model<
     investment_multiple: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true,
-    },
-    total_sats_invested: {
-      type: DataTypes.FLOAT,
-      allowNull: true,
-      defaultValue: 0.0,
     },
     expires_at: {
       type: DataTypes.DATE,
