@@ -4,12 +4,14 @@ import { Sequelize } from "sequelize/dist";
 import faker from "faker";
 import connectionOptions from "../utils/connectionOptions";
 import { BusinessDAO } from "../../dao/types";
+import moment from "moment";
 
 describe("dao", () => {
   let driver: Sequelize;
   let businessDAO: BusinessDAO;
   let business_funding_campaign_plan_id: string;
   const user_id = faker.datatype.uuid();
+  const maturity_date = moment().add(5, "years").toDate();
 
   beforeAll(async () => {
     driver = await database.connect(connectionOptions, { force: true, logging: false });
@@ -34,6 +36,7 @@ describe("dao", () => {
       expires_at: new Date(),
       slug: faker.lorem.slug(),
       btcpayserver_store_id: faker.datatype.uuid(),
+      maturity_date,
     });
 
     business_funding_campaign_plan_id = businessFundingCampaignRecord.getDataValue("id");

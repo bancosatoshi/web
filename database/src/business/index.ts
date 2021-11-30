@@ -37,6 +37,7 @@ export default {
 
     BusinessInfo.belongsTo(Business, {
       foreignKey: { allowNull: true },
+      onDelete: "cascade",
     });
 
     Business.hasMany(BusinessFundingCampaignPlan, {
@@ -51,6 +52,7 @@ export default {
 
     BusinessFundingCampaignPlan.belongsTo(Business, {
       foreignKey: { allowNull: true },
+      onDelete: "cascade",
     });
 
     console.log("Syncing Business Models");

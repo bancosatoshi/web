@@ -13,6 +13,7 @@ type BusinessCampaign {
   expiresAt: Date!
   id: String!
   investmentMultiple: Float!
+  maturityDate: Date!
   slug: String!
   totalInvestors: Int!
   totalSatsInvested: Int!

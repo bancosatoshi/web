@@ -8,4 +8,5 @@ fragment BusinessCampaign on BusinessCampaign {
   btcPayServerStoreId
   daysLeft
   totalInvestors
+  maturityDate
 }

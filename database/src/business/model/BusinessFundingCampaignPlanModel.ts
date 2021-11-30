@@ -9,6 +9,7 @@ export type BusinessFundingCampaignPlanModelArgs = {
   btcpayserver_store_id: string;
   investment_multiple: number;
   expires_at: Date;
+  maturity_date: Date;
   is_active?: boolean;
   days_left?: number;
   created_at?: Date;
@@ -54,7 +55,11 @@ export class BusinessFundingCampaignPlanModel extends Model<
     },
     expires_at: {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
+    },
+    maturity_date: {
+      type: DataTypes.DATE,
+      allowNull: false,
     },
     is_active: {
       type: DataTypes.VIRTUAL(DataTypes.BOOLEAN, ["expires_at"]),

@@ -48,6 +48,7 @@ const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = a
         daysLeft: data.days_left || 0,
         totalInvestors,
         expiresAt: data.getDataValue("expires_at"),
+        maturityDate: data.getDataValue("maturity_date"),
         slug: data.getDataValue("slug"),
         btcPayServerStoreId: data.getDataValue("btcpayserver_store_id"),
         content,
