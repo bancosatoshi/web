@@ -37,6 +37,7 @@ describe("business_funding_campaign_plan: getByBtcPayServerStoreId", () => {
       expires_at: new Date(),
       slug,
       btcpayserver_store_id,
+      total_sats_invested: 0,
     });
   });
 

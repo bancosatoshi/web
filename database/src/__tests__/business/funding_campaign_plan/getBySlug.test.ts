@@ -34,6 +34,7 @@ describe("business_funding_campaign_plan: getBySlug", () => {
       expires_at: new Date(),
       slug,
       btcpayserver_store_id: faker.datatype.uuid(),
+      total_sats_invested: 0,
     });
   });
 

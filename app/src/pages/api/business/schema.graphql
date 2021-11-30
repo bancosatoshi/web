@@ -9,10 +9,12 @@ type BusinessCampaign {
   btcPayServerStoreId: String!
   businessId: String!
   content: BusinessCampaignContent!
+  daysLeft: Int!
   expiresAt: Date!
   id: String!
   investmentMultiple: Float!
   slug: String!
+  totalInvestors: Int!
   totalSatsInvested: Int!
 }
 

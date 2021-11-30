@@ -4,20 +4,22 @@ import {
   BusinessFundingCampaignTransactionsModel,
   BusinessFundingCampaignTransactionsModelArgs,
   BusinessInfoModel,
-  BusinessInfoModelArgs,
   BusinessModel,
-  BusinessModelArgs,
 } from "../business/model";
+import { BusinessFundingCampaignPlanModelCreationArgs } from "../business/model/BusinessFundingCampaignPlanModel";
+import { BusinessFundingCampaignTransactionsModelCreationArgs } from "../business/model/BusinessFundingCampaignTransactionsModel";
+import { BusinessInfoModelCreationArgs } from "../business/model/BusinessInfoModel";
+import { BusinessModelCreationArgs } from "../business/model/BusinessModel";
 
 export type BusinessDAO = {
   business: {
-    create: (args: BusinessModelArgs) => Promise<BusinessModel>;
+    create: (args: BusinessModelCreationArgs) => Promise<BusinessModel>;
   };
   business_info: {
-    create: (args: BusinessInfoModelArgs) => Promise<BusinessInfoModel>;
+    create: (args: BusinessInfoModelCreationArgs) => Promise<BusinessInfoModel>;
   };
   business_funding_campaign_plan: {
-    create: (args: BusinessFundingCampaignPlanModelArgs) => Promise<BusinessFundingCampaignPlanModel>;
+    create: (args: BusinessFundingCampaignPlanModelCreationArgs) => Promise<BusinessFundingCampaignPlanModel>;
     getBySlug: (args: Pick<BusinessFundingCampaignPlanModelArgs, "slug">) => Promise<BusinessFundingCampaignPlanModel>;
     getAllActive: () => Promise<BusinessFundingCampaignPlanModel[]>;
     getByBtcPayServerStoreId: (
@@ -25,7 +27,9 @@ export type BusinessDAO = {
     ) => Promise<BusinessFundingCampaignPlanModel>;
   };
   business_funding_campaign_transactions: {
-    create: (args: BusinessFundingCampaignTransactionsModelArgs) => Promise<BusinessFundingCampaignTransactionsModel>;
+    create: (
+      args: BusinessFundingCampaignTransactionsModelCreationArgs,
+    ) => Promise<BusinessFundingCampaignTransactionsModel>;
     findAllByBusinessFundingCampaignId: (
       args: Pick<BusinessFundingCampaignTransactionsModelArgs, "business_funding_campaign_plan_id">,
     ) => Promise<BusinessFundingCampaignTransactionsModel[]>;

@@ -34,7 +34,8 @@ const getActiveBusinessCampaigns: QueryResolvers["getActiveBusinessCampaigns"] =
 
     return await Promise.all(mergeCampaignDataWithWordpressContent);
   } catch (error) {
-    return error;
+    // @TODO log error
+    throw error;
   }
 };
 

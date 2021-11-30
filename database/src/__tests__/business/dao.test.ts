@@ -34,6 +34,7 @@ describe("dao", () => {
       expires_at: new Date(),
       slug: faker.lorem.slug(),
       btcpayserver_store_id: faker.datatype.uuid(),
+      total_sats_invested: 0,
     });
 
     business_funding_campaign_plan_id = businessFundingCampaignRecord.getDataValue("id");

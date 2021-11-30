@@ -1,3 +1,4 @@
+import sequelize from "sequelize";
 import { ModelCtor } from "sequelize/dist";
 import {
   BusinessFundingCampaignTransactionsModel,

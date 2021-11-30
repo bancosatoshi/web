@@ -95,19 +95,19 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                 <div className={styles["invest-now-widget__goal"]}>
                   <div>
                     <Typography.Headline4>
-                      <Icon name="icon-bag-dollar" /> 3500 SAT
+                      <Icon name="icon-bag-dollar" /> {campaign.totalSatsInvested} SAT
                     </Typography.Headline4>
                     <Typography.Description>Invertidos hasta hoy: $3,000.00 USD</Typography.Description>
                   </div>
                   <div>
                     <Typography.Headline4>
-                      <Icon name="icon-users" /> 23
+                      <Icon name="icon-users" /> {campaign.totalInvestors}
                     </Typography.Headline4>
                     <Typography.Description>Inversionistas</Typography.Description>
                   </div>
                   <div>
                     <Typography.Headline4>
-                      <Icon name="icon-timer" /> 15 días
+                      <Icon name="icon-timer" /> {campaign.daysLeft} días
                     </Typography.Headline4>
                     <Typography.Description>Restantes para invertir</Typography.Description>
                   </div>
