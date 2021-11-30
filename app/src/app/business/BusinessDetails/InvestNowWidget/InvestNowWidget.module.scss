@@ -22,6 +22,7 @@
 
   &__cta-button {
     display: block;
+    margin-top: $space-m;
 
     &--icon {
       margin-left: $space-default;
@@ -36,20 +37,6 @@
   &__cta-text {
     margin-top: $space-default;
     text-align: center;
-  }
-
-  &__terms {
-    margin-top: $space-ml;
-    margin-bottom: $space-default;
-    h4,
-    p {
-      &:not([class*="title"]) {
-        margin-bottom: 0;
-      }
-    }
-    p {
-      line-height: 1;
-    }
   }
 
   &__warnings {

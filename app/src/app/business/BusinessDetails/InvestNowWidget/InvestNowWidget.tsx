@@ -63,24 +63,6 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                 <Typography.Headline3 className={styles["invest-now-widget__cta-text"]}>
                   Invierte en {content.title}
                 </Typography.Headline3>
-                <div className={styles["invest-now-widget__terms"]}>
-                  <Grid.Row>
-                    <Grid.Col lg={6}>
-                      <Tooltip.Wrapper>
-                        <Typography.Headline4>1.5x</Typography.Headline4>
-                        <Tooltip
-                          title="ROI"
-                          description={`Si inviertes 10 SAT, ${content.title} se compromete a devolverte 15 SAT a lo largo de la vida útil del acuerdo: Nov 21, 2025.`}
-                        />
-                      </Tooltip.Wrapper>
-                      <Typography.Text>Retorno sobre tu inversión.</Typography.Text>
-                    </Grid.Col>
-                    <Grid.Col lg={6}>
-                      <Typography.Headline4>25 SAT</Typography.Headline4>
-                      <Typography.Text>Inversión mínima.</Typography.Text>
-                    </Grid.Col>
-                  </Grid.Row>
-                </div>
                 <div className={styles["invest-now-widget__cta-button"]}>
                   <Button fullWidth onClick={handleOnInvestNowClick} isLoading={isCheckoutLoading}>
                     {auth.hasActiveSession ? "Depositar BTC" : "Ingresa y Deposita BTC"}
@@ -93,6 +75,21 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                   )}
                 </div>
                 <div className={styles["invest-now-widget__goal"]}>
+                  <div>
+                    <Tooltip.Wrapper>
+                      <Typography.Headline4>
+                        <Icon name="icon-bag-dollar" /> {campaign.investmentMultiple}x
+                      </Typography.Headline4>
+                      {/* @TODO get maturity_date formatted */}
+                      <Tooltip
+                        title="ROI"
+                        description={`Si inviertes 10 SAT, ${content.title} se compromete a devolverte ${
+                          10 * campaign.investmentMultiple
+                        } SAT a lo largo de la vida útil del acuerdo: Nov 21, 2025.`}
+                      />
+                    </Tooltip.Wrapper>
+                    <Typography.Description>Retorno sobre tu inversión</Typography.Description>
+                  </div>
                   <div>
                     <Typography.Headline4>
                       <Icon name="icon-bag-dollar" /> {campaign.totalSatsInvested} SAT
@@ -124,11 +121,13 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                   </div>
                   <div>
                     <Typography.Description>
-                      <strong>Periodo de Retorno</strong>
+                      <strong>Periodo de Maduración</strong>
                     </Typography.Description>
+                    {/* @TODO get maturity_date formatted */}
                     <Typography.Description>
-                      Por ejemplo, si inviertes 10 SAT, {content.title} se compromete a devolverte 15 SAT durante la
-                      vida útil del acuerdo: <strong>Nov 21, 2025.</strong>
+                      Por ejemplo, si inviertes 10 SAT, {content.title} se compromete a devolverte{" "}
+                      {10 * campaign.investmentMultiple} SAT durante la vida útil del acuerdo:{" "}
+                      <strong>Nov 21, 2025.</strong>
                     </Typography.Description>
                   </div>
                 </div>
