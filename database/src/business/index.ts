@@ -36,7 +36,7 @@ export default {
     });
 
     BusinessInfo.belongsTo(Business, {
-      foreignKey: { allowNull: true },
+      foreignKey: { allowNull: false },
       onDelete: "cascade",
     });
 
@@ -45,13 +45,13 @@ export default {
       constraints: false,
     });
 
-    BusinessFundingCampaignTransactions.hasMany(BusinessFundingCampaignPlan, {
-      foreignKey: { allowNull: true },
-      constraints: false,
+    BusinessFundingCampaignPlan.hasMany(BusinessFundingCampaignTransactions, {
+      foreignKey: { allowNull: false, name: "business_funding_campaign_plan_id" },
+      onDelete: "cascade",
     });
 
     BusinessFundingCampaignPlan.belongsTo(Business, {
-      foreignKey: { allowNull: true },
+      foreignKey: { allowNull: false },
       onDelete: "cascade",
     });
 
