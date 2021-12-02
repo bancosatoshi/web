@@ -28,12 +28,8 @@ export const FundingProgressBar: React.FC<FundingProgressBarProps> = ({ classNam
       <Typography.Headline6>BTC Recaudado</Typography.Headline6>
       <Card shadow className={styles["funding-progress-bar__card"]}>
         <div className={styles["funding-progress-bar__digits"]}>
-          <Typography.Text className={styles["funding-progress-bar__digits--min"]} style={{ width: `${minProgress}%` }}>
-            {formatFiatCurrency(min)} min.
-          </Typography.Text>
-          <Typography.Text className={styles["funding-progress-bar__digits--max"]}>
-            {formatFiatCurrency(max)} max.
-          </Typography.Text>
+          <Typography.Text style={{ width: `${minProgress}%` }}>{formatFiatCurrency(min)} min.</Typography.Text>
+          <Typography.Text>{formatFiatCurrency(max)} max.</Typography.Text>
         </div>
         <div className={clsx(styles["funding-progress-bar"], className)}>
           <Typography.Text className={styles["funding-progress-bar__funded-amount"]}>

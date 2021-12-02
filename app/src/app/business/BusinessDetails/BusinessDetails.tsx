@@ -3,7 +3,6 @@ import clsx from "clsx";
 import { Grid } from "ui/grid/Grid";
 import { Card } from "ui/card/Card";
 import { Tab } from "ui/tab/Tab";
-import { Typography } from "ui/typography/Typography";
 
 import { BusinessDetailsProps } from "./BusinessDetails.types";
 import styles from "./BusinessDetails.module.scss";
