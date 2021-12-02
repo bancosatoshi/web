@@ -11,6 +11,7 @@
 
   &__dropdown {
     position: absolute;
+    z-index: $z-index-navigation;
     top: 100%;
     right: 0;
     width: 210px;

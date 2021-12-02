@@ -15,6 +15,7 @@ import { useCheckoutContext } from "hooks/useCheckoutContext/useCheckoutContext"
 
 import { InvestNowWidgetProps } from "./InvestNowWidget.types";
 import styles from "./InvestNowWidget.module.scss";
+import getDefaultDateFormat from "providers/date/getDefaultDateFormat";
 
 export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, campaign }) => {
   const auth = useAuthContext();
@@ -77,57 +78,63 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                 <div className={styles["invest-now-widget__goal"]}>
                   <div>
                     <Tooltip.Wrapper>
-                      <Typography.Headline4>
-                        <Icon name="icon-bag-dollar" /> {campaign.investmentMultiple}x
+                      <Typography.Headline4 className={styles["invest-now-widget__goal--heading"]}>
+                        <Icon name="icon-rotation-lock" /> {campaign.investmentMultiple}x
                       </Typography.Headline4>
-                      {/* @TODO get maturity_date formatted */}
                       <Tooltip
                         title="ROI"
                         description={`Si inviertes 10 SAT, ${content.title} se compromete a devolverte ${
                           10 * campaign.investmentMultiple
-                        } SAT a lo largo de la vida útil del acuerdo: Nov 21, 2025.`}
+                        } SAT a lo largo de la vida útil del acuerdo: ${getDefaultDateFormat(campaign.maturityDate)}.`}
                       />
                     </Tooltip.Wrapper>
-                    <Typography.Description>Retorno sobre tu inversión</Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__goal--text"]}>
+                      Retorno sobre tu inversión
+                    </Typography.Description>
                   </div>
                   <div>
-                    <Typography.Headline4>
+                    <Typography.Headline4 className={styles["invest-now-widget__goal--heading"]}>
                       <Icon name="icon-bag-dollar" /> {campaign.totalSatsInvested} SAT
                     </Typography.Headline4>
-                    <Typography.Description>Invertidos hasta hoy: $3,000.00 USD</Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__goal--text"]}>
+                      Invertidos hasta hoy: $3,000.00 USD
+                    </Typography.Description>
                   </div>
                   <div>
-                    <Typography.Headline4>
+                    <Typography.Headline4 className={styles["invest-now-widget__goal--heading"]}>
                       <Icon name="icon-users" /> {campaign.totalInvestors}
                     </Typography.Headline4>
-                    <Typography.Description>Inversionistas</Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__goal--text"]}>
+                      Inversionistas
+                    </Typography.Description>
                   </div>
                   <div>
-                    <Typography.Headline4>
+                    <Typography.Headline4 className={styles["invest-now-widget__goal--heading"]}>
                       <Icon name="icon-timer" /> {campaign.daysLeft} días
                     </Typography.Headline4>
-                    <Typography.Description>Restantes para invertir</Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__goal--text"]}>
+                      Restantes para invertir
+                    </Typography.Description>
                   </div>
                 </div>
                 <div className={styles["invest-now-widget__warnings"]}>
                   <div>
-                    <Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
                       <strong>Volatilidad 0</strong>
                     </Typography.Description>
-                    <Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
                       Tu depósito estará respaldado en un <strong>Stable Coin Escrow</strong> hasta cumplir la meta de
                       inversión.
                     </Typography.Description>
                   </div>
                   <div>
-                    <Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
                       <strong>Periodo de Maduración</strong>
                     </Typography.Description>
-                    {/* @TODO get maturity_date formatted */}
-                    <Typography.Description>
+                    <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
                       Por ejemplo, si inviertes 10 SAT, {content.title} se compromete a devolverte{" "}
                       {10 * campaign.investmentMultiple} SAT durante la vida útil del acuerdo:{" "}
-                      <strong>Nov 21, 2025.</strong>
+                      <strong>{getDefaultDateFormat(campaign.maturityDate)}.</strong>
                     </Typography.Description>
                   </div>
                 </div>

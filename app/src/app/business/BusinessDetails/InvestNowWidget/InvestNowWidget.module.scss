@@ -3,7 +3,7 @@
 .invest-now-widget {
   position: fixed;
   width: 100%;
-  z-index: $z-index-navigation;
+  z-index: $z-index-content;
   margin-top: $space-default;
 
   &__risk-level {
@@ -45,7 +45,7 @@
     border-radius: $border-radius;
     @include boxShadowInset;
 
-    p {
+    &--text {
       margin-bottom: 0;
     }
 
@@ -59,19 +59,21 @@
 
   &__goal {
     padding: $space-m 0;
-    h4,
-    p {
+
+    &--text,
+    &--heading {
       margin-bottom: 0;
+      line-height: 1;
     }
 
-    p {
-      line-height: 1;
+    &--text {
+      margin-left: 25px;
     }
 
     > div {
       background-color: var(--color-background-contrast);
       margin-bottom: $space-s;
-      border-left: 2px solid var(--color-status-info);
+      border-left: 3px solid var(--color-primary);
       padding: $space-s;
       display: flex;
       flex-direction: column;
