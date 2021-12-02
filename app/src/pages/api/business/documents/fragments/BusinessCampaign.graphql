@@ -3,6 +3,8 @@ fragment BusinessCampaign on BusinessCampaign {
   slug
   expiresAt
   investmentMultiple
+  minFundingInUSD
+  maxFundingInUSD
   totalSatsInvested
   businessId
   btcPayServerStoreId
