@@ -8,6 +8,8 @@ export type BusinessFundingCampaignPlanModelArgs = {
   slug: string;
   btcpayserver_store_id: string;
   investment_multiple: number;
+  min_funding_in_usd: number;
+  max_funding_in_usd: number;
   expires_at: Date;
   maturity_date: Date;
   is_active?: boolean;
@@ -51,7 +53,15 @@ export class BusinessFundingCampaignPlanModel extends Model<
     },
     investment_multiple: {
       type: DataTypes.DECIMAL(10, 2),
-      allowNull: true,
+      allowNull: false,
+    },
+    min_funding_in_usd: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+    },
+    max_funding_in_usd: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
     },
     expires_at: {
       type: DataTypes.DATE,
@@ -81,12 +91,12 @@ export class BusinessFundingCampaignPlanModel extends Model<
     },
     created_at: {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
       defaultValue: new Date(),
     },
     updated_at: {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
       defaultValue: new Date(),
     },
   };
