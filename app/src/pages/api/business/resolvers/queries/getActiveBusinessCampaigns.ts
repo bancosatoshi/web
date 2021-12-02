@@ -41,6 +41,7 @@ const getActiveBusinessCampaigns: QueryResolvers["getActiveBusinessCampaigns"] =
         investmentMultiple: campaign.getDataValue("investment_multiple"),
         maxFundingInUSD: campaign.getDataValue("max_funding_in_usd"),
         minFundingInUSD: campaign.getDataValue("min_funding_in_usd"),
+        maturityDate: campaign.getDataValue("maturity_date"),
         btcPayServerStoreId: campaign.getDataValue("btcpayserver_store_id"),
         totalInvestors,
         content,
