@@ -6,4 +6,6 @@ fragment BusinessCampaign on BusinessCampaign {
   totalSatsInvested
   businessId
   btcPayServerStoreId
+  daysLeft
+  totalInvestors
 }

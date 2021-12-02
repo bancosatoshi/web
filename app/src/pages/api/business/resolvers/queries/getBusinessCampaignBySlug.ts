@@ -1,6 +1,8 @@
 import { Business } from "api/codegen";
 import { QueryGetBusinessCampaignBySlugArgs, QueryResolvers } from "api/codegen/resolvers-types";
 import { ResolversContext } from "api/graphql";
+import getTotalInvestors from "providers/database/getTotalInvestors";
+import getTotalSatsInvested from "providers/database/getTotalSatsInvested";
 
 import { getPageContentByBusinessCampaignSlug } from "providers/wordpress/getPageContentBySlug";
 
@@ -20,6 +22,16 @@ const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = a
 
     const content = await getPageContentByBusinessCampaignSlug(slug);
 
+    const business_funding_campaign_plan_id = data.getDataValue("id")!;
+
+    const campaignTransactions =
+      await database.dao.business_funding_campaign_transactions.findAllByBusinessFundingCampaignId({
+        business_funding_campaign_plan_id,
+      });
+
+    const totalInvestors = getTotalInvestors(campaignTransactions);
+    const totalSatsInvested = getTotalSatsInvested(campaignTransactions);
+
     return {
       id: data.business.getDataValue("id")!,
       userId: data.business.getDataValue("user_id"),
@@ -29,10 +41,12 @@ const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = a
         establisedAt: data.business.business_info.getDataValue("established_at"),
       },
       activeCampaign: {
-        id: data.getDataValue("id")!,
+        id: business_funding_campaign_plan_id,
         businessId: data.getDataValue("business_id"),
         investmentMultiple: data.getDataValue("investment_multiple"),
-        totalSatsInvested: 12345678,
+        totalSatsInvested,
+        daysLeft: data.days_left || 0,
+        totalInvestors,
         expiresAt: data.getDataValue("expires_at"),
         slug: data.getDataValue("slug"),
         btcPayServerStoreId: data.getDataValue("btcpayserver_store_id"),
@@ -40,7 +54,8 @@ const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = a
       },
     };
   } catch (error) {
-    return error;
+    // @TODO log error
+    throw error;
   }
 };
 

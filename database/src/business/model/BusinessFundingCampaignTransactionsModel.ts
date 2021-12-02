@@ -1,8 +1,8 @@
-import { DataTypes, Model, ModelOptions } from "sequelize";
+import { DataTypes, Model, ModelAttributes, ModelOptions, Optional } from "sequelize";
 import { BusinessFundingCampaignPlanModel } from ".";
 
 export type BusinessFundingCampaignTransactionsModelArgs = {
-  id?: string;
+  id: string;
   user_id: string;
   business_funding_campaign_plan_id: string;
   btc_invoice_id: string;
@@ -11,12 +11,20 @@ export type BusinessFundingCampaignTransactionsModelArgs = {
   updated_at?: Date;
 };
 
-export class BusinessFundingCampaignTransactionsModel extends Model<BusinessFundingCampaignTransactionsModelArgs> {
+export type BusinessFundingCampaignTransactionsModelCreationArgs = Optional<
+  BusinessFundingCampaignTransactionsModelArgs,
+  "id"
+>;
+
+export class BusinessFundingCampaignTransactionsModel extends Model<
+  BusinessFundingCampaignTransactionsModelArgs,
+  BusinessFundingCampaignTransactionsModelCreationArgs
+> {
   public static tableName = "business_funding_campaign_transactions";
 
   public businessFundingCampaignPlan?: BusinessFundingCampaignPlanModel;
 
-  public static rawAttributes = {
+  public static _attributes: ModelAttributes = {
     id: {
       type: DataTypes.UUID,
       allowNull: false,

@@ -36,19 +36,20 @@ export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ camp
             <Typography.MiniDescription>Recaudado</Typography.MiniDescription>
           </Grid.Col>
           <Grid.Col className={styles["campaign-card__short"]}>
-            {/* @TODO add investors count */}
-            <Typography.Headline6>123</Typography.Headline6>
-            <Typography.MiniDescription>{2 > 1 ? "Inversionistas" : "Inversionista"}</Typography.MiniDescription>
+            <Typography.Headline6>{campaign.totalInvestors}</Typography.Headline6>
+            <Typography.MiniDescription>
+              {campaign.totalInvestors > 1 ? "Inversionistas" : "Inversionista"}
+            </Typography.MiniDescription>
           </Grid.Col>
         </Grid.Row>
         <Visible lg xl>
           <Grid.Row>
             <Grid.Col className={styles["campaign-card__short"]}>
-              <Typography.Headline6>{`${campaign?.investmentMultiple}x`}</Typography.Headline6>
+              <Typography.Headline6>{campaign.investmentMultiple}x</Typography.Headline6>
               <Typography.MiniDescription>Retorno</Typography.MiniDescription>
             </Grid.Col>
             <Grid.Col className={styles["campaign-card__short"]}>
-              <Typography.Headline6>0</Typography.Headline6>
+              <Typography.Headline6>{campaign.daysLeft}</Typography.Headline6>
               <Typography.MiniDescription>Días Restantes</Typography.MiniDescription>
             </Grid.Col>
           </Grid.Row>

@@ -8,5 +8,5 @@ import { BusinessDAO } from "../types";
 export default (
   model: ModelCtor<BusinessFundingCampaignTransactionsModel>,
 ): BusinessDAO["business_funding_campaign_transactions"]["create"] => {
-  return async (args: BusinessFundingCampaignTransactionsModelArgs) => await model.create(args, { logging: false });
+  return async (args) => await model.create(args, { logging: false });
 };

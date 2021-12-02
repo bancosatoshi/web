@@ -4,7 +4,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import crypto from "crypto";
 import databaseConnection from "src/providers/database";
-import { BusinessFundingCampaignTransactionsModelArgs } from "@bancosatoshi/database/business/model";
+import { BusinessFundingCampaignTransactionsModelCreationArgs } from "@bancosatoshi/database/business/model";
 
 import { BtcPayServerWebhookRequestBody } from "./btc-pay-server.types";
 import getInvoicePaymentMethod from "providers/btcpay/getInvoicePaymentMethod";
@@ -47,7 +47,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const btcpayserver_store_id = data.storeId;
     const btc_invoice_id = data.invoiceId;
 
-    const transaction: BusinessFundingCampaignTransactionsModelArgs = {
+    const transaction: BusinessFundingCampaignTransactionsModelCreationArgs = {
       user_id: "",
       business_funding_campaign_plan_id: "",
       btc_invoice_id,

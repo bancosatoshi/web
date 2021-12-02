@@ -1,20 +1,22 @@
-import { DataTypes, Model, ModelOptions } from "sequelize";
+import { DataTypes, Model, ModelAttributes, ModelOptions, Optional } from "sequelize";
 import { BusinessModel } from ".";
 
 export type BusinessInfoModelArgs = {
-  id?: string;
+  id: string;
   business_id: string;
   established_at: Date;
   created_at?: Date;
   updated_at?: Date;
 };
 
-export class BusinessInfoModel extends Model<BusinessInfoModelArgs> {
+export type BusinessInfoModelCreationArgs = Optional<BusinessInfoModelArgs, "id">;
+
+export class BusinessInfoModel extends Model<BusinessInfoModelArgs, BusinessInfoModelCreationArgs> {
   public static tableName = "business_info";
 
   public business?: BusinessModel;
 
-  public static rawAttributes = {
+  public static _attributes: ModelAttributes = {
     id: {
       type: DataTypes.UUID,
       allowNull: false,

@@ -40,7 +40,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       checkoutLink: content.checkoutLink,
     });
   } catch (error) {
-    console.log(error);
+    // @TODO log error
     res.status(500);
   }
 };
