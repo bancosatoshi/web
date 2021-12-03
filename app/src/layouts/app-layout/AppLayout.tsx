@@ -10,7 +10,7 @@ import { ToastContextController } from "context/toast/ToastContextController";
 import { AppLayoutProps } from "./AppLayout.types";
 
 export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("head");
   const { locale } = useRouter();
 
   useEffect(() => {

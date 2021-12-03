@@ -6,5 +6,7 @@
   "intro.asBusinessOwner.title": "Como empresarix",
   "intro.asBusinessOwner.description": "Accede a capital de inversión global<br />y ejecuta tus ideas.",
   "intro.bottomBanner.welcome": "Bienvenido a tu banco de inversión y desarrollo,<br />con Bitcoin.",
-  "intro.bottomBanner.cta": "Visita la Sala de Inversión"
+  "intro.bottomBanner.cta": "Visita la Sala de Inversión",
+  "head.og.description": "Como inversionista: Diversifica tu portafolio con ingresos pasivos desde 1 SAT. Como empresario: Accede a capital de inversión global y ejecuta tus ideas.",
+  "head.og.title": "Banco Satoshi | Tu Banco de Inversión y Desarrollo, con Bitcoin"
 }
