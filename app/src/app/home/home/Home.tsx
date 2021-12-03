@@ -8,9 +8,11 @@ import { useRoutes } from "hooks/useRoutes/useRoutes";
 
 import styles from "./Home.module.scss";
 import { HomeProps } from "./Home.types";
+import { Trans, useTranslation } from "react-i18next";
 
 export const Home: React.FC<HomeProps> = ({ className }) => {
   const routes = useRoutes();
+  const { t } = useTranslation("home");
 
   return (
     <div className={clsx(styles.home, className)}>
@@ -19,23 +21,20 @@ export const Home: React.FC<HomeProps> = ({ className }) => {
           <Grid.Row>
             <Grid.Col lg={7}>
               <Typography.Headline1 className={styles["home__intro--headline"]}>
-                Invierte en Negocios
+                {t("intro.h1.top")}
                 <br />
-                con Bitcoin.
+                {t("intro.h1.main")}
               </Typography.Headline1>
               <div className={styles["home__intro--text-block"]}>
-                <Typography.Text>Como inversionista</Typography.Text>
+                <Typography.Text>{t("intro.asInvestor.title")}</Typography.Text>
                 <Typography.TextLead>
-                  Diversifica tu portafolio con ingresos pasivos
-                  <br />
-                  <strong>desde 1 SAT</strong>.
+                  <Trans>{t("intro.asInvestor.description")}</Trans>
                 </Typography.TextLead>
               </div>
               <div className={styles["home__intro--text-block"]}>
-                <Typography.Text>Como empresarix</Typography.Text>
+                <Typography.Text>{t("intro.asBusinessOwner.title")}</Typography.Text>
                 <Typography.TextLead>
-                  Accede a capital de inversión global
-                  <br />y ejecuta tus ideas.
+                  <Trans>{t("intro.asBusinessOwner.description")}</Trans>
                 </Typography.TextLead>
               </div>
             </Grid.Col>
@@ -47,14 +46,12 @@ export const Home: React.FC<HomeProps> = ({ className }) => {
           <Grid.Row>
             <Grid.Col lg={7}>
               <Typography.Headline4 className={styles["home__section--cta-banner--welcome"]}>
-                Bienvenido a tu banco de inversión y desarrollo,
-                <br />
-                con Bitcoin.
+                <Trans>{t("intro.bottomBanner.welcome")}</Trans>
               </Typography.Headline4>
             </Grid.Col>
             <Grid.Col lg={5}>
               <Typography.Link className={styles["home__section--cta-banner--cta"]} href={routes.invest.grid}>
-                Visita la Sala de Inversión <Icon name="icon-chevron-right-circle" />
+                {t("intro.bottomBanner.cta")} <Icon name="icon-chevron-right-circle" />
               </Typography.Link>
             </Grid.Col>
           </Grid.Row>

@@ -1,10 +1,15 @@
 {
-  "intro.h1.top": "Accelerate into",
-  "intro.h1.main": "DeFi",
-  "intro.button.contact": "Get in touch",
+  "intro.h1.top": "Invest in Businesses",
+  "intro.h1.main": "with Bitcoin",
+  "intro.asInvestor.title": "As investor",
+  "intro.asInvestor.description": "Discover passive income investments<br />in businesses worldwide.",
+  "intro.asBusinessOwner.title": "As a business owner",
+  "intro.asBusinessOwner.description": "Access to global investment capital,<br />and stay onwards.",
+  "intro.bottomBanner.welcome": "Banco Satoshi, Bitcoin Investment Banking.",
+  "intro.bottomBanner.cta": "Investment Opportunities",
   "intro.h2.text.1": "We are a team of visionaries and pioneers in the Decentralized Finance ecosystem. Leverage blockchain technology to advance smarter.",
   "intro.h2.text.2": "",
   "intro.h2.text.3": "",
-  "head.og.description": "We are a team of visionaries and pioneers in the Decentralized Finance ecosystem. Leverage blockchain technology to advance smarter.",
-  "head.og.title": "Aufacicenta | Accelerate Into DeFi"
+  "head.og.description": "Access to passive income by investing in guaranteed business opportunities.",
+  "head.og.title": "Banco Satoshi | Bitcoin Investment Banking"
 }
