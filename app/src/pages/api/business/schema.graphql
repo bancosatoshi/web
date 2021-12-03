@@ -14,6 +14,8 @@ type BusinessCampaign {
   id: String!
   investmentMultiple: Float!
   maturityDate: Date!
+  maxFundingInUSD: Float!
+  minFundingInUSD: Float!
   slug: String!
   totalInvestors: Int!
   totalSatsInvested: Int!

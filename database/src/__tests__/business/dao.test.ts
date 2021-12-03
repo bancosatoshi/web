@@ -12,6 +12,8 @@ describe("dao", () => {
   let business_funding_campaign_plan_id: string;
   const user_id = faker.datatype.uuid();
   const maturity_date = moment().add(5, "years").toDate();
+  const min_funding_in_usd = 20000;
+  const max_funding_in_usd = 30000;
 
   beforeAll(async () => {
     driver = await database.connect(connectionOptions, { force: true, logging: false });
@@ -37,6 +39,8 @@ describe("dao", () => {
       slug: faker.lorem.slug(),
       btcpayserver_store_id: faker.datatype.uuid(),
       maturity_date,
+      min_funding_in_usd,
+      max_funding_in_usd,
     });
 
     business_funding_campaign_plan_id = businessFundingCampaignRecord.getDataValue("id");

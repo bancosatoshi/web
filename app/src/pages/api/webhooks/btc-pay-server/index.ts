@@ -9,8 +9,7 @@ import { BusinessFundingCampaignTransactionsModelCreationArgs } from "@bancosato
 import { BtcPayServerWebhookRequestBody } from "./btc-pay-server.types";
 import getInvoicePaymentMethod from "providers/btcpay/getInvoicePaymentMethod";
 import getWebhookSecretByStoreId from "providers/aws/getWebhookSecretByStoreId";
-
-const bitcoin = require("bitcoin-units");
+import convert from "providers/currency/convert";
 
 const headerSignatureMatchesWebhookKey = async (sig: string, body: BtcPayServerWebhookRequestBody) => {
   const webhookKey = await getWebhookSecretByStoreId(body.storeId);
@@ -77,7 +76,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       throw new Error("api/webhooks/btc-pay-server: no Settled payment methods exist for storeId:invoiceId");
     }
 
-    const transaction_amount_in_sats = bitcoin(Number(paymentMethod.value), "btc").to("satoshi");
+    const transaction_amount_in_sats = convert.btc_satoshi(Number(paymentMethod.value));
     transaction.transaction_amount_in_sats = transaction_amount_in_sats._value;
 
     await db.dao.business_funding_campaign_transactions.create(transaction);

@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Container } from "react-grid-system";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { Card } from "ui/card/Card";
 import { Typography } from "ui/typography/Typography";
@@ -16,12 +16,24 @@ import { useCheckoutContext } from "hooks/useCheckoutContext/useCheckoutContext"
 import { InvestNowWidgetProps } from "./InvestNowWidget.types";
 import styles from "./InvestNowWidget.module.scss";
 import getDefaultDateFormat from "providers/date/getDefaultDateFormat";
+import convert from "providers/currency/convert";
+import formatFiatCurrency from "providers/currency/formatFiatCurrency";
 
 export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, campaign }) => {
   const auth = useAuthContext();
   const router = useRouter();
   const routes = useRoutes();
   const { getCheckoutURL, checkoutState, isLoading: isCheckoutLoading, error: checkoutError } = useCheckoutContext();
+  const [totalFunded, setTotalFunded] = useState(0);
+
+  useEffect(() => {
+    (async () => {
+      const btcFunded = convert.satoshi_btc(campaign.totalSatsInvested);
+      const conversion = await convert.btc_usd(btcFunded);
+
+      setTotalFunded(conversion);
+    })();
+  }, [campaign.totalSatsInvested]);
 
   useEffect(() => {
     if (!checkoutState?.url) {
@@ -97,7 +109,7 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                       <Icon name="icon-bag-dollar" /> {campaign.totalSatsInvested} SAT
                     </Typography.Headline4>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>
-                      Invertidos hasta hoy: $3,000.00 USD
+                      Invertidos hasta hoy: {formatFiatCurrency(totalFunded)} USD
                     </Typography.Description>
                   </div>
                   <div>

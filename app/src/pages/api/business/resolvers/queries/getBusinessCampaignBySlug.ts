@@ -44,6 +44,8 @@ const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = a
         id: business_funding_campaign_plan_id,
         businessId: data.getDataValue("business_id"),
         investmentMultiple: data.getDataValue("investment_multiple"),
+        minFundingInUSD: data.getDataValue("min_funding_in_usd"),
+        maxFundingInUSD: data.getDataValue("max_funding_in_usd"),
         totalSatsInvested,
         daysLeft: data.days_left || 0,
         totalInvestors,
