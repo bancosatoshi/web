@@ -9,11 +9,13 @@ import styles from "./NavBar.module.scss";
 import { NavBarProps } from "./NavBar.types";
 import { Icon } from "ui/icon/Icon";
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 export const NavBar: React.FC<NavBarProps> = () => {
   const auth = useAuthContext();
   const routes = useRoutes();
   const { session, handleLogout } = useAuthContext();
+  const { t } = useTranslation("common");
 
   const getUserNickname = () => {
     const userEmail = session?.user?.email;
@@ -36,14 +38,14 @@ export const NavBar: React.FC<NavBarProps> = () => {
           <Col lg={6} xs={6} sm={6}>
             <div className={styles.navbar__center}>
               <div className={clsx(styles["navbar__center--item"], styles["navbar__center--item-dropdown"])}>
-                <Typography.Link href={routes.invest.grid}>Sala de Inversión</Typography.Link>
+                <Typography.Link href={routes.invest.grid}>{t("navbar.businessCampaigns")}</Typography.Link>
                 <div className={clsx(styles["navbar__dropdown"], "dropdown")}>
                   <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.map}>
                     <div className={styles["navbar__dropdown--item-icon"]}>
                       <Icon name="icon-map2" />
                     </div>
                     <div className={styles["navbar__dropdown--item-text"]}>
-                      <Typography.Text>Mapa</Typography.Text>
+                      <Typography.Text>{t("navbar.businessCampaigns.map")}</Typography.Text>
                     </div>
                   </Typography.Link>
                   <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.data}>
@@ -51,7 +53,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                       <Icon name="icon-file-stats" />
                     </div>
                     <div className={styles["navbar__dropdown--item-text"]}>
-                      <Typography.Text>Tabla</Typography.Text>
+                      <Typography.Text>{t("navbar.businessCampaigns.table")}</Typography.Text>
                     </div>
                   </Typography.Link>
                   <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.grid}>
@@ -59,16 +61,16 @@ export const NavBar: React.FC<NavBarProps> = () => {
                       <Icon name="icon-grid" />
                     </div>
                     <div className={styles["navbar__dropdown--item-text"]}>
-                      <Typography.Text>Grid</Typography.Text>
+                      <Typography.Text>{t("navbar.businessCampaigns.grid")}</Typography.Text>
                     </div>
                   </Typography.Link>
                 </div>
               </div>
               <div className={styles["navbar__center--item"]}>
-                <Typography.Text>Cómo Funciona</Typography.Text>
+                <Typography.Text>{t("navbar.howItWorks")}</Typography.Text>
               </div>
               <div className={styles["navbar__center--item"]}>
-                <Typography.Text>Accede a Capital</Typography.Text>
+                <Typography.Text>{t("navbar.apply")}</Typography.Text>
               </div>
             </div>
           </Col>
@@ -84,7 +86,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                           <Icon name="icon-exit" />
                         </div>
                         <div className={styles["navbar__dropdown--item-text"]}>
-                          <Typography.Text>Cerrar Sesión</Typography.Text>
+                          <Typography.Text>{t("navbar.logout")}</Typography.Text>
                         </div>
                       </div>
                     </div>
