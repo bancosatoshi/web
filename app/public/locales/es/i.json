@@ -1,12 +1,7 @@
 {
-  "intro.h1.top": "Invierte en Negocios",
-  "intro.h1.main": "con Bitcoin",
-  "intro.asInvestor.title": "Como inversionista",
-  "intro.asInvestor.description": "Diversifica tu portafolio con ingresos pasivos<br /><strong>desde 1 SAT</strong>.",
-  "intro.asBusinessOwner.title": "Como empresarix",
-  "intro.asBusinessOwner.description": "Accede a capital de inversión global<br />y ejecuta tus ideas.",
-  "intro.bottomBanner.welcome": "Bienvenido a tu banco de inversión y desarrollo,<br />con Bitcoin.",
-  "intro.bottomBanner.cta": "Visita la Sala de Inversión",
-  "head.og.description": "Como inversionista: Diversifica tu portafolio con ingresos pasivos desde 1 SAT. Como empresario: Accede a capital de inversión global y ejecuta tus ideas.",
-  "head.og.title": "Banco Satoshi | Tu Banco de Inversión y Desarrollo, con Bitcoin"
+  "grid.recentCampaigns.title": "Campañas Recientes",
+  "grid.recentCampaigns.description": "Descubre nuevas oportunidades y comienza a invertir",
+  "grid.banner.title": "Explora e Invierte con Bitcoin",
+  "grid.banner.description": "Diversifica tu portafolio con ingresos pasivos desde <strong>1 SAT</strong>.",
+  "grid.banner.cta": "Crea una cuenta"
 }
