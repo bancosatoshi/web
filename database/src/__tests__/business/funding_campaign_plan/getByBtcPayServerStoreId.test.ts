@@ -15,6 +15,8 @@ describe("business_funding_campaign_plan: getByBtcPayServerStoreId", () => {
   const established_at = new Date("2019-08-21");
   const maturity_date = moment().add(5, "years").toDate();
   const btcpayserver_store_id = faker.datatype.uuid();
+  const min_funding_in_usd = 20000;
+  const max_funding_in_usd = 30000;
 
   beforeAll(async () => {
     driver = await database.connect(connectionOptions, { force: true, logging: false });
@@ -40,6 +42,8 @@ describe("business_funding_campaign_plan: getByBtcPayServerStoreId", () => {
       slug,
       btcpayserver_store_id,
       maturity_date,
+      min_funding_in_usd,
+      max_funding_in_usd,
     });
   });
 

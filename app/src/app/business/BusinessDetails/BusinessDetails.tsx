@@ -3,13 +3,13 @@ import clsx from "clsx";
 import { Grid } from "ui/grid/Grid";
 import { Card } from "ui/card/Card";
 import { Tab } from "ui/tab/Tab";
-import { Typography } from "ui/typography/Typography";
 
 import { BusinessDetailsProps } from "./BusinessDetails.types";
 import styles from "./BusinessDetails.module.scss";
 import { BusinessContent } from "./BusinessContent/BusinessContent";
 import { BusinessHeader } from "./BusinessHeader/BusinessHeader";
 import { InvestNowWidget } from "./InvestNowWidget/InvestNowWidget";
+import { CampaignFinancials } from "./CampaignFinancials/CampaignFinancials";
 
 export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign }) => (
   <div className={clsx(styles["business-details"])}>
@@ -28,7 +28,7 @@ export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign }) =>
                 <BusinessContent content={campaign.content} />
               </Tab.Pane>
               <Tab.Pane id="business-financials-tab">
-                <Typography.Text>Finanzas y Datos</Typography.Text>
+                <CampaignFinancials campaign={campaign} />
               </Tab.Pane>
             </Tab>
           </Card>
