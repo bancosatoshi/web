@@ -54,6 +54,10 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
     try {
       setIsLoading(true);
 
+      if (!email) {
+        throw new Error("Invalid email");
+      }
+
       const { error } = await supabase.auth.signIn(
         { email },
         { redirectTo: (router.query.redirectTo as string) || routes.home },
@@ -62,18 +66,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       if (error) {
         throw new Error(error.message);
       }
-    } catch (_error) {
-      // @TODO log to error logger
-      console.log(_error);
 
-      // @TODO i18n
-      toast.trigger({
-        variant: "error",
-        title: "Error",
-        withTimeout: false,
-        children: <Typography.Text>No pudimos enviar un correo de ingreso. Intenta de nuevo.</Typography.Text>,
-      });
-    } finally {
       setIsLoading(false);
 
       // @TODO i18n
@@ -86,6 +79,19 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
             Enviamos un link de ingreso sin contraseña a tu bandeja de entrada. Da click en él para iniciar sesión.
           </Typography.Text>
         ),
+      });
+    } catch (_error) {
+      setIsLoading(false);
+
+      // @TODO log to error logger
+      console.log(_error);
+
+      // @TODO i18n
+      toast.trigger({
+        variant: "error",
+        title: "Error",
+        withTimeout: false,
+        children: <Typography.Text>No pudimos enviar un correo de ingreso. Intenta de nuevo.</Typography.Text>,
       });
     }
   };
