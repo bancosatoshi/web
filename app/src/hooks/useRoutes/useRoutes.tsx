@@ -32,7 +32,7 @@ export const routes: RouteMap = {
     },
   },
   auth: {
-    signIn: "/a/ingresa", // @TODO resolve i18n paths for all languages
+    signIn: "/a",
   },
   api: {
     getCheckoutURL: `/api/getCheckoutURL`,

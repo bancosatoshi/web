@@ -5,5 +5,7 @@
     "navbar.businessCampaigns.table": "Tabla",
     "navbar.howItWorks": "Cómo Funciona",
     "navbar.apply": "Accede a Capital",
-    "navbar.logout": "Cerrar Sesión"
+    "navbar.logout": "Cerrar Sesión",
+    "privacyNotice": "Aviso de Privacidad",
+    "termsAndConditions": "Términos y Condiciones"
 }
