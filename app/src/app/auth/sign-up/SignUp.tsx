@@ -32,16 +32,14 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => {
                 <>
                   <Card.Content>
                     <div className={styles["sign-up__instructions"]}>
-                      <Typography.Headline3>Ya has iniciado sesión</Typography.Headline3>
-                      <Typography.Text>
-                        Si no es tu cuenta, cambia de cuenta o navega a tu panel de control.
-                      </Typography.Text>
+                      <Typography.Headline3>{t("signUp.activeSession.title")}</Typography.Headline3>
+                      <Typography.Text>{t("signUp.activeSession.description")}</Typography.Text>
                     </div>
                   </Card.Content>
                   <Card.Actions>
-                    <Button>Ir a panel de control</Button>
+                    <Button>{t("signUp.activeSession.dashboard-cta")}</Button>
                     <Button variant="outlined" onClick={auth.handleLogout} isLoading={auth.isLoading}>
-                      Cambiar de cuenta
+                      {t("signUp.activeSession.signout-cta")}
                     </Button>
                   </Card.Actions>
                 </>
