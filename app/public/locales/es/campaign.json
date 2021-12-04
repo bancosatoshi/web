@@ -13,5 +13,8 @@
   "investNowWidget.warnings.volatility.title": "Volatilidad 0",
   "investNowWidget.warnings.volatility.description": "Tu depósito estará respaldado en un <strong>Stable Coin Escrow</strong> hasta cumplir la meta de inversión.",
   "investNowWidget.warnings.maturityDate.title": "Periodo de Maduración",
-  "investNowWidget.warnings.maturityDate.description": "Por ejemplo, si inviertes 10 SAT, {{name}} se compromete a devolverte {{investmentMultiple}} SAT durante la vida útil del acuerdo: <strong>{{maturityDate}}</strong>."
+  "investNowWidget.warnings.maturityDate.description": "Por ejemplo, si inviertes 10 SAT, {{name}} se compromete a devolverte {{investmentMultiple}} SAT durante la vida útil del acuerdo: <strong>{{maturityDate}}</strong>.",
+  "businessDetails.tab.investmentOpportunity": "Oportunidad de Inversión",
+  "businessDetails.tab.dataRoom": "Finanzas y Datos",
+  "businessHeader.social.title": "Redes Sociales"
 }

@@ -68,6 +68,7 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                 <div className={styles["invest-now-widget__risk-level"]}>
                   <Tooltip.Wrapper>
                     <Typography.Description>{t("investNowWidget.riskLevel.title")}: Medio</Typography.Description>
+                    {/* @TODO translate risk level date and description */}
                     <Tooltip
                       title={`${t("investNowWidget.riskLevel.title")}: Medio`}
                       description={t("investNowWidget.riskLevel.description", {
