@@ -16,5 +16,7 @@
   "investNowWidget.warnings.maturityDate.description": "Por ejemplo, si inviertes 10 SAT, {{name}} se compromete a devolverte {{investmentMultiple}} SAT durante la vida útil del acuerdo: <strong>{{maturityDate}}</strong>.",
   "businessDetails.tab.investmentOpportunity": "Oportunidad de Inversión",
   "businessDetails.tab.dataRoom": "Finanzas y Datos",
-  "businessHeader.social.title": "Redes Sociales"
+  "businessHeader.social.title": "Redes Sociales",
+  "fundingProgressBar.totalBitcoinCollected.title": "BTC Recaudado",
+  "fundingProgressBar.totalBitcoinCollected.description": "recaudado"
 }
