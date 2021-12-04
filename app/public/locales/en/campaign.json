@@ -1,5 +1,6 @@
 {
   "investNowWidget.riskLevel.title": "Risk Level",
+  "investNowWidget.riskLevel.description": "{{name}} was established {{establishedSince}}. {{description}}",
   "investNowWidget.investIn.title": "Invest in",
   "investNowWidget.cta.depositNow": "Deposit BTC",
   "investNowWidget.cta.signInAndDepositNow": "Sign In & Deposit BTC",

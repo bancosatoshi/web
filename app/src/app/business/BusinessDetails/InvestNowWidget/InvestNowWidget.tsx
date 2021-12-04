@@ -70,7 +70,14 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                     <Typography.Description>{t("investNowWidget.riskLevel.title")}: Medio</Typography.Description>
                     <Tooltip
                       title={`${t("investNowWidget.riskLevel.title")}: Medio`}
-                      description={`${content.title} tiene una edad de 2 años. Tiene libros contables en orden y tiene un score 8.5 de 10 en el Protocolo de Inversión.`}
+                      description={t("investNowWidget.riskLevel.description", {
+                        replace: {
+                          name: content.title,
+                          establishedSince: "hace 2 años",
+                          description:
+                            "Tiene libros contables en orden y tiene un score 8.5 de 10 en el Protocolo de Inversión.",
+                        },
+                      })}
                     />
                   </Tooltip.Wrapper>
                 </div>
@@ -99,9 +106,13 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                       </Typography.Headline4>
                       <Tooltip
                         title="ROI"
-                        description={`Si inviertes 10 SAT, ${content.title} se compromete a devolverte ${
-                          10 * campaign.investmentMultiple
-                        } SAT a lo largo de la vida útil del acuerdo: ${getDefaultDateFormat(campaign.maturityDate)}.`}
+                        description={t("investNowWidget.warnings.maturityDate.description", {
+                          replace: {
+                            name: content.title,
+                            investmentMultiple: 10 * campaign.investmentMultiple,
+                            maturityDate: getDefaultDateFormat(campaign.maturityDate),
+                          },
+                        })}
                       />
                     </Tooltip.Wrapper>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>

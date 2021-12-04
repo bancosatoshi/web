@@ -73,8 +73,10 @@ const MiniButtonLabel: React.FC<TypographyProps> = ({ children, className }) => 
   <span className={clsx(styles["typography__mini-button-label"], className)}>{children}</span>
 );
 
-const Description: React.FC<TypographyProps> = ({ children, className, inline }) => (
-  <p className={clsx(styles.typography__description, className, { [styles.typography__inline]: inline })}>{children}</p>
+const Description: React.FC<TypographyProps> = ({ children, className, inline, ...props }) => (
+  <p className={clsx(styles.typography__description, className, { [styles.typography__inline]: inline })} {...props}>
+    {children}
+  </p>
 );
 
 const MiniDescription: React.FC<TypographyProps> = ({ children, className }) => (
