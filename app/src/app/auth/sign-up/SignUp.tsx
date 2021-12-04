@@ -20,7 +20,7 @@ const AuthEmailForm = dynamic<AuthEmailFormProps>(
 
 export const SignUp: React.FC<SignUpProps> = ({ className }) => {
   const auth = useAuthContext();
-  const { t } = useTranslation(["a", "common"]);
+  const { t } = useTranslation(["auth", "common"]);
 
   return (
     <div className={clsx(styles["sign-up"], className)}>
