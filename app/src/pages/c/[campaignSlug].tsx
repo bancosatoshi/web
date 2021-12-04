@@ -1,4 +1,4 @@
-import { GetStaticPathsContext, GetStaticPropsContext, NextPage } from "next";
+import { GetStaticPropsContext, NextPage } from "next";
 
 import { BusinessDetailsContainer } from "app/business/BusinessDetails/BusinessDetailsContainer";
 import { AppLayout } from "layouts/app-layout/AppLayout";
