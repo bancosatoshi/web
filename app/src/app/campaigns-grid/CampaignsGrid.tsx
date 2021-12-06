@@ -12,11 +12,13 @@ import { useRoutes } from "hooks/useRoutes/useRoutes";
 import styles from "./CampaignsGrid.module.scss";
 import { CampaignsGridProps } from "./CampaignsGrid.types";
 import { CampaignsGroup } from "./CampaignsGroup/CampaignsGroup";
+import { Trans, useTranslation } from "react-i18next";
 
 export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, className }) => {
   const auth = useAuthContext();
   const router = useRouter();
   const routes = useRoutes();
+  const { t } = useTranslation("i");
 
   const redirectToSignIn = () => {
     router.push(routes.auth.signIn);
@@ -36,14 +38,13 @@ export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, classNa
           <Container>
             <Grid.Row>
               <Grid.Col>
-                <Typography.Headline1>Explora e Invierte con Bitcoin</Typography.Headline1>
+                <Typography.Headline1>{t("grid.banner.title")}</Typography.Headline1>
                 <Typography.TextLead>
-                  Diversifica tu portafolio con ingresos pasivos desde 1{" "}
-                  <abbr title="La unidad más pequeña de Bitcoin">SAT</abbr>
+                  <Trans>{t("grid.banner.description")}</Trans>
                 </Typography.TextLead>
                 <div className={styles["campaigns-grid__intro--cta"]}>
                   <Button size="l" onClick={redirectToSignIn}>
-                    Crea una Cuenta
+                    {t("grid.banner.cta")}
                   </Button>
                 </div>
               </Grid.Col>
@@ -58,8 +59,8 @@ export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, classNa
         <Grid.Container>
           <Grid.Row>
             <Grid.Col>
-              <Typography.Headline3>Campañas Recientes</Typography.Headline3>
-              <Typography.Text>Descubre nuevas oportunidades y comienza a invertir</Typography.Text>
+              <Typography.Headline3>{t("grid.recentCampaigns.title")}</Typography.Headline3>
+              <Typography.Text>{t("grid.recentCampaigns.description")}</Typography.Text>
             </Grid.Col>
           </Grid.Row>
         </Grid.Container>

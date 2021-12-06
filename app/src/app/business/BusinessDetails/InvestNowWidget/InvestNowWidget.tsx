@@ -18,20 +18,22 @@ import styles from "./InvestNowWidget.module.scss";
 import getDefaultDateFormat from "providers/date/getDefaultDateFormat";
 import convert from "providers/currency/convert";
 import formatFiatCurrency from "providers/currency/formatFiatCurrency";
+import { Trans, useTranslation } from "react-i18next";
 
 export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, campaign }) => {
   const auth = useAuthContext();
   const router = useRouter();
   const routes = useRoutes();
+  const { t } = useTranslation("campaign");
   const { getCheckoutURL, checkoutState, isLoading: isCheckoutLoading, error: checkoutError } = useCheckoutContext();
-  const [totalFunded, setTotalFunded] = useState(0);
+  const [totalFiatFunded, setTotalFiatFunded] = useState(0);
 
   useEffect(() => {
     (async () => {
       const btcFunded = convert.satoshi_btc(campaign.totalSatsInvested);
       const conversion = await convert.btc_usd(btcFunded);
 
-      setTotalFunded(conversion);
+      setTotalFiatFunded(conversion);
     })();
   }, [campaign.totalSatsInvested]);
 
@@ -65,25 +67,35 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
               <Card.Content>
                 <div className={styles["invest-now-widget__risk-level"]}>
                   <Tooltip.Wrapper>
-                    <Typography.Description>Nivel de Riesgo: Medio</Typography.Description>
+                    <Typography.Description>{t("investNowWidget.riskLevel.title")}: Medio</Typography.Description>
+                    {/* @TODO translate risk level date and description */}
                     <Tooltip
-                      title="Nivel de Riesgo Medio"
-                      description={`${content.title} tiene una edad de 2 años. Tiene libros contables en orden y tiene un score 8.5 de 10 en el Protocolo de Inversión.`}
+                      title={`${t("investNowWidget.riskLevel.title")}: Medio`}
+                      description={t("investNowWidget.riskLevel.description", {
+                        replace: {
+                          name: content.title,
+                          establishedSince: "hace 2 años",
+                          description:
+                            "Tiene libros contables en orden y tiene un score 8.5 de 10 en el Protocolo de Inversión.",
+                        },
+                      })}
                     />
                   </Tooltip.Wrapper>
                 </div>
                 <hr />
                 <Typography.Headline3 className={styles["invest-now-widget__cta-text"]}>
-                  Invierte en {content.title}
+                  {t("investNowWidget.investIn.title")} {content.title}
                 </Typography.Headline3>
                 <div className={styles["invest-now-widget__cta-button"]}>
                   <Button fullWidth onClick={handleOnInvestNowClick} isLoading={isCheckoutLoading}>
-                    {auth.hasActiveSession ? "Depositar BTC" : "Ingresa y Deposita BTC"}
+                    {auth.hasActiveSession
+                      ? t("investNowWidget.cta.depositNow")
+                      : t("investNowWidget.cta.signInAndDepositNow")}
                     <Icon name="icon-power" className={styles["invest-now-widget__cta-button--icon"]} />
                   </Button>
                   {checkoutError && (
                     <Typography.Description className={styles["invest-now-widget__cta-button--error"]}>
-                      Algo salió mal, intenta de nuevo
+                      {t("investNowWidget.cta.error")}
                     </Typography.Description>
                   )}
                 </div>
@@ -95,13 +107,17 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                       </Typography.Headline4>
                       <Tooltip
                         title="ROI"
-                        description={`Si inviertes 10 SAT, ${content.title} se compromete a devolverte ${
-                          10 * campaign.investmentMultiple
-                        } SAT a lo largo de la vida útil del acuerdo: ${getDefaultDateFormat(campaign.maturityDate)}.`}
+                        description={t("investNowWidget.warnings.maturityDate.description", {
+                          replace: {
+                            name: content.title,
+                            investmentMultiple: 10 * campaign.investmentMultiple,
+                            maturityDate: getDefaultDateFormat(campaign.maturityDate),
+                          },
+                        })}
                       />
                     </Tooltip.Wrapper>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>
-                      Retorno sobre tu inversión
+                      {t("investNowWidget.terms.investmentMultiple.description")}
                     </Typography.Description>
                   </div>
                   <div>
@@ -109,7 +125,8 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                       <Icon name="icon-bag-dollar" /> {campaign.totalSatsInvested} SAT
                     </Typography.Headline4>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>
-                      Invertidos hasta hoy: {formatFiatCurrency(totalFunded)} USD
+                      {t("investNowWidget.terms.totalFiatFunded.description")}: {formatFiatCurrency(totalFiatFunded)}{" "}
+                      USD
                     </Typography.Description>
                   </div>
                   <div>
@@ -117,36 +134,41 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                       <Icon name="icon-users" /> {campaign.totalInvestors}
                     </Typography.Headline4>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>
-                      Inversionistas
+                      {t("investNowWidget.terms.investors.description")}
                     </Typography.Description>
                   </div>
                   <div>
                     <Typography.Headline4 className={styles["invest-now-widget__goal--heading"]}>
-                      <Icon name="icon-timer" /> {campaign.daysLeft} días
+                      <Icon name="icon-timer" /> {campaign.daysLeft} {t("investNowWidget.terms.daysLeft.title")}
                     </Typography.Headline4>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>
-                      Restantes para invertir
+                      {t("investNowWidget.terms.daysLeft.description")}
                     </Typography.Description>
                   </div>
                 </div>
                 <div className={styles["invest-now-widget__warnings"]}>
                   <div>
                     <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
-                      <strong>Volatilidad 0</strong>
+                      <strong>{t("investNowWidget.warnings.volatility.title")}</strong>
                     </Typography.Description>
                     <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
-                      Tu depósito estará respaldado en un <strong>Stable Coin Escrow</strong> hasta cumplir la meta de
-                      inversión.
+                      <Trans>{t("investNowWidget.warnings.volatility.description")}</Trans>
                     </Typography.Description>
                   </div>
                   <div>
                     <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
-                      <strong>Periodo de Maduración</strong>
+                      <strong>{t("investNowWidget.warnings.maturityDate.title")}</strong>
                     </Typography.Description>
                     <Typography.Description className={styles["invest-now-widget__warnings--text"]}>
-                      Por ejemplo, si inviertes 10 SAT, {content.title} se compromete a devolverte{" "}
-                      {10 * campaign.investmentMultiple} SAT durante la vida útil del acuerdo:{" "}
-                      <strong>{getDefaultDateFormat(campaign.maturityDate)}.</strong>
+                      <Trans>
+                        {t("investNowWidget.warnings.maturityDate.description", {
+                          replace: {
+                            name: content.title,
+                            investmentMultiple: 10 * campaign.investmentMultiple,
+                            maturityDate: getDefaultDateFormat(campaign.maturityDate),
+                          },
+                        })}
+                      </Trans>
                     </Typography.Description>
                   </div>
                 </div>

@@ -11,6 +11,7 @@ import { Button } from "ui/button/Button";
 
 import { SignUpProps } from "./SignUp.types";
 import styles from "./SignUp.module.scss";
+import { useTranslation } from "react-i18next";
 
 const AuthEmailForm = dynamic<AuthEmailFormProps>(
   () => import("ui/form/auth-email-form/AuthEmailForm").then((mod) => mod.AuthEmailForm),
@@ -19,6 +20,7 @@ const AuthEmailForm = dynamic<AuthEmailFormProps>(
 
 export const SignUp: React.FC<SignUpProps> = ({ className }) => {
   const auth = useAuthContext();
+  const { t } = useTranslation(["auth", "common"]);
 
   return (
     <div className={clsx(styles["sign-up"], className)}>
@@ -30,26 +32,22 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => {
                 <>
                   <Card.Content>
                     <div className={styles["sign-up__instructions"]}>
-                      <Typography.Headline3>Ya has iniciado sesión</Typography.Headline3>
-                      <Typography.Text>
-                        Si no es tu cuenta, cambia de cuenta o navega a tu panel de control.
-                      </Typography.Text>
+                      <Typography.Headline3>{t("signUp.activeSession.title")}</Typography.Headline3>
+                      <Typography.Text>{t("signUp.activeSession.description")}</Typography.Text>
                     </div>
                   </Card.Content>
                   <Card.Actions>
-                    <Button>Ir a panel de control</Button>
+                    <Button>{t("signUp.activeSession.dashboard-cta")}</Button>
                     <Button variant="outlined" onClick={auth.handleLogout} isLoading={auth.isLoading}>
-                      Cambiar de cuenta
+                      {t("signUp.activeSession.signout-cta")}
                     </Button>
                   </Card.Actions>
                 </>
               ) : (
                 <Card.Content>
                   <div className={styles["sign-up__instructions"]}>
-                    <Typography.Headline3>Inicia Sesión sin Contraseña</Typography.Headline3>
-                    <Typography.Text>
-                      Enviaremos un correo a tu bandeja de entrada con las instrucciones.
-                    </Typography.Text>
+                    <Typography.Headline3>{t("signUp.form.title")}</Typography.Headline3>
+                    <Typography.Text>{t("signUp.form.description")}</Typography.Text>
                   </div>
                   <AuthEmailForm
                     autoFocus
@@ -60,8 +58,10 @@ export const SignUp: React.FC<SignUpProps> = ({ className }) => {
               )}
             </Card>
             <div className={styles["sign-up__footer"]}>
-              <Typography.Text>Banco Satoshi ∞ Tu Banco de Inversión y Desarrollo, con Bitcoin.</Typography.Text>
-              <Typography.Description>Aviso de Privacidad ∞ Términos y Condiciones</Typography.Description>
+              <Typography.Text>{t("signUp.footer.slogan")}</Typography.Text>
+              <Typography.Description>
+                {t("privacyNotice", { ns: "common" })} ∞ {t("termsAndConditions", { ns: "common" })}
+              </Typography.Description>
             </div>
           </Grid.Col>
         </Grid.Row>

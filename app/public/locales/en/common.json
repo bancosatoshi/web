@@ -1,3 +1,11 @@
 {
-  "sidebar.item.real-estate": "Real Estate"
+  "navbar.businessCampaigns": "Investment Opportunities",
+  "navbar.businessCampaigns.map": "Map",
+  "navbar.businessCampaigns.grid": "Grid",
+  "navbar.businessCampaigns.table": "Table",
+  "navbar.howItWorks": "How It Works",
+  "navbar.apply": "Apply to Funding",
+  "navbar.logout": "Sign Out",
+  "privacyNotice": "Privacy Notice",
+  "termsAndConditions": "Terms & Conditions"
 }

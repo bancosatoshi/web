@@ -37,7 +37,7 @@ export const Tooltip = ({ className, title, description }: TooltipProps) => {
               <strong>{title}</strong>
             </Typography.Description>
           )}
-          <Typography.Description>{description}</Typography.Description>
+          <Typography.Description dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       </Card>
     </div>

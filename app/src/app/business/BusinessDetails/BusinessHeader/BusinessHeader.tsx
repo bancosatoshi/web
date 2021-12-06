@@ -8,8 +8,11 @@ import { Icon } from "ui/icon/Icon";
 
 import { BusinessHeaderProps } from "./BusinessHeader.types";
 import styles from "./BusinessHeader.module.scss";
+import { useTranslation } from "react-i18next";
 
 export const BusinessHeader: React.FC<BusinessHeaderProps> = ({ className, content }) => {
+  const { t } = useTranslation("campaign");
+
   const mapOptions = {
     center: {
       lat: Number(content.latitude),
@@ -52,7 +55,7 @@ export const BusinessHeader: React.FC<BusinessHeaderProps> = ({ className, conte
                   {content.website}
                 </Typography.Link>
                 <hr />
-                <Typography.Description>Redes Sociales</Typography.Description>
+                <Typography.Description>{t("businessHeader.social.title")}</Typography.Description>
                 <Typography.Link
                   className={styles["business-header__link--social"]}
                   href={`https://instagram.com/${content.instagram}`}
