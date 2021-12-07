@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import { Visible } from "react-grid-system";
 
 import { Card } from "ui/card/Card";
 import { Grid } from "ui/grid/Grid";
@@ -25,14 +24,16 @@ export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ camp
   <div className={clsx(styles["campaign-card"], className)} {...props}>
     <Card shadow backgroundImageUrl={campaign.content.media.featuredImageUrl}>
       <Card.Content>
-        <Typography.Headline4>{campaign.content.title}</Typography.Headline4>
-        <Typography.Description>
-          {campaign.content.country} - {campaign.content.category}
-        </Typography.Description>
-        <Typography.Text>{campaign.content.description}</Typography.Text>
+        <div className={styles["campaign-card__content"]}>
+          <Typography.Headline4>{campaign.content.title}</Typography.Headline4>
+          <Typography.Description>
+            {campaign.content.country} - {campaign.content.category}
+          </Typography.Description>
+          <Typography.Text>{campaign.content.description}</Typography.Text>
+        </div>
         <Grid.Row>
           <Grid.Col className={styles["campaign-card__short"]}>
-            <Typography.Headline6>{truncateRaisedAmount(campaign.totalSatsInvested)}</Typography.Headline6>
+            <Typography.Headline6>{truncateRaisedAmount(campaign.totalSatsInvested)} SAT</Typography.Headline6>
             <Typography.MiniDescription>Recaudado</Typography.MiniDescription>
           </Grid.Col>
           <Grid.Col className={styles["campaign-card__short"]}>
@@ -42,18 +43,16 @@ export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ camp
             </Typography.MiniDescription>
           </Grid.Col>
         </Grid.Row>
-        <Visible lg xl>
-          <Grid.Row>
-            <Grid.Col className={styles["campaign-card__short"]}>
-              <Typography.Headline6>{campaign.investmentMultiple}x</Typography.Headline6>
-              <Typography.MiniDescription>Retorno</Typography.MiniDescription>
-            </Grid.Col>
-            <Grid.Col className={styles["campaign-card__short"]}>
-              <Typography.Headline6>{campaign.daysLeft}</Typography.Headline6>
-              <Typography.MiniDescription>Días Restantes</Typography.MiniDescription>
-            </Grid.Col>
-          </Grid.Row>
-        </Visible>
+        <Grid.Row>
+          <Grid.Col className={styles["campaign-card__short"]}>
+            <Typography.Headline6>{campaign.investmentMultiple}x</Typography.Headline6>
+            <Typography.MiniDescription>Retorno</Typography.MiniDescription>
+          </Grid.Col>
+          <Grid.Col className={styles["campaign-card__short"]}>
+            <Typography.Headline6>{campaign.daysLeft}</Typography.Headline6>
+            <Typography.MiniDescription>Días Restantes</Typography.MiniDescription>
+          </Grid.Col>
+        </Grid.Row>
       </Card.Content>
     </Card>
   </div>
