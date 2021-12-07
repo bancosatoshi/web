@@ -6,7 +6,8 @@
     "url": "https://github.com/bancosatoshi/web.git"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "stylelint": "stylelint"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.20.0",

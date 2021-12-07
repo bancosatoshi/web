@@ -80,10 +80,10 @@
     ],
     "order/order": [
       "declarations",
-      "at-rules",
-      "dollar-variables",
       "custom-properties",
-      "rules"
+      "rules",
+      "at-rules",
+      "dollar-variables"
     ],
     "order/properties-order": [
       "position",

@@ -1,33 +1,33 @@
 @import "src/theme/base";
 
 .funding-progress-bar {
-  background-color: var(--color-secondary);
-  border-radius: $border-radius;
   position: relative;
+  border-radius: $border-radius;
+  background-color: var(--color-secondary);
 
   &__card {
-    padding: $space-default;
     margin-top: $space-default;
+    padding: $space-default;
   }
 
   &__funded-amount {
     position: absolute;
-    margin: 0;
-    color: var(--color-white);
-    font-weight: $font-weight-bold;
-    padding-left: $space-default;
     top: 1px;
+    margin: 0;
+    padding-left: $space-default;
+    font-weight: $font-weight-bold;
+    color: var(--color-white);
   }
 
   &__funded-bar {
-    background-color: var(--color-primary);
     height: 28px;
     padding: 0 $space-xs;
+    background-color: var(--color-primary);
   }
 
   &__digits {
     display: flex;
-    text-align: right;
     justify-content: space-between;
+    text-align: right;
   }
 }

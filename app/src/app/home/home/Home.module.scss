@@ -43,22 +43,25 @@
       background-color: var(--color-primary);
 
       &--welcome {
-        @include font-properties($typography-text);
-        @include atTablet {
-          @include font-properties($typography-headline-4);
-          margin-bottom: 0;
-          text-align: left;
-        }
         margin-bottom: $space-m;
         text-align: right;
         color: var(--color-white);
+
+        @include font-properties($typography-text);
+        @include atTablet {
+          margin-bottom: 0;
+          text-align: left;
+
+          @include font-properties($typography-headline-4);
+        }
       }
 
       &--cta {
-        @include font-properties($typography-headline-3);
         display: block;
         text-align: right;
         color: var(--color-white);
+
+        @include font-properties($typography-headline-3);
       }
     }
 
