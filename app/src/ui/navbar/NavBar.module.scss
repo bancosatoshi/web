@@ -10,7 +10,6 @@
   background-color: var(--color-background);
 
   &__dropdown {
-    @extend .z-depth-1;
     position: absolute;
     top: 100%;
     right: 0;
@@ -50,6 +49,8 @@
         padding: $space-default;
       }
     }
+
+    @extend .z-depth-1;
   }
 
   &__center--item,
@@ -71,28 +72,26 @@
 
   &__logo {
     a {
-      @include atLargeTablet {
-        height: $navbar-height;
-      }
       display: flex;
       flex-direction: column;
       justify-content: center;
       height: $navbar-height-mobile;
+
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
     }
 
     svg {
+      width: $navbar-logo-width-mobile;
+
       @include atLargeTablet {
         width: $navbar-logo-width;
       }
-      width: $navbar-logo-width-mobile;
     }
   }
 
   &__center {
-    @include atTablet {
-      display: flex;
-      justify-content: center;
-    }
     display: none;
 
     a {
@@ -104,9 +103,6 @@
     }
 
     &--item {
-      @include atLargeTablet {
-        height: $navbar-height;
-      }
       position: relative;
       display: flex;
       flex-direction: column;
@@ -124,6 +120,15 @@
           background-color: var(--color-background-contrast);
         }
       }
+
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
+    }
+
+    @include atTablet {
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -132,9 +137,6 @@
     justify-content: flex-end;
 
     &--item {
-      @include atLargeTablet {
-        height: $navbar-height;
-      }
       position: relative;
       display: flex;
       flex-direction: column;
@@ -144,6 +146,10 @@
       a {
         margin: 0;
         font-weight: $font-weight-bold;
+      }
+
+      @include atLargeTablet {
+        height: $navbar-height;
       }
     }
   }

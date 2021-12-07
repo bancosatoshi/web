@@ -1,7 +1,5 @@
 export type Styles = {
-  "campaign-card": string;
-  "campaign-card__content": string;
-  "campaign-card__short": string;
+  "intended-use-of-funds": string;
   "z-depth-0": string;
   "z-depth-1": string;
   "z-depth-1-half": string;

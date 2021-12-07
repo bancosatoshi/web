@@ -8,5 +8,11 @@
   "navbar.logout": "Cerrar Sesión",
   "navbar.signIn": "Iniciar Sesión",
   "privacyNotice": "Aviso de Privacidad",
-  "termsAndConditions": "Términos y Condiciones"
+  "termsAndConditions": "Términos y Condiciones",
+  "checkoutContextController.error.getCheckoutURL": "No pudimos generar un link de depósito de BTC. Intenta de nuevo.",
+  "authContextController.success.signInConfirmation": "Enviamos un link de ingreso sin contraseña a tu bandeja de entrada. Da click en él para iniciar sesión.",
+  "authContextController.success.signInConfirmation.title": "Revisa tu correo",
+  "toast.cta.dismiss": "Entendido",
+  "authContextController.error.signIn": "No pudimos enviar un correo de ingreso. Intenta de nuevo.",
+  "typeformEmbedForm.buttonLabel": "Accede a Capital"
 }

@@ -1,13 +1,6 @@
 @import "src/theme/base";
 
 .invest-now-widget {
-  @include atLargeTablet {
-    position: fixed;
-    top: 0;
-    z-index: $z-index-content;
-    width: 100%;
-    padding-top: $navbar-height;
-  }
   margin-top: $space-default;
 
   &__risk-level {
@@ -46,7 +39,6 @@
   }
 
   &__warnings {
-    @include boxShadowInset;
     border-radius: $border-radius;
     padding: $space-default;
     background-color: var(--color-background-contrast);
@@ -62,6 +54,8 @@
         margin-bottom: 0;
       }
     }
+
+    @include boxShadowInset;
   }
 
   &__goal {
@@ -90,5 +84,13 @@
         margin-bottom: 0;
       }
     }
+  }
+
+  @include atLargeTablet {
+    position: fixed;
+    top: 0;
+    z-index: $z-index-content;
+    width: 100%;
+    padding-top: $navbar-height;
   }
 }

@@ -1,12 +1,11 @@
-@import "../../theme/base";
-@import "../../theme/button/primary";
-@import "../../theme/button/button-outline";
+@import "src/theme/base";
+@import "src/theme/button/primary";
+@import "src/theme/button/button-outline";
 
 $LOADER_SIZE: 30px;
 $HALF_LOADER_SIZE: 15px;
 
 .button {
-  @extend .button_primary;
   display: inline-block;
   min-width: auto;
   white-space: nowrap;
@@ -48,13 +47,15 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &__icon--left {
-    @extend .button__icon;
     margin-right: $space-s;
+
+    @extend .button__icon;
   }
 
   &__icon--right {
-    @extend .button__icon;
     margin-left: $space-s;
+
+    @extend .button__icon;
   }
 
   &--large {
@@ -73,18 +74,28 @@ $HALF_LOADER_SIZE: 15px;
   }
 
   &--extra-small {
-    @include font-properties($typography-mini-button-label);
     padding: $space-s 20px;
+
+    @include font-properties($typography-mini-button-label);
   }
 
   &--small {
-    @include font-properties($typography-button-label);
     padding: 9px 24px;
+
+    @include font-properties($typography-button-label);
   }
 
   // "m" on desktop and "xs" on mobile
 
   &--auto-size {
+    padding: $space-s 20px;
+    font-size: $font-size-3;
+    font-weight: $font-weight-medium;
+    line-height: 1.75;
+
+    &.button--outlined {
+      padding: 6px 20px;
+    }
     // default values from .button size "m"
     @include atTablet {
       padding: 13px $space-ml;
@@ -95,14 +106,6 @@ $HALF_LOADER_SIZE: 15px;
       &.button--outlined {
         padding: 11px 22px;
       }
-    }
-    padding: $space-s 20px;
-    font-size: $font-size-3;
-    font-weight: $font-weight-medium;
-    line-height: 1.75;
-
-    &.button--outlined {
-      padding: 6px 20px;
     }
   }
 
@@ -295,7 +298,6 @@ $HALF_LOADER_SIZE: 15px;
   // Outlined variant
 
   &--outlined {
-    @extend .button-outline;
     background-color: transparent;
 
     &.button--extra-small {
@@ -384,20 +386,13 @@ $HALF_LOADER_SIZE: 15px;
         background-color: var(--color-white);
       }
     }
+
+    @extend .button-outline;
   }
 
   // Loader classes
 
   &__loading-floating-border {
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
     position: absolute;
     top: calc(50% - #{$HALF_LOADER_SIZE});
     left: calc(50% - #{$HALF_LOADER_SIZE});
@@ -407,6 +402,16 @@ $HALF_LOADER_SIZE: 15px;
     border-top: $space-xxs solid var(--color-primary);
     border-radius: $border-radius-circle;
     animation: spin 2s linear infinite;
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
   }
 
   &__loader {
@@ -514,4 +519,6 @@ $HALF_LOADER_SIZE: 15px;
   &--link {
     text-decoration: none;
   }
+
+  @extend .button_primary;
 }
