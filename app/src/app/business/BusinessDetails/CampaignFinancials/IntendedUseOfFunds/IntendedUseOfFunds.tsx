@@ -9,7 +9,7 @@ export const IntendedUseOfFunds: React.FC<IntendedUseOfFundsProps> = ({ classNam
   <div className={clsx(styles["intended-use-of-funds"], className)}>
     <Typography.Headline6>Intended Use of Funds</Typography.Headline6>
     <iframe
-      width="600"
+      width="100%"
       height="371"
       seamless
       frameBorder="0"
