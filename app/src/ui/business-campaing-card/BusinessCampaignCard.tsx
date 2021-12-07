@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import { Trans, useTranslation } from "react-i18next";
 
 import { Card } from "ui/card/Card";
 import { Grid } from "ui/grid/Grid";
@@ -18,42 +19,44 @@ const truncateRaisedAmount = (raised: number) => {
   return truncated;
 };
 
-export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ campaign, className, ...props }) => (
-  // @TODO Implement i18n
+export const BusinessCampaignCard: React.FC<BusinessCampaignCardProps> = ({ campaign, className, ...props }) => {
+  const { t } = useTranslation("i");
 
-  <div className={clsx(styles["campaign-card"], className)} {...props}>
-    <Card shadow backgroundImageUrl={campaign.content.media.featuredImageUrl}>
-      <Card.Content>
-        <div className={styles["campaign-card__content"]}>
-          <Typography.Headline4>{campaign.content.title}</Typography.Headline4>
-          <Typography.Description>
-            {campaign.content.country} - {campaign.content.category}
-          </Typography.Description>
-          <Typography.Text>{campaign.content.description}</Typography.Text>
-        </div>
-        <Grid.Row>
-          <Grid.Col className={styles["campaign-card__short"]}>
-            <Typography.Headline6>{truncateRaisedAmount(campaign.totalSatsInvested)} SAT</Typography.Headline6>
-            <Typography.MiniDescription>Recaudado</Typography.MiniDescription>
-          </Grid.Col>
-          <Grid.Col className={styles["campaign-card__short"]}>
-            <Typography.Headline6>{campaign.totalInvestors}</Typography.Headline6>
-            <Typography.MiniDescription>
-              {campaign.totalInvestors > 1 ? "Inversionistas" : "Inversionista"}
-            </Typography.MiniDescription>
-          </Grid.Col>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Col className={styles["campaign-card__short"]}>
-            <Typography.Headline6>{campaign.investmentMultiple}x</Typography.Headline6>
-            <Typography.MiniDescription>Retorno</Typography.MiniDescription>
-          </Grid.Col>
-          <Grid.Col className={styles["campaign-card__short"]}>
-            <Typography.Headline6>{campaign.daysLeft}</Typography.Headline6>
-            <Typography.MiniDescription>Días Restantes</Typography.MiniDescription>
-          </Grid.Col>
-        </Grid.Row>
-      </Card.Content>
-    </Card>
-  </div>
-);
+  return (
+    <div className={clsx(styles["campaign-card"], className)} {...props}>
+      <Card shadow backgroundImageUrl={campaign.content.media.featuredImageUrl}>
+        <Card.Content>
+          <div className={styles["campaign-card__content"]}>
+            <Typography.Headline4>{campaign.content.title}</Typography.Headline4>
+            <Typography.Description>
+              {campaign.content.country} - {campaign.content.category}
+            </Typography.Description>
+            <Typography.Text>{campaign.content.description}</Typography.Text>
+          </div>
+          <Grid.Row>
+            <Grid.Col className={styles["campaign-card__short"]}>
+              <Typography.Headline6>{truncateRaisedAmount(campaign.totalSatsInvested)} SAT</Typography.Headline6>
+              <Typography.MiniDescription>{t("businessCampaignCard.funded")}</Typography.MiniDescription>
+            </Grid.Col>
+            <Grid.Col className={styles["campaign-card__short"]}>
+              <Typography.Headline6>{campaign.totalInvestors}</Typography.Headline6>
+              <Typography.MiniDescription>
+                <Trans count={campaign.totalInvestors}>{t("businessCampaignCard.investors")}</Trans>
+              </Typography.MiniDescription>
+            </Grid.Col>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Col className={styles["campaign-card__short"]}>
+              <Typography.Headline6>{campaign.investmentMultiple}x</Typography.Headline6>
+              <Typography.MiniDescription>{t("businessCampaignCard.investmentMultiple")}</Typography.MiniDescription>
+            </Grid.Col>
+            <Grid.Col className={styles["campaign-card__short"]}>
+              <Typography.Headline6>{campaign.daysLeft}</Typography.Headline6>
+              <Typography.MiniDescription>{t("businessCampaignCard.daysLeft")}</Typography.MiniDescription>
+            </Grid.Col>
+          </Grid.Row>
+        </Card.Content>
+      </Card>
+    </div>
+  );
+};
