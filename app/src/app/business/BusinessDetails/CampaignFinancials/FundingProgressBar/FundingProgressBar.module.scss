@@ -12,11 +12,15 @@
 
   &__funded-amount {
     position: absolute;
-    top: 1px;
+    top: 3px;
     margin: 0;
     padding-left: $space-default;
     font-weight: $font-weight-bold;
     color: var(--color-white);
+
+    @include atLargeTablet {
+      top: 1px;
+    }
   }
 
   &__funded-bar {
@@ -29,5 +33,12 @@
     display: flex;
     justify-content: space-between;
     text-align: right;
+
+    p {
+      @include font-properties($typography-description);
+      @include atLargeTablet {
+        @include font-properties($typography-text);
+      }
+    }
   }
 }
