@@ -19,8 +19,6 @@ export const CampaignsGridContainer = () => {
   if (getBusinessCampaignsQueryError || !getBusinessCampaignsQueryData?.getActiveBusinessCampaigns) {
     // @TODO redirect to generic error page
 
-    console.log(getBusinessCampaignsQueryError);
-
     return null;
   }
 

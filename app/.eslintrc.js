@@ -188,11 +188,16 @@ module.exports = {
       },
     },
     {
-      files: ["src/api/codegen/index.ts", "src/api/codegen/resolvers-types.ts"],
+      files: [
+        "src/pages/api/codegen/index.ts",
+        "src/pages/api/codegen/resolvers-types.ts",
+        "src/pages/api/codegen/index.tsx",
+      ],
       rules: {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/ban-types": "off",
         "no-shadow": "off",
+        "import/newline-after-import": "off",
       },
     },
     {

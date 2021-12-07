@@ -25,6 +25,7 @@ export default async ({
   }
 
   let payment: InvoicePaymentMethodsPayments;
+  // eslint-disable-next-line no-restricted-syntax
   for (const paymentMethod of content) {
     if (paymentMethod.payments.length > 0) {
       [payment] = paymentMethod.payments;

@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
-
 import { renderHook } from "tests";
+
 import { ToastContext } from "context/toast/ToastContext";
 
 import { useToastContext } from "./useToastContext";

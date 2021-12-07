@@ -1,11 +1,11 @@
 {
-    "navbar.businessCampaigns": "Sala de Inversión",
-    "navbar.businessCampaigns.map": "Mapa",
-    "navbar.businessCampaigns.grid": "Lista",
-    "navbar.businessCampaigns.table": "Tabla",
-    "navbar.howItWorks": "Cómo Funciona",
-    "navbar.apply": "Accede a Capital",
-    "navbar.logout": "Cerrar Sesión",
-    "privacyNotice": "Aviso de Privacidad",
-    "termsAndConditions": "Términos y Condiciones"
+  "navbar.businessCampaigns": "Sala de Inversión",
+  "navbar.businessCampaigns.map": "Mapa",
+  "navbar.businessCampaigns.grid": "Lista",
+  "navbar.businessCampaigns.table": "Tabla",
+  "navbar.howItWorks": "Cómo Funciona",
+  "navbar.apply": "Accede a Capital",
+  "navbar.logout": "Cerrar Sesión",
+  "privacyNotice": "Aviso de Privacidad",
+  "termsAndConditions": "Términos y Condiciones"
 }

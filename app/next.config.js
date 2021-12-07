@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 const { i18n } = require("./next-i18next.config");
 
 /**
@@ -13,6 +14,9 @@ const regexEqual = (x, y) =>
 
 module.exports = {
   i18n,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack: (config) => {
     const oneOf = config.module.rules.find((rule) => typeof rule.oneOf === "object");
 

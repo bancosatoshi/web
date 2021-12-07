@@ -4,6 +4,6 @@ export type CampaignsGroupProps = {
   className?: string;
   singleLine?: boolean;
   campaigns: GetActiveBusinessCampaignsQuery["getActiveBusinessCampaigns"];
-  onCampaignClick: (...params: any) => void;
+  onCampaignClick: (campaign: BusinessCampaign) => void;
   campaignsFilter?: (value: BusinessCampaign, index: number, array: BusinessCampaign[]) => BusinessCampaign[] | [];
 };

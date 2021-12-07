@@ -15,5 +15,5 @@
     "storybook/**/*.jsx",
     "storybook/**/*.tsx"
   ],
-  "exclude": ["src/api/codegen/*"]
+  "exclude": ["src/pages/api/codegen/*"]
 }

@@ -50,16 +50,7 @@ input GetBusinessCampaignBySlugInput {
   slug: String!
 }
 
-input GetBusinessesByUserIdInput {
-  userId: String!
-}
-
-type Mutation {
-  createBusiness: Business!
-}
-
 type Query {
   getActiveBusinessCampaigns: [BusinessCampaign]!
   getBusinessCampaignBySlug(input: GetBusinessCampaignBySlugInput!): Business!
-  getBusinessesByUserId(input: GetBusinessesByUserIdInput!): [Business]!
 }

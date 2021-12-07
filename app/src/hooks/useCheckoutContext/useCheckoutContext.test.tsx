@@ -1,11 +1,11 @@
-import { renderHook } from 'tests';
+import { renderHook } from "tests";
 
-import { useCheckoutContext } from './useCheckoutContext';
+import { useCheckoutContext } from "./useCheckoutContext";
 
-describe('useCheckoutContext', () => {
-  it('returns a value', async () => {
+describe("useCheckoutContext", () => {
+  it("returns a value", async () => {
     const { result } = renderHook(() => useCheckoutContext());
 
-    expect(result.current).toEqual('1');
+    expect(result.current).toEqual("1");
   });
 });

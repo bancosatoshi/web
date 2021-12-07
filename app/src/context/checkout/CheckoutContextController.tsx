@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { useToastContext } from "hooks/useToastContext/useToastContext";
 import { Typography } from "ui/typography/Typography";
+import { useRoutes } from "hooks/useRoutes/useRoutes";
 
 import { CheckoutContext } from "./CheckoutContext";
 import {
@@ -11,7 +12,6 @@ import {
   CheckoutContextControllerProps,
   CheckoutState,
 } from "./CheckoutContext.types";
-import { useRoutes } from "hooks/useRoutes/useRoutes";
 
 export const CheckoutContextController = ({ children }: CheckoutContextControllerProps) => {
   const [checkoutState, setCheckoutState] = useState<CheckoutState>(undefined);
@@ -28,7 +28,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
 
       const buyerEmail = auth.session?.user?.email!;
 
-      const businessId = campaign.businessId;
+      const { businessId } = campaign;
       const storeId = campaign.btcPayServerStoreId;
       const campaignId = campaign.id;
 
@@ -54,10 +54,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
       });
 
       setIsLoading(false);
-    } catch (error_) {
-      // @TODO handle error
-      console.log(error_);
-
+    } catch {
       setError(
         "Error at CheckoutContextController:getCheckoutURL. Check server logs as this may have happened in the API side.",
       );

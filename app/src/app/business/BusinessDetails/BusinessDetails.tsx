@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 import { Grid } from "ui/grid/Grid";
 import { Card } from "ui/card/Card";
@@ -10,7 +11,6 @@ import { BusinessContent } from "./BusinessContent/BusinessContent";
 import { BusinessHeader } from "./BusinessHeader/BusinessHeader";
 import { InvestNowWidget } from "./InvestNowWidget/InvestNowWidget";
 import { CampaignFinancials } from "./CampaignFinancials/CampaignFinancials";
-import { useTranslation } from "react-i18next";
 
 export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign }) => {
   const { t } = useTranslation("campaign");

@@ -83,8 +83,8 @@ const MiniDescription: React.FC<TypographyProps> = ({ children, className }) => 
   <p className={clsx(styles["typography__mini-description"], className)}>{children}</p>
 );
 
-const Link: React.FC<TypographyProps & LinkProps> = ({ children, className, href }) => (
-  <NextLink href={href}>
+const Link: React.FC<TypographyProps & LinkProps> = ({ children, className, href, ...props }) => (
+  <NextLink href={href} {...props}>
     <a className={clsx(styles.typography__link, className)}>{children}</a>
   </NextLink>
 );

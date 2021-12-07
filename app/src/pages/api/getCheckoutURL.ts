@@ -1,7 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { BTCPayInvoiceMetadata } from "context/checkout/CheckoutContext.types";
 import { NextApiRequest, NextApiResponse } from "next";
+
+import { BTCPayInvoiceMetadata } from "context/checkout/CheckoutContext.types";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -39,7 +40,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(200).json({
       checkoutLink: content.checkoutLink,
     });
-  } catch (error) {
+  } catch {
     // @TODO log error
     res.status(500);
   }

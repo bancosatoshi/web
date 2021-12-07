@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { GQLClient } from "src/providers/graphql/client";
 
 import { ToastContextController } from "context/toast/ToastContextController";
+import { LocaleSelector } from "ui/locale-selector/LocaleSelector";
 
 import { AppLayoutProps } from "./AppLayout.types";
 
@@ -38,7 +39,9 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
       </Head>
       <ApolloProvider client={GQLClient}>
         <ToastContextController>
-          <main>{children}</main>
+          <LocaleSelector>
+            <main>{children}</main>
+          </LocaleSelector>
         </ToastContextController>
       </ApolloProvider>
     </>

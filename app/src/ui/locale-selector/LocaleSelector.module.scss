@@ -1,0 +1,21 @@
+@import "src/theme/base";
+
+.locale-selector {
+  position: fixed;
+  right: 0;
+  top: $navbar-height * 2;
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  display: block;
+  z-index: $z-index-content;
+  background-color: var(--color-primary);
+  padding: $space-xs $space-s;
+  @extend .z-depth-1;
+
+  a {
+    color: var(--color-white);
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
