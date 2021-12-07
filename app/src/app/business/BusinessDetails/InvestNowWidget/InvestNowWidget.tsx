@@ -134,7 +134,7 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                       <Icon name="icon-users" /> {campaign.totalInvestors}
                     </Typography.Headline4>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>
-                      {t("investNowWidget.terms.investors.description")}
+                      <Trans count={campaign.totalInvestors}>{t("investNowWidget.terms.investors.description")}</Trans>
                     </Typography.Description>
                   </div>
                   <div>
