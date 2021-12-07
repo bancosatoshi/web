@@ -114,5 +114,5 @@
       "prettier --list-different --write",
       "git add **/*.module.scss.d.ts"
     ]
-  },
+  }
 }
