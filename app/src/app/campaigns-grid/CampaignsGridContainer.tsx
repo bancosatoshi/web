@@ -1,7 +1,5 @@
 import { useGetActiveBusinessCampaignsQuery } from "api/codegen";
-
-import { Typography } from "ui/typography/Typography";
-
+import { GenericLoader } from "ui/generic-loader/GenericLoader";
 import { CampaignsGrid } from "./CampaignsGrid";
 
 export const CampaignsGridContainer = () => {
@@ -12,8 +10,7 @@ export const CampaignsGridContainer = () => {
   } = useGetActiveBusinessCampaignsQuery();
 
   if (isGetBusinessByCampaignsQueryLoading) {
-    // @TODO set a generic loading template
-    return <Typography.Text>loading</Typography.Text>;
+    return <GenericLoader />;
   }
 
   if (getBusinessCampaignsQueryError || !getBusinessCampaignsQueryData?.getActiveBusinessCampaigns) {
