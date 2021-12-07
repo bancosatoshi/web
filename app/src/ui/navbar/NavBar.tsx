@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-grid-system";
+import { Col, Container, Hidden, Row } from "react-grid-system";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 
@@ -28,53 +28,55 @@ export const NavBar: React.FC<NavBarProps> = () => {
     <div className={styles.navbar}>
       <Container>
         <Row>
-          <Col lg={3} xs={6} sm={6}>
+          <Col lg={3} sm={3} xs={6}>
             <div className={styles.navbar__logo}>
               <Typography.Link href={routes.home}>
                 <BancoSatoshiLogo />
               </Typography.Link>
             </div>
           </Col>
-          <Col lg={6} xs={6} sm={6}>
-            <div className={styles.navbar__center}>
-              <div className={clsx(styles["navbar__center--item"], styles["navbar__center--item-dropdown"])}>
-                <Typography.Link href={routes.invest.grid}>{t("navbar.businessCampaigns")}</Typography.Link>
-                <div className={clsx(styles.navbar__dropdown, "dropdown")}>
-                  <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.map}>
-                    <div className={styles["navbar__dropdown--item-icon"]}>
-                      <Icon name="icon-map2" />
-                    </div>
-                    <div className={styles["navbar__dropdown--item-text"]}>
-                      <Typography.Text>{t("navbar.businessCampaigns.map")}</Typography.Text>
-                    </div>
-                  </Typography.Link>
-                  <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.data}>
-                    <div className={styles["navbar__dropdown--item-icon"]}>
-                      <Icon name="icon-file-stats" />
-                    </div>
-                    <div className={styles["navbar__dropdown--item-text"]}>
-                      <Typography.Text>{t("navbar.businessCampaigns.table")}</Typography.Text>
-                    </div>
-                  </Typography.Link>
-                  <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.grid}>
-                    <div className={styles["navbar__dropdown--item-icon"]}>
-                      <Icon name="icon-grid" />
-                    </div>
-                    <div className={styles["navbar__dropdown--item-text"]}>
-                      <Typography.Text>{t("navbar.businessCampaigns.grid")}</Typography.Text>
-                    </div>
-                  </Typography.Link>
+          <Hidden xs>
+            <Col lg={6} sm={6} xs={6}>
+              <div className={styles.navbar__center}>
+                <div className={clsx(styles["navbar__center--item"], styles["navbar__center--item-dropdown"])}>
+                  <Typography.Link href={routes.invest.grid}>{t("navbar.businessCampaigns")}</Typography.Link>
+                  <div className={clsx(styles.navbar__dropdown, "dropdown")}>
+                    <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.map}>
+                      <div className={styles["navbar__dropdown--item-icon"]}>
+                        <Icon name="icon-map2" />
+                      </div>
+                      <div className={styles["navbar__dropdown--item-text"]}>
+                        <Typography.Text>{t("navbar.businessCampaigns.map")}</Typography.Text>
+                      </div>
+                    </Typography.Link>
+                    <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.data}>
+                      <div className={styles["navbar__dropdown--item-icon"]}>
+                        <Icon name="icon-file-stats" />
+                      </div>
+                      <div className={styles["navbar__dropdown--item-text"]}>
+                        <Typography.Text>{t("navbar.businessCampaigns.table")}</Typography.Text>
+                      </div>
+                    </Typography.Link>
+                    <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.grid}>
+                      <div className={styles["navbar__dropdown--item-icon"]}>
+                        <Icon name="icon-grid" />
+                      </div>
+                      <div className={styles["navbar__dropdown--item-text"]}>
+                        <Typography.Text>{t("navbar.businessCampaigns.grid")}</Typography.Text>
+                      </div>
+                    </Typography.Link>
+                  </div>
+                </div>
+                <div className={styles["navbar__center--item"]}>
+                  <Typography.Text>{t("navbar.howItWorks")}</Typography.Text>
+                </div>
+                <div className={styles["navbar__center--item"]}>
+                  <Typography.Text>{t("navbar.apply")}</Typography.Text>
                 </div>
               </div>
-              <div className={styles["navbar__center--item"]}>
-                <Typography.Text>{t("navbar.howItWorks")}</Typography.Text>
-              </div>
-              <div className={styles["navbar__center--item"]}>
-                <Typography.Text>{t("navbar.apply")}</Typography.Text>
-              </div>
-            </div>
-          </Col>
-          <Col lg={3} xs={6} sm={6}>
+            </Col>
+          </Hidden>
+          <Col lg={3} sm={3} xs={6}>
             <div className={styles.navbar__right}>
               <div className={styles["navbar__right--item"]}>
                 {auth.hasActiveSession ? (
@@ -98,7 +100,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
                     </div>
                   </div>
                 ) : (
-                  <Typography.Link href={routes.auth.signIn}>Iniciar Sesión</Typography.Link>
+                  <Typography.Link href={routes.auth.signIn}>{t("navbar.signIn")}</Typography.Link>
                 )}
               </div>
             </div>
