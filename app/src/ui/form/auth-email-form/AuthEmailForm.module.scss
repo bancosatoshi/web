@@ -1,11 +1,12 @@
 @import "../../../theme/base";
 
 .auth-email-form {
-  @include boxShadowInset;
   border-radius: $border-radius;
   padding: $space-default;
   padding-top: $space-ml;
   background-color: var(--color-background-contrast);
+
+  @include boxShadowInset;
 
   &__input {
     input {
