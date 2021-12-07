@@ -14,6 +14,10 @@ body {
   font-family: $font-family-display;
 }
 
+body {
+  position: relative;
+}
+
 a {
   text-decoration: underline;
   color: inherit;

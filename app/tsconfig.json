@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,16 +21,41 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "app/*": ["src/app/*"],
-      "ui/*": ["src/ui/*"],
-      "theme": ["src/theme/*"],
-      "hooks/*": ["src/hooks/*"],
-      "context/*": ["src/context/*"],
-      "layouts/*": ["src/layouts/*"],
-      "api/*": ["src/pages/api/*"],
-      "providers/*": ["src/providers/*"]
-    }
+      "app/*": [
+        "src/app/*"
+      ],
+      "ui/*": [
+        "src/ui/*"
+      ],
+      "theme": [
+        "src/theme/*"
+      ],
+      "hooks/*": [
+        "src/hooks/*"
+      ],
+      "context/*": [
+        "src/context/*"
+      ],
+      "layouts/*": [
+        "src/layouts/*"
+      ],
+      "api/*": [
+        "src/pages/api/*"
+      ],
+      "providers/*": [
+        "src/providers/*"
+      ]
+    },
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "**/**/*.test.ts", "**/**/*.test.tsx"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/**/*.test.ts",
+    "**/**/*.test.tsx"
+  ]
 }

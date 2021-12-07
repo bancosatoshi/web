@@ -8,7 +8,7 @@ import { AuthEmailFormProps } from "./AuthEmailForm.types";
 import { useTranslation } from "react-i18next";
 
 export const AuthEmailForm: React.FC<AuthEmailFormProps> = ({ className, autoFocus, onSubmit, isLoading }) => {
-  const { t } = useTranslation("a");
+  const { t } = useTranslation("auth");
 
   return (
     <Form className={clsx(styles["auth-email-form"], className)} onSubmit={onSubmit}>

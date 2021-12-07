@@ -4,7 +4,7 @@ import { ResolversContext } from "api/graphql";
 import getTotalInvestors from "providers/database/getTotalInvestors";
 import getTotalSatsInvested from "providers/database/getTotalSatsInvested";
 
-import { getPageContentByBusinessCampaignSlug } from "providers/wordpress/getPageContentBySlug";
+import { getPageContentByBusinessCampaignSlug } from "providers/wordpress/getPageContentByBusinessCampaignSlug";
 
 const getBusinessCampaignBySlug: QueryResolvers["getBusinessCampaignBySlug"] = async (
   _,
