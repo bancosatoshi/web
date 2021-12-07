@@ -14,6 +14,9 @@ const regexEqual = (x, y) =>
 
 module.exports = {
   i18n,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack: (config) => {
     const oneOf = config.module.rules.find((rule) => typeof rule.oneOf === "object");
 
