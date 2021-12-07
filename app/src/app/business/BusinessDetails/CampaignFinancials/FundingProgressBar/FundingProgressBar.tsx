@@ -1,12 +1,14 @@
 import clsx from "clsx";
-import { FundingProgressBarProps } from "./FundingProgressBar.types";
-import styles from "./FundingProgressBar.module.scss";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import convert from "providers/currency/convert";
 import formatFiatCurrency from "providers/currency/formatFiatCurrency";
 import { Typography } from "ui/typography/Typography";
 import { Card } from "ui/card/Card";
-import { useTranslation } from "react-i18next";
+
+import styles from "./FundingProgressBar.module.scss";
+import { FundingProgressBarProps } from "./FundingProgressBar.types";
 
 export const FundingProgressBar: React.FC<FundingProgressBarProps> = ({ className, funded, min, max }) => {
   const { t } = useTranslation("campaign");
@@ -23,7 +25,7 @@ export const FundingProgressBar: React.FC<FundingProgressBarProps> = ({ classNam
       setProgress((conversion / max) * 100);
       setMinProgress((min / max) * 100);
     })();
-  }, [funded]);
+  }, [funded, max, min]);
 
   return (
     <>
@@ -37,7 +39,7 @@ export const FundingProgressBar: React.FC<FundingProgressBarProps> = ({ classNam
           <Typography.Text className={styles["funding-progress-bar__funded-amount"]}>
             {formatFiatCurrency(totalFiatFunded)} {t("fundingProgressBar.totalBitcoinCollected.description")}
           </Typography.Text>
-          <div className={styles["funding-progress-bar__funded-bar"]} style={{ width: `${progress}%` }}></div>
+          <div className={styles["funding-progress-bar__funded-bar"]} style={{ width: `${progress}%` }} />
         </div>
       </Card>
     </>

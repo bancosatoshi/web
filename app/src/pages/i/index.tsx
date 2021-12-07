@@ -1,10 +1,10 @@
 import { GetStaticPropsContext, NextPage } from "next";
+import { i18n } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import { AppLayout } from "layouts/app-layout/AppLayout";
 import { AuthLayout } from "layouts/auth-layout/AuthLayout";
 import { CampaignsGridContainer } from "app/campaigns-grid/CampaignsGridContainer";
-import { i18n } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const BusinessCampaigns: NextPage = () => (
   <AppLayout>

@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { Container } from "react-grid-system";
+import { Trans, useTranslation } from "react-i18next";
 
 import { Typography } from "ui/typography/Typography";
 import { Grid } from "ui/grid/Grid";
@@ -8,7 +9,6 @@ import { useRoutes } from "hooks/useRoutes/useRoutes";
 
 import styles from "./Home.module.scss";
 import { HomeProps } from "./Home.types";
-import { Trans, useTranslation } from "react-i18next";
 
 export const Home: React.FC<HomeProps> = ({ className }) => {
   const routes = useRoutes();

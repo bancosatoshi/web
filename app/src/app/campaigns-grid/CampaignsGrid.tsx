@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Container } from "react-grid-system";
 import { useRouter } from "next/router";
 import { BusinessCampaign } from "api/codegen";
+import { Trans, useTranslation } from "react-i18next";
 
 import { Grid } from "ui/grid/Grid";
 import { Button } from "ui/button/Button";
@@ -12,7 +13,6 @@ import { useRoutes } from "hooks/useRoutes/useRoutes";
 import styles from "./CampaignsGrid.module.scss";
 import { CampaignsGridProps } from "./CampaignsGrid.types";
 import { CampaignsGroup } from "./CampaignsGroup/CampaignsGroup";
-import { Trans, useTranslation } from "react-i18next";
 
 export const CampaignsGrid: React.FC<CampaignsGridProps> = ({ campaigns, className }) => {
   const auth = useAuthContext();

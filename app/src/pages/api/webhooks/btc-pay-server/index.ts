@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 import { NextApiRequest, NextApiResponse } from "next";
 import crypto from "crypto";
-import databaseConnection from "src/providers/database";
 import { BusinessFundingCampaignTransactionsModelCreationArgs } from "@bancosatoshi/database/business/model";
+import databaseConnection from "src/providers/database";
 
-import { BtcPayServerWebhookRequestBody } from "./btc-pay-server.types";
 import getInvoicePaymentMethod from "providers/btcpay/getInvoicePaymentMethod";
 import getWebhookSecretByStoreId from "providers/aws/getWebhookSecretByStoreId";
 import convert from "providers/currency/convert";
+
+import { BtcPayServerWebhookRequestBody } from "./btc-pay-server.types";
 
 const headerSignatureMatchesWebhookKey = async (sig: string, body: BtcPayServerWebhookRequestBody) => {
   const webhookKey = await getWebhookSecretByStoreId(body.storeId);
@@ -77,6 +77,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const transaction_amount_in_sats = convert.btc_satoshi(Number(paymentMethod.value));
+    // eslint-disable-next-line no-underscore-dangle
     transaction.transaction_amount_in_sats = transaction_amount_in_sats._value;
 
     await db.dao.business_funding_campaign_transactions.create(transaction);
@@ -86,7 +87,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     });
   } catch (error) {
     // @TODO log to error logger
-    console.log(error);
     res.status(500).send(error);
   }
 };

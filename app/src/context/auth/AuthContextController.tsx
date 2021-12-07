@@ -48,7 +48,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
     return () => {
       authListener?.unsubscribe();
     };
-  }, []);
+  }, [routes.api.auth]);
 
   const handleLogin = async ({ email }: AuthContextLoginValues) => {
     try {

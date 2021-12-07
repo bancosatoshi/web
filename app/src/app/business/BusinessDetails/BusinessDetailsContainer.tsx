@@ -27,7 +27,6 @@ export const BusinessDetailsContainer = () => {
     !getBusinessCampaignBySlugQueryData?.getBusinessCampaignBySlug?.activeCampaign
   ) {
     // @TODO redirect to generic error page
-    console.log(getBusinessCampaignBySlugQueryError);
 
     return null;
   }

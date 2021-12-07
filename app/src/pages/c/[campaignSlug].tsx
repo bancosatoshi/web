@@ -1,12 +1,12 @@
 import { GetStaticPropsContext, NextPage } from "next";
+import { i18n } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import { BusinessDetailsContainer } from "app/business/BusinessDetails/BusinessDetailsContainer";
 import { AppLayout } from "layouts/app-layout/AppLayout";
 import { AuthLayout } from "layouts/auth-layout/AuthLayout";
 import { BusinessDetailsProps } from "app/business/BusinessDetails/BusinessDetails.types";
 import { CheckoutContextController } from "context/checkout/CheckoutContextController";
-import { i18n } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Index: NextPage<BusinessDetailsProps> = () => (
   <AppLayout>

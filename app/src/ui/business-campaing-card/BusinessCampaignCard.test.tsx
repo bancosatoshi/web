@@ -1,6 +1,6 @@
 import { screen, render } from "tests";
-import { BusinessCampaignCardProps } from "./BusinessCampaign.types";
 
+import { BusinessCampaignCardProps } from "./BusinessCampaign.types";
 import { BusinessCampaignCard } from "./BusinessCampaignCard";
 
 describe("BusinessCard", () => {

@@ -1,11 +1,10 @@
 import { GetStaticPropsContext, NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { i18n } from "next-i18next";
 
 import { HomeContainer } from "app/home/home/HomeContainer";
 import { AppLayout } from "layouts/app-layout/AppLayout";
 import { AuthLayout } from "layouts/auth-layout/AuthLayout";
-
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { i18n } from "next-i18next";
 
 const Index: NextPage = () => (
   <AppLayout>

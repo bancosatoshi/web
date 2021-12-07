@@ -2,6 +2,7 @@ import clsx from "clsx";
 import { Container } from "react-grid-system";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { Trans, useTranslation } from "react-i18next";
 
 import { Card } from "ui/card/Card";
 import { Typography } from "ui/typography/Typography";
@@ -12,13 +13,12 @@ import { Tooltip } from "ui/tooltip/Tooltip";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { useRoutes } from "hooks/useRoutes/useRoutes";
 import { useCheckoutContext } from "hooks/useCheckoutContext/useCheckoutContext";
-
-import { InvestNowWidgetProps } from "./InvestNowWidget.types";
-import styles from "./InvestNowWidget.module.scss";
 import getDefaultDateFormat from "providers/date/getDefaultDateFormat";
 import convert from "providers/currency/convert";
 import formatFiatCurrency from "providers/currency/formatFiatCurrency";
-import { Trans, useTranslation } from "react-i18next";
+
+import styles from "./InvestNowWidget.module.scss";
+import { InvestNowWidgetProps } from "./InvestNowWidget.types";
 
 export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, campaign }) => {
   const auth = useAuthContext();
@@ -56,7 +56,7 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
     }
   };
 
-  const content = campaign.content;
+  const { content } = campaign;
 
   return (
     <div className={clsx(styles["invest-now-widget"], className)}>

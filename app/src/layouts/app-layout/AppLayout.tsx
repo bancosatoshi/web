@@ -6,9 +6,9 @@ import { useTranslation } from "react-i18next";
 import { GQLClient } from "src/providers/graphql/client";
 
 import { ToastContextController } from "context/toast/ToastContextController";
+import { LocaleSelector } from "ui/locale-selector/LocaleSelector";
 
 import { AppLayoutProps } from "./AppLayout.types";
-import { LocaleSelector } from "ui/locale-selector/LocaleSelector";
 
 export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
   const { t } = useTranslation("head");

@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import userEvent from "@testing-library/user-event";
-
 import { render, screen, act } from "tests";
 
 import { ToastContextController } from "./ToastContextController";

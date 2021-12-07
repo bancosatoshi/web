@@ -59,7 +59,7 @@ module.exports = {
       "error",
       {
         groups: [
-          ["external", "builtin"],
+          ["builtin", "external"],
           ["internal", "parent"],
           ["sibling", "index"],
         ],
@@ -160,7 +160,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.test.tsx", "**/*.test.ts", "src/api/mock/server.ts"],
+      files: ["**/*.test.tsx", "**/*.test.ts", "src/pages/api/mock/server.ts"],
       extends: ["plugin:jest/recommended"],
       rules: {
         "@typescript-eslint/no-explicit-any": 0,
@@ -182,13 +182,17 @@ module.exports = {
       },
     },
     {
-      files: ["src/tests/index.tsx", "src/api/**/*"],
+      files: ["src/tests/index.tsx", "src/pages/api/**/*"],
       rules: {
         "no-restricted-imports": "off",
       },
     },
     {
-      files: ["src/api/codegen/index.ts", "src/api/codegen/resolvers-types.ts"],
+      files: [
+        "src/pages/api/codegen/index.ts",
+        "src/pages/api/codegen/resolvers-types.ts",
+        "src/pages/api/codegen/index.tsx",
+      ],
       rules: {
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/ban-types": "off",
@@ -204,9 +208,15 @@ module.exports = {
       },
     },
     {
-      files: ["src/api/mock/resolvers/**/*"],
+      files: ["src/pages/api/mock/resolvers/**/*"],
       rules: {
         "@typescript-eslint/no-explicit-any": "off",
+      },
+    },
+    {
+      files: ["src/pages/api/**/*.ts"],
+      rules: {
+        "@typescript-eslint/naming-convention": "off",
       },
     },
   ],

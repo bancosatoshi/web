@@ -1,5 +1,4 @@
 import userEvent from "@testing-library/user-event";
-
 import { render, screen } from "tests";
 
 import { Toast } from "./Toast";

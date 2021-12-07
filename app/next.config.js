@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 const { i18n } = require("./next-i18next.config");
 
 /**

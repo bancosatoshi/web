@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import dynamic from "next/dynamic";
+import { useTranslation } from "react-i18next";
 
 import { Card } from "ui/card/Card";
 import { Grid } from "ui/grid/Grid";
@@ -11,7 +12,6 @@ import { Button } from "ui/button/Button";
 
 import { SignUpProps } from "./SignUp.types";
 import styles from "./SignUp.module.scss";
-import { useTranslation } from "react-i18next";
 
 const AuthEmailForm = dynamic<AuthEmailFormProps>(
   () => import("ui/form/auth-email-form/AuthEmailForm").then((mod) => mod.AuthEmailForm),

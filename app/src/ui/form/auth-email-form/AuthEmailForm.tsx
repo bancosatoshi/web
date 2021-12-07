@@ -1,11 +1,11 @@
 import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 import { Form } from "../Form";
 import { Button } from "../../button/Button";
 
 import styles from "./AuthEmailForm.module.scss";
 import { AuthEmailFormProps } from "./AuthEmailForm.types";
-import { useTranslation } from "react-i18next";
 
 export const AuthEmailForm: React.FC<AuthEmailFormProps> = ({ className, autoFocus, onSubmit, isLoading }) => {
   const { t } = useTranslation("auth");

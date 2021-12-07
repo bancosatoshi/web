@@ -1,15 +1,15 @@
 import { Col, Container, Row } from "react-grid-system";
+import clsx from "clsx";
+import { useTranslation } from "react-i18next";
 
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { Typography } from "../typography/Typography";
 import { useRoutes } from "hooks/useRoutes/useRoutes";
 import { BancoSatoshiLogo } from "ui/icons/BancoSatoshiLogo";
+import { Icon } from "ui/icon/Icon";
 
 import styles from "./NavBar.module.scss";
 import { NavBarProps } from "./NavBar.types";
-import { Icon } from "ui/icon/Icon";
-import clsx from "clsx";
-import { useTranslation } from "react-i18next";
 
 export const NavBar: React.FC<NavBarProps> = () => {
   const auth = useAuthContext();
@@ -39,7 +39,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
             <div className={styles.navbar__center}>
               <div className={clsx(styles["navbar__center--item"], styles["navbar__center--item-dropdown"])}>
                 <Typography.Link href={routes.invest.grid}>{t("navbar.businessCampaigns")}</Typography.Link>
-                <div className={clsx(styles["navbar__dropdown"], "dropdown")}>
+                <div className={clsx(styles.navbar__dropdown, "dropdown")}>
                   <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.map}>
                     <div className={styles["navbar__dropdown--item-icon"]}>
                       <Icon name="icon-map2" />
@@ -80,8 +80,14 @@ export const NavBar: React.FC<NavBarProps> = () => {
                 {auth.hasActiveSession ? (
                   <div className={styles["navbar__account-widget"]}>
                     <Typography.Text>{getUserNickname()}</Typography.Text>
-                    <div className={clsx(styles["navbar__dropdown"], "dropdown")}>
-                      <div className={styles["navbar__dropdown--item"]} onClick={handleLogout}>
+                    <div className={clsx(styles.navbar__dropdown, "dropdown")}>
+                      <div
+                        className={styles["navbar__dropdown--item"]}
+                        onClick={handleLogout}
+                        onKeyPress={handleLogout}
+                        role="button"
+                        tabIndex={0}
+                      >
                         <div className={styles["navbar__dropdown--item-icon"]}>
                           <Icon name="icon-exit" />
                         </div>

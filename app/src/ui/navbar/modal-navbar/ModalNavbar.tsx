@@ -20,7 +20,7 @@ export const ModalNavbar: React.FC<ModalNavbarProps> = ({ children, title }) => 
             </div>
           </Grid.Col>
           <Grid.Col lg={6} xs={6} sm={6}>
-            <div className={styles["modal-navbar__right"]} onClick={back}>
+            <div className={styles["modal-navbar__right"]} onClick={back} role="button" tabIndex={0} onKeyPress={back}>
               {children && children}
               <div className={styles["modal-navbar__close-button"]}>
                 <CloseIcon />

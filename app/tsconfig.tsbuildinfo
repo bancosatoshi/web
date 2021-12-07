@@ -1752,8 +1752,8 @@
         "affectsGlobalScope": false
       },
       "./src/pages/api/codegen/index.tsx": {
-        "version": "045ebd9e33e3fe9cca27edf690d2e16e8b3439e3f2b49abb701dfd2e6acadffd",
-        "signature": "07725d925a4ea7008d22c981b4671fc44639119c3843bd3cd9de62fb729199f5",
+        "version": "bdf78851727b162bf4430ae8499a13fcada7ddd70ff433de4705b7820e2c7449",
+        "signature": "55ba9aa532bec396a6b0bdd9eff485cdc68f34017192b4b75f170d3b0ddf634e",
         "affectsGlobalScope": false
       },
       "./src/app/business/businessdetails/businessdetails.types.ts": {
@@ -1927,8 +1927,8 @@
         "affectsGlobalScope": false
       },
       "./src/context/toast/toastcontext.ts": {
-        "version": "ece96f45c9769e0b5c5536f5278d27f808a71d0e9f458f15263d672124d67c09",
-        "signature": "cc8ebeea167dcb38bbe026b6f44502245588759a67929480bbbf3a3c79f3ef43",
+        "version": "8211d5494a19bf46088a88f282e45a8d228c6eae08befcc034cdaf966d69f9e3",
+        "signature": "eadd05fb3c198f8bd5134a98accae1b992e336b46fb9828442fc5e913f0f6fb0",
         "affectsGlobalScope": false
       },
       "./src/hooks/usetoastcontext/usetoastcontext.ts": {
@@ -2152,7 +2152,7 @@
         "affectsGlobalScope": false
       },
       "./src/pages/api/getcheckouturl.ts": {
-        "version": "55d50998886d7d30fa30784bf950be71601b88889a2be398006dd001e45d6e0f",
+        "version": "f9d459c11eacd1797615c64394922e9d6137fdba7aebf8689997b1e38c78f912",
         "signature": "b52a20347f23f5867bd3db5281fd4c1912410f5cf4e3d4e093b17ad1508c38ee",
         "affectsGlobalScope": false
       },
@@ -3087,8 +3087,8 @@
         "affectsGlobalScope": false
       },
       "./src/pages/api/codegen/resolvers-types.ts": {
-        "version": "f0dd8bbfbd8b2192459ed38b81c1651b12484162035e801210dd94d21a55cc4d",
-        "signature": "b1d64742e99fa880a73fe0fe42d236c54f78b478b85059bc89de3bf0bdc20914",
+        "version": "53170ece9665bbd2e011de8261a98f51101969b7f263ebba97fa4a9eb80e71cd",
+        "signature": "9bfc46f7a446233a4b351133f44e55bf836183396f764145c16f9a85c250f3c3",
         "affectsGlobalScope": false
       },
       "../database/build/business/model/businessmodel.d.ts": {
@@ -3129,6 +3129,11 @@
       "./src/providers/database/index.ts": {
         "version": "a5165caf491fefa2afe624fced244a033f82553b26c979caf0d35885fd754a95",
         "signature": "12bb1ad622b7e391e04de64f01dd66ad1c52d97b6e1435461560b3f990d7dd7c",
+        "affectsGlobalScope": false
+      },
+      "./src/hooks/useroutes/useroutes.tsx": {
+        "version": "e28d1bb9226ccc74054f223d4ca2a48652fe75d079cd88366449277eaf5ea59b",
+        "signature": "6324d6e1c1d50a5c0029d7d7584a623e0b442d7ff6d3908dc3f0914107c93c7f",
         "affectsGlobalScope": false
       },
       "./src/providers/database/gettotalsatsinvested.ts": {
@@ -3217,32 +3222,17 @@
         "affectsGlobalScope": false
       },
       "./src/pages/api/business/resolvers/queries/getactivebusinesscampaigns.ts": {
-        "version": "1e1fa25da0fc3313253ee47846759a8f9e7c2c247168737adb5468123ddb0044",
+        "version": "d57d21cf9c54496323a5229f93c0b2b7df953ee266ee0073646f4376cfadbe8d",
         "signature": "3578545fcc21e75bde03a15feab67044e504c4c3f2de5a4a23033917bb7e2da7",
         "affectsGlobalScope": false
       },
-      "./src/pages/api/business/resolvers/queries/getbusinessesbyuserid.ts": {
-        "version": "81ee1916e077dcd60acfef89305b937214af656fa978e5681fd7a32898e41228",
-        "signature": "cb89c56257de6e093a2e43e1e9ecee52f8c25d7c550033d922194693976d6462",
-        "affectsGlobalScope": false
-      },
       "./src/pages/api/business/resolvers/queries/getbusinesscampaignbyslug.ts": {
-        "version": "b469a4809699aa68e14e18ca65ce119d0b43c71e7613e1d637063cedf11a047b",
+        "version": "935437e673415a368194e070bc45f46a9e77d57c37e0fbbc6342694d791f97dd",
         "signature": "3c3d7e2ac83a09f0b953e3b04c3448d8c1b137f0e8e78647295a3dafa8631e4f",
         "affectsGlobalScope": false
       },
-      "./src/pages/api/business/resolvers/mutations/createbusiness.ts": {
-        "version": "6e5c8be2d861e47ec49fa212b6803f09aac7af8d9c5265c4b39a9e257943cee8",
-        "signature": "ac3c9e2fde8c4b075872874e835ab3272a5d58e4f72334c6c55268871a569fa8",
-        "affectsGlobalScope": false
-      },
-      "./src/hooks/useroutes/useroutes.tsx": {
-        "version": "e28d1bb9226ccc74054f223d4ca2a48652fe75d079cd88366449277eaf5ea59b",
-        "signature": "6324d6e1c1d50a5c0029d7d7584a623e0b442d7ff6d3908dc3f0914107c93c7f",
-        "affectsGlobalScope": false
-      },
       "./src/pages/api/graphql.ts": {
-        "version": "8715ac52ba81269377c1352523c3af45c57087dd21ccc70a51985281f18fc79b",
+        "version": "2e864f1684754c51ba13156ee5710ddcc737ed4d22bb54eb2966f197e6529d79",
         "signature": "10d7a72f5fe7d8a32a198aa17d09d6c88ae50219212c7274d42097f19586d20f",
         "affectsGlobalScope": false
       },
@@ -4952,7 +4942,7 @@
         "affectsGlobalScope": false
       },
       "./src/providers/aws/getwebhooksecretbystoreid.ts": {
-        "version": "3e5bf1513ef9287facfc7362f1bbad6093a5bbf4f091fce42b1249829f749564",
+        "version": "c0449b62f8f8444775f9d79278713597eaaf4d8acb94a313e917d8ec06242c46",
         "signature": "383c49d6cf6502fb6f5ee100110bf8affc791bc0ececa925a87273f3f40f34d7",
         "affectsGlobalScope": false
       },
@@ -4967,7 +4957,7 @@
         "affectsGlobalScope": false
       },
       "./src/pages/api/webhooks/btc-pay-server/index.ts": {
-        "version": "78205033c6c3d06be9fae7b731e29ce990274496c380f42bc93cb2840db62cde",
+        "version": "9bc59306f82401ee5a432647b9d5e7b52da6c1f7262d36934fba620481a63059",
         "signature": "b52a20347f23f5867bd3db5281fd4c1912410f5cf4e3d4e093b17ad1508c38ee",
         "affectsGlobalScope": false
       },
@@ -4987,7 +4977,7 @@
         "affectsGlobalScope": false
       },
       "./src/providers/graphql/client.ts": {
-        "version": "6b1b0bd13bc3d2b32b8b92ee14f2c31f01536379cb40e6dec43c211c66992a6c",
+        "version": "8850cfd4eead6ba0c4871bd2ad95a943d3926602a059decf73b1bbfece171b7a",
         "signature": "14fecca6821007a7e3380d83a18f7f9033310386124e13d7859de8194ff719de",
         "affectsGlobalScope": false
       },
@@ -5002,8 +4992,8 @@
         "affectsGlobalScope": false
       },
       "./src/ui/business-campaing-card/businesscampaign.types.ts": {
-        "version": "3b04d9dcfa2d4bd6214e805c5544a1d6dc8f9568ff337deee0ac4dac4db6963c",
-        "signature": "f8020ed985de402ec3681093d090638dfa342aa67dbcd49224b9aaf6cf0c390a",
+        "version": "7027d4f8b90e49114f6acdc4c66c6bd8440a0aa62fabc37a5f316875a09e708d",
+        "signature": "a97d786107fe396b42798d2e319d7c2906f16822f5fc4b48ee6cf4a269fd7840",
         "affectsGlobalScope": false
       },
       "./src/ui/business-campaing-card/businesscampaigncard.module.scss.d.ts": {
@@ -5117,8 +5107,8 @@
         "affectsGlobalScope": false
       },
       "./src/ui/locale-selector/localeselector.types.ts": {
-        "version": "0ca844564dad2b76a62fcf7d52b078862600916668ceb6abbb39d857154cf450",
-        "signature": "e9efc4d7bbd2a0f06436d0c8e28c6af072c267aea11cdeafbac685020359eddc",
+        "version": "fb7eef2d2f72332918ec9dc5b512f89931ecab8e140643c682913a85edd8ea62",
+        "signature": "85eb5fccae4c765220ce266533d4b3cb48c5549a79e05f9d3ace8f43f0db3c4a",
         "affectsGlobalScope": false
       },
       "./src/ui/mainpanel/mainpanel.module.scss.d.ts": {
@@ -5296,6 +5286,16 @@
         "signature": "dd5f3f0344d3a7b78b58ecb4d253b458b808785659ad1365522d1831fdbfbcab",
         "affectsGlobalScope": false
       },
+      "./node_modules/i18next/index.d.ts": {
+        "version": "1be382585272d1015fe04ec4e83c899a225536946249cb928ce1349faa4d9e5f",
+        "signature": "1be382585272d1015fe04ec4e83c899a225536946249cb928ce1349faa4d9e5f",
+        "affectsGlobalScope": false
+      },
+      "./node_modules/react-i18next/ts4.1/index.d.ts": {
+        "version": "f3ec776a4be327a13bbc804da3d8a4a88a11c81fdacd84d44bb4fd2af946aa12",
+        "signature": "f3ec776a4be327a13bbc804da3d8a4a88a11c81fdacd84d44bb4fd2af946aa12",
+        "affectsGlobalScope": false
+      },
       "./src/ui/card/card.tsx": {
         "version": "637ce245fded43b932c3ebd38519ce59f2ef4e89d15b37c924fe60f40b173e9e",
         "signature": "773531fbc44c2901e1f6cc2ebed8f567e58d2fcc436ac5ecc314e54cf53a7762",
@@ -5331,16 +5331,6 @@
         "signature": "0e5cc752c296672d1a5a168bbff335f042cb8c86ba2dd38f74088d3505ac9eaf",
         "affectsGlobalScope": false
       },
-      "./node_modules/i18next/index.d.ts": {
-        "version": "1be382585272d1015fe04ec4e83c899a225536946249cb928ce1349faa4d9e5f",
-        "signature": "1be382585272d1015fe04ec4e83c899a225536946249cb928ce1349faa4d9e5f",
-        "affectsGlobalScope": false
-      },
-      "./node_modules/react-i18next/ts4.1/index.d.ts": {
-        "version": "f3ec776a4be327a13bbc804da3d8a4a88a11c81fdacd84d44bb4fd2af946aa12",
-        "signature": "f3ec776a4be327a13bbc804da3d8a4a88a11c81fdacd84d44bb4fd2af946aa12",
-        "affectsGlobalScope": false
-      },
       "./node_modules/react-final-form/typescript/index.d.ts": {
         "version": "7b207185ac35d11a4820e9a95f712f5904f3c3c78c4b0ca942b0a30d4808acd2",
         "signature": "7b207185ac35d11a4820e9a95f712f5904f3c3c78c4b0ca942b0a30d4808acd2",
@@ -5357,12 +5347,12 @@
         "affectsGlobalScope": false
       },
       "./src/ui/form/auth-email-form/authemailform.tsx": {
-        "version": "48849f799bc3c186610247575fa2e7c2ca02cf0ec30e99b3a47fe144ff5f4698",
+        "version": "24d8fee19a4c9dbf672754b49f035124d3dcc1443ab73bdc21406ebba998c882",
         "signature": "41e00192e1547b9e749479c6de2277f7169d8a34a00c8ce01d61113caf61eda8",
         "affectsGlobalScope": false
       },
       "./src/app/auth/sign-up/signup.tsx": {
-        "version": "3e0d5ec3904b9d5931deb9bf751b04b2e9fb61bfad0f36694c391674de3e8c0b",
+        "version": "22bdaca00e6a6285efaf39eab3ee07e5460566c260c7be8c510f993a40d3ed4b",
         "signature": "b57f5dcdedfe450654728d3432e668ecb60f0e9cf4aa720755882da41b84a08a",
         "affectsGlobalScope": false
       },
@@ -5457,7 +5447,7 @@
         "affectsGlobalScope": false
       },
       "./src/app/business/businessdetails/businessheader/businessheader.tsx": {
-        "version": "0d34c0fbcd1ae4b61ced8994fc8c2a7ee14c6a7b575be03f51de7bd7c394a0ff",
+        "version": "3ce8ec5b25f36ca5cbe57470d456418e490d4c3a9b790c7bb5a6aee605792092",
         "signature": "8b6e3f7d5967a2af54985e4b800606474afe995cabecd9c3e2571a03969b8c36",
         "affectsGlobalScope": false
       },
@@ -5477,22 +5467,22 @@
         "affectsGlobalScope": false
       },
       "./src/app/business/businessdetails/investnowwidget/investnowwidget.tsx": {
-        "version": "05a6e61aa3919b25024225ac8438740c16207e179d6d34c950bed60214d38ec0",
+        "version": "9b49c91833e009a6f41a5a4a01fa509e1bfd4f6f489747779b2577ec921fdad9",
         "signature": "411dabdc34cd5b1ba09e861658258f8f443901e535ad271961a5e2fa0603900f",
         "affectsGlobalScope": false
       },
       "./src/app/business/businessdetails/campaignfinancials/fundingprogressbar/fundingprogressbar.tsx": {
-        "version": "f883f40437dea515a4a4ecd467c266a82bf72616b664ac3dfe75f9c5ad61fdea",
+        "version": "d1419096a4550bb91231db9455f0d924b2906c722559a8f50bdf1afbca02e2fc",
         "signature": "90e99653b77c5b59b1ad5bb9263f0bade16aad26e43c464d8a028ab998b3b033",
         "affectsGlobalScope": false
       },
       "./src/app/business/businessdetails/campaignfinancials/campaignfinancials.tsx": {
-        "version": "cda70c823355609af9207d341c1625880b156b2dc15190044595cdc0de2112c8",
+        "version": "c8f3e4655585472827533fb10b86ce709971bdc2baff24d86408ed487f67f1ed",
         "signature": "469fc993f8380b7c69697c05bf63333414e7810a1529d73f68f5ea7f3642d809",
         "affectsGlobalScope": false
       },
       "./src/app/business/businessdetails/businessdetails.tsx": {
-        "version": "e049121e713739bf3b2c6aeef566f9932fc8d308d9e8747fecb0f14bfb8c460c",
+        "version": "8d667dd38a56dbe930a5e426c0341f64c97634fe98cf76c65fb89e972b4472b3",
         "signature": "e6f3bf9bb9e6f241bb2381d309133ddab727d5257102c2c693d1cc766eae22d4",
         "affectsGlobalScope": false
       },
@@ -5512,7 +5502,7 @@
         "affectsGlobalScope": false
       },
       "./src/app/campaigns-grid/campaignsgrid.tsx": {
-        "version": "8b93f401ff187e40791f0993ba9b8067923ef455bb416ad984e5a356a0b7d9d0",
+        "version": "00fc44728d391fb5774f4e118ebb9f070b0ac63882cd457ccec520d7863cc946",
         "signature": "f82b1d529ce21c55a44ac893f1a247df52025d54cd82ebe86d50e5982346f822",
         "affectsGlobalScope": false
       },
@@ -5522,7 +5512,7 @@
         "affectsGlobalScope": false
       },
       "./src/app/home/home/home.tsx": {
-        "version": "25810752a1fb829a81d3d83895083ff1f89eb33c0362cd7fe0c1bb0f13301e69",
+        "version": "cca62a2c7a4d2196b355c8c2a0f250fc2d381911a423648e97c027af499151fe",
         "signature": "b603eb4dab6283e8e89fd6566377ab3f94ba34abf0ab3ca31624c223a840246e",
         "affectsGlobalScope": false
       },
@@ -5547,7 +5537,7 @@
         "affectsGlobalScope": false
       },
       "./src/context/checkout/checkoutcontextcontroller.tsx": {
-        "version": "38dd0dc3ff230650aa9e5393bf293526417298c439a1953802f67453119fcba6",
+        "version": "d63e642411338b484aef4185b050ac76ec689ad7fbb4d19e70d48497b3abcac7",
         "signature": "f393a8b56e1b3b886d65d8f41b9173e18cb83672395593d9bf184c26cd21c1af",
         "affectsGlobalScope": false
       },
@@ -5927,12 +5917,12 @@
         "affectsGlobalScope": false
       },
       "./src/ui/locale-selector/localeselector.tsx": {
-        "version": "e65387b26d940d86eb855d380825c8d751f1d5c61d8abac3e97a5e8d08a8f97a",
+        "version": "3de8fa6f32089a008be44178450df1c4020824ba690e7b67cfef206ad02544be",
         "signature": "06e4ae02610947d3d18ded1f03de325d128ffd9172fabd60d97078014152d993",
         "affectsGlobalScope": false
       },
       "./src/layouts/app-layout/applayout.tsx": {
-        "version": "6a947c5419e366575bd358b12141075161911b97eb6ad65ed3ab2827c0643e26",
+        "version": "1b5c701163e38e7c6921ced21eb392db335b93cec338520693cdf1e0de12a493",
         "signature": "3fb1d8b21ff803622f3ba1a84798ac0c0c8362d1aa7a45efa32a16de2b4ee1a8",
         "affectsGlobalScope": false
       },
@@ -5947,7 +5937,7 @@
         "affectsGlobalScope": false
       },
       "./src/ui/navbar/navbar.tsx": {
-        "version": "bf00bb0cf001307df2703b286fe02ea02e9bafef2ca21b819d788b51fd86ddb2",
+        "version": "9bae48fc928944faec06a8ffdf2b95450fbebe833336b3096a2f54add3be1b91",
         "signature": "84e53cafbb3e031fe69243c86a86591baa8b69a82e1ff3bb4b3ef224f4c6a904",
         "affectsGlobalScope": false
       },
@@ -6022,33 +6012,33 @@
         "affectsGlobalScope": false
       },
       "./src/pages/index.tsx": {
-        "version": "f7afded7de453d9d1b54002559f8dad08e839cd4d7cbb9a3ef496b0dba945937",
+        "version": "c04b43227f70d122a56d073afa47ded27ec2c1ee4395fd2d83ed302781a060e7",
         "signature": "31173f0dbf132f4106b9b727d9441b1777efceb016c878712da6fca1f75941ea",
         "affectsGlobalScope": false
       },
       "./src/pages/a/index.tsx": {
-        "version": "1f66d8fab577273438b2d4daea3df7213f5156292893e3dd18355287ed3cd11f",
+        "version": "ac3d1998118602329456a8837f46b5dc638aced1c32df8e788d5d4bb4419b79a",
         "signature": "31173f0dbf132f4106b9b727d9441b1777efceb016c878712da6fca1f75941ea",
         "affectsGlobalScope": false
       },
       "./src/pages/c/[campaignslug].tsx": {
-        "version": "b1c74253bd5543e85658d75ccd3e41d7ef169b0d1d757d096d695db67885e894",
+        "version": "1576f25a916c71fb51d0df0063ee0a8e0db48c94c04c3af63a90c782df7ad1fe",
         "signature": "df079c9e1d8bf8c6e27c32fd46d500fc7ce6fe6347e2d907a66a8a5e23b1e592",
         "affectsGlobalScope": false
       },
       "./src/pages/i/data.tsx": {
-        "version": "ee599cca404b8a3c413dc2c99292dc7153c2e2ed0df7df5e922ec66324279f1c",
-        "signature": "0a38e82c1fcaf44594fad8458c89489edf3849ff736cc1b4b75112020c385285",
+        "version": "f5d5e361e2a65c6137dc8dd5c7a80dbf08659cc3f90684d782d3233e23fe5953",
+        "signature": "654e242fa81e753795637a49135ca05b2264a870148af71f8a2ae87113816adf",
         "affectsGlobalScope": false
       },
       "./src/pages/i/index.tsx": {
-        "version": "3ced42aa07e2e0d0d95042850f7d881773352c811dd019900b6ae1bffa2f6090",
+        "version": "207823d17556b0c57eeb9dbaaf546a9cb5f1ffc5b3097793c549e6289aeca9fb",
         "signature": "da8d920be953bda4df62c574c2778839bdec902877eff8752b46eafbc9abfa89",
         "affectsGlobalScope": false
       },
       "./src/pages/i/map.tsx": {
-        "version": "a19213d8e61a5538db5a9b25e7713b6633f68838b2dc5ebf3f25099f32858f27",
-        "signature": "e856326a33e4a239dad7be7b90ec5ee0fed6a7564798433e03f1053dab661903",
+        "version": "790cf642c17cf079feabb8936bd4b40861dc63d320d18c70e8f297fc9e858c8f",
+        "signature": "bfacebc5f15270a2ca4ea39440d824ab2c47f2a3051608965edae71d9cfb069f",
         "affectsGlobalScope": false
       },
       "./src/ui/circular-progress/circularprogress.tsx": {
@@ -12255,10 +12245,6 @@
         "./node_modules/next/types/index.d.ts",
         "./src/providers/supabase/client.ts"
       ],
-      "./src/pages/api/business/resolvers/mutations/createbusiness.ts": [
-        "./src/pages/api/codegen/resolvers-types.ts",
-        "./src/providers/supabase/client.ts"
-      ],
       "./src/pages/api/business/resolvers/queries/getactivebusinesscampaigns.ts": [
         "./src/pages/api/codegen/index.tsx",
         "./src/pages/api/codegen/resolvers-types.ts",
@@ -12274,11 +12260,6 @@
         "./src/providers/database/gettotalinvestors.ts",
         "./src/providers/database/gettotalsatsinvested.ts",
         "./src/providers/wordpress/getpagecontentbybusinesscampaignslug.ts"
-      ],
-      "./src/pages/api/business/resolvers/queries/getbusinessesbyuserid.ts": [
-        "./src/pages/api/codegen/index.tsx",
-        "./src/pages/api/codegen/resolvers-types.ts",
-        "./src/providers/supabase/client.ts"
       ],
       "./src/pages/api/codegen/index.tsx": [
         "./node_modules/@apollo/client/index.d.ts",
@@ -12302,10 +12283,8 @@
         "./node_modules/graphql/index.d.ts",
         "./node_modules/next/types/index.d.ts",
         "./src/hooks/useroutes/useroutes.tsx",
-        "./src/pages/api/business/resolvers/mutations/createbusiness.ts",
         "./src/pages/api/business/resolvers/queries/getactivebusinesscampaigns.ts",
         "./src/pages/api/business/resolvers/queries/getbusinesscampaignbyslug.ts",
-        "./src/pages/api/business/resolvers/queries/getbusinessesbyuserid.ts",
         "./src/pages/api/codegen/resolvers-types.ts",
         "./src/providers/database/index.ts"
       ],
@@ -12330,6 +12309,8 @@
         "./src/layouts/auth-layout/authlayout.tsx"
       ],
       "./src/pages/i/data.tsx": [
+        "./node_modules/next-i18next/dist/types/types.d.ts",
+        "./node_modules/next-i18next/serversidetranslations.d.ts",
         "./node_modules/next/types/index.d.ts",
         "./src/layouts/app-layout/applayout.tsx",
         "./src/layouts/auth-layout/authlayout.tsx"
@@ -12343,6 +12324,8 @@
         "./src/layouts/auth-layout/authlayout.tsx"
       ],
       "./src/pages/i/map.tsx": [
+        "./node_modules/next-i18next/dist/types/types.d.ts",
+        "./node_modules/next-i18next/serversidetranslations.d.ts",
         "./node_modules/next/types/index.d.ts",
         "./src/app/map/mapcontainer.tsx",
         "./src/layouts/app-layout/applayout.tsx",
@@ -18503,16 +18486,10 @@
       "./src/pages/api/auth.ts": [
         "./node_modules/next/types/index.d.ts"
       ],
-      "./src/pages/api/business/resolvers/mutations/createbusiness.ts": [
-        "./src/pages/api/codegen/resolvers-types.ts"
-      ],
       "./src/pages/api/business/resolvers/queries/getactivebusinesscampaigns.ts": [
         "./src/pages/api/codegen/resolvers-types.ts"
       ],
       "./src/pages/api/business/resolvers/queries/getbusinesscampaignbyslug.ts": [
-        "./src/pages/api/codegen/resolvers-types.ts"
-      ],
-      "./src/pages/api/business/resolvers/queries/getbusinessesbyuserid.ts": [
         "./src/pages/api/codegen/resolvers-types.ts"
       ],
       "./src/pages/api/codegen/index.tsx": [
@@ -18539,6 +18516,7 @@
         "./src/app/business/businessdetails/businessdetails.types.ts"
       ],
       "./src/pages/i/data.tsx": [
+        "./node_modules/next-i18next/dist/types/types.d.ts",
         "./node_modules/next/types/index.d.ts"
       ],
       "./src/pages/i/index.tsx": [
@@ -18546,6 +18524,7 @@
         "./node_modules/next/types/index.d.ts"
       ],
       "./src/pages/i/map.tsx": [
+        "./node_modules/next-i18next/dist/types/types.d.ts",
         "./node_modules/next/types/index.d.ts"
       ],
       "./src/pages/index.tsx": [
@@ -20035,10 +20014,8 @@
       "./src/pages/_middleware.ts",
       "./src/pages/a/index.tsx",
       "./src/pages/api/auth.ts",
-      "./src/pages/api/business/resolvers/mutations/createbusiness.ts",
       "./src/pages/api/business/resolvers/queries/getactivebusinesscampaigns.ts",
       "./src/pages/api/business/resolvers/queries/getbusinesscampaignbyslug.ts",
-      "./src/pages/api/business/resolvers/queries/getbusinessesbyuserid.ts",
       "./src/pages/api/codegen/index.tsx",
       "./src/pages/api/codegen/resolvers-types.ts",
       "./src/pages/api/getcheckouturl.ts",
@@ -20108,20 +20085,7 @@
       "./src/ui/icons/verticalellipsisicon.tsx",
       "./src/ui/locale-selector/localeselector.module.scss.d.ts",
       "./src/ui/locale-selector/localeselector.tsx",
-      [
-        "./src/ui/locale-selector/localeselector.types.ts",
-        [
-          {
-            "file": "./src/ui/locale-selector/localeselector.types.ts",
-            "start": 20,
-            "length": 13,
-            "messageText": "'CSSProperties' is declared but its value is never read.",
-            "category": 1,
-            "code": 6133,
-            "reportsUnnecessary": true
-          }
-        ]
-      ],
+      "./src/ui/locale-selector/localeselector.types.ts",
       "./src/ui/mainpanel/mainpanel.module.scss.d.ts",
       "./src/ui/mainpanel/mainpanel.tsx",
       "./src/ui/mainpanel/mainpanel.types.ts",

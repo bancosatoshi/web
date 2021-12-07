@@ -1,10 +1,12 @@
 import clsx from "clsx";
-import { LocaleSelectorProps } from "./LocaleSelector.types";
-import styles from "./LocaleSelector.module.scss";
 import { useCallback, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+
 import { Typography } from "ui/typography/Typography";
 import { Icon } from "ui/icon/Icon";
-import { useRouter } from "next/router";
+
+import { LocaleSelectorProps } from "./LocaleSelector.types";
+import styles from "./LocaleSelector.module.scss";
 
 export const LocaleSelector: React.FC<LocaleSelectorProps> = ({ children, className }) => {
   const { locale, locales, asPath } = useRouter();
@@ -15,11 +17,11 @@ export const LocaleSelector: React.FC<LocaleSelectorProps> = ({ children, classN
       const currentLocaleIndex = locales.indexOf(locale);
       setNextLocale(locales[currentLocaleIndex + 1] ? locales[currentLocaleIndex + 1] : locales[0]);
     }
-  }, []);
+  }, [locale, locales]);
 
   useEffect(() => {
     getNextLocale();
-  }, []);
+  }, [getNextLocale]);
 
   return (
     <>

@@ -1,7 +1,7 @@
-import clsx from "clsx";
 import "materialize-css";
 
 import { Form as RFForm } from "react-final-form";
+import clsx from "clsx";
 
 import { FormProps } from "./Form.types";
 import styles from "./Form.module.scss";
