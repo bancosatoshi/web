@@ -1,9 +1,13 @@
 @import "src/theme/base";
 
 .invest-now-widget {
-  position: fixed;
-  width: 100%;
-  z-index: $z-index-content;
+  @include atLargeTablet {
+    position: fixed;
+    top: 0;
+    z-index: $z-index-content;
+    width: 100%;
+    padding-top: $navbar-height;
+  }
   margin-top: $space-default;
 
   &__risk-level {
@@ -17,7 +21,9 @@
   }
 
   &__fixed-col {
-    height: 0;
+    @include atLargeTablet {
+      height: 0;
+    }
   }
 
   &__cta-button {
@@ -40,10 +46,10 @@
   }
 
   &__warnings {
+    @include boxShadowInset;
+    border-radius: $border-radius;
     padding: $space-default;
     background-color: var(--color-background-contrast);
-    border-radius: $border-radius;
-    @include boxShadowInset;
 
     &--text {
       margin-bottom: 0;
@@ -51,6 +57,7 @@
 
     > div {
       margin-bottom: $space-s;
+
       &:last-child {
         margin-bottom: 0;
       }
@@ -71,13 +78,14 @@
     }
 
     > div {
-      background-color: var(--color-background-contrast);
-      margin-bottom: $space-s;
-      border-left: 3px solid var(--color-primary);
-      padding: $space-s;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      margin-bottom: $space-s;
+      border-left: 3px solid var(--color-primary);
+      padding: $space-s;
+      background-color: var(--color-background-contrast);
+
       &:last-child {
         margin-bottom: 0;
       }

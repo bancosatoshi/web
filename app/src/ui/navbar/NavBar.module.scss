@@ -10,15 +10,15 @@
   background-color: var(--color-background);
 
   &__dropdown {
+    @extend .z-depth-1;
     position: absolute;
-    z-index: $z-index-navigation;
     top: 100%;
     right: 0;
-    width: 210px;
+    z-index: $z-index-navigation;
     display: none;
-    @extend .z-depth-1;
-    border-bottom-left-radius: $border-radius;
+    width: 210px;
     border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
 
     a {
       &:hover {
@@ -28,17 +28,18 @@
 
     &--item {
       display: flex;
-      background-color: var(--color-background);
       border-left: 2px solid var(--color-background);
+      background-color: var(--color-background);
+
       &:last-child {
-        border-bottom-left-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
       }
 
       &:hover {
-        cursor: pointer;
-        background-color: var(--color-background-contrast);
         border-left: 2px solid var(--color-primary);
+        background-color: var(--color-background-contrast);
+        cursor: pointer;
       }
 
       &-icon,
@@ -70,39 +71,52 @@
 
   &__logo {
     a {
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: $navbar-height;
+      height: $navbar-height-mobile;
     }
 
     svg {
-      width: $navbar-logo-width;
+      @include atLargeTablet {
+        width: $navbar-logo-width;
+      }
+      width: $navbar-logo-width-mobile;
     }
   }
 
   &__center {
-    display: flex;
-    justify-content: center;
+    @include atTablet {
+      display: flex;
+      justify-content: center;
+    }
+    display: none;
 
     a {
       color: var(--color-typography-subtitle);
+
       &:hover {
         text-decoration: none;
       }
     }
 
     &--item {
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
       position: relative;
-      height: $navbar-height;
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      height: $navbar-height-mobile;
       padding: $space-default;
 
       p {
-        color: var(--color-typography-subtitle);
         margin: 0;
+        color: var(--color-typography-subtitle);
       }
 
       &-dropdown {
@@ -118,15 +132,18 @@
     justify-content: flex-end;
 
     &--item {
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
       position: relative;
-      height: $navbar-height;
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      height: $navbar-height-mobile;
 
       a {
-        font-weight: $font-weight-bold;
         margin: 0;
+        font-weight: $font-weight-bold;
       }
     }
   }
@@ -165,8 +182,8 @@
     align-items: center;
     width: 42px;
     height: 42px;
-    border-radius: 50%;
     border: 2px solid var(--color-secondary);
+    border-radius: 50%;
 
     &:hover {
       background-color: var(--color-background-contrast);

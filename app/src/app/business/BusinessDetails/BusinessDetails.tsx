@@ -17,7 +17,6 @@ export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign }) =>
 
   return (
     <div className={clsx(styles["business-details"])}>
-      <InvestNowWidget campaign={campaign} />
       <Grid.Container>
         <Grid.Row>
           <Grid.Col lg={8}>
@@ -39,6 +38,7 @@ export const BusinessDetails: React.FC<BusinessDetailsProps> = ({ campaign }) =>
           </Grid.Col>
         </Grid.Row>
       </Grid.Container>
+      <InvestNowWidget campaign={campaign} />
     </div>
   );
 };

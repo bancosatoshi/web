@@ -23,7 +23,7 @@ export const AuthEmailForm: React.FC<AuthEmailFormProps> = ({ className, autoFoc
           />
         </div>
         <div className={styles["auth-email-form__inline-wrapper--button"]}>
-          <Button variant="outlined" fullWidth type="submit" isLoading={isLoading}>
+          <Button variant="outlined" type="submit" isLoading={isLoading}>
             {t("authEmailForm.button")}
           </Button>
         </div>

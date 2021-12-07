@@ -44,12 +44,12 @@ export const Home: React.FC<HomeProps> = ({ className }) => {
       <section id="cta-banner" className={clsx(styles.home__section, styles["home__section--cta-banner"])}>
         <Container>
           <Grid.Row>
-            <Grid.Col lg={7}>
+            <Grid.Col lg={7} xs={12} sm={6}>
               <Typography.Headline4 className={styles["home__section--cta-banner--welcome"]}>
                 <Trans>{t("intro.bottomBanner.welcome")}</Trans>
               </Typography.Headline4>
             </Grid.Col>
-            <Grid.Col lg={5}>
+            <Grid.Col lg={5} xs={12} sm={6}>
               <Typography.Link className={styles["home__section--cta-banner--cta"]} href={routes.invest.grid}>
                 {t("intro.bottomBanner.cta")} <Icon name="icon-chevron-right-circle" />
               </Typography.Link>
