@@ -1,8 +1,7 @@
 import { useGetBusinessCampaignBySlugQuery } from "api/codegen";
 import { useRouter } from "next/router";
 import React from "react";
-
-import { Typography } from "ui/typography/Typography";
+import { GenericLoader } from "ui/generic-loader/GenericLoader";
 
 import { BusinessDetails } from "./BusinessDetails";
 
@@ -18,8 +17,7 @@ export const BusinessDetailsContainer = () => {
   } = useGetBusinessCampaignBySlugQuery({ variables: { input: { slug: campaignSlug as string } } });
 
   if (isGetBusinessByCampaignSlugQueryLoading) {
-    // @TODO set a generic loading template
-    return <Typography.Text>loading</Typography.Text>;
+    return <GenericLoader />;
   }
 
   if (
