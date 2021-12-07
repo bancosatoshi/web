@@ -77,8 +77,10 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.10.2",
     "eslint-plugin-unicorn": "^29.0.0",
+    "husky": "^7.0.4",
     "inquirer-directory": "^2.2.0",
     "jest": "^27.3.1",
+    "lint-staged": "^12.1.2",
     "node-sass": "^5.0.0",
     "plop": "^2.7.4",
     "prettier": "^2.4.1",
@@ -92,5 +94,25 @@
     "stylelint-scss": "^3.19.0",
     "typed-scss-modules": "^4.1.1",
     "typescript": "^4.3.2"
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,cypress,storybook,scripts}/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --list-different --write"
+    ],
+    "./**/*.{json,scss}": [
+      "prettier --list-different --write"
+    ],
+    "src/**/*.module.scss": [
+      "stylelint --fix",
+      "tsm --ignore 'src/theme/*.scss' --exportType default --nameFormat none --implementation node-sass --aliasPrefixes./src src",
+      "prettier --list-different --write",
+      "git add **/*.module.scss.d.ts"
+    ]
+  },
 }
