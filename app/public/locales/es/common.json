@@ -13,5 +13,6 @@
   "authContextController.success.signInConfirmation": "Enviamos un link de ingreso sin contraseña a tu bandeja de entrada. Da click en él para iniciar sesión.",
   "authContextController.success.signInConfirmation.title": "Revisa tu correo",
   "toast.cta.dismiss": "Entendido",
-  "authContextController.error.signIn": "No pudimos enviar un correo de ingreso. Intenta de nuevo."
+  "authContextController.error.signIn": "No pudimos enviar un correo de ingreso. Intenta de nuevo.",
+  "typeformEmbedForm.buttonLabel": "Accede a Capital"
 }

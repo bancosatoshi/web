@@ -1,12 +1,16 @@
 import { Col, Container, Hidden, Row } from "react-grid-system";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
+import { Sidetab } from "@typeform/embed-react";
 
+import { Locale } from "types/Locale";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { Typography } from "../typography/Typography";
 import { useRoutes } from "hooks/useRoutes/useRoutes";
 import { BancoSatoshiLogo } from "ui/icons/BancoSatoshiLogo";
 import { Icon } from "ui/icon/Icon";
+import getEmbedFormConfig from "providers/typeform/getEmbedFormConfig";
 
 import styles from "./NavBar.module.scss";
 import { NavBarProps } from "./NavBar.types";
@@ -14,8 +18,11 @@ import { NavBarProps } from "./NavBar.types";
 export const NavBar: React.FC<NavBarProps> = () => {
   const auth = useAuthContext();
   const routes = useRoutes();
+  const { locale } = useRouter();
   const { session, handleLogout } = useAuthContext();
   const { t } = useTranslation("common");
+
+  const embedFormConfig = getEmbedFormConfig(locale as Locale);
 
   const getUserNickname = () => {
     const userEmail = session?.user?.email;
@@ -37,43 +44,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
           </Col>
           <Hidden xs>
             <Col lg={6} sm={6} xs={6}>
-              <div className={styles.navbar__center}>
-                <div className={clsx(styles["navbar__center--item"], styles["navbar__center--item-dropdown"])}>
-                  <Typography.Link href={routes.invest.grid}>{t("navbar.businessCampaigns")}</Typography.Link>
-                  <div className={clsx(styles.navbar__dropdown, "dropdown")}>
-                    <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.map}>
-                      <div className={styles["navbar__dropdown--item-icon"]}>
-                        <Icon name="icon-map2" />
-                      </div>
-                      <div className={styles["navbar__dropdown--item-text"]}>
-                        <Typography.Text>{t("navbar.businessCampaigns.map")}</Typography.Text>
-                      </div>
-                    </Typography.Link>
-                    <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.data}>
-                      <div className={styles["navbar__dropdown--item-icon"]}>
-                        <Icon name="icon-file-stats" />
-                      </div>
-                      <div className={styles["navbar__dropdown--item-text"]}>
-                        <Typography.Text>{t("navbar.businessCampaigns.table")}</Typography.Text>
-                      </div>
-                    </Typography.Link>
-                    <Typography.Link className={styles["navbar__dropdown--item"]} href={routes.invest.grid}>
-                      <div className={styles["navbar__dropdown--item-icon"]}>
-                        <Icon name="icon-grid" />
-                      </div>
-                      <div className={styles["navbar__dropdown--item-text"]}>
-                        <Typography.Text>{t("navbar.businessCampaigns.grid")}</Typography.Text>
-                      </div>
-                    </Typography.Link>
-                  </div>
-                </div>
-                <div className={styles["navbar__center--item"]}>
-                  <Typography.Text>{t("navbar.howItWorks")}</Typography.Text>
-                </div>
-                <div className={styles["navbar__center--item"]}>
-                  <Typography.Text>{t("navbar.apply")}</Typography.Text>
-                </div>
-              </div>
+              <div className={styles.navbar__center} />
             </Col>
           </Hidden>
           <Col lg={3} sm={3} xs={6}>
@@ -107,6 +78,11 @@ export const NavBar: React.FC<NavBarProps> = () => {
           </Col>
         </Row>
       </Container>
+      <Sidetab
+        id={embedFormConfig.formID}
+        buttonText={t("typeformEmbedForm.buttonLabel")}
+        buttonColor="var(--color-primary)"
+      />
     </div>
   );
 };

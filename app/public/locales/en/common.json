@@ -4,7 +4,7 @@
   "navbar.businessCampaigns.grid": "Grid",
   "navbar.businessCampaigns.table": "Table",
   "navbar.howItWorks": "How It Works",
-  "navbar.apply": "Apply to Funding",
+  "navbar.apply": "Get Funded",
   "navbar.logout": "Sign Out",
   "navbar.signIn": "Sign In",
   "privacyNotice": "Privacy Notice",
@@ -13,5 +13,6 @@
   "authContextController.success.signInConfirmation": "Click on the link in your inbox to sign in.",
   "authContextController.success.signInConfirmation.title": "Check your inbox",
   "toast.cta.dismiss": "Dismiss",
-  "authContextController.error.signIn": "Something went wrong while sending your sign-in link. Please try again."
+  "authContextController.error.signIn": "Something went wrong while sending your sign-in link. Please try again.",
+  "typeformEmbedForm.buttonLabel": "Get Funded"
 }
