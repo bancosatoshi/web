@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Session } from "@supabase/gotrue-js";
 import { useRouter } from "next/router";
 import { client as supabase } from "src/providers/supabase/client";
+import { useTranslation } from "react-i18next";
 
 import { useRoutes } from "hooks/useRoutes/useRoutes";
 import { useToastContext } from "hooks/useToastContext/useToastContext";
@@ -18,6 +19,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
   const router = useRouter();
   const routes = useRoutes();
   const toast = useToastContext();
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     const currentSession = supabase.auth.session();
@@ -72,13 +74,9 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
       // @TODO i18n
       toast.trigger({
         variant: "confirmation",
-        title: "Revisa tu correo",
+        title: t("authContextController.success.signInConfirmation.title"),
         withTimeout: false,
-        children: (
-          <Typography.Text>
-            Enviamos un link de ingreso sin contraseña a tu bandeja de entrada. Da click en él para iniciar sesión.
-          </Typography.Text>
-        ),
+        children: <Typography.Text>{t("authContextController.success.signInConfirmation")}</Typography.Text>,
       });
     } catch (_error) {
       setIsLoading(false);
@@ -91,7 +89,7 @@ export const AuthContextController = ({ children }: AuthContextControllerProps) 
         variant: "error",
         title: "Error",
         withTimeout: false,
-        children: <Typography.Text>No pudimos enviar un correo de ingreso. Intenta de nuevo.</Typography.Text>,
+        children: <Typography.Text>{t("authContextController.error.signIn")}</Typography.Text>,
       });
     }
   };

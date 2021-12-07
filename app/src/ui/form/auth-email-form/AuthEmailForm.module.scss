@@ -1,7 +1,6 @@
-@import "../../../theme/base";
+@import "src/theme/base";
 
 .auth-email-form {
-  @include boxShadowInset;
   border-radius: $border-radius;
   padding: $space-default;
   padding-top: $space-ml;
@@ -15,6 +14,12 @@
   }
 
   &__inline-wrapper {
+    &--button {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: $space-default;
+    }
+
     @include atLargeTablet {
       display: flex;
 
@@ -39,11 +44,7 @@
         }
       }
     }
-
-    &--button {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: $space-default;
-    }
   }
+
+  @include boxShadowInset;
 }

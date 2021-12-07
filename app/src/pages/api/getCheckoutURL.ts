@@ -13,6 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     };
 
     const { storeId, checkout } = req.body;
+    const defaultLanguage = checkout.locale === "es" ? "es-ES" : "en";
 
     const endpoint = `${process.env.BTC_PAY_SERVER_BASE_URL}/stores/${storeId}/invoices`;
 
@@ -27,7 +28,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       headers,
       body: JSON.stringify({
         metadata,
-        checkout: { redirectUrl: `${checkout.redirectURL}?invoiceId={InvoiceId}&orderId={OrderId}`.replace(/#/, "") },
+        checkout: { redirectUrl: `${checkout.redirectURL}?invoiceId={InvoiceId}&orderId={OrderId}`, defaultLanguage },
       }),
     });
 

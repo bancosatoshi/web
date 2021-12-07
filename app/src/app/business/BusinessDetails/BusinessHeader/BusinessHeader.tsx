@@ -51,17 +51,22 @@ export const BusinessHeader: React.FC<BusinessHeaderProps> = ({ className, conte
                 </Typography.Text>
               </Grid.Col>
               <Grid.Col>
-                <Typography.Link className={styles["business-header__link--website"]} href={content.website}>
+                <Typography.Anchor
+                  className={styles["business-header__link--website"]}
+                  href={content.website}
+                  target="_blank"
+                >
                   {content.website}
-                </Typography.Link>
+                </Typography.Anchor>
                 <hr />
                 <Typography.Description>{t("businessHeader.social.title")}</Typography.Description>
-                <Typography.Link
+                <Typography.Anchor
                   className={styles["business-header__link--social"]}
                   href={`https://instagram.com/${content.instagram}`}
+                  target="_blank"
                 >
                   <Icon name="icon-instagram" />
-                </Typography.Link>
+                </Typography.Anchor>
               </Grid.Col>
             </Grid.Row>
           </Grid.Col>

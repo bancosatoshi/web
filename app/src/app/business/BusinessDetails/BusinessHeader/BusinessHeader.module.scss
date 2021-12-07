@@ -23,6 +23,8 @@
   }
 
   &__map {
+    display: none;
+
     @include atLargeTablet {
       position: relative;
       display: block;
@@ -30,7 +32,6 @@
       height: 210px;
       background-color: var(--color-dark-3);
     }
-    display: none;
   }
 
   &__link {

@@ -52,7 +52,9 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
         campaign,
       });
     } else {
-      router.push(`${routes.auth.signIn}?redirectTo=${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`);
+      router.push(
+        `${routes.auth.signIn}?redirectTo=${process.env.NEXT_PUBLIC_BASE_URL}/${router.locale}${router.asPath}`,
+      );
     }
   };
 
@@ -134,7 +136,7 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
                       <Icon name="icon-users" /> {campaign.totalInvestors}
                     </Typography.Headline4>
                     <Typography.Description className={styles["invest-now-widget__goal--text"]}>
-                      {t("investNowWidget.terms.investors.description")}
+                      <Trans count={campaign.totalInvestors}>{t("investNowWidget.terms.investors.description")}</Trans>
                     </Typography.Description>
                   </div>
                   <div>

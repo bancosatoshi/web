@@ -8,56 +8,60 @@
   }
 
   &__headline1 {
-    @include font-properties($typography-headline-1);
-    @include normalizeTypography;
     margin-bottom: $space-s;
     color: var(--color-typography-headline-1);
+
+    @include font-properties($typography-headline-1);
+    @include normalizeTypography;
   }
 
   &__headline2 {
+    color: var(--color-typography-headline-2);
+
     @include font-properties($typography-headline-2);
     @include normalizeTypography;
-    color: var(--color-typography-headline-2);
   }
 
   &__headline3 {
-    @include font-properties($typography-headline-3);
-    @include normalizeTypography;
     margin-bottom: $space-s;
     color: var(--color-typography-headline-3);
+
+    @include font-properties($typography-headline-3);
+    @include normalizeTypography;
   }
 
   &__headline4 {
-    @include font-properties($typography-headline-4);
-    @include normalizeTypography;
-    color: var(--color-typography-headline-4);
     margin-bottom: $space-xs;
+    color: var(--color-typography-headline-4);
 
     [class^="icon-"],
     [class*=" icon-"] {
       font-size: $font-size-headline-4 * 0.75;
     }
+
+    @include font-properties($typography-headline-4);
+    @include normalizeTypography;
   }
 
   &__headline5 {
-    @include font-properties($typography-headline-5);
-    @include normalizeTypography;
     margin-top: $space-default;
     margin-bottom: $space-xs;
     color: var(--color-typography-headline-5);
+
+    @include font-properties($typography-headline-5);
+    @include normalizeTypography;
   }
 
   &__headline6 {
-    @include font-properties($typography-headline-6);
-    @include normalizeTypography;
     margin-top: $space-default;
     margin-bottom: $space-xs;
     color: var(--color-typography-headline-6);
+
+    @include font-properties($typography-headline-6);
+    @include normalizeTypography;
   }
 
   &__text {
-    @include font-properties($typography-text);
-    @include normalizeTypography;
     margin-bottom: $space-s;
     color: var(--color-typography-text);
 
@@ -65,56 +69,64 @@
     [class*=" icon-"] {
       font-size: $font-size-text * 0.75;
     }
+
+    @include font-properties($typography-text);
+    @include normalizeTypography;
   }
 
   &__text-lead {
-    @include font-properties($typography-text-lead);
-    @include normalizeTypography;
     margin-bottom: $space-s;
     color: var(--color-typography-text);
+
+    @include font-properties($typography-text-lead);
+    @include normalizeTypography;
   }
 
   &__text-bold {
+    color: var(--color-typography-text-bold);
+
     @include font-properties($typography-text-bold);
     @include normalizeTypography;
-    color: var(--color-typography-text-bold);
   }
 
   &__subtitle {
-    @include font-properties($typography-subtitle);
-    @include normalizeTypography;
     margin-bottom: $space-xs;
     color: var(--color-typography-subtitle);
+
+    @include font-properties($typography-subtitle);
+    @include normalizeTypography;
   }
 
   &__button-label {
+    color: var(--color-typography-button-label);
+
     @include font-properties($typography-button-label);
     @include normalizeTypography;
-    color: var(--color-typography-button-label);
   }
 
   &__mini-button-label {
+    color: var(--color-typography-mini-button-label);
+
     @include font-properties($typography-mini-button-label);
     @include normalizeTypography;
-    color: var(--color-typography-mini-button-label);
   }
 
   &__description {
-    @include font-properties($typography-description);
-    @include normalizeTypography;
     margin-bottom: $space-xs;
     color: var(--color-typography-description);
+
+    @include font-properties($typography-description);
+    @include normalizeTypography;
   }
 
   &__mini-description {
+    color: var(--color-typography-mini-description);
+
     @include font-properties($typography-mini-description);
     @include normalizeTypography;
-    color: var(--color-typography-mini-description);
   }
 
   &__link {
-    @include font-properties($typography-link);
-    @include normalizeTypography;
     font-size: inherit;
     text-decoration: none;
     color: var(--color-typography-link);
@@ -122,5 +134,8 @@
     &:hover {
       text-decoration: underline;
     }
+
+    @include font-properties($typography-link);
+    @include normalizeTypography;
   }
 }

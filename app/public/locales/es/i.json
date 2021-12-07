@@ -3,5 +3,10 @@
   "grid.recentCampaigns.description": "Descubre nuevas oportunidades y comienza a invertir",
   "grid.banner.title": "Explora e Invierte con Bitcoin",
   "grid.banner.description": "Diversifica tu portafolio con ingresos pasivos desde <strong>1 SAT</strong>.",
-  "grid.banner.cta": "Crea una cuenta"
+  "grid.banner.cta": "Crea una cuenta",
+  "businessCampaignCard.funded": "Recaudado",
+  "businessCampaignCard.investors": "Inversionista",
+  "businessCampaignCard.investors_plural": "Inversionistas",
+  "businessCampaignCard.investmentMultiple": "Retorno",
+  "businessCampaignCard.daysLeft": "Días Restantes"
 }

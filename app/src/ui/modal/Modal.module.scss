@@ -69,13 +69,13 @@
     }
 
     &--fullscreen {
-      @include fullscreen();
-
       &-on-mobile {
         @media (max-width: $mq-medium) {
           @include fullscreen();
         }
       }
+
+      @include fullscreen();
     }
 
     &--pullup {
@@ -90,14 +90,14 @@
   }
 
   &__header {
-    @include font-properties($typography-headline-1);
     border-bottom: $border-divider;
     padding: $space-l;
     color: var(--color-typography-text);
+
+    @include font-properties($typography-headline-1);
   }
 
   &__content {
-    @include font-properties($typography-text);
     max-height: 50vh;
     padding: $space-l;
     overflow-y: auto;
@@ -106,18 +106,11 @@
     &:last-child {
       margin-bottom: $space-l;
     }
+
+    @include font-properties($typography-text);
   }
 
   &__actions {
-    @include atTablet {
-      flex-flow: row;
-      padding: $space-l;
-
-      > *:not(:first-child) {
-        width: auto;
-        margin: 0 0 0 $space-m;
-      }
-    }
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
@@ -126,6 +119,16 @@
     > *:not(:first-child) {
       width: 100%;
       margin: $space-m 0 0;
+    }
+
+    @include atTablet {
+      flex-flow: row;
+      padding: $space-l;
+
+      > *:not(:first-child) {
+        width: auto;
+        margin: 0 0 0 $space-m;
+      }
     }
   }
 

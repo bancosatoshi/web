@@ -20,11 +20,12 @@
 
   &__text {
     &--wrapper {
-      @include font-properties($typography-text);
       display: flex;
       flex-direction: column;
       justify-content: center;
       min-height: 32px;
+
+      @include font-properties($typography-text);
     }
   }
 
