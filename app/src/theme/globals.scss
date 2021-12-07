@@ -226,8 +226,8 @@ code {
   width: 160px !important;
   height: 38px !important;
   @media (min-width: $mq-medium) {
-    width: 200px;
-    height: 48px;
+    width: 200px !important;
+    height: 48px !important;
   }
 }
 
