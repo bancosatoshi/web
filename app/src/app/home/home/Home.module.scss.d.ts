@@ -1,6 +1,5 @@
 export type Styles = {
   home: string;
-  "home__auth-email-card": string;
   "home__intro--cta": string;
   "home__intro--headline": string;
   "home__intro--image": string;

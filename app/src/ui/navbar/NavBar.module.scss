@@ -71,14 +71,20 @@
 
   &__logo {
     a {
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: $navbar-height;
+      height: $navbar-height-mobile;
     }
 
     svg {
-      width: $navbar-logo-width;
+      @include atLargeTablet {
+        width: $navbar-logo-width;
+      }
+      width: $navbar-logo-width-mobile;
     }
   }
 
@@ -98,11 +104,14 @@
     }
 
     &--item {
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: $navbar-height;
+      height: $navbar-height-mobile;
       padding: $space-default;
 
       p {
@@ -123,11 +132,14 @@
     justify-content: flex-end;
 
     &--item {
+      @include atLargeTablet {
+        height: $navbar-height;
+      }
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      height: $navbar-height;
+      height: $navbar-height-mobile;
 
       a {
         margin: 0;
