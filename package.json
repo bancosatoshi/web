@@ -1,0 +1,30 @@
+{
+  "name": "@bancosatoshi/root",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bancosatoshi/web.git"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2"
+  },
+  "lint-staged": {
+    "{src,cypress,storybook,scripts}/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --list-different --write"
+    ],
+    "./**/*.{json,scss}": [
+      "prettier --list-different --write"
+    ],
+    "src/**/*.module.scss": [
+      "stylelint --fix",
+      "tsm --ignore 'src/theme/*.scss' --exportType default --nameFormat none --implementation node-sass --aliasPrefixes./src src",
+      "prettier --list-different --write",
+      "git add **/*.module.scss.d.ts"
+    ]
+  }
+}

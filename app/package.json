@@ -15,7 +15,6 @@
     "plop": "plop",
     "api:codegen:watch": "graphql-codegen --watch 'src/pages/api/**/resolvers/*.ts' --watch 'src/pages/api/**/schema.graphql'",
     "api:codegen:dry": "graphql-codegen",
-    "prepare": "husky install",
     "postinstall": "npm run api:codegen:dry"
   },
   "dependencies": {
@@ -95,20 +94,5 @@
     "stylelint-scss": "^3.19.0",
     "typed-scss-modules": "^4.1.1",
     "typescript": "^4.3.2"
-  },
-  "lint-staged": {
-    "{src,cypress,storybook,scripts}/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --list-different --write"
-    ],
-    "./**/*.{json,scss}": [
-      "prettier --list-different --write"
-    ],
-    "src/**/*.module.scss": [
-      "stylelint --fix",
-      "tsm --ignore 'src/theme/*.scss' --exportType default --nameFormat none --implementation node-sass --aliasPrefixes./src src",
-      "prettier --list-different --write",
-      "git add **/*.module.scss.d.ts"
-    ]
   }
 }
