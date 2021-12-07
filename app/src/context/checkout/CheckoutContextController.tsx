@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { useToastContext } from "hooks/useToastContext/useToastContext";
@@ -21,6 +22,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
   const auth = useAuthContext();
   const toast = useToastContext();
   const routes = useRoutes();
+  const { t } = useTranslation("common");
 
   const getCheckoutURL = async ({ checkout, campaign }: BTCPayCheckoutOptions) => {
     try {
@@ -66,7 +68,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
         variant: "error",
         title: "Error",
         withTimeout: false,
-        children: <Typography.Text>No pudimos generar un link de depósito de BTC. Intenta de nuevo.</Typography.Text>,
+        children: <Typography.Text>{t("checkoutContextController.error.getCheckoutURL")}</Typography.Text>,
       });
     }
   };
