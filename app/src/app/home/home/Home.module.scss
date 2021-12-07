@@ -43,8 +43,9 @@
       background-color: var(--color-primary);
 
       &--welcome {
-        @include font-properties($typography-headline-5);
+        @include font-properties($typography-text);
         @include atTablet {
+          @include font-properties($typography-headline-4);
           margin-bottom: 0;
           text-align: left;
         }
