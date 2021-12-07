@@ -27,7 +27,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       headers,
       body: JSON.stringify({
         metadata,
-        checkout: { redirectUrl: `${checkout.redirectURL}?invoiceId={InvoiceId}&orderId={OrderId}`.replace(/#/, "") },
+        checkout: { redirectUrl: `${checkout.redirectURL}?invoiceId={InvoiceId}&orderId={OrderId}` },
       }),
     });
 
