@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { useToastContext } from "hooks/useToastContext/useToastContext";
@@ -22,6 +23,7 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
   const auth = useAuthContext();
   const toast = useToastContext();
   const routes = useRoutes();
+  const { locale } = useRouter();
   const { t } = useTranslation("common");
 
   const getCheckoutURL = async ({ checkout, campaign }: BTCPayCheckoutOptions) => {
@@ -42,7 +44,14 @@ export const CheckoutContextController = ({ children }: CheckoutContextControlle
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ metadata, storeId, checkout }),
+        body: JSON.stringify({
+          metadata,
+          storeId,
+          checkout: {
+            ...checkout,
+            locale,
+          },
+        }),
       });
 
       const content = await response.json();

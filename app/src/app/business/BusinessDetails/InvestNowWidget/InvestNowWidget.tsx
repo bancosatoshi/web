@@ -52,7 +52,9 @@ export const InvestNowWidget: React.FC<InvestNowWidgetProps> = ({ className, cam
         campaign,
       });
     } else {
-      router.push(`${routes.auth.signIn}?redirectTo=${process.env.NEXT_PUBLIC_BASE_URL}${router.asPath}`);
+      router.push(
+        `${routes.auth.signIn}?redirectTo=${process.env.NEXT_PUBLIC_BASE_URL}/${router.locale}${router.asPath}`,
+      );
     }
   };
 
