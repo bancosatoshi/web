@@ -2,14 +2,15 @@ import { Col, Container, Hidden, Row } from "react-grid-system";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
-import { Locale } from "src/types/Locale";
 import { Sidetab } from "@typeform/embed-react";
 
+import { Locale } from "types/Locale";
 import { useAuthContext } from "hooks/useAuthContext/useAuthContext";
 import { Typography } from "../typography/Typography";
 import { useRoutes } from "hooks/useRoutes/useRoutes";
 import { BancoSatoshiLogo } from "ui/icons/BancoSatoshiLogo";
 import { Icon } from "ui/icon/Icon";
+import getEmbedFormConfig from "providers/typeform/getEmbedFormConfig";
 
 import styles from "./NavBar.module.scss";
 import { NavBarProps } from "./NavBar.types";
@@ -21,10 +22,7 @@ export const NavBar: React.FC<NavBarProps> = () => {
   const { session, handleLogout } = useAuthContext();
   const { t } = useTranslation("common");
 
-  const embedFormConfig = {
-    formID: (locale as Locale) === "es" ? "tMiwThZS" : "ycYIXjXb",
-    buttonText: t("typeformEmbedForm.buttonLabel"),
-  };
+  const embedFormConfig = getEmbedFormConfig(locale as Locale);
 
   const getUserNickname = () => {
     const userEmail = session?.user?.email;
@@ -80,7 +78,11 @@ export const NavBar: React.FC<NavBarProps> = () => {
           </Col>
         </Row>
       </Container>
-      <Sidetab id={embedFormConfig.formID} buttonText={embedFormConfig.buttonText} buttonColor="var(--color-primary)" />
+      <Sidetab
+        id={embedFormConfig.formID}
+        buttonText={t("typeformEmbedForm.buttonLabel")}
+        buttonColor="var(--color-primary)"
+      />
     </div>
   );
 };
