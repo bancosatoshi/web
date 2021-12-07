@@ -221,5 +221,26 @@ code {
   background-color: var(--color-background-contrast);
 }
 
+// Typeform EMBED
+.tf-v1-sidetab-button {
+  width: 160px !important;
+  height: 38px !important;
+  @media (min-width: $mq-medium) {
+    width: 200px;
+    height: 48px;
+  }
+}
+
+.tf-v1-sidetab-button-text {
+  font-size: 15px !important;
+  @media (min-width: $mq-medium) {
+    font-size: 18px !important;
+  }
+}
+
+.tf-v1-sidetab-button-icon[data-testid="default-icon"] {
+  display: none;
+}
+
 @import "./forms/forms";
 @import "./icons";

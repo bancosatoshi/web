@@ -22,6 +22,7 @@
     "@bancosatoshi/database": "^2.0.5",
     "@googlemaps/react-wrapper": "^1.1.12",
     "@supabase/supabase-js": "^1.28.0",
+    "@typeform/embed-react": "^1.2.1",
     "apollo-server-micro": "^3.5.0",
     "aws-sdk": "^2.1037.0",
     "bitcoin-units": "^0.3.0",
@@ -63,9 +64,9 @@
     "inquirer-directory": "^2.2.0",
     "jest": "^27.3.1",
     "node-sass": "^5.0.0",
-    "typed-scss-modules": "^4.1.1",
     "plop": "^2.7.4",
     "sass-loader": "^12.3.0",
+    "typed-scss-modules": "^4.1.1",
     "typescript": "^4.3.2"
   }
 }
