@@ -13,14 +13,14 @@
     "lint-staged": "^12.1.2"
   },
   "lint-staged": {
-    "{src,cypress,storybook,scripts}/**/*.{js,jsx,ts,tsx}": [
+    "./app/{src,cypress,storybook,scripts}/**/*.{js,jsx,ts,tsx}": [
       "eslint --fix",
       "prettier --list-different --write"
     ],
     "./**/*.{json,scss}": [
       "prettier --list-different --write"
     ],
-    "src/**/*.module.scss": [
+    "./app/src/**/*.module.scss": [
       "stylelint --fix",
       "tsm --ignore 'src/theme/*.scss' --exportType default --nameFormat none --implementation node-sass --aliasPrefixes./src src",
       "prettier --list-different --write",
