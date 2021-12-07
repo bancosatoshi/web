@@ -4,14 +4,6 @@
   min-height: 100vh;
   background-color: var(--color-primary);
 
-  &__section {
-    display: block;
-  }
-
-  &__auth-email-card {
-    margin-top: $space-l;
-  }
-
   &__intro {
     &--headline {
       margin-bottom: $space-ml;
@@ -21,6 +13,7 @@
     &--image {
       display: flex;
       justify-content: center;
+
       img {
         width: 350px;
         height: auto;
@@ -37,6 +30,8 @@
   }
 
   &__section {
+    display: block;
+
     &--intro {
       padding: $navbar-height 0;
       background-color: var(--color-secondary);
@@ -48,14 +43,22 @@
       background-color: var(--color-primary);
 
       &--welcome {
+        @include font-properties($typography-text);
+        @include atTablet {
+          @include font-properties($typography-headline-4);
+          margin-bottom: 0;
+          text-align: left;
+        }
+        margin-bottom: $space-m;
+        text-align: right;
         color: var(--color-white);
       }
 
       &--cta {
         @include font-properties($typography-headline-3);
         display: block;
-        color: var(--color-white);
         text-align: right;
+        color: var(--color-white);
       }
     }
 
@@ -64,19 +67,16 @@
       background-color: var(--color-background);
 
       h2 {
-        font-family: $font-family-display;
         margin-bottom: $space-default;
+        font-family: $font-family-display;
       }
 
       &--box {
-        min-height: 30vh;
         display: flex;
-        justify-content: center;
         flex-direction: column;
+        justify-content: center;
+        min-height: 30vh;
       }
-    }
-
-    &--perfil-del-empresario {
     }
   }
 }
