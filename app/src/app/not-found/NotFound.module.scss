@@ -1,0 +1,25 @@
+@import "src/theme/base";
+
+.not-found {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  
+  img {    
+    padding: $space-default;
+    max-width: 70%;
+    max-height: 65%;  
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
