@@ -52,7 +52,7 @@ module.exports = {
     indent: 0,
 
     // Imports
-    "import/no-default-export": "as-needed",
+    "import/no-default-export": "off",
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
     "import/order": [

@@ -10,9 +10,7 @@ import path from "path";
 import { BusinessDAO } from "@bancosatoshi/database/dao/types";
 
 import getActiveBusinessCampaigns from "./business/resolvers/queries/getActiveBusinessCampaigns";
-import getBusinessesByUserId from "./business/resolvers/queries/getBusinessesByUserId";
 import getBusinessCampaignBySlug from "./business/resolvers/queries/getBusinessCampaignBySlug";
-import createBusiness from "./business/resolvers/mutations/createBusiness";
 import { routes } from "hooks/useRoutes/useRoutes";
 
 const schemas = loadTypedefsSync(path.join(process.cwd(), "/src/pages/api/business/schema.graphql"), {
@@ -24,11 +22,7 @@ const typeDefs = schemas.map((schema) => schema.document) as DocumentNode[];
 const resolvers: Resolvers = {
   Query: {
     getActiveBusinessCampaigns,
-    getBusinessesByUserId,
     getBusinessCampaignBySlug,
-  },
-  Mutation: {
-    createBusiness,
   },
 };
 
